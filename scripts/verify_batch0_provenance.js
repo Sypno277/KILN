@@ -65,6 +65,9 @@ async function runBatch0Verification() {
 
   const gitHash = cp.execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
   const gitShort = cp.execSync('git rev-parse --short HEAD', { encoding: 'utf8' }).trim();
+  process.env.GIT_COMMIT = gitShort;
+  globalThis.GIT_COMMIT = gitShort;
+  globalThis.nodeChildProcess = cp;
 
   console.log(`  Entry Point (Engine):       ${enginePath}`);
   console.log(`  Module (PPTX Template):     ${pptxTemplatePath}`);

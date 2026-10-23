@@ -1044,15 +1044,16 @@ export class ConverterEngine {
   }
 
   getBuildVersionStamp() {
-    let gitHash = '76a554b';
-    try {
-      if (typeof process !== 'undefined' && process.env && process.env.GIT_COMMIT) {
-        gitHash = process.env.GIT_COMMIT;
-      } else if (typeof require !== 'undefined') {
-        const cp = require('child_process');
-        gitHash = cp.execSync('git rev-parse --short HEAD', { encoding: 'utf8' }).trim();
-      }
-    } catch (e) {}
+    let gitHash = (typeof process !== 'undefined' && process.env && process.env.GIT_COMMIT)
+      || (typeof globalThis !== 'undefined' && globalThis.GIT_COMMIT);
+    if (!gitHash && typeof process !== 'undefined' && process.versions?.node) {
+      try {
+        if (typeof globalThis !== 'undefined' && globalThis.nodeChildProcess) {
+          gitHash = globalThis.nodeChildProcess.execSync('git rev-parse --short HEAD', { encoding: 'utf8' }).trim();
+        }
+      } catch (e) {}
+    }
+    if (!gitHash) gitHash = '96fe0e4';
     const timestamp = new Date().toISOString();
     return {
       gitHash,
