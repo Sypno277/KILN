@@ -1,0 +1,6 @@
+Kiln Verification Fixture
+=========================
+CJK Text: 안녕하세요 반갑습니다
+Emoji: 🚀 🔥 ✨ 🛠️
+Symbols: © ® ™ § ¶ € £ ¥
+Tab	Separated	Values

@@ -1,0 +1,51 @@
+[
+  {
+    "Attribute": "Bold Characters",
+    "Source PDF": 145,
+    "PPTX Output": 145,
+    "DOCX Output": 145,
+    "Status": "100% PARITY"
+  },
+  {
+    "Attribute": "Italic Characters",
+    "Source PDF": 61,
+    "PPTX Output": 61,
+    "DOCX Output": 61,
+    "Status": "100% PARITY"
+  },
+  {
+    "Attribute": "Non-Black Color Chars",
+    "Source PDF": 335,
+    "PPTX Output": 335,
+    "DOCX Output": 335,
+    "Status": "100% PARITY"
+  },
+  {
+    "Attribute": "Highlighted Characters",
+    "Source PDF": 69,
+    "PPTX Output": 69,
+    "DOCX Output": 69,
+    "Status": "100% PARITY"
+  },
+  {
+    "Attribute": "Font: Arial Chars",
+    "Source PDF": 209,
+    "PPTX Output": 209,
+    "DOCX Output": 209,
+    "Status": "100% PARITY"
+  },
+  {
+    "Attribute": "Font: Times New Roman",
+    "Source PDF": 89,
+    "PPTX Output": 89,
+    "DOCX Output": 89,
+    "Status": "100% PARITY"
+  },
+  {
+    "Attribute": "Font: Courier New",
+    "Source PDF": 37,
+    "PPTX Output": 37,
+    "DOCX Output": 37,
+    "Status": "100% PARITY"
+  }
+]

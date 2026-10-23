@@ -1,0 +1,4652 @@
+[
+  {
+    "id": "images",
+    "color": "#378add",
+    "name": "图片",
+    "count": "36 种格式",
+    "intro": "照片和图形，包括 iPhone 的 HEIC、Photoshop 的 PSD、各大品牌相机的 RAW、动态 APNG 和 DICOM。转换时可调整尺寸、旋转、质量和 DPI，或清除元数据，还能把图片描摹成 SVG。",
+    "iconSvg": "<path fill-rule=\"evenodd\" d=\"M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM5 5v11l4-4.5 3 3.5 3.5-4.5L19 15.5V5zm4 1.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4z\"/>",
+    "rows": [
+      {
+        "from": [
+          {
+            "title": ".jpg .jpeg .jpe .jfif",
+            "name": "JPG"
+          },
+          {
+            "title": ".png",
+            "name": "PNG"
+          },
+          {
+            "title": ".webp",
+            "name": "WEBP"
+          },
+          {
+            "title": ".avif",
+            "name": "AVIF"
+          },
+          {
+            "title": ".heic .heif .hif",
+            "name": "HEIC/HEIF"
+          },
+          {
+            "title": ".tiff .tif",
+            "name": "TIFF"
+          },
+          {
+            "title": ".bmp .dib",
+            "name": "BMP"
+          },
+          {
+            "title": ".gif",
+            "name": "GIF"
+          },
+          {
+            "title": ".ico",
+            "name": "ICO"
+          },
+          {
+            "title": ".psd",
+            "name": "PSD"
+          },
+          {
+            "title": ".psb",
+            "name": "PSB"
+          },
+          {
+            "title": ".tga .icb .vda .vst",
+            "name": "TGA"
+          },
+          {
+            "title": ".ppm .pgm .pbm .pnm",
+            "name": "PPM/PGM/PBM"
+          },
+          {
+            "title": ".jxl",
+            "name": "JPEG XL"
+          },
+          {
+            "title": ".jp2 .j2k .jpf .jpx",
+            "name": "JPEG 2000"
+          },
+          {
+            "title": "GIMP — .xcf",
+            "name": "XCF"
+          },
+          {
+            "title": ".icns",
+            "name": "ICNS"
+          },
+          {
+            "title": "animated PNG — .apng",
+            "name": "APNG"
+          },
+          {
+            "title": ".mng",
+            "name": "MNG"
+          },
+          {
+            "title": ".qoi",
+            "name": "QOI"
+          },
+          {
+            "title": "DirectDraw Surface — .dds",
+            "name": "DDS"
+          },
+          {
+            "title": ".pcx",
+            "name": "PCX"
+          },
+          {
+            "title": "Windows cursor — .cur",
+            "name": "CUR"
+          },
+          {
+            "title": ".xpm",
+            "name": "XPM"
+          },
+          {
+            "title": ".xbm",
+            "name": "XBM"
+          },
+          {
+            "title": ".wbmp",
+            "name": "WBMP"
+          },
+          {
+            "title": ".pam",
+            "name": "PAM"
+          },
+          {
+            "title": ".pfm",
+            "name": "PFM"
+          },
+          {
+            "title": ".sgi .rgb .rgba .bw",
+            "name": "SGI"
+          },
+          {
+            "title": ".ras .sun",
+            "name": "Sun Raster"
+          },
+          {
+            "title": "ImageMagick — .miff",
+            "name": "MIFF"
+          },
+          {
+            "title": "medical images — .dcm .dicom",
+            "name": "DICOM"
+          },
+          {
+            "title": ".exr",
+            "name": "OpenEXR"
+          },
+          {
+            "title": ".hdr",
+            "name": "Radiance HDR"
+          },
+          {
+            "title": "Kodak — .pcd",
+            "name": "Photo CD"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".jpg .jpeg .jpe .jfif",
+            "name": "JPG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".png",
+            "name": "PNG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".webp",
+            "name": "WEBP"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".avif",
+            "name": "AVIF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".tiff .tif",
+            "name": "TIFF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".bmp .dib",
+            "name": "BMP"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".gif",
+            "name": "GIF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".ico",
+            "name": "ICO"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".psd",
+            "name": "PSD"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".tga .icb .vda .vst",
+            "name": "TGA"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".ppm .pgm .pbm .pnm",
+            "name": "PPM"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".jxl",
+            "name": "JPEG XL"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".jp2 .j2k .jpf .jpx",
+            "name": "JPEG 2000"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".icns",
+            "name": "ICNS"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "animated PNG — .apng",
+            "name": "APNG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".mng",
+            "name": "MNG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".qoi",
+            "name": "QOI"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "DirectDraw Surface — .dds",
+            "name": "DDS"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pcx",
+            "name": "PCX"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "Windows cursor — .cur",
+            "name": "CUR"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".xpm",
+            "name": "XPM"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".xbm",
+            "name": "XBM"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".wbmp",
+            "name": "WBMP"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pam",
+            "name": "PAM"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pfm",
+            "name": "PFM"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".sgi .rgb .rgba .bw",
+            "name": "SGI"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".ras .sun",
+            "name": "Sun Raster"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "ImageMagick — .miff",
+            "name": "MIFF"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": "Adobe DNG (Leica, Pentax, phones) — .dng",
+            "name": "DNG"
+          },
+          {
+            "title": "Canon — .cr2",
+            "name": "CR2"
+          },
+          {
+            "title": "Canon — .cr3",
+            "name": "CR3"
+          },
+          {
+            "title": "Canon — .crw",
+            "name": "CRW"
+          },
+          {
+            "title": "Nikon — .nef",
+            "name": "NEF"
+          },
+          {
+            "title": "Nikon Coolpix — .nrw",
+            "name": "NRW"
+          },
+          {
+            "title": "Sony — .arw",
+            "name": "ARW"
+          },
+          {
+            "title": "Sony — .srf",
+            "name": "SRF"
+          },
+          {
+            "title": "Sony — .sr2",
+            "name": "SR2"
+          },
+          {
+            "title": "Olympus / OM System — .orf",
+            "name": "ORF"
+          },
+          {
+            "title": "Panasonic — .rw2",
+            "name": "RW2"
+          },
+          {
+            "title": "Fujifilm — .raf",
+            "name": "RAF"
+          },
+          {
+            "title": "Pentax — .pef",
+            "name": "PEF"
+          },
+          {
+            "title": "Samsung — .srw",
+            "name": "SRW"
+          },
+          {
+            "title": "Sigma — .x3f",
+            "name": "X3F"
+          },
+          {
+            "title": "Hasselblad — .3fr",
+            "name": "3FR"
+          },
+          {
+            "title": "Epson — .erf",
+            "name": "ERF"
+          },
+          {
+            "title": "Leaf — .mos",
+            "name": "MOS"
+          },
+          {
+            "title": "Minolta — .mrw",
+            "name": "MRW"
+          },
+          {
+            "title": "Kodak — .dcr",
+            "name": "DCR"
+          },
+          {
+            "title": "Kodak — .kdc",
+            "name": "KDC"
+          },
+          {
+            "title": "Phase One — .iiq",
+            "name": "IIQ"
+          },
+          {
+            "title": "Hasselblad — .fff",
+            "name": "FFF"
+          },
+          {
+            "title": "Mamiya — .mef",
+            "name": "MEF"
+          },
+          {
+            "title": "Leica — .rwl",
+            "name": "RWL"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".jpg .jpeg .jpe .jfif",
+            "name": "JPG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".png",
+            "name": "PNG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".webp",
+            "name": "WEBP"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".avif",
+            "name": "AVIF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".tiff .tif",
+            "name": "TIFF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".bmp .dib",
+            "name": "BMP"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".gif",
+            "name": "GIF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".ico",
+            "name": "ICO"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".psd",
+            "name": "PSD"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".tga .icb .vda .vst",
+            "name": "TGA"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".ppm .pgm .pbm .pnm",
+            "name": "PPM"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".jxl",
+            "name": "JPEG XL"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".jp2 .j2k .jpf .jpx",
+            "name": "JPEG 2000"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".icns",
+            "name": "ICNS"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "animated PNG — .apng",
+            "name": "APNG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".mng",
+            "name": "MNG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".qoi",
+            "name": "QOI"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "DirectDraw Surface — .dds",
+            "name": "DDS"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pcx",
+            "name": "PCX"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "Windows cursor — .cur",
+            "name": "CUR"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".xpm",
+            "name": "XPM"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".xbm",
+            "name": "XBM"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".wbmp",
+            "name": "WBMP"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pam",
+            "name": "PAM"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pfm",
+            "name": "PFM"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".sgi .rgb .rgba .bw",
+            "name": "SGI"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".ras .sun",
+            "name": "Sun Raster"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "ImageMagick — .miff",
+            "name": "MIFF"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".jpg .jpeg .jpe .jfif",
+            "name": "JPG"
+          },
+          {
+            "title": ".png",
+            "name": "PNG"
+          },
+          {
+            "title": ".webp",
+            "name": "WEBP"
+          },
+          {
+            "title": ".avif",
+            "name": "AVIF"
+          },
+          {
+            "title": ".heic .heif .hif",
+            "name": "HEIC/HEIF"
+          },
+          {
+            "title": ".tiff .tif",
+            "name": "TIFF"
+          },
+          {
+            "title": ".bmp .dib",
+            "name": "BMP"
+          },
+          {
+            "title": ".gif",
+            "name": "GIF"
+          },
+          {
+            "title": ".ico",
+            "name": "ICO"
+          },
+          {
+            "title": ".psd",
+            "name": "PSD"
+          },
+          {
+            "title": ".psb",
+            "name": "PSB"
+          },
+          {
+            "title": ".tga .icb .vda .vst",
+            "name": "TGA"
+          },
+          {
+            "title": ".ppm .pgm .pbm .pnm",
+            "name": "PPM/PGM/PBM"
+          },
+          {
+            "title": ".jxl",
+            "name": "JPEG XL"
+          },
+          {
+            "title": ".jp2 .j2k .jpf .jpx",
+            "name": "JPEG 2000"
+          },
+          {
+            "title": "GIMP — .xcf",
+            "name": "XCF"
+          },
+          {
+            "title": ".icns",
+            "name": "ICNS"
+          },
+          {
+            "title": "animated PNG — .apng",
+            "name": "APNG"
+          },
+          {
+            "title": ".mng",
+            "name": "MNG"
+          },
+          {
+            "title": ".qoi",
+            "name": "QOI"
+          },
+          {
+            "title": "DirectDraw Surface — .dds",
+            "name": "DDS"
+          },
+          {
+            "title": ".pcx",
+            "name": "PCX"
+          },
+          {
+            "title": "Windows cursor — .cur",
+            "name": "CUR"
+          },
+          {
+            "title": ".xpm",
+            "name": "XPM"
+          },
+          {
+            "title": ".xbm",
+            "name": "XBM"
+          },
+          {
+            "title": ".wbmp",
+            "name": "WBMP"
+          },
+          {
+            "title": ".pam",
+            "name": "PAM"
+          },
+          {
+            "title": ".pfm",
+            "name": "PFM"
+          },
+          {
+            "title": ".sgi .rgb .rgba .bw",
+            "name": "SGI"
+          },
+          {
+            "title": ".ras .sun",
+            "name": "Sun Raster"
+          },
+          {
+            "title": "ImageMagick — .miff",
+            "name": "MIFF"
+          },
+          {
+            "title": "medical images — .dcm .dicom",
+            "name": "DICOM"
+          },
+          {
+            "title": ".exr",
+            "name": "OpenEXR"
+          },
+          {
+            "title": ".hdr",
+            "name": "Radiance HDR"
+          },
+          {
+            "title": "Kodak — .pcd",
+            "name": "Photo CD"
+          },
+          {
+            "title": "Adobe DNG (Leica, Pentax, phones) — .dng",
+            "name": "DNG"
+          },
+          {
+            "title": "Canon — .cr2",
+            "name": "CR2"
+          },
+          {
+            "title": "Canon — .cr3",
+            "name": "CR3"
+          },
+          {
+            "title": "Canon — .crw",
+            "name": "CRW"
+          },
+          {
+            "title": "Nikon — .nef",
+            "name": "NEF"
+          },
+          {
+            "title": "Nikon Coolpix — .nrw",
+            "name": "NRW"
+          },
+          {
+            "title": "Sony — .arw",
+            "name": "ARW"
+          },
+          {
+            "title": "Sony — .srf",
+            "name": "SRF"
+          },
+          {
+            "title": "Sony — .sr2",
+            "name": "SR2"
+          },
+          {
+            "title": "Olympus / OM System — .orf",
+            "name": "ORF"
+          },
+          {
+            "title": "Panasonic — .rw2",
+            "name": "RW2"
+          },
+          {
+            "title": "Fujifilm — .raf",
+            "name": "RAF"
+          },
+          {
+            "title": "Pentax — .pef",
+            "name": "PEF"
+          },
+          {
+            "title": "Samsung — .srw",
+            "name": "SRW"
+          },
+          {
+            "title": "Sigma — .x3f",
+            "name": "X3F"
+          },
+          {
+            "title": "Hasselblad — .3fr",
+            "name": "3FR"
+          },
+          {
+            "title": "Epson — .erf",
+            "name": "ERF"
+          },
+          {
+            "title": "Leaf — .mos",
+            "name": "MOS"
+          },
+          {
+            "title": "Minolta — .mrw",
+            "name": "MRW"
+          },
+          {
+            "title": "Kodak — .dcr",
+            "name": "DCR"
+          },
+          {
+            "title": "Kodak — .kdc",
+            "name": "KDC"
+          },
+          {
+            "title": "Phase One — .iiq",
+            "name": "IIQ"
+          },
+          {
+            "title": "Hasselblad — .fff",
+            "name": "FFF"
+          },
+          {
+            "title": "Mamiya — .mef",
+            "name": "MEF"
+          },
+          {
+            "title": "Leica — .rwl",
+            "name": "RWL"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".svg",
+            "name": "SVG"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".jpg .jpeg .jpe .jfif",
+            "name": "JPG"
+          },
+          {
+            "title": ".png",
+            "name": "PNG"
+          },
+          {
+            "title": ".webp",
+            "name": "WEBP"
+          },
+          {
+            "title": ".avif",
+            "name": "AVIF"
+          },
+          {
+            "title": ".tiff .tif",
+            "name": "TIFF"
+          },
+          {
+            "title": ".bmp .dib",
+            "name": "BMP"
+          },
+          {
+            "title": ".gif",
+            "name": "GIF"
+          },
+          {
+            "title": ".ico",
+            "name": "ICO"
+          },
+          {
+            "title": ".psd",
+            "name": "PSD"
+          },
+          {
+            "title": ".psb",
+            "name": "PSB"
+          },
+          {
+            "title": ".tga .icb .vda .vst",
+            "name": "TGA"
+          },
+          {
+            "title": ".ppm .pgm .pbm .pnm",
+            "name": "PPM/PGM/PBM"
+          },
+          {
+            "title": ".jxl",
+            "name": "JPEG XL"
+          },
+          {
+            "title": ".jp2 .j2k .jpf .jpx",
+            "name": "JPEG 2000"
+          },
+          {
+            "title": "GIMP — .xcf",
+            "name": "XCF"
+          },
+          {
+            "title": ".icns",
+            "name": "ICNS"
+          },
+          {
+            "title": "animated PNG — .apng",
+            "name": "APNG"
+          },
+          {
+            "title": ".mng",
+            "name": "MNG"
+          },
+          {
+            "title": ".qoi",
+            "name": "QOI"
+          },
+          {
+            "title": "DirectDraw Surface — .dds",
+            "name": "DDS"
+          },
+          {
+            "title": ".pcx",
+            "name": "PCX"
+          },
+          {
+            "title": "Windows cursor — .cur",
+            "name": "CUR"
+          },
+          {
+            "title": ".xpm",
+            "name": "XPM"
+          },
+          {
+            "title": ".xbm",
+            "name": "XBM"
+          },
+          {
+            "title": ".wbmp",
+            "name": "WBMP"
+          },
+          {
+            "title": ".pam",
+            "name": "PAM"
+          },
+          {
+            "title": ".pfm",
+            "name": "PFM"
+          },
+          {
+            "title": ".sgi .rgb .rgba .bw",
+            "name": "SGI"
+          },
+          {
+            "title": ".ras .sun",
+            "name": "Sun Raster"
+          },
+          {
+            "title": "ImageMagick — .miff",
+            "name": "MIFF"
+          },
+          {
+            "title": "medical images — .dcm .dicom",
+            "name": "DICOM"
+          },
+          {
+            "title": ".exr",
+            "name": "OpenEXR"
+          },
+          {
+            "title": ".hdr",
+            "name": "Radiance HDR"
+          },
+          {
+            "title": "Kodak — .pcd",
+            "name": "Photo CD"
+          },
+          {
+            "title": "Adobe DNG (Leica, Pentax, phones) — .dng",
+            "name": "DNG"
+          },
+          {
+            "title": "Canon — .cr2",
+            "name": "CR2"
+          },
+          {
+            "title": "Canon — .cr3",
+            "name": "CR3"
+          },
+          {
+            "title": "Canon — .crw",
+            "name": "CRW"
+          },
+          {
+            "title": "Nikon — .nef",
+            "name": "NEF"
+          },
+          {
+            "title": "Nikon Coolpix — .nrw",
+            "name": "NRW"
+          },
+          {
+            "title": "Sony — .arw",
+            "name": "ARW"
+          },
+          {
+            "title": "Sony — .srf",
+            "name": "SRF"
+          },
+          {
+            "title": "Sony — .sr2",
+            "name": "SR2"
+          },
+          {
+            "title": "Olympus / OM System — .orf",
+            "name": "ORF"
+          },
+          {
+            "title": "Panasonic — .rw2",
+            "name": "RW2"
+          },
+          {
+            "title": "Fujifilm — .raf",
+            "name": "RAF"
+          },
+          {
+            "title": "Pentax — .pef",
+            "name": "PEF"
+          },
+          {
+            "title": "Samsung — .srw",
+            "name": "SRW"
+          },
+          {
+            "title": "Sigma — .x3f",
+            "name": "X3F"
+          },
+          {
+            "title": "Hasselblad — .3fr",
+            "name": "3FR"
+          },
+          {
+            "title": "Epson — .erf",
+            "name": "ERF"
+          },
+          {
+            "title": "Leaf — .mos",
+            "name": "MOS"
+          },
+          {
+            "title": "Minolta — .mrw",
+            "name": "MRW"
+          },
+          {
+            "title": "Kodak — .dcr",
+            "name": "DCR"
+          },
+          {
+            "title": "Kodak — .kdc",
+            "name": "KDC"
+          },
+          {
+            "title": "Phase One — .iiq",
+            "name": "IIQ"
+          },
+          {
+            "title": "Hasselblad — .fff",
+            "name": "FFF"
+          },
+          {
+            "title": "Mamiya — .mef",
+            "name": "MEF"
+          },
+          {
+            "title": "Leica — .rwl",
+            "name": "RWL"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".heic .heif .hif",
+            "name": "HEIC"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "FFmpeg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vector",
+    "color": "#d4537e",
+    "name": "矢量图",
+    "count": "12 种格式",
+    "intro": "SVG、Windows 图元文件（EMF/WMF）、Illustrator、EPS/PostScript，以及 CorelDRAW、Visio 和 LibreOffice Draw 的绘图。SVG 还能转成 CAD 用的 DXF 或 DWG。",
+    "iconSvg": "<path fill-rule=\"evenodd\" d=\"M3 15h6v6H3zM15 3h6v6h-6zM5 15c0-5.5 4.5-10 10-10v2c-4.4 0-8 3.6-8 8z\"/>",
+    "rows": [
+      {
+        "from": [
+          {
+            "title": ".svg",
+            "name": "SVG"
+          },
+          {
+            "title": ".svgz",
+            "name": "SVGZ"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".png",
+            "name": "PNG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".jpg .jpeg .jpe .jfif",
+            "name": "JPG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".svg",
+            "name": "SVG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".svgz",
+            "name": "SVGZ"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".svg",
+            "name": "SVG"
+          },
+          {
+            "title": ".svgz",
+            "name": "SVGZ"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".dxf",
+            "name": "DXF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".dwg",
+            "name": "DWG"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".svg",
+            "name": "SVG"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".emf",
+            "name": "EMF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".wmf",
+            "name": "WMF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "LibreOffice Draw — .odg",
+            "name": "ODG"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "LibreOffice"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".emf",
+            "name": "EMF"
+          },
+          {
+            "title": ".wmf",
+            "name": "WMF"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".png",
+            "name": "PNG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": "Adobe Illustrator — .ai",
+            "name": "AI"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".png",
+            "name": "PNG"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".eps .epsf .epsi",
+            "name": "EPS"
+          },
+          {
+            "title": "PostScript — .ps",
+            "name": "PS"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".png",
+            "name": "PNG"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "Ghostscript"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": "CorelDRAW — .cdr",
+            "name": "CDR"
+          },
+          {
+            "title": ".cgm",
+            "name": "CGM"
+          },
+          {
+            "title": "Microsoft Visio — .vsd .vsdx",
+            "name": "VSD/VSDX"
+          },
+          {
+            "title": "LibreOffice Draw — .odg",
+            "name": "ODG"
+          },
+          {
+            "title": "flat OpenDocument drawing — .fodg",
+            "name": "FODG"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".svg",
+            "name": "SVG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".png",
+            "name": "PNG"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "LibreOffice"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pdf",
+    "color": "#e5252a",
+    "name": "PDF",
+    "count": "1 种格式",
+    "intro": "把 PDF 转成图片、可编辑的 Word 或 HWPX 文档、文本或漫画压缩包（CBZ），还能合并、拆分和挑选页面。",
+    "iconSvg": "<path fill-rule=\"evenodd\" d=\"M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm7 1.5V9h5.5zM7 12.5h10V18H7z\"/>",
+    "rows": [
+      {
+        "from": [
+          {
+            "title": ".pdf",
+            "name": "PDF"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".png",
+            "name": "PNG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".jpg .jpeg .jpe .jfif",
+            "name": "JPG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".tiff .tif",
+            "name": "TIFF"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".pdf",
+            "name": "PDF"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".docx",
+            "name": "DOCX"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".hwpx",
+            "name": "HWPX"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".epub",
+            "name": "EPUB"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".txt",
+            "name": "TXT"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".md .markdown",
+            "name": "Markdown"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".html .htm .xhtml",
+            "name": "HTML"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".cbz",
+            "name": "CBZ"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".pdf",
+            "name": "PDF"
+          }
+        ],
+        "to": [],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".pdf",
+            "name": "PDF"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".eps .epsf .epsi",
+            "name": "EPS"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "PostScript — .ps",
+            "name": "PS"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "Ghostscript"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".pdf",
+            "name": "PDF"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".svg",
+            "name": "SVG"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "LibreOffice"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "documents",
+    "color": "#2b579a",
+    "name": "文档",
+    "count": "23 种格式",
+    "intro": "无需 Microsoft Office 即可转换 Word 文档。旧版和少见的文字处理格式使用可选引擎 LibreOffice。还支持保存的电子邮件（EML 和 Outlook MSG）。",
+    "iconSvg": "<path fill-rule=\"evenodd\" d=\"M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm7 1.5V9h5.5zM7 12h10v1.8H7zm0 3.4h10v1.8H7zm0 3.4h6.5v1.8H7z\"/>",
+    "rows": [
+      {
+        "from": [
+          {
+            "title": ".docx",
+            "name": "DOCX"
+          },
+          {
+            "title": ".docm",
+            "name": "DOCM"
+          },
+          {
+            "title": ".dotx",
+            "name": "DOTX"
+          },
+          {
+            "title": ".dotm",
+            "name": "DOTM"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".hwpx",
+            "name": "HWPX"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".hwp",
+            "name": "HWP"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".epub",
+            "name": "EPUB"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".txt",
+            "name": "TXT"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".html .htm .xhtml",
+            "name": "HTML"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".png",
+            "name": "PNG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".jpg .jpeg .jpe .jfif",
+            "name": "JPG"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".docx",
+            "name": "DOCX"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".md .markdown",
+            "name": "Markdown"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "Pandoc"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".doc",
+            "name": "DOC"
+          },
+          {
+            "title": "Word 97–2003 template — .dot",
+            "name": "DOT"
+          },
+          {
+            "title": "OpenDocument — .odt",
+            "name": "ODT"
+          },
+          {
+            "title": "flat OpenDocument text — .fodt",
+            "name": "FODT"
+          },
+          {
+            "title": "OpenDocument template — .ott",
+            "name": "OTT"
+          },
+          {
+            "title": ".rtf",
+            "name": "RTF"
+          },
+          {
+            "title": "Microsoft Works / WPS Office — .wps",
+            "name": "WPS"
+          },
+          {
+            "title": "WordPerfect — .wpd",
+            "name": "WPD"
+          },
+          {
+            "title": "Lotus Word Pro — .lwp",
+            "name": "LWP"
+          },
+          {
+            "title": "AbiWord — .abw .zabw",
+            "name": "ABW"
+          },
+          {
+            "title": "Apple Pages — .pages",
+            "name": "Pages"
+          },
+          {
+            "title": "StarWriter — .sdw",
+            "name": "SDW"
+          },
+          {
+            "title": "ClarisWorks / AppleWorks — .cwk",
+            "name": "ClarisWorks"
+          },
+          {
+            "title": ".mcw",
+            "name": "MacWrite"
+          },
+          {
+            "title": ".602",
+            "name": "T602"
+          },
+          {
+            "title": ".psw",
+            "name": "Pocket Word"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".docx",
+            "name": "DOCX"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "OpenDocument — .odt",
+            "name": "ODT"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "LibreOffice"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".docx",
+            "name": "DOCX"
+          },
+          {
+            "title": ".doc",
+            "name": "DOC"
+          },
+          {
+            "title": "OpenDocument — .odt",
+            "name": "ODT"
+          },
+          {
+            "title": ".rtf",
+            "name": "RTF"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "flat OpenDocument text — .fodt",
+            "name": "FODT"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "OpenDocument template — .ott",
+            "name": "OTT"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "LibreOffice"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": "Microsoft Publisher — .pub",
+            "name": "PUB"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".svg",
+            "name": "SVG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".png",
+            "name": "PNG"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "LibreOffice"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".eml",
+            "name": "EML"
+          },
+          {
+            "title": "Outlook — .msg",
+            "name": "MSG"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".html .htm .xhtml",
+            "name": "HTML"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".txt",
+            "name": "TXT"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".zip",
+            "name": "ZIP"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": "Outlook — .msg",
+            "name": "MSG"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".eml",
+            "name": "EML"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hwp",
+    "color": "#1b7fc4",
+    "name": "韩文 HWP",
+    "count": "2 种格式",
+    "intro": "无需 Hancom Office 转换韩文（한글）文档：HWP ↔ HWPX，转为 PDF、图片、Word、文本、Markdown 和 HTML，也能从 Word、Excel、PowerPoint、Markdown 和 PDF 生成 HWPX。",
+    "iconSvg": "<path d=\"M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M8,12H16V14H8V12M8,16H13V18H8V16Z\"/>",
+    "rows": [
+      {
+        "from": [
+          {
+            "title": ".hwp",
+            "name": "HWP"
+          },
+          {
+            "title": ".hwpx",
+            "name": "HWPX"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".png",
+            "name": "PNG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".jpg .jpeg .jpe .jfif",
+            "name": "JPG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".docx",
+            "name": "DOCX"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".txt",
+            "name": "TXT"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".md .markdown",
+            "name": "Markdown"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".html .htm .xhtml",
+            "name": "HTML"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".epub",
+            "name": "EPUB"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".hwp",
+            "name": "HWP"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".hwpx",
+            "name": "HWPX"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".hwpx",
+            "name": "HWPX"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".hwp",
+            "name": "HWP"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".docx",
+            "name": "DOCX"
+          },
+          {
+            "title": ".xlsx",
+            "name": "XLSX"
+          },
+          {
+            "title": ".pptx",
+            "name": "PPTX"
+          },
+          {
+            "title": ".md .markdown",
+            "name": "Markdown"
+          },
+          {
+            "title": ".pdf",
+            "name": "PDF"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".hwpx",
+            "name": "HWPX"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".docx",
+            "name": "DOCX"
+          },
+          {
+            "title": ".xlsx",
+            "name": "XLSX"
+          },
+          {
+            "title": ".pptx",
+            "name": "PPTX"
+          },
+          {
+            "title": ".md .markdown",
+            "name": "Markdown"
+          },
+          {
+            "title": ".txt",
+            "name": "TXT"
+          },
+          {
+            "title": ".html .htm .xhtml",
+            "name": "HTML"
+          },
+          {
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "title": ".epub",
+            "name": "EPUB"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".hwp",
+            "name": "HWP"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "spreadsheets",
+    "color": "#1d7a46",
+    "name": "电子表格",
+    "count": "13 种格式",
+    "intro": "无需 Excel，把 Excel、OpenDocument 和 CSV/TSV 表格转成 PDF（像 Excel 一样适配页面），或互相转换。",
+    "iconSvg": "<path fill-rule=\"evenodd\" d=\"M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm1 4v4.5h6V8zm8 0v4.5h6V8zM5 14.5V18h6v-3.5zm8 0V18h6v-3.5z\"/>",
+    "rows": [
+      {
+        "from": [
+          {
+            "title": ".xlsx",
+            "name": "XLSX"
+          },
+          {
+            "title": ".xlsm",
+            "name": "XLSM"
+          },
+          {
+            "title": ".xltx",
+            "name": "XLTX"
+          },
+          {
+            "title": ".xls",
+            "name": "XLS"
+          },
+          {
+            "title": "Excel 97–2003 template — .xlt",
+            "name": "XLT"
+          },
+          {
+            "title": "OpenDocument — .ods",
+            "name": "ODS"
+          },
+          {
+            "title": ".csv",
+            "name": "CSV"
+          },
+          {
+            "title": ".tsv .tab",
+            "name": "TSV"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".xlsx",
+            "name": "XLSX"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".csv",
+            "name": "CSV"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".tsv .tab",
+            "name": "TSV"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "OpenDocument — .ods",
+            "name": "ODS"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".json",
+            "name": "JSON"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".hwpx",
+            "name": "HWPX"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".html .htm .xhtml",
+            "name": "HTML"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": "Apple Numbers — .numbers",
+            "name": "Numbers"
+          },
+          {
+            "title": "WPS Spreadsheets — .et",
+            "name": "ET"
+          },
+          {
+            "title": "StarCalc — .sdc",
+            "name": "SDC"
+          },
+          {
+            "title": "flat OpenDocument spreadsheet — .fods",
+            "name": "FODS"
+          },
+          {
+            "title": "OpenDocument template — .ots",
+            "name": "OTS"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".xlsx",
+            "name": "XLSX"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "LibreOffice"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".xlsx",
+            "name": "XLSX"
+          },
+          {
+            "title": ".xls",
+            "name": "XLS"
+          },
+          {
+            "title": "OpenDocument — .ods",
+            "name": "ODS"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "OpenDocument template — .ots",
+            "name": "OTS"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "Excel 97–2003 template — .xlt",
+            "name": "XLT"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "LibreOffice"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "presentations",
+    "color": "#c8502e",
+    "name": "演示文稿",
+    "count": "11 种格式",
+    "intro": "无需 PowerPoint 把 PPTX 转成 PDF、图片和 HWPX；旧版 PPT、ODP 和 Keynote 使用可选引擎 LibreOffice。",
+    "iconSvg": "<path fill-rule=\"evenodd\" d=\"M2 3h20v2h-1v11h-6.2l1.4 5h-2l-1.4-5h-1.6l-1.4 5h-2l1.4-5H3V5H2zm3 2v9h14V5zm2 5h2v2.5H7zm4-2h2v4.5h-2zm4 3h2v1.5h-2z\"/>",
+    "rows": [
+      {
+        "from": [
+          {
+            "title": ".pptx",
+            "name": "PPTX"
+          },
+          {
+            "title": ".pptm",
+            "name": "PPTM"
+          },
+          {
+            "title": ".potx",
+            "name": "POTX"
+          },
+          {
+            "title": ".ppsx",
+            "name": "PPSX"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".png",
+            "name": "PNG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".jpg .jpeg .jpe .jfif",
+            "name": "JPG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".docx",
+            "name": "DOCX"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".hwpx",
+            "name": "HWPX"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".ppt .pps .pot",
+            "name": "PPT"
+          },
+          {
+            "title": "OpenDocument — .odp",
+            "name": "ODP"
+          },
+          {
+            "title": "OpenDocument template — .otp",
+            "name": "OTP"
+          },
+          {
+            "title": "flat OpenDocument presentation — .fodp",
+            "name": "FODP"
+          },
+          {
+            "title": "Apple Keynote — .key",
+            "name": "Keynote"
+          },
+          {
+            "title": "WPS Presentation — .dps",
+            "name": "DPS"
+          },
+          {
+            "title": "StarImpress / StarDraw — .sda .sdd",
+            "name": "SDA"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pptx",
+            "name": "PPTX"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "OpenDocument — .odp",
+            "name": "ODP"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "LibreOffice"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".pptx",
+            "name": "PPTX"
+          },
+          {
+            "title": ".ppt .pps .pot",
+            "name": "PPT"
+          },
+          {
+            "title": "OpenDocument — .odp",
+            "name": "ODP"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "OpenDocument template — .otp",
+            "name": "OTP"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "LibreOffice"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "text",
+    "color": "#5f5e5a",
+    "name": "文本与标记",
+    "count": "14 种格式",
+    "intro": "把纯文本、Markdown 和 HTML 转成 PDF、Word、HWPX 和 EPUB。LaTeX、reStructuredText、Org、AsciiDoc、Typst、Jupyter 等标记语言使用可选引擎 Pandoc，它还能把 Markdown 转成 PowerPoint 幻灯片。",
+    "iconSvg": "<path fill-rule=\"evenodd\" d=\"M4 5h16v2H4zm0 4h16v2H4zm0 4h16v2H4zm0 4h10v2H4z\"/>",
+    "rows": [
+      {
+        "from": [
+          {
+            "title": ".txt",
+            "name": "TXT"
+          },
+          {
+            "title": ".md .markdown",
+            "name": "Markdown"
+          },
+          {
+            "title": ".html .htm .xhtml",
+            "name": "HTML"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".docx",
+            "name": "DOCX"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".hwpx",
+            "name": "HWPX"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".epub",
+            "name": "EPUB"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".rst",
+            "name": "reStructuredText"
+          },
+          {
+            "title": ".tex .latex",
+            "name": "LaTeX"
+          },
+          {
+            "title": "Emacs Org mode — .org",
+            "name": "Org"
+          },
+          {
+            "title": ".adoc .asciidoc",
+            "name": "AsciiDoc"
+          },
+          {
+            "title": ".typ",
+            "name": "Typst"
+          },
+          {
+            "title": ".mediawiki .wiki",
+            "name": "MediaWiki"
+          },
+          {
+            "title": ".dbk .docbook",
+            "name": "DocBook"
+          },
+          {
+            "title": "Jupyter notebook — .ipynb",
+            "name": "Jupyter"
+          },
+          {
+            "title": ".textile",
+            "name": "Textile"
+          },
+          {
+            "title": "Unix manual page — .man",
+            "name": "Man page"
+          },
+          {
+            "title": ".opml",
+            "name": "OPML"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".docx",
+            "name": "DOCX"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".hwpx",
+            "name": "HWPX"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "OpenDocument — .odt",
+            "name": "ODT"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".html .htm .xhtml",
+            "name": "HTML"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".md .markdown",
+            "name": "Markdown"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".epub",
+            "name": "EPUB"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".txt",
+            "name": "TXT"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "Pandoc"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".docx",
+            "name": "DOCX"
+          },
+          {
+            "title": ".html .htm .xhtml",
+            "name": "HTML"
+          },
+          {
+            "title": ".md .markdown",
+            "name": "Markdown"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".rst",
+            "name": "reStructuredText"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".tex .latex",
+            "name": "LaTeX"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "Emacs Org mode — .org",
+            "name": "Org"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".adoc .asciidoc",
+            "name": "AsciiDoc"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".typ",
+            "name": "Typst"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".mediawiki .wiki",
+            "name": "MediaWiki"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".dbk .docbook",
+            "name": "DocBook"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "Jupyter notebook — .ipynb",
+            "name": "Jupyter"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".textile",
+            "name": "Textile"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "Unix manual page — .man",
+            "name": "Man page"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".opml",
+            "name": "OPML"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "Pandoc"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".md .markdown",
+            "name": "Markdown"
+          },
+          {
+            "title": ".rst",
+            "name": "reStructuredText"
+          },
+          {
+            "title": "Emacs Org mode — .org",
+            "name": "Org"
+          },
+          {
+            "title": ".adoc .asciidoc",
+            "name": "AsciiDoc"
+          },
+          {
+            "title": ".typ",
+            "name": "Typst"
+          },
+          {
+            "title": ".mediawiki .wiki",
+            "name": "MediaWiki"
+          },
+          {
+            "title": ".textile",
+            "name": "Textile"
+          },
+          {
+            "title": "Jupyter notebook — .ipynb",
+            "name": "Jupyter"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pptx",
+            "name": "PPTX"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "Pandoc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "data",
+    "color": "#4d7c0f",
+    "name": "数据",
+    "count": "6 种格式",
+    "intro": "JSON、JSON Lines、YAML、TOML 和 XML 互相转换，表格数据还能与 CSV、Excel 互转。vCard 联系人可与 CSV 互转，旧手机导出的也可以。无需安装其他软件。",
+    "iconSvg": "<path fill-rule=\"evenodd\" d=\"M10 3H8a2 2 0 0 0-2 2v4.5C6 10.3 5.3 11 4.5 11H4v2h.5c.8 0 1.5.7 1.5 1.5V19a2 2 0 0 0 2 2h2v-2H8v-4.5c0-1.1-.6-2-1.4-2.5.8-.5 1.4-1.4 1.4-2.5V5h2zm4 0h2a2 2 0 0 1 2 2v4.5c0 .8.7 1.5 1.5 1.5h.5v2h-.5c-.8 0-1.5.7-1.5 1.5V19a2 2 0 0 1-2 2h-2v-2h2v-4.5c0-1.1.6-2 1.4-2.5-.8-.5-1.4-1.4-1.4-2.5V5h-2z\"/>",
+    "rows": [
+      {
+        "from": [
+          {
+            "title": ".json",
+            "name": "JSON"
+          },
+          {
+            "title": ".jsonl .ndjson",
+            "name": "JSON Lines"
+          },
+          {
+            "title": ".yaml .yml",
+            "name": "YAML"
+          },
+          {
+            "title": ".toml",
+            "name": "TOML"
+          },
+          {
+            "title": ".xml",
+            "name": "XML"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".json",
+            "name": "JSON"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".jsonl .ndjson",
+            "name": "JSON Lines"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".yaml .yml",
+            "name": "YAML"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".toml",
+            "name": "TOML"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".xml",
+            "name": "XML"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".csv",
+            "name": "CSV"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".xlsx",
+            "name": "XLSX"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".csv",
+            "name": "CSV"
+          },
+          {
+            "title": ".xlsx",
+            "name": "XLSX"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".json",
+            "name": "JSON"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".jsonl .ndjson",
+            "name": "JSON Lines"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".yaml .yml",
+            "name": "YAML"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".toml",
+            "name": "TOML"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".xml",
+            "name": "XML"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".vcf .vcard",
+            "name": "vCard"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".csv",
+            "name": "CSV"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".xlsx",
+            "name": "XLSX"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".csv",
+            "name": "CSV"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".vcf .vcard",
+            "name": "vCard"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ebooks",
+    "color": "#8a5cc2",
+    "name": "电子书与漫画",
+    "count": "24 种格式",
+    "intro": "把 EPUB、Kindle（MOBI、AZW、AZW3）、FictionBook 和漫画压缩包（CBZ、CBR、CB7 等）转成 PDF、EPUB、Word 等格式，也能转成 Kobo 阅读器用的 KEPUB。仅限无 DRM 的书籍。",
+    "iconSvg": "<path fill-rule=\"evenodd\" d=\"M3 5.5C5.9 4.6 9.3 5 12 7c2.7-2 6.1-2.4 9-1.5V19c-2.9-.9-6.3-.5-9 1.5-2.7-2-6.1-2.4-9-1.5zm2 1.7v10c2.1-.3 4.2.1 6 1.1v-10c-1.8-1-3.9-1.4-6-1.1zm14 0c-2.1-.3-4.2.1-6 1.1v10c1.8-1 3.9-1.4 6-1.1z\"/>",
+    "rows": [
+      {
+        "from": [
+          {
+            "title": ".epub",
+            "name": "EPUB"
+          },
+          {
+            "title": "Kobo — .kepub.epub .kepub",
+            "name": "KEPUB"
+          },
+          {
+            "title": ".mobi",
+            "name": "MOBI"
+          },
+          {
+            "title": "Kindle — .azw",
+            "name": "AZW"
+          },
+          {
+            "title": "Kindle — .azw3",
+            "name": "AZW3"
+          },
+          {
+            "title": "Kindle — .azw4",
+            "name": "AZW4"
+          },
+          {
+            "title": "Mobipocket — .prc",
+            "name": "PRC"
+          },
+          {
+            "title": "FictionBook — .fb2",
+            "name": "FB2"
+          },
+          {
+            "title": ".cbz",
+            "name": "CBZ"
+          },
+          {
+            "title": ".cbr",
+            "name": "CBR"
+          },
+          {
+            "title": ".cb7",
+            "name": "CB7"
+          },
+          {
+            "title": ".cbt",
+            "name": "CBT"
+          },
+          {
+            "title": ".cbc",
+            "name": "CBC"
+          },
+          {
+            "title": ".htmlz",
+            "name": "HTMLZ"
+          },
+          {
+            "title": ".txtz",
+            "name": "TXTZ"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".epub",
+            "name": "EPUB"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".docx",
+            "name": "DOCX"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".txt",
+            "name": "TXT"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".html .htm .xhtml",
+            "name": "HTML"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".hwpx",
+            "name": "HWPX"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".epub",
+            "name": "EPUB"
+          },
+          {
+            "title": ".mobi",
+            "name": "MOBI"
+          },
+          {
+            "title": "Kindle — .azw3",
+            "name": "AZW3"
+          },
+          {
+            "title": "FictionBook — .fb2",
+            "name": "FB2"
+          },
+          {
+            "title": ".docx",
+            "name": "DOCX"
+          },
+          {
+            "title": ".md .markdown",
+            "name": "Markdown"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "Kobo — .kepub.epub .kepub",
+            "name": "KEPUB"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".docx",
+            "name": "DOCX"
+          },
+          {
+            "title": ".txt",
+            "name": "TXT"
+          },
+          {
+            "title": ".md .markdown",
+            "name": "Markdown"
+          },
+          {
+            "title": ".html .htm .xhtml",
+            "name": "HTML"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".epub",
+            "name": "EPUB"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".pdf",
+            "name": "PDF"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".cbz",
+            "name": "CBZ"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".epub",
+            "name": "EPUB"
+          },
+          {
+            "title": ".mobi",
+            "name": "MOBI"
+          },
+          {
+            "title": "Kindle — .azw",
+            "name": "AZW"
+          },
+          {
+            "title": "Kindle — .azw3",
+            "name": "AZW3"
+          },
+          {
+            "title": "Kindle — .azw4",
+            "name": "AZW4"
+          },
+          {
+            "title": "Mobipocket — .prc",
+            "name": "PRC"
+          },
+          {
+            "title": "FictionBook — .fb2",
+            "name": "FB2"
+          },
+          {
+            "title": ".htmlz",
+            "name": "HTMLZ"
+          },
+          {
+            "title": ".txtz",
+            "name": "TXTZ"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".mobi",
+            "name": "MOBI"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "Kindle — .azw3",
+            "name": "AZW3"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "Calibre"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": "Microsoft Reader — .lit",
+            "name": "LIT"
+          },
+          {
+            "title": "Sony Reader — .lrf",
+            "name": "LRF"
+          },
+          {
+            "title": "Compiled HTML Help — .chm",
+            "name": "CHM"
+          },
+          {
+            "title": "Palm eReader — .pdb",
+            "name": "PDB"
+          },
+          {
+            "title": ".pml",
+            "name": "PML"
+          },
+          {
+            "title": "Rocket eBook — .rb",
+            "name": "RB"
+          },
+          {
+            "title": "Shanda Bambook — .snb",
+            "name": "SNB"
+          },
+          {
+            "title": "Psion — .tcr",
+            "name": "TCR"
+          },
+          {
+            "title": "Open eBook — .oeb .opf",
+            "name": "OEB"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".epub",
+            "name": "EPUB"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".docx",
+            "name": "DOCX"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".txt",
+            "name": "TXT"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".html .htm .xhtml",
+            "name": "HTML"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "Calibre"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "video",
+    "color": "#9c36b5",
+    "name": "视频",
+    "count": "22 种格式",
+    "intro": "把常见视频格式转成 MP4（H.264、HEVC 或 AV1）、WebM、MOV、MKV、AVI、GIF 或 APNG，可缩小到 720p，也能提取 MP3/M4A 音频。使用可选引擎 FFmpeg。",
+    "iconSvg": "<path fill-rule=\"evenodd\" d=\"M4 6h11a1 1 0 0 1 1 1v3.2l5-3.2v10l-5-3.2V17a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z\"/>",
+    "rows": [
+      {
+        "from": [
+          {
+            "title": ".mp4",
+            "name": "MP4"
+          },
+          {
+            "title": "iTunes video — .m4v",
+            "name": "M4V"
+          },
+          {
+            "title": ".mov .qt",
+            "name": "MOV"
+          },
+          {
+            "title": ".mkv",
+            "name": "MKV"
+          },
+          {
+            "title": ".webm",
+            "name": "WEBM"
+          },
+          {
+            "title": ".avi .divx",
+            "name": "AVI"
+          },
+          {
+            "title": ".wmv .asf",
+            "name": "WMV"
+          },
+          {
+            "title": ".flv .f4v",
+            "name": "FLV"
+          },
+          {
+            "title": ".mpg .mpeg .mpe .m1v .m2v",
+            "name": "MPEG"
+          },
+          {
+            "title": ".ts",
+            "name": "TS"
+          },
+          {
+            "title": ".m2ts .mts .m2t",
+            "name": "M2TS/MTS"
+          },
+          {
+            "title": ".3gp .3gpp",
+            "name": "3GP"
+          },
+          {
+            "title": ".3g2",
+            "name": "3G2"
+          },
+          {
+            "title": ".ogv",
+            "name": "OGV"
+          },
+          {
+            "title": "DVD — .vob",
+            "name": "VOB"
+          },
+          {
+            "title": "JVC / Panasonic camcorders — .mod .tod",
+            "name": "MOD"
+          },
+          {
+            "title": ".dv .dif",
+            "name": "DV"
+          },
+          {
+            "title": ".mxf",
+            "name": "MXF"
+          },
+          {
+            "title": "RealMedia — .rm .rmvb",
+            "name": "RM/RMVB"
+          },
+          {
+            "title": "Flash — .swf",
+            "name": "SWF"
+          },
+          {
+            "title": "Windows Media Center — .wtv .dvr-ms .dvr",
+            "name": "WTV"
+          },
+          {
+            "title": ".cavs",
+            "name": "CAVS"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".mp4",
+            "name": "MP4"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".webm",
+            "name": "WEBM"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".mov .qt",
+            "name": "MOV"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".mkv",
+            "name": "MKV"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".avi .divx",
+            "name": "AVI"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".gif",
+            "name": "GIF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "animated PNG — .apng",
+            "name": "APNG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".mp3",
+            "name": "MP3"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".m4a",
+            "name": "M4A"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "FFmpeg"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".gif",
+            "name": "GIF"
+          },
+          {
+            "title": "animated PNG — .apng",
+            "name": "APNG"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".mp4",
+            "name": "MP4"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".webm",
+            "name": "WEBM"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".mov .qt",
+            "name": "MOV"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "FFmpeg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "audio",
+    "color": "#0f9d8a",
+    "name": "音频",
+    "count": "30 种格式",
+    "intro": "把音乐、录音和语音备忘录转成 MP3、M4A、WAV、FLAC、OGG、Opus、AAC 或无损的 WavPack、TTA，也能读取 APE、DSD 和 DTS。使用可选引擎 FFmpeg。",
+    "iconSvg": "<path fill-rule=\"evenodd\" d=\"M12 3h7v4h-5v10a4 4 0 1 1-2-3.46z\"/>",
+    "rows": [
+      {
+        "from": [
+          {
+            "title": ".mp3",
+            "name": "MP3"
+          },
+          {
+            "title": ".m4a",
+            "name": "M4A"
+          },
+          {
+            "title": "audiobooks — .m4b",
+            "name": "M4B"
+          },
+          {
+            "title": ".aac",
+            "name": "AAC"
+          },
+          {
+            "title": ".wav .wave",
+            "name": "WAV"
+          },
+          {
+            "title": ".flac",
+            "name": "FLAC"
+          },
+          {
+            "title": ".ogg .oga",
+            "name": "OGG"
+          },
+          {
+            "title": ".opus",
+            "name": "OPUS"
+          },
+          {
+            "title": ".wma",
+            "name": "WMA"
+          },
+          {
+            "title": ".aiff .aif .aifc",
+            "name": "AIFF"
+          },
+          {
+            "title": ".ac3",
+            "name": "AC3"
+          },
+          {
+            "title": ".amr",
+            "name": "AMR"
+          },
+          {
+            "title": ".au .snd",
+            "name": "AU"
+          },
+          {
+            "title": ".caf",
+            "name": "CAF"
+          },
+          {
+            "title": ".weba",
+            "name": "WEBA"
+          },
+          {
+            "title": ".mka",
+            "name": "MKA"
+          },
+          {
+            "title": ".mp2 .mpa",
+            "name": "MP2"
+          },
+          {
+            "title": "Olympus / Philips dictation — .dss",
+            "name": "DSS"
+          },
+          {
+            "title": ".voc",
+            "name": "VOC"
+          },
+          {
+            "title": ".wv",
+            "name": "WavPack"
+          },
+          {
+            "title": ".tta",
+            "name": "TTA"
+          },
+          {
+            "title": "Sony Wave64 — .w64",
+            "name": "W64"
+          },
+          {
+            "title": "Dolby Digital Plus — .eac3 .ec3",
+            "name": "E-AC3"
+          },
+          {
+            "title": "Monkey's Audio — .ape",
+            "name": "APE"
+          },
+          {
+            "title": ".mpc .mpp .mp+",
+            "name": "Musepack"
+          },
+          {
+            "title": ".tak",
+            "name": "TAK"
+          },
+          {
+            "title": "DSD — .dsf",
+            "name": "DSF"
+          },
+          {
+            "title": "DSD — .dff",
+            "name": "DFF"
+          },
+          {
+            "title": ".dts",
+            "name": "DTS"
+          },
+          {
+            "title": ".spx",
+            "name": "Speex"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".mp3",
+            "name": "MP3"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".m4a",
+            "name": "M4A"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".wav .wave",
+            "name": "WAV"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".flac",
+            "name": "FLAC"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".ogg .oga",
+            "name": "OGG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".opus",
+            "name": "OPUS"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".aac",
+            "name": "AAC"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".wv",
+            "name": "WavPack"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".tta",
+            "name": "TTA"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "Sony Wave64 — .w64",
+            "name": "W64"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".ac3",
+            "name": "AC3"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "Dolby Digital Plus — .eac3 .ec3",
+            "name": "E-AC3"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "FFmpeg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "subtitles",
+    "color": "#4f46e5",
+    "name": "字幕",
+    "count": "9 种格式",
+    "intro": "SRT、ASS、WebVTT、SAMI（SMI）、LRC、TTML 和 MicroDVD 无需引擎即可互相转换，保存为 UTF-8，也能读取 SSA 和 SCC。以 CP949 保存的韩文 SMI、SRT 也能正确读取。视频里的字幕用 FFmpeg 提取。",
+    "iconSvg": "<path fill-rule=\"evenodd\" d=\"M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm1 8v2h3v-2zm4.5 0v2H18v-2zM6 15.5v2h8v-2zm9.5 0v2H18v-2z\"/>",
+    "rows": [
+      {
+        "from": [
+          {
+            "title": ".srt",
+            "name": "SRT"
+          },
+          {
+            "title": ".ass",
+            "name": "ASS"
+          },
+          {
+            "title": "SubStation Alpha — .ssa",
+            "name": "SSA"
+          },
+          {
+            "title": ".vtt",
+            "name": "WebVTT"
+          },
+          {
+            "title": ".smi .sami",
+            "name": "SAMI (SMI)"
+          },
+          {
+            "title": "song lyrics — .lrc",
+            "name": "LRC"
+          },
+          {
+            "title": ".ttml .dfxp",
+            "name": "TTML/DFXP"
+          },
+          {
+            "title": ".sub",
+            "name": "MicroDVD"
+          },
+          {
+            "title": "Scenarist closed captions — .scc",
+            "name": "SCC"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".srt",
+            "name": "SRT"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".ass",
+            "name": "ASS"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".vtt",
+            "name": "WebVTT"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".smi .sami",
+            "name": "SAMI"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "song lyrics — .lrc",
+            "name": "LRC"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".ttml .dfxp",
+            "name": "TTML"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".sub",
+            "name": "MicroDVD"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".mkv",
+            "name": "MKV"
+          },
+          {
+            "title": ".mp4",
+            "name": "MP4"
+          },
+          {
+            "title": ".mov .qt",
+            "name": "MOV"
+          },
+          {
+            "title": ".webm",
+            "name": "WEBM"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".srt",
+            "name": "SRT"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".ass",
+            "name": "ASS"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".vtt",
+            "name": "WebVTT"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-optional",
+            "title": "免费的可选引擎，在 Filee 内下载一次即可",
+            "text": "FFmpeg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "archives",
+    "color": "#b7791f",
+    "name": "压缩包",
+    "count": "28 种格式",
+    "intro": "用自带的 7-Zip 引擎重新打包或解压 ZIP、7Z、RAR、TAR、磁盘映像等多种压缩格式，也能把任意文件打包成一个 ZIP。",
+    "iconSvg": "<path fill-rule=\"evenodd\" d=\"M3 3h18v4H3zm1 5h16v13H4zm5 3v2h6v-2z\"/>",
+    "rows": [
+      {
+        "from": [
+          {
+            "title": ".zip",
+            "name": "ZIP"
+          },
+          {
+            "title": ".7z",
+            "name": "7Z"
+          },
+          {
+            "title": ".rar",
+            "name": "RAR"
+          },
+          {
+            "title": ".tar",
+            "name": "TAR"
+          },
+          {
+            "title": ".tar.gz .tgz",
+            "name": "TAR.GZ"
+          },
+          {
+            "title": ".tar.bz2 .tbz2",
+            "name": "TAR.BZ2"
+          },
+          {
+            "title": ".tar.xz .txz",
+            "name": "TAR.XZ"
+          },
+          {
+            "title": ".tar.7z",
+            "name": "TAR.7Z"
+          },
+          {
+            "title": ".tar.lz .tlz",
+            "name": "TAR.LZ"
+          },
+          {
+            "title": ".tar.z .tz",
+            "name": "TAR.Z"
+          },
+          {
+            "title": ".gz",
+            "name": "GZ"
+          },
+          {
+            "title": ".bz2 .bz",
+            "name": "BZ2"
+          },
+          {
+            "title": ".xz",
+            "name": "XZ"
+          },
+          {
+            "title": "lzip — .lz",
+            "name": "LZ"
+          },
+          {
+            "title": ".lzma",
+            "name": "LZMA"
+          },
+          {
+            "title": ".z",
+            "name": "Z"
+          },
+          {
+            "title": "Java — .jar",
+            "name": "JAR"
+          },
+          {
+            "title": "Windows Cabinet — .cab",
+            "name": "CAB"
+          },
+          {
+            "title": ".cpio",
+            "name": "CPIO"
+          },
+          {
+            "title": "Debian/Ubuntu packages — .deb",
+            "name": "DEB"
+          },
+          {
+            "title": "Red Hat/Fedora packages — .rpm",
+            "name": "RPM"
+          },
+          {
+            "title": "macOS disk image — .dmg",
+            "name": "DMG"
+          },
+          {
+            "title": "disc image — .iso",
+            "name": "ISO"
+          },
+          {
+            "title": "disk image — .img",
+            "name": "IMG"
+          },
+          {
+            "title": ".lha .lzh",
+            "name": "LHA/LZH"
+          },
+          {
+            "title": ".arj",
+            "name": "ARJ"
+          },
+          {
+            "title": "ALZip — .alz",
+            "name": "ALZ"
+          },
+          {
+            "title": "ALZip — .egg",
+            "name": "EGG"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".zip",
+            "name": "ZIP"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".7z",
+            "name": "7Z"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".tar",
+            "name": "TAR"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".tar.gz .tgz",
+            "name": "TAR.GZ"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".zip",
+            "name": "ZIP"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cad",
+    "color": "#0e7490",
+    "name": "CAD 图纸",
+    "count": "2 种格式",
+    "intro": "AutoCAD 的 DWG 和 DXF 可互相转换，也可转成 PDF、SVG 和 PNG，无需 AutoCAD。",
+    "iconSvg": "<path fill-rule=\"evenodd\" d=\"M3 3v18h18zm3 7.2V18h7.8z\"/>",
+    "rows": [
+      {
+        "from": [
+          {
+            "title": ".dwg",
+            "name": "DWG"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".dxf",
+            "name": "DXF"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".dxf",
+            "name": "DXF"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".dwg",
+            "name": "DWG"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".dwg",
+            "name": "DWG"
+          },
+          {
+            "title": ".dxf",
+            "name": "DXF"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".pdf",
+            "name": "PDF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".svg",
+            "name": "SVG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".png",
+            "name": "PNG"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "models",
+    "color": "#be185d",
+    "name": "3D 模型",
+    "count": "6 种格式",
+    "intro": "GLB、glTF、STL、OBJ、3MF 和 PLY 互相转换，格式支持时保留颜色、纹理和材质，也能生成带阴影的 PNG 或 JPG 图片。无需安装其他软件。",
+    "iconSvg": "<path fill-rule=\"evenodd\" d=\"M12 2l9 5v10l-9 5-9-5V7zm0 2.3L5.6 7.8 12 11.3l6.4-3.5zM5 9.5v6.3l6 3.3v-6.3zm14 0l-6 3.3v6.3l6-3.3z\"/>",
+    "rows": [
+      {
+        "from": [
+          {
+            "title": ".glb",
+            "name": "GLB"
+          },
+          {
+            "title": ".gltf",
+            "name": "glTF"
+          },
+          {
+            "title": ".stl",
+            "name": "STL"
+          },
+          {
+            "title": ".obj",
+            "name": "OBJ"
+          },
+          {
+            "title": "3D printing — .3mf",
+            "name": "3MF"
+          },
+          {
+            "title": "3D scans — .ply",
+            "name": "PLY"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".glb",
+            "name": "GLB"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".gltf",
+            "name": "glTF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".stl",
+            "name": "STL"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".obj",
+            "name": "OBJ"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "3D printing — .3mf",
+            "name": "3MF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "3D scans — .ply",
+            "name": "PLY"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      },
+      {
+        "from": [
+          {
+            "title": ".glb",
+            "name": "GLB"
+          },
+          {
+            "title": ".gltf",
+            "name": "glTF"
+          },
+          {
+            "title": ".stl",
+            "name": "STL"
+          },
+          {
+            "title": ".obj",
+            "name": "OBJ"
+          },
+          {
+            "title": "3D printing — .3mf",
+            "name": "3MF"
+          },
+          {
+            "title": "3D scans — .ply",
+            "name": "PLY"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".png",
+            "name": "PNG"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".jpg .jpeg .jpe .jfif",
+            "name": "JPG"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fonts",
+    "color": "#4b5563",
+    "name": "字体",
+    "count": "5 种格式",
+    "intro": "桌面字体和网页字体 TTF、OTF、WOFF、WOFF2、EOT 互相转换。",
+    "iconSvg": "<path fill-rule=\"evenodd\" d=\"M10.2 4h3.6L20 20h-3l-1.4-4H8.4L7 20H4zm-1 9.4h5.6L12 6.2z\"/>",
+    "rows": [
+      {
+        "from": [
+          {
+            "title": ".ttf",
+            "name": "TTF"
+          },
+          {
+            "title": ".otf",
+            "name": "OTF"
+          },
+          {
+            "title": ".woff",
+            "name": "WOFF"
+          },
+          {
+            "title": ".woff2",
+            "name": "WOFF2"
+          },
+          {
+            "title": "Internet Explorer — .eot",
+            "name": "EOT"
+          }
+        ],
+        "to": [
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".ttf",
+            "name": "TTF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".otf",
+            "name": "OTF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".woff",
+            "name": "WOFF"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": ".woff2",
+            "name": "WOFF2"
+          },
+          {
+            "tag": "span",
+            "isLink": false,
+            "href": null,
+            "title": "Internet Explorer — .eot",
+            "name": "EOT"
+          }
+        ],
+        "engines": [
+          {
+            "class": "tag-builtin",
+            "title": "安装后即可使用，无需额外下载",
+            "text": "内置"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "title": "Kiln Data Suite",
+  "locale": "ko-KR",
+  "hangulText": "안녕하세요 Kiln 파일 변환기입니다 🎉",
+  "metrics": {
+    "accuracy": 1,
+    "precision": 0.999999,
+    "negativeVal": -42.5
+  },
+  "nested": {
+    "user": {
+      "id": 1001,
+      "roles": [
+        "admin",
+        "tester"
+      ]
+    }
+  },
+  "items": [
+    {
+      "id": 1,
+      "label": "Images",
+      "count": 36,
+      "supported": true
+    },
+    {
+      "id": 2,
+      "label": "Documents",
+      "count": 23,
+      "supported": true
+    }
+  ],
+  "emptyFields": {
+    "nullField": null,
+    "emptyString": "",
+    "emptyArray": []
+  }
+}

@@ -1,0 +1,3 @@
+Single
+CRLF
+LFCR mixed endings with trailing spaces   

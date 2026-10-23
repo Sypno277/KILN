@@ -1,0 +1,4 @@
+special_string: "true"
+boolean_val: true
+null_val: null
+number: 1.23456789e-5

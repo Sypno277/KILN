@@ -1,0 +1,3 @@
+Kiln Client-Side Converter
+100% Offline execution.
+No server required.

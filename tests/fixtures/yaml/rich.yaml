@@ -1,0 +1,17 @@
+app: Kiln
+version: "1.11.0"
+title: "Kiln Comprehensive Engine"
+i18n:
+  korean: "안녕하세요! 오프라인 변환기입니다."
+  chinese: "您好！离线转换器。"
+matrix:
+  - id: 1
+    type: "image"
+    formats: [PNG, JPG, WEBP, BMP]
+  - id: 2
+    type: "data"
+    formats: [JSON, YAML, CSV, TSV]
+settings:
+  quality: 90
+  resize: 100
+  grayscale: false

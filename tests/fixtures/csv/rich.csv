@@ -1,0 +1,4 @@
+id,title,description,price,category
+1,"Kiln Pro, Edition","High-fidelity ""zero-upload"" converter",0.00,"Software"
+2,"한글 지원","한국어 지원과 CJK 텍스트 처리",12000,"I18N"
+3,"Special;Chars","Has comma, semicolon; and newline",45.50,"Edge"

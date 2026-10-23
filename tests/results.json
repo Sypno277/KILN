@@ -1,0 +1,71 @@
+{
+  "passed": 13,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "Internal Route Verification (All 200 OK)",
+      "pass": true,
+      "details": "62 routes checked"
+    },
+    {
+      "name": "Landing page contains website brief",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Landing page has Go to Processing Window button",
+      "pass": true,
+      "details": "href: /app/"
+    },
+    {
+      "name": "Go to Processing Window button navigates to /app/",
+      "pass": true,
+      "details": "Current URL: http://127.0.0.1:3000/app/"
+    },
+    {
+      "name": "Language menu toggles open",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Language switch to Korean (/ko/) with processing button",
+      "pass": true,
+      "details": "HTML lang: ko"
+    },
+    {
+      "name": "Language switch to Chinese (/zh-cn/) with processing button",
+      "pass": true,
+      "details": "HTML lang: zh-CN"
+    },
+    {
+      "name": "Light theme background is light",
+      "pass": true,
+      "details": "Color: rgb(247, 246, 242)"
+    },
+    {
+      "name": "Dark theme background is dark",
+      "pass": true,
+      "details": "Color: rgb(15, 14, 22)"
+    },
+    {
+      "name": "Processing window contains drop prompt for files",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Processing window renders native 33 PDF tools",
+      "pass": true,
+      "details": "Found 33 tool cards"
+    },
+    {
+      "name": "Formats catalog renders all 17 categories",
+      "pass": true,
+      "details": "Found 17 categories"
+    },
+    {
+      "name": "Formats routing tables rendered with format chips",
+      "pass": true,
+      "details": "Found 78 routing rows"
+    }
+  ]
+}

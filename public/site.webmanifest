@@ -1,0 +1,32 @@
+{
+  "name": "Kiln - Private PDF Tools & Universal Converter",
+  "short_name": "Kiln",
+  "description": "100% private, client-side PDF toolset and universal offline file converter.",
+  "start_url": "/app/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#7F77DD",
+  "background_color": "#0F0E16",
+  "icons": [
+    {
+      "src": "/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "/app/",
+      "name": "PDF Document",
+      "accept": {
+        "application/pdf": [".pdf"]
+      }
+    }
+  ]
+}

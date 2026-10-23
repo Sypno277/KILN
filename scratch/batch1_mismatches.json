@@ -1,0 +1,30 @@
+[
+  {
+    "location": "Shape 'Item 4' (text: 'Regression Prevention Aud...')",
+    "character": "All characters in run",
+    "attribute": "a:rPr child element sequence",
+    "source_value": "ECMA-376 compliant (fill -> effects -> highlight -> underline -> latin)",
+    "output_value": "Violated (latin serialized before solidFill / highlight)"
+  },
+  {
+    "location": "ppt/media/image_1_1.png (Shape 'img_p0_1')",
+    "character": "N/A (Embedded Media)",
+    "attribute": "Media Byte Stream & Dimensions",
+    "source_value": "Valid PNG (1x1, 90 bytes, SHA256: b9214335...)",
+    "output_value": "Corrupt/Empty (1x1, 73 bytes, SHA256: 473163f1...)"
+  },
+  {
+    "location": "Title block (x=40, y=740)",
+    "character": "Regression Prevention Audit Document",
+    "attribute": "fill color (rounding)",
+    "source_value": "#191919 (rgb(0.1, 0.1, 0.1))",
+    "output_value": "#1A1A1A (round(0.1*255)=26=0x1A)"
+  },
+  {
+    "location": "Math Formula line (x=40, y=610)",
+    "character": "Math Formula / Greek symbols",
+    "attribute": "fill color (rounding)",
+    "source_value": "#0C1966 (rgb(0.05, 0.1, 0.4))",
+    "output_value": "#0D1A66 (round(0.05*255)=13=0x0D)"
+  }
+]
