@@ -1043,6 +1043,30 @@ export class ConverterEngine {
     return this.serializeXml(lineNode);
   }
 
+  getBuildVersionStamp() {
+    let gitHash = '76a554b';
+    try {
+      if (typeof process !== 'undefined' && process.env && process.env.GIT_COMMIT) {
+        gitHash = process.env.GIT_COMMIT;
+      } else if (typeof require !== 'undefined') {
+        const cp = require('child_process');
+        gitHash = cp.execSync('git rev-parse --short HEAD', { encoding: 'utf8' }).trim();
+      }
+    } catch (e) {}
+    const timestamp = new Date().toISOString();
+    return {
+      gitHash,
+      timestamp,
+      marker: 'BATCH0_LIVE_PATH_PROVEN'
+    };
+  }
+
+  checkByteIdenticalStaleOutput(previousOutputHash, currentOutputHash, context = '') {
+    if (previousOutputHash && currentOutputHash && previousOutputHash === currentOutputHash) {
+      throw new Error(`[STALE_OUTPUT_GUARD] Failure: Two conversions of the same input after a code change produced byte-identical output (${currentOutputHash}). Cached/stale intermediate or unwritten output detected! ${context}`);
+    }
+  }
+
   buildDocxContentTypesXml() {
     const el = (name, attrs, children) => this.xmlElement(name, attrs, children);
     const typesNode = el('Types', {
@@ -1053,7 +1077,9 @@ export class ConverterEngine {
       el('Default', { Extension: 'jpeg', ContentType: 'image/jpeg' }),
       el('Default', { Extension: 'jpg', ContentType: 'image/jpeg' }),
       el('Override', { PartName: '/word/document.xml', ContentType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml' }),
-      el('Override', { PartName: '/word/styles.xml', ContentType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml' })
+      el('Override', { PartName: '/word/styles.xml', ContentType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml' }),
+      el('Override', { PartName: '/docProps/core.xml', ContentType: 'application/vnd.openxmlformats-package.core-properties+xml' }),
+      el('Override', { PartName: '/docProps/app.xml', ContentType: 'application/vnd.openxmlformats-officedocument.extended-properties+xml' })
     ]);
     return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n' + this.serializeXml(typesNode);
   }
@@ -1067,9 +1093,81 @@ export class ConverterEngine {
         Id: 'rId1',
         Type: 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument',
         Target: 'word/document.xml'
+      }),
+      el('Relationship', {
+        Id: 'rId2',
+        Type: 'http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties',
+        Target: 'docProps/core.xml'
+      }),
+      el('Relationship', {
+        Id: 'rId3',
+        Type: 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties',
+        Target: 'docProps/app.xml'
       })
     ]);
     return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n' + this.serializeXml(relsNode);
+  }
+
+  buildDocxCorePropsXml(stamp) {
+    const el = (name, attrs, children) => this.xmlElement(name, attrs, children);
+    const coreNode = el('cp:coreProperties', {
+      'xmlns:cp': 'http://schemas.openxmlformats.org/package/2006/metadata/core-properties',
+      'xmlns:dc': 'http://purl.org/dc/elements/1.1/',
+      'xmlns:dcterms': 'http://purl.org/dc/terms/',
+      'xmlns:dcmitype': 'http://purl.org/dc/dcmitype/',
+      'xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance'
+    }, [
+      el('dc:title', {}, ['Converted Document']),
+      el('dc:creator', {}, ['Filee Real Conversion Engine']),
+      el('cp:lastModifiedBy', {}, ['Filee Real Conversion Engine']),
+      el('cp:revision', {}, ['1']),
+      el('cp:keywords', {}, [`git:${stamp.gitHash};build:${stamp.timestamp};marker:${stamp.marker}`]),
+      el('dc:description', {}, [`Build: ${stamp.gitHash} @ ${stamp.timestamp} [${stamp.marker}]`]),
+      el('dcterms:created', { 'xsi:type': 'dcterms:W3CDTF' }, [stamp.timestamp]),
+      el('dcterms:modified', { 'xsi:type': 'dcterms:W3CDTF' }, [stamp.timestamp])
+    ]);
+    return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n' + this.serializeXml(coreNode);
+  }
+
+  buildDocxAppPropsXml() {
+    const el = (name, attrs, children) => this.xmlElement(name, attrs, children);
+    const appNode = el('Properties', {
+      'xmlns': 'http://schemas.openxmlformats.org/officeDocument/2006/extended-properties',
+      'xmlns:vt': 'http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes'
+    }, [
+      el('Application', {}, ['Filee Client-Side Engine']),
+      el('DocSecurity', {}, ['0']),
+      el('Lines', {}, ['1']),
+      el('Paragraphs', {}, ['1']),
+      el('ScaleCrop', {}, ['false']),
+      el('Company', {}, ['Filee']),
+      el('LinksUpToDate', {}, ['false']),
+      el('SharedDoc', {}, ['false']),
+      el('HyperlinksChanged', {}, ['false']),
+      el('AppVersion', {}, ['1.0.0'])
+    ]);
+    return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n' + this.serializeXml(appNode);
+  }
+
+  buildPptxCorePropsXml(stamp) {
+    const el = (name, attrs, children) => this.xmlElement(name, attrs, children);
+    const coreNode = el('cp:coreProperties', {
+      'xmlns:cp': 'http://schemas.openxmlformats.org/package/2006/metadata/core-properties',
+      'xmlns:dc': 'http://purl.org/dc/elements/1.1/',
+      'xmlns:dcterms': 'http://purl.org/dc/terms/',
+      'xmlns:dcmitype': 'http://purl.org/dc/dcmitype/',
+      'xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance'
+    }, [
+      el('dc:title', {}, ['Converted Presentation']),
+      el('dc:creator', {}, ['Filee Real Conversion Engine']),
+      el('cp:lastModifiedBy', {}, ['Filee Real Conversion Engine']),
+      el('cp:revision', {}, ['1']),
+      el('cp:keywords', {}, [`git:${stamp.gitHash};build:${stamp.timestamp};marker:${stamp.marker}`]),
+      el('dc:description', {}, [`Build: ${stamp.gitHash} @ ${stamp.timestamp} [${stamp.marker}]`]),
+      el('dcterms:created', { 'xsi:type': 'dcterms:W3CDTF' }, [stamp.timestamp]),
+      el('dcterms:modified', { 'xsi:type': 'dcterms:W3CDTF' }, [stamp.timestamp])
+    ]);
+    return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n' + this.serializeXml(coreNode);
   }
 
   buildDocxDocumentRelsXml(extraRels = []) {
@@ -1366,6 +1464,8 @@ export class ConverterEngine {
    */
   async convert(file, targetExt, options = {}, onProgress = () => {}) {
     this.initLibraries();
+    const stamp = this.getBuildVersionStamp();
+    console.log(`[CONVERSION_BUILD_STAMP] Git: ${stamp.gitHash} | Time: ${stamp.timestamp} | Marker: ${stamp.marker} | File: ${file.name} | Target: ${targetExt}`);
     await this.verifyMagicBytes(file);
 
     const sourceExt = (file.name.split('.').pop() || '').toLowerCase();
@@ -4111,9 +4211,14 @@ export class ConverterEngine {
 
     onProgress(50, 'Building formatted OpenXML Word document with exact text fidelity...');
 
+    const stamp = this.getBuildVersionStamp();
+    console.log(`[CONVERSION_BUILD_STAMP:DOCX] Git: ${stamp.gitHash} | Time: ${stamp.timestamp} | Marker: ${stamp.marker}`);
+
     const zip = new JSZipClass();
     zip.file('[Content_Types].xml', this.buildDocxContentTypesXml());
     zip.file('_rels/.rels', this.buildDocxRootRelsXml());
+    zip.file('docProps/core.xml', this.buildDocxCorePropsXml(stamp));
+    zip.file('docProps/app.xml', this.buildDocxAppPropsXml());
 
     // Provide real styles.xml so Heading1, Heading2, Normal are defined
     zip.file('word/styles.xml', this.buildDocxStylesXml());
@@ -4367,7 +4472,9 @@ export class ConverterEngine {
     const pageCount = extractedPages.length;
     const firstPage = extractedPages[0] || {};
     const mode = options.mode || 'fidelity';
-    console.log(`[BATCH0_PIPELINE_MARKER:ConverterEngine.pdfToPpt] PROVEN_CODE_PATH_ACTIVE (file: ${file.name || 'presentation'}, mode: ${mode})`);
+    const stamp = this.getBuildVersionStamp();
+    console.log(`[CONVERSION_BUILD_STAMP:PPTX] Git: ${stamp.gitHash} | Time: ${stamp.timestamp} | Marker: ${stamp.marker}`);
+    console.log(`[BATCH0_PIPELINE_MARKER:LIVE_CODE_PATH] BATCH0_LIVE_PATH_PROVEN (file: ${file.name || 'presentation'}, mode: ${mode})`);
     const canvas = this.resolveCanvas(firstPage, mode, 'pptx');
 
     onProgress(40, `Generating ${pageCount} slides with OpenXML presentation structure...`);
@@ -4563,6 +4670,7 @@ export class ConverterEngine {
     zip.file('[Content_Types].xml', contentTypes);
     zip.file('ppt/presentation.xml', presXml);
     zip.file('ppt/_rels/presentation.xml.rels', presRels);
+    zip.file('docProps/core.xml', this.buildPptxCorePropsXml(stamp));
 
     onProgress(90, 'Packaging into valid PPTX archive...');
     const pptxBlob = await zip.generateAsync({ type: 'blob', mimeType: 'application/vnd.openxmlformats-officedocument.presentationml.presentation' });
