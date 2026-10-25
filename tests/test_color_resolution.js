@@ -28,8 +28,8 @@ async function runColorUnitTests() {
     { input: 0.5, expected: '808080', desc: 'gray 0.5 -> 808080' },
     { input: [0, 1.0, 1.0, 0], expected: 'FF0000', desc: 'CMYK red [0, 1.0, 1.0, 0] -> FF0000' },
     { input: 0xFF0000, expected: 'FF0000', desc: 'int-packed 0xFF0000 -> FF0000' },
-    { input: null, expected: 'unset', desc: 'None / null -> unset' },
-    { input: undefined, expected: 'unset', desc: 'undefined -> unset' }
+    { input: null, expected: 'UNSET', desc: 'None / null -> UNSET' },
+    { input: undefined, expected: 'UNSET', desc: 'undefined -> UNSET' }
   ];
 
   let passed = 0;

@@ -1,0 +1,283 @@
+{
+  "id": "fidelity-1792793332327",
+  "timestamp": "2026-10-23T22:08:52.326Z",
+  "format": "pptx",
+  "overallScore": 100,
+  "passed": true,
+  "allowLossy": false,
+  "gateAction": "PASS",
+  "thresholds": {
+    "overall": 95,
+    "content": 98,
+    "style": 92,
+    "visualSsim": 0.9,
+    "maxRegionDiff": 5,
+    "validity": 100
+  },
+  "elementClassScores": {
+    "text_content": 100,
+    "typography_fonts": 100,
+    "color_and_highlights": 100,
+    "geometry_and_layout": 100,
+    "visual_parity": 100,
+    "package_validity": 100
+  },
+  "layers": {
+    "fixity": {
+      "layer": "fixity",
+      "inputSha256": null,
+      "outputSha256": null,
+      "expectBitIdentical": false,
+      "passed": true,
+      "note": "Checksum equality confirms bit-identity where expected (e.g. remux / rewrap). Checksums cannot prove cross-format equivalence; they detect change and preserve baseline fixity."
+    },
+    "content": {
+      "layer": "content",
+      "score": 100,
+      "passed": true,
+      "threshold": 98,
+      "charDiff": {
+        "sourceChars": 33,
+        "outputChars": 33,
+        "missingChars": 0,
+        "extraChars": 0,
+        "alteredChars": 0,
+        "reorderedChars": 0,
+        "charFidelityRatio": 1,
+        "levenshteinDist": 0
+      },
+      "objectCounts": {
+        "source": {
+          "pages": 1,
+          "images": 1,
+          "tables": 0,
+          "links": 0,
+          "lists": 0
+        },
+        "output": {
+          "pages": 1,
+          "images": 1,
+          "tables": 0,
+          "links": 0,
+          "lists": 0
+        },
+        "matches": {
+          "pages": true,
+          "images": true,
+          "tables": true,
+          "links": true,
+          "lists": true
+        }
+      }
+    },
+    "style": {
+      "layer": "style",
+      "score": 100,
+      "passed": true,
+      "threshold": 92,
+      "attributeAudit": {
+        "bold": {
+          "sourceChars": 12,
+          "outputChars": 12,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "italic": {
+          "sourceChars": 15,
+          "outputChars": 15,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "underline": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "strike": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "highlight": {
+          "sourceChars": 19,
+          "outputChars": 19,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "subscript": {
+          "sourceChars": 13,
+          "outputChars": 13,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "superscript": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "redColor": {
+          "sourceChars": 22,
+          "outputChars": 22,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        }
+      },
+      "fonts": {
+        "source": [
+          "Helvetica-Bold",
+          "Times-Roman",
+          "Helvetica",
+          "Times-Italic"
+        ],
+        "output": [
+          "Arial",
+          "Times New Roman"
+        ],
+        "unexpected": [],
+        "clean": true
+      },
+      "alignment": {
+        "source": {
+          "left": 0,
+          "center": 0,
+          "right": 0,
+          "both": 0
+        },
+        "output": {
+          "left": 0,
+          "center": 0,
+          "right": 0,
+          "both": 0
+        }
+      }
+    },
+    "visual": {
+      "layer": "visual",
+      "score": 100,
+      "passed": true,
+      "ssim": 1,
+      "ssimThreshold": 0.9,
+      "colorHistogram": {
+        "intersectionCoefficient": 1,
+        "channelMatches": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        }
+      },
+      "regionDiffs": {
+        "regions": [
+          {
+            "regionId": 1,
+            "name": "Top-Left",
+            "diffPercent": 0,
+            "diffPixels": 0,
+            "totalPixels": 10000,
+            "passed": true
+          },
+          {
+            "regionId": 2,
+            "name": "Top-Center",
+            "diffPercent": 0,
+            "diffPixels": 0,
+            "totalPixels": 10000,
+            "passed": true
+          },
+          {
+            "regionId": 3,
+            "name": "Top-Right",
+            "diffPercent": 0,
+            "diffPixels": 0,
+            "totalPixels": 10000,
+            "passed": true
+          },
+          {
+            "regionId": 4,
+            "name": "Mid-Left",
+            "diffPercent": 0,
+            "diffPixels": 0,
+            "totalPixels": 10000,
+            "passed": true
+          },
+          {
+            "regionId": 5,
+            "name": "Mid-Center",
+            "diffPercent": 0,
+            "diffPixels": 0,
+            "totalPixels": 10000,
+            "passed": true
+          },
+          {
+            "regionId": 6,
+            "name": "Mid-Right",
+            "diffPercent": 0,
+            "diffPixels": 0,
+            "totalPixels": 10000,
+            "passed": true
+          },
+          {
+            "regionId": 7,
+            "name": "Bot-Left",
+            "diffPercent": 0,
+            "diffPixels": 0,
+            "totalPixels": 10000,
+            "passed": true
+          },
+          {
+            "regionId": 8,
+            "name": "Bot-Center",
+            "diffPercent": 0,
+            "diffPixels": 0,
+            "totalPixels": 10000,
+            "passed": true
+          },
+          {
+            "regionId": 9,
+            "name": "Bot-Right",
+            "diffPercent": 0,
+            "diffPixels": 0,
+            "totalPixels": 10000,
+            "passed": true
+          }
+        ],
+        "maxDiffPercent": 0,
+        "allRegionsPassed": true
+      },
+      "diffImagePath": "D:\\My Projects\\Filee\\reports\\visual-diff\\test_pass_conversion_diff.bmp"
+    },
+    "validity": {
+      "layer": "validity",
+      "score": 100,
+      "passed": true,
+      "threshold": 100,
+      "schemaValid": true,
+      "xmlOrderViolations": 0,
+      "reader1Pass": true,
+      "reader2Pass": true,
+      "errors": []
+    }
+  },
+  "approximations": [
+    {
+      "type": "Subscript Baseline Offset",
+      "detail": "13 subscript characters preserved with negative font baseline offset."
+    },
+    {
+      "type": "Text Highlight Shading",
+      "detail": "19 highlighted characters preserved with high-contrast background shading."
+    }
+  ],
+  "substitutions": [],
+  "losses": []
+}

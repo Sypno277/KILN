@@ -1,0 +1,3243 @@
+{
+  "metadata": {
+    "source_file": "week1_solutions.pdf",
+    "file_sha256": "9ece5582872a5f89aa4600dba616270077a9a0af6e21263fbbd9553354209fb4",
+    "pages": 3,
+    "pipeline_stage": "BATCH 1: Ground-Truth Color Map (Independent Method)",
+    "verification_status": "VERIFIED_100%_AGREEMENT"
+  },
+  "facts_verified": {
+    "text_red_rg_used": true,
+    "text_red_RG_used": true,
+    "text_reset_to_black": true,
+    "yellow_highlight_rectangles": 16,
+    "white_page_fills": 3,
+    "pages_inspected": 3
+  },
+  "summary": {
+    "total_characters_across_all_pages": 6338,
+    "character_counts_by_color": {
+      "#000000": 5242,
+      "#FF0000": 1096
+    },
+    "unexpected_colors_count": 0,
+    "unexpected_colors": [],
+    "glyph_level_cross_check": {
+      "method_1": "PDF text library (pdfplumber + PyMuPDF spans)",
+      "method_2": "Raw content-stream interpreter (pikepdf q/Q, rg/RG, Tr state tracker)",
+      "total_glyphs_cross_checked": 6338,
+      "total_mismatches": 0,
+      "agreement_percentage": 100.0
+    },
+    "visual_cross_check_summary": {
+      "dpi": 150,
+      "pure_red_pixels_total": 21935,
+      "antialiased_red_pixels_total": 19922,
+      "per_page": {
+        "1": {
+          "resolution": "1275x1650 @ 150 DPI",
+          "pure_red_pixels": 7106,
+          "antialiased_red_pixels": 6630,
+          "total_red_spectrum_pixels": 13736,
+          "mask_artifact": "reports/visual-diff/ground_truth_page_1_red_mask.png"
+        },
+        "2": {
+          "resolution": "1275x1650 @ 150 DPI",
+          "pure_red_pixels": 11556,
+          "antialiased_red_pixels": 10395,
+          "total_red_spectrum_pixels": 21951,
+          "mask_artifact": "reports/visual-diff/ground_truth_page_2_red_mask.png"
+        },
+        "3": {
+          "resolution": "1275x1650 @ 150 DPI",
+          "pure_red_pixels": 3273,
+          "antialiased_red_pixels": 2897,
+          "total_red_spectrum_pixels": 6170,
+          "mask_artifact": "reports/visual-diff/ground_truth_page_3_red_mask.png"
+        }
+      }
+    }
+  },
+  "pages": [
+    {
+      "page": 1,
+      "total_characters": 2483,
+      "color_counts": {
+        "#000000": 2126,
+        "#FF0000": 357
+      },
+      "visual_check": {
+        "resolution": "1275x1650 @ 150 DPI",
+        "pure_red_pixels": 7106,
+        "antialiased_red_pixels": 6630,
+        "total_red_spectrum_pixels": 13736,
+        "mask_artifact": "reports/visual-diff/ground_truth_page_1_red_mask.png"
+      },
+      "lines": [
+        {
+          "line_number": 1,
+          "bbox": [
+            72.0,
+            36.36,
+            200.06,
+            48.65
+          ],
+          "text": "Week-1 Solution Sheet:  ",
+          "char_count": 24,
+          "runs": [
+            {
+              "text": "Week-1 Solution Sheet:  ",
+              "char_range": [
+                0,
+                23
+              ],
+              "char_count": 24,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 2,
+          "bbox": [
+            72.0,
+            50.91,
+            75.06,
+            63.2
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 3,
+          "bbox": [
+            90.0,
+            65.45,
+            535.02,
+            77.74
+          ],
+          "text": "1. What does the “Systemic Safety” strategy in the Disaster Risk Equation primarily aim to ",
+          "char_count": 91,
+          "runs": [
+            {
+              "text": "1. What does the “Systemic Safety” strategy in the Disaster Risk Equation primarily aim to ",
+              "char_range": [
+                0,
+                90
+              ],
+              "char_count": 91,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 4,
+          "bbox": [
+            108.0,
+            80.0,
+            158.11,
+            92.29
+          ],
+          "text": "achieve?  ",
+          "char_count": 10,
+          "runs": [
+            {
+              "text": "achieve?  ",
+              "char_range": [
+                0,
+                9
+              ],
+              "char_count": 10,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 5,
+          "bbox": [
+            126.0,
+            94.54,
+            453.56,
+            106.83
+          ],
+          "text": "a. Improve a specific model’s ability to withstand external hazards ",
+          "char_count": 68,
+          "runs": [
+            {
+              "text": "a. Improve a specific model’s ability to withstand external hazards ",
+              "char_range": [
+                0,
+                67
+              ],
+              "char_count": 68,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 6,
+          "bbox": [
+            126.0,
+            109.09,
+            415.9,
+            121.38
+          ],
+          "text": "b. Identify and avoid hazards through real-time monitoring ",
+          "char_count": 59,
+          "runs": [
+            {
+              "text": "b. Identify and avoid hazards through real-time monitoring ",
+              "char_range": [
+                0,
+                58
+              ],
+              "char_count": 59,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 7,
+          "bbox": [
+            126.0,
+            123.64,
+            526.47,
+            135.93
+          ],
+          "text": "c. Reduce the likelihood of conflict and overall systemic risks in the environment  ",
+          "char_count": 84,
+          "runs": [
+            {
+              "text": "c. Reduce the likelihood of conflict and overall systemic risks in the environment  ",
+              "char_range": [
+                0,
+                83
+              ],
+              "char_count": 84,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 8,
+          "bbox": [
+            126.0,
+            138.18,
+            348.51,
+            150.47
+          ],
+          "text": "d. Align an agent’s goals with human values ",
+          "char_count": 44,
+          "runs": [
+            {
+              "text": "d. Align an agent’s goals with human values ",
+              "char_range": [
+                0,
+                43
+              ],
+              "char_count": 44,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 9,
+          "bbox": [
+            144.0,
+            152.73,
+            147.06,
+            165.02
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 10,
+          "bbox": [
+            108.0,
+            167.28,
+            504.92,
+            179.57
+          ],
+          "text": "Explanation: AI Risk Part 3 [34:02-34:55] - We can look at the risk equation as a ",
+          "char_count": 82,
+          "runs": [
+            {
+              "text": "Explanation: AI Risk Part 3 [34:02-34:55] - We can look at the risk equation as a ",
+              "char_range": [
+                0,
+                81
+              ],
+              "char_count": 82,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 11,
+          "bbox": [
+            108.0,
+            181.82,
+            412.88,
+            194.11
+          ],
+          "text": "\"systemic” safety, which in turn can generally reduce the risks. ",
+          "char_count": 65,
+          "runs": [
+            {
+              "text": "\"systemic” safety, which in turn can generally reduce the risks. ",
+              "char_range": [
+                0,
+                64
+              ],
+              "char_count": 65,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 12,
+          "bbox": [
+            144.0,
+            196.37,
+            147.06,
+            208.66
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 13,
+          "bbox": [
+            90.0,
+            210.92,
+            523.46,
+            223.2
+          ],
+          "text": "2. In the context of “Deceptive Alignment,” what is the primary concern regarding model ",
+          "char_count": 88,
+          "runs": [
+            {
+              "text": "2. In the context of “Deceptive Alignment,” what is the primary concern regarding model ",
+              "char_range": [
+                0,
+                87
+              ],
+              "char_count": 88,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 14,
+          "bbox": [
+            108.0,
+            225.46,
+            162.39,
+            237.75
+          ],
+          "text": "behavior?  ",
+          "char_count": 11,
+          "runs": [
+            {
+              "text": "behavior?  ",
+              "char_range": [
+                0,
+                10
+              ],
+              "char_count": 11,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 15,
+          "bbox": [
+            126.0,
+            240.01,
+            503.29,
+            252.3
+          ],
+          "text": "a. The model appears to follow safety guidelines during training but pursues ",
+          "char_count": 77,
+          "runs": [
+            {
+              "text": "a. The model appears to follow safety guidelines during training but pursues ",
+              "char_range": [
+                0,
+                76
+              ],
+              "char_count": 77,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 16,
+          "bbox": [
+            144.0,
+            254.55,
+            303.89,
+            266.84
+          ],
+          "text": "different goals after deployment  ",
+          "char_count": 34,
+          "runs": [
+            {
+              "text": "different goals after deployment  ",
+              "char_range": [
+                0,
+                33
+              ],
+              "char_count": 34,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 17,
+          "bbox": [
+            126.0,
+            269.1,
+            543.45,
+            281.39
+          ],
+          "text": "b. The model cannot understand human language due to environmental differences  ",
+          "char_count": 80,
+          "runs": [
+            {
+              "text": "b. The model cannot understand human language due to environmental differences  ",
+              "char_range": [
+                0,
+                79
+              ],
+              "char_count": 80,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 18,
+          "bbox": [
+            126.0,
+            283.65,
+            471.48,
+            295.94
+          ],
+          "text": "c. The model accidentally deletes critical memory during deployment  ",
+          "char_count": 69,
+          "runs": [
+            {
+              "text": "c. The model accidentally deletes critical memory during deployment  ",
+              "char_range": [
+                0,
+                68
+              ],
+              "char_count": 69,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 19,
+          "bbox": [
+            126.0,
+            298.19,
+            484.11,
+            310.48
+          ],
+          "text": "d. The model’s safeguards are easily bypassed by simple user prompts  ",
+          "char_count": 70,
+          "runs": [
+            {
+              "text": "d. The model’s safeguards are easily bypassed by simple user prompts  ",
+              "char_range": [
+                0,
+                69
+              ],
+              "char_count": 70,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 20,
+          "bbox": [
+            144.0,
+            312.74,
+            147.06,
+            325.03
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 21,
+          "bbox": [
+            108.0,
+            327.29,
+            503.28,
+            339.57
+          ],
+          "text": "Explanation: AI Risk Part 4 [23:34-24:23] - Deceptive alignment is shown by the ",
+          "char_count": 80,
+          "runs": [
+            {
+              "text": "Explanation: AI Risk Part 4 [23:34-24:23] - Deceptive alignment is shown by the ",
+              "char_range": [
+                0,
+                79
+              ],
+              "char_count": 80,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 22,
+          "bbox": [
+            108.0,
+            341.83,
+            540.61,
+            354.12
+          ],
+          "text": "example as the model appearing to grab the ball/asnwer a specific way but later doesn’t. ",
+          "char_count": 89,
+          "runs": [
+            {
+              "text": "example as the model appearing to grab the ball/asnwer a specific way but later doesn’t. ",
+              "char_range": [
+                0,
+                88
+              ],
+              "char_count": 89,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 23,
+          "bbox": [
+            144.0,
+            356.38,
+            147.06,
+            368.67
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 24,
+          "bbox": [
+            90.0,
+            370.92,
+            494.13,
+            383.21
+          ],
+          "text": "3. According to the lecture, why is “proxy gaming” considered a failure mode in AI ",
+          "char_count": 83,
+          "runs": [
+            {
+              "text": "3. According to the lecture, why is “proxy gaming” considered a failure mode in AI ",
+              "char_range": [
+                0,
+                82
+              ],
+              "char_count": 83,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 25,
+          "bbox": [
+            108.0,
+            385.47,
+            160.53,
+            397.76
+          ],
+          "text": "systems?  ",
+          "char_count": 10,
+          "runs": [
+            {
+              "text": "systems?  ",
+              "char_range": [
+                0,
+                9
+              ],
+              "char_count": 10,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 26,
+          "bbox": [
+            126.0,
+            400.02,
+            517.9,
+            412.31
+          ],
+          "text": "a. Agents over-optimize fault metrics, producing outcomes misaligned with true ",
+          "char_count": 79,
+          "runs": [
+            {
+              "text": "a. Agents over-optimize fault metrics, producing outcomes misaligned with true ",
+              "char_range": [
+                0,
+                78
+              ],
+              "char_count": 79,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 27,
+          "bbox": [
+            144.0,
+            414.56,
+            218.55,
+            426.85
+          ],
+          "text": "human values  ",
+          "char_count": 14,
+          "runs": [
+            {
+              "text": "human values  ",
+              "char_range": [
+                0,
+                13
+              ],
+              "char_count": 14,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 28,
+          "bbox": [
+            126.0,
+            429.11,
+            495.9,
+            441.4
+          ],
+          "text": "b. AI systems consume excessive computational resources unnecessarily  ",
+          "char_count": 71,
+          "runs": [
+            {
+              "text": "b. AI systems consume excessive computational resources unnecessarily  ",
+              "char_range": [
+                0,
+                70
+              ],
+              "char_count": 71,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 29,
+          "bbox": [
+            126.0,
+            443.66,
+            368.84,
+            455.94
+          ],
+          "text": "c. AI systems are used to cheat in video games  ",
+          "char_count": 48,
+          "runs": [
+            {
+              "text": "c. AI systems are used to cheat in video games  ",
+              "char_range": [
+                0,
+                47
+              ],
+              "char_count": 48,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 30,
+          "bbox": [
+            126.0,
+            458.2,
+            443.97,
+            470.49
+          ],
+          "text": "d. It results from hardware failure during large-scale simulations ",
+          "char_count": 67,
+          "runs": [
+            {
+              "text": "d. It results from hardware failure during large-scale simulations ",
+              "char_range": [
+                0,
+                66
+              ],
+              "char_count": 67,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 31,
+          "bbox": [
+            144.0,
+            472.75,
+            147.06,
+            485.04
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 32,
+          "bbox": [
+            108.0,
+            487.29,
+            531.37,
+            499.58
+          ],
+          "text": "Explanation: AI Risk Part 4 [20:26-22:17] - Future artificial agents could over-optimize ",
+          "char_count": 89,
+          "runs": [
+            {
+              "text": "Explanation: AI Risk Part 4 [20:26-22:17] - Future artificial agents could over-optimize ",
+              "char_range": [
+                0,
+                88
+              ],
+              "char_count": 89,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 33,
+          "bbox": [
+            108.0,
+            501.84,
+            516.76,
+            514.13
+          ],
+          "text": "and game faulty proxies, which could mean systems aggressively pursue goals and ",
+          "char_count": 80,
+          "runs": [
+            {
+              "text": "and game faulty proxies, which could mean systems aggressively pursue goals and ",
+              "char_range": [
+                0,
+                79
+              ],
+              "char_count": 80,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 34,
+          "bbox": [
+            108.0,
+            516.39,
+            375.6,
+            528.68
+          ],
+          "text": "create a world that is distinct from what humans value. ",
+          "char_count": 56,
+          "runs": [
+            {
+              "text": "create a world that is distinct from what humans value. ",
+              "char_range": [
+                0,
+                55
+              ],
+              "char_count": 56,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 35,
+          "bbox": [
+            144.0,
+            530.93,
+            150.11,
+            543.22
+          ],
+          "text": "  ",
+          "char_count": 2,
+          "runs": [
+            {
+              "text": "  ",
+              "char_range": [
+                0,
+                1
+              ],
+              "char_count": 2,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 36,
+          "bbox": [
+            90.0,
+            545.48,
+            524.67,
+            557.77
+          ],
+          "text": "4. According to the lecture, why might AI systems develop an “instrumental incentive” to ",
+          "char_count": 89,
+          "runs": [
+            {
+              "text": "4. According to the lecture, why might AI systems develop an “instrumental incentive” to ",
+              "char_range": [
+                0,
+                88
+              ],
+              "char_count": 89,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 37,
+          "bbox": [
+            108.0,
+            560.03,
+            176.43,
+            572.31
+          ],
+          "text": "seek power?  ",
+          "char_count": 13,
+          "runs": [
+            {
+              "text": "seek power?  ",
+              "char_range": [
+                0,
+                12
+              ],
+              "char_count": 13,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 38,
+          "bbox": [
+            126.0,
+            574.57,
+            403.05,
+            586.86
+          ],
+          "text": "a. They are explicitly programmed to dominate humans ",
+          "char_count": 53,
+          "runs": [
+            {
+              "text": "a. They are explicitly programmed to dominate humans ",
+              "char_range": [
+                0,
+                52
+              ],
+              "char_count": 53,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 39,
+          "bbox": [
+            126.0,
+            589.12,
+            472.51,
+            601.41
+          ],
+          "text": "b. Power and resources help them pursue their goals more effectively ",
+          "char_count": 69,
+          "runs": [
+            {
+              "text": "b. Power and resources help them pursue their goals more effectively ",
+              "char_range": [
+                0,
+                68
+              ],
+              "char_count": 69,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 40,
+          "bbox": [
+            126.0,
+            603.66,
+            417.74,
+            615.95
+          ],
+          "text": "c. It is a biological byproduct of the neural network design  ",
+          "char_count": 62,
+          "runs": [
+            {
+              "text": "c. It is a biological byproduct of the neural network design  ",
+              "char_range": [
+                0,
+                61
+              ],
+              "char_count": 62,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 41,
+          "bbox": [
+            126.0,
+            618.21,
+            451.94,
+            630.5
+          ],
+          "text": "d. They imitate human power-seeking behavior from training data ",
+          "char_count": 64,
+          "runs": [
+            {
+              "text": "d. They imitate human power-seeking behavior from training data ",
+              "char_range": [
+                0,
+                63
+              ],
+              "char_count": 64,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 42,
+          "bbox": [
+            144.0,
+            632.76,
+            147.06,
+            645.05
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 43,
+          "bbox": [
+            108.0,
+            647.3,
+            525.69,
+            659.59
+          ],
+          "text": "Explanation: AI Risk Part 4 [9:51-11:50] - By default, suitably strategic and intelligent ",
+          "char_count": 90,
+          "runs": [
+            {
+              "text": "Explanation: AI Risk Part 4 [9:51-11:50] - By default, suitably strategic and intelligent ",
+              "char_range": [
+                0,
+                89
+              ],
+              "char_count": 90,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 44,
+          "bbox": [
+            108.0,
+            661.85,
+            533.3,
+            674.14
+          ],
+          "text": "agents, engaging in suitable types of planning, will have instrumental incentives to gain ",
+          "char_count": 90,
+          "runs": [
+            {
+              "text": "agents, engaging in suitable types of planning, will have instrumental incentives to gain ",
+              "char_range": [
+                0,
+                89
+              ],
+              "char_count": 90,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 45,
+          "bbox": [
+            108.0,
+            676.4,
+            502.09,
+            688.68
+          ],
+          "text": "and maintain various types of power, since this power will help them pursue their ",
+          "char_count": 82,
+          "runs": [
+            {
+              "text": "and maintain various types of power, since this power will help them pursue their ",
+              "char_range": [
+                0,
+                81
+              ],
+              "char_count": 82,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 46,
+          "bbox": [
+            108.0,
+            690.94,
+            242.0,
+            703.23
+          ],
+          "text": "objectives more effectively. ",
+          "char_count": 29,
+          "runs": [
+            {
+              "text": "objectives more effectively. ",
+              "char_range": [
+                0,
+                28
+              ],
+              "char_count": 29,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 47,
+          "bbox": [
+            144.0,
+            705.49,
+            147.06,
+            717.78
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 48,
+          "bbox": [
+            90.0,
+            720.03,
+            413.87,
+            732.32
+          ],
+          "text": "5. What does the term “Treacherous Turns” refer to in AI safety?  ",
+          "char_count": 66,
+          "runs": [
+            {
+              "text": "5. What does the term “Treacherous Turns” refer to in AI safety?  ",
+              "char_range": [
+                0,
+                65
+              ],
+              "char_count": 66,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 49,
+          "bbox": [
+            126.0,
+            734.58,
+            341.37,
+            746.87
+          ],
+          "text": "a. Failures caused by biased training data  ",
+          "char_count": 44,
+          "runs": [
+            {
+              "text": "a. Failures caused by biased training data  ",
+              "char_range": [
+                0,
+                43
+              ],
+              "char_count": 44,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "total_characters": 2336,
+      "color_counts": {
+        "#FF0000": 574,
+        "#000000": 1762
+      },
+      "visual_check": {
+        "resolution": "1275x1650 @ 150 DPI",
+        "pure_red_pixels": 11556,
+        "antialiased_red_pixels": 10395,
+        "total_red_spectrum_pixels": 21951,
+        "mask_artifact": "reports/visual-diff/ground_truth_page_2_red_mask.png"
+      },
+      "lines": [
+        {
+          "line_number": 1,
+          "bbox": [
+            126.0,
+            36.36,
+            419.17,
+            48.65
+          ],
+          "text": "b. A system behaving differently once sufficiently capable   ",
+          "char_count": 61,
+          "runs": [
+            {
+              "text": "b. A system behaving differently once sufficiently capable   ",
+              "char_range": [
+                0,
+                60
+              ],
+              "char_count": 61,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 2,
+          "bbox": [
+            126.0,
+            50.91,
+            370.06,
+            63.2
+          ],
+          "text": "c. Intentional misuse of AI by malicious humans  ",
+          "char_count": 49,
+          "runs": [
+            {
+              "text": "c. Intentional misuse of AI by malicious humans  ",
+              "char_range": [
+                0,
+                48
+              ],
+              "char_count": 49,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 3,
+          "bbox": [
+            126.0,
+            65.45,
+            330.33,
+            77.74
+          ],
+          "text": "d. Over-optimization of proxy objectives  ",
+          "char_count": 42,
+          "runs": [
+            {
+              "text": "d. Over-optimization of proxy objectives  ",
+              "char_range": [
+                0,
+                41
+              ],
+              "char_count": 42,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 4,
+          "bbox": [
+            108.0,
+            80.0,
+            111.06,
+            92.29
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 5,
+          "bbox": [
+            108.0,
+            94.54,
+            528.76,
+            106.83
+          ],
+          "text": "Explanation: AI Risk Part 4 [22:18-23:34] - AI could behave differently once it has the ",
+          "char_count": 88,
+          "runs": [
+            {
+              "text": "Explanation: AI Risk Part 4 [22:18-23:34] - AI could behave differently once it has the ",
+              "char_range": [
+                0,
+                87
+              ],
+              "char_count": 88,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 6,
+          "bbox": [
+            108.0,
+            109.09,
+            184.38,
+            121.38
+          ],
+          "text": "ability to do so. ",
+          "char_count": 18,
+          "runs": [
+            {
+              "text": "ability to do so. ",
+              "char_range": [
+                0,
+                17
+              ],
+              "char_count": 18,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 7,
+          "bbox": [
+            72.0,
+            123.64,
+            75.06,
+            135.93
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 8,
+          "bbox": [
+            90.0,
+            138.18,
+            536.7,
+            150.47
+          ],
+          "text": "6. According to the “Swiss cheese model”, which statement best describes effective safety ",
+          "char_count": 90,
+          "runs": [
+            {
+              "text": "6. According to the “Swiss cheese model”, which statement best describes effective safety ",
+              "char_range": [
+                0,
+                89
+              ],
+              "char_count": 90,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 9,
+          "bbox": [
+            108.0,
+            152.73,
+            152.61,
+            165.02
+          ],
+          "text": "design?  ",
+          "char_count": 9,
+          "runs": [
+            {
+              "text": "design?  ",
+              "char_range": [
+                0,
+                8
+              ],
+              "char_count": 9,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 10,
+          "bbox": [
+            126.0,
+            167.28,
+            388.39,
+            179.57
+          ],
+          "text": "a. Rely on a single, highly robust safety mechanism  ",
+          "char_count": 53,
+          "runs": [
+            {
+              "text": "a. Rely on a single, highly robust safety mechanism  ",
+              "char_range": [
+                0,
+                52
+              ],
+              "char_count": 53,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 11,
+          "bbox": [
+            126.0,
+            181.82,
+            425.02,
+            194.11
+          ],
+          "text": "b. Implement safety measures randomly across the system  ",
+          "char_count": 57,
+          "runs": [
+            {
+              "text": "b. Implement safety measures randomly across the system  ",
+              "char_range": [
+                0,
+                56
+              ],
+              "char_count": 57,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 12,
+          "bbox": [
+            126.0,
+            196.37,
+            530.77,
+            208.66
+          ],
+          "text": "c. Use multiple layers of defense so that individual weaknesses are compensated ",
+          "char_count": 80,
+          "runs": [
+            {
+              "text": "c. Use multiple layers of defense so that individual weaknesses are compensated ",
+              "char_range": [
+                0,
+                79
+              ],
+              "char_count": 80,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 13,
+          "bbox": [
+            144.0,
+            210.92,
+            195.32,
+            223.2
+          ],
+          "text": "by others  ",
+          "char_count": 11,
+          "runs": [
+            {
+              "text": "by others  ",
+              "char_range": [
+                0,
+                10
+              ],
+              "char_count": 11,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 14,
+          "bbox": [
+            126.0,
+            225.46,
+            438.47,
+            237.75
+          ],
+          "text": "d. Eliminate safety measures if the AI system is well-designed  ",
+          "char_count": 64,
+          "runs": [
+            {
+              "text": "d. Eliminate safety measures if the AI system is well-designed  ",
+              "char_range": [
+                0,
+                63
+              ],
+              "char_count": 64,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 15,
+          "bbox": [
+            144.0,
+            240.01,
+            147.06,
+            252.3
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 16,
+          "bbox": [
+            108.0,
+            254.55,
+            500.82,
+            266.84
+          ],
+          "text": "Explanation: AI Risk Part 3 [8:18-10:48] - The Swiss Cheese model shows how ",
+          "char_count": 76,
+          "runs": [
+            {
+              "text": "Explanation: AI Risk Part 3 [8:18-10:48] - The Swiss Cheese model shows how ",
+              "char_range": [
+                0,
+                75
+              ],
+              "char_count": 76,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 17,
+          "bbox": [
+            108.0,
+            269.1,
+            487.22,
+            281.39
+          ],
+          "text": "technical factors can improve organizational safety. Multiple layers of defense ",
+          "char_count": 80,
+          "runs": [
+            {
+              "text": "technical factors can improve organizational safety. Multiple layers of defense ",
+              "char_range": [
+                0,
+                79
+              ],
+              "char_count": 80,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 18,
+          "bbox": [
+            108.0,
+            283.65,
+            544.46,
+            295.94
+          ],
+          "text": "compensate for each other’s individual weaknesses, leading to a low overall level of risk.  ",
+          "char_count": 92,
+          "runs": [
+            {
+              "text": "compensate for each other’s individual weaknesses, leading to a low overall level of risk.  ",
+              "char_range": [
+                0,
+                91
+              ],
+              "char_count": 92,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 19,
+          "bbox": [
+            144.0,
+            298.19,
+            147.06,
+            310.48
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 20,
+          "bbox": [
+            90.0,
+            312.74,
+            528.99,
+            325.03
+          ],
+          "text": "7. According to the lecture, what are the potential “double-edged sword” risks associated ",
+          "char_count": 90,
+          "runs": [
+            {
+              "text": "7. According to the lecture, what are the potential “double-edged sword” risks associated ",
+              "char_range": [
+                0,
+                89
+              ],
+              "char_count": 90,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 21,
+          "bbox": [
+            108.0,
+            327.29,
+            379.03,
+            339.57
+          ],
+          "text": "with AI in military applications?  (Select all that apply.) ",
+          "char_count": 60,
+          "runs": [
+            {
+              "text": "with AI in military applications?  (Select all that apply.) ",
+              "char_range": [
+                0,
+                59
+              ],
+              "char_count": 60,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 22,
+          "bbox": [
+            126.0,
+            341.83,
+            437.3,
+            354.12
+          ],
+          "text": "a. Autonomous weapons targeting humans with high precision ",
+          "char_count": 59,
+          "runs": [
+            {
+              "text": "a. Autonomous weapons targeting humans with high precision ",
+              "char_range": [
+                0,
+                58
+              ],
+              "char_count": 59,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 23,
+          "bbox": [
+            126.0,
+            356.38,
+            490.44,
+            368.67
+          ],
+          "text": "b. Complete elimination of the need for human strategic decision-making  ",
+          "char_count": 73,
+          "runs": [
+            {
+              "text": "b. Complete elimination of the need for human strategic decision-making  ",
+              "char_range": [
+                0,
+                72
+              ],
+              "char_count": 73,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 24,
+          "bbox": [
+            126.0,
+            370.92,
+            362.73,
+            383.21
+          ],
+          "text": "c. Lowering the barriers to large-scale violence ",
+          "char_count": 49,
+          "runs": [
+            {
+              "text": "c. Lowering the barriers to large-scale violence ",
+              "char_range": [
+                0,
+                48
+              ],
+              "char_count": 49,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 25,
+          "bbox": [
+            126.0,
+            385.47,
+            486.76,
+            397.76
+          ],
+          "text": "d. Autonomous retaliation systems increasing the risk of rapid escalation ",
+          "char_count": 74,
+          "runs": [
+            {
+              "text": "d. Autonomous retaliation systems increasing the risk of rapid escalation ",
+              "char_range": [
+                0,
+                73
+              ],
+              "char_count": 74,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 26,
+          "bbox": [
+            144.0,
+            400.02,
+            147.06,
+            412.31
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 27,
+          "bbox": [
+            108.0,
+            414.56,
+            533.84,
+            426.85
+          ],
+          "text": "Explanation: AI Risk Part 3 [1:02-2:55] - Low-cost automated weapons, such as drone ",
+          "char_count": 84,
+          "runs": [
+            {
+              "text": "Explanation: AI Risk Part 3 [1:02-2:55] - Low-cost automated weapons, such as drone ",
+              "char_range": [
+                0,
+                83
+              ],
+              "char_count": 84,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 28,
+          "bbox": [
+            108.0,
+            429.11,
+            516.15,
+            441.4
+          ],
+          "text": "swarms outfitted with explosives, could autonomously hunt human targets with high ",
+          "char_count": 82,
+          "runs": [
+            {
+              "text": "swarms outfitted with explosives, could autonomously hunt human targets with high ",
+              "char_range": [
+                0,
+                81
+              ],
+              "char_count": 82,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 29,
+          "bbox": [
+            108.0,
+            443.66,
+            503.92,
+            455.94
+          ],
+          "text": "precision, performing lethal operations for both militaries and terrorist groups and ",
+          "char_count": 85,
+          "runs": [
+            {
+              "text": "precision, performing lethal operations for both militaries and terrorist groups and ",
+              "char_range": [
+                0,
+                84
+              ],
+              "char_count": 85,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 30,
+          "bbox": [
+            108.0,
+            458.2,
+            326.12,
+            470.49
+          ],
+          "text": "lowering the barriers to large-scale violence. ",
+          "char_count": 47,
+          "runs": [
+            {
+              "text": "lowering the barriers to large-scale violence. ",
+              "char_range": [
+                0,
+                46
+              ],
+              "char_count": 47,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 31,
+          "bbox": [
+            144.0,
+            472.75,
+            147.06,
+            485.04
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 32,
+          "bbox": [
+            90.0,
+            487.29,
+            540.97,
+            499.58
+          ],
+          "text": "8. Which of the following are considered speculative hazards of AI? (Select all that apply.) ",
+          "char_count": 93,
+          "runs": [
+            {
+              "text": "8. Which of the following are considered speculative hazards of AI? (Select all that apply.) ",
+              "char_range": [
+                0,
+                92
+              ],
+              "char_count": 93,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 33,
+          "bbox": [
+            126.0,
+            501.84,
+            238.7,
+            514.13
+          ],
+          "text": "a. Eroded Epistemics ",
+          "char_count": 21,
+          "runs": [
+            {
+              "text": "a. Eroded Epistemics ",
+              "char_range": [
+                0,
+                20
+              ],
+              "char_count": 21,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 34,
+          "bbox": [
+            126.0,
+            516.39,
+            214.89,
+            528.68
+          ],
+          "text": "b. Enfeeblement ",
+          "char_count": 16,
+          "runs": [
+            {
+              "text": "b. Enfeeblement ",
+              "char_range": [
+                0,
+                15
+              ],
+              "char_count": 16,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 35,
+          "bbox": [
+            126.0,
+            530.93,
+            247.87,
+            543.22
+          ],
+          "text": "c. Deceptive Alignment ",
+          "char_count": 23,
+          "runs": [
+            {
+              "text": "c. Deceptive Alignment ",
+              "char_range": [
+                0,
+                22
+              ],
+              "char_count": 23,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 36,
+          "bbox": [
+            126.0,
+            545.48,
+            257.65,
+            557.77
+          ],
+          "text": "d. Hardware Degradation ",
+          "char_count": 24,
+          "runs": [
+            {
+              "text": "d. Hardware Degradation ",
+              "char_range": [
+                0,
+                23
+              ],
+              "char_count": 24,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 37,
+          "bbox": [
+            144.0,
+            560.03,
+            147.06,
+            572.31
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 38,
+          "bbox": [
+            108.0,
+            574.57,
+            534.87,
+            586.86
+          ],
+          "text": "Explanation: Slide 146 in the week’s lecture notes lists speculative hazards and failure ",
+          "char_count": 89,
+          "runs": [
+            {
+              "text": "Explanation: Slide 146 in the week’s lecture notes lists speculative hazards and failure ",
+              "char_range": [
+                0,
+                88
+              ],
+              "char_count": 89,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 39,
+          "bbox": [
+            108.0,
+            589.12,
+            150.16,
+            601.41
+          ],
+          "text": "modes.  ",
+          "char_count": 8,
+          "runs": [
+            {
+              "text": "modes.  ",
+              "char_range": [
+                0,
+                7
+              ],
+              "char_count": 8,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 40,
+          "bbox": [
+            144.0,
+            603.66,
+            147.06,
+            615.95
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 41,
+          "bbox": [
+            90.0,
+            618.21,
+            460.91,
+            630.5
+          ],
+          "text": "9. The Disaster Risk Equation can be mitigated by (Select all that apply.): ",
+          "char_count": 76,
+          "runs": [
+            {
+              "text": "9. The Disaster Risk Equation can be mitigated by (Select all that apply.): ",
+              "char_range": [
+                0,
+                75
+              ],
+              "char_count": 76,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 42,
+          "bbox": [
+            126.0,
+            632.76,
+            397.57,
+            645.05
+          ],
+          "text": "a. Improving agents’ robustness to withstand hazards  ",
+          "char_count": 54,
+          "runs": [
+            {
+              "text": "a. Improving agents’ robustness to withstand hazards  ",
+              "char_range": [
+                0,
+                53
+              ],
+              "char_count": 54,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 43,
+          "bbox": [
+            126.0,
+            647.3,
+            432.41,
+            659.59
+          ],
+          "text": "b. Identifying and mitigating hazards before they cause harm  ",
+          "char_count": 62,
+          "runs": [
+            {
+              "text": "b. Identifying and mitigating hazards before they cause harm  ",
+              "char_range": [
+                0,
+                61
+              ],
+              "char_count": 62,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 44,
+          "bbox": [
+            126.0,
+            661.85,
+            422.61,
+            674.14
+          ],
+          "text": "c. Increasing the number of parameters to drown out errors ",
+          "char_count": 59,
+          "runs": [
+            {
+              "text": "c. Increasing the number of parameters to drown out errors ",
+              "char_range": [
+                0,
+                58
+              ],
+              "char_count": 59,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 45,
+          "bbox": [
+            126.0,
+            676.4,
+            413.46,
+            688.68
+          ],
+          "text": "d. Reducing the severity of inherent model vulnerabilities  ",
+          "char_count": 60,
+          "runs": [
+            {
+              "text": "d. Reducing the severity of inherent model vulnerabilities  ",
+              "char_range": [
+                0,
+                59
+              ],
+              "char_count": 60,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 46,
+          "bbox": [
+            144.0,
+            690.94,
+            147.06,
+            703.23
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 47,
+          "bbox": [
+            108.0,
+            705.49,
+            484.36,
+            717.78
+          ],
+          "text": "Explanation: AI Risk Part 3 [29:45-34:02] - Each component has one way to ",
+          "char_count": 74,
+          "runs": [
+            {
+              "text": "Explanation: AI Risk Part 3 [29:45-34:02] - Each component has one way to ",
+              "char_range": [
+                0,
+                73
+              ],
+              "char_count": 74,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 48,
+          "bbox": [
+            108.0,
+            720.03,
+            517.55,
+            732.32
+          ],
+          "text": "mitigate/reduce it. Vulnerability: Robustness; Hazard Exposure: Monitoring; Hazard: ",
+          "char_count": 84,
+          "runs": [
+            {
+              "text": "mitigate/reduce it. Vulnerability: Robustness; Hazard Exposure: Monitoring; Hazard: ",
+              "char_range": [
+                0,
+                83
+              ],
+              "char_count": 84,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 49,
+          "bbox": [
+            108.0,
+            734.58,
+            162.99,
+            746.87
+          ],
+          "text": "Alignment. ",
+          "char_count": 11,
+          "runs": [
+            {
+              "text": "Alignment.",
+              "char_range": [
+                0,
+                9
+              ],
+              "char_count": 10,
+              "fill_color_hex": "#000000"
+            },
+            {
+              "text": " ",
+              "char_range": [
+                10,
+                10
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": false
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "total_characters": 1519,
+      "color_counts": {
+        "#FF0000": 165,
+        "#000000": 1354
+      },
+      "visual_check": {
+        "resolution": "1275x1650 @ 150 DPI",
+        "pure_red_pixels": 3273,
+        "antialiased_red_pixels": 2897,
+        "total_red_spectrum_pixels": 6170,
+        "mask_artifact": "reports/visual-diff/ground_truth_page_3_red_mask.png"
+      },
+      "lines": [
+        {
+          "line_number": 1,
+          "bbox": [
+            144.0,
+            36.36,
+            147.06,
+            48.65
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 2,
+          "bbox": [
+            90.0,
+            50.91,
+            535.66,
+            63.2
+          ],
+          "text": "10. Which risk refers to humans voluntarily ceding control of socio-economic functions to AI ",
+          "char_count": 93,
+          "runs": [
+            {
+              "text": "10. Which risk refers to humans voluntarily ceding control of socio-economic functions to AI ",
+              "char_range": [
+                0,
+                92
+              ],
+              "char_count": 93,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 3,
+          "bbox": [
+            108.0,
+            65.45,
+            296.82,
+            77.74
+          ],
+          "text": "to keep up with the automated world?  ",
+          "char_count": 38,
+          "runs": [
+            {
+              "text": "to keep up with the automated world?  ",
+              "char_range": [
+                0,
+                37
+              ],
+              "char_count": 38,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 4,
+          "bbox": [
+            126.0,
+            80.0,
+            238.7,
+            92.29
+          ],
+          "text": "a. Eroded Epistemics ",
+          "char_count": 21,
+          "runs": [
+            {
+              "text": "a. Eroded Epistemics ",
+              "char_range": [
+                0,
+                20
+              ],
+              "char_count": 21,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 5,
+          "bbox": [
+            126.0,
+            94.54,
+            247.87,
+            106.83
+          ],
+          "text": "b. Deceptive Alignment ",
+          "char_count": 23,
+          "runs": [
+            {
+              "text": "b. Deceptive Alignment ",
+              "char_range": [
+                0,
+                22
+              ],
+              "char_count": 23,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 6,
+          "bbox": [
+            126.0,
+            109.09,
+            216.7,
+            121.38
+          ],
+          "text": "c. Proxy Gaming ",
+          "char_count": 16,
+          "runs": [
+            {
+              "text": "c. Proxy Gaming ",
+              "char_range": [
+                0,
+                15
+              ],
+              "char_count": 16,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 7,
+          "bbox": [
+            126.0,
+            123.64,
+            214.89,
+            135.93
+          ],
+          "text": "d. Enfeeblement ",
+          "char_count": 16,
+          "runs": [
+            {
+              "text": "d. Enfeeblement ",
+              "char_range": [
+                0,
+                15
+              ],
+              "char_count": 16,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 8,
+          "bbox": [
+            144.0,
+            138.18,
+            147.06,
+            150.47
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 9,
+          "bbox": [
+            108.0,
+            152.73,
+            534.42,
+            165.02
+          ],
+          "text": "Explanation: AI Risk Part 3 [2:57-3:44] - As AIs automate increasingly many tasks, the ",
+          "char_count": 87,
+          "runs": [
+            {
+              "text": "Explanation: AI Risk Part 3 [2:57-3:44] - As AIs automate increasingly many tasks, the ",
+              "char_range": [
+                0,
+                86
+              ],
+              "char_count": 87,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 10,
+          "bbox": [
+            108.0,
+            167.28,
+            490.89,
+            179.57
+          ],
+          "text": "economy may become largely run by AIs. Eventually, this could lead to human ",
+          "char_count": 76,
+          "runs": [
+            {
+              "text": "economy may become largely run by AIs. Eventually, this could lead to human ",
+              "char_range": [
+                0,
+                75
+              ],
+              "char_count": 76,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 11,
+          "bbox": [
+            108.0,
+            181.82,
+            377.5,
+            194.11
+          ],
+          "text": "enfeeblement and dependence on AIs for basic needs. ",
+          "char_count": 52,
+          "runs": [
+            {
+              "text": "enfeeblement and dependence on AIs for basic needs. ",
+              "char_range": [
+                0,
+                51
+              ],
+              "char_count": 52,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 12,
+          "bbox": [
+            144.0,
+            196.37,
+            147.06,
+            208.66
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 13,
+          "bbox": [
+            90.0,
+            210.92,
+            523.45,
+            223.2
+          ],
+          "text": "11. In the risk decomposition framework, which combination of factors would result in the ",
+          "char_count": 90,
+          "runs": [
+            {
+              "text": "11. In the risk decomposition framework, which combination of factors would result in the ",
+              "char_range": [
+                0,
+                89
+              ],
+              "char_count": 90,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 14,
+          "bbox": [
+            108.0,
+            225.46,
+            280.86,
+            237.75
+          ],
+          "text": "HIGHEST risk from an AI system?  ",
+          "char_count": 33,
+          "runs": [
+            {
+              "text": "HIGHEST risk from an AI system?  ",
+              "char_range": [
+                0,
+                32
+              ],
+              "char_count": 33,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 15,
+          "bbox": [
+            126.0,
+            240.01,
+            448.49,
+            252.3
+          ],
+          "text": "a. High vulnerability, high hazard exposure, high hazard severity. ",
+          "char_count": 67,
+          "runs": [
+            {
+              "text": "a. High vulnerability, high hazard exposure, high hazard severity. ",
+              "char_range": [
+                0,
+                66
+              ],
+              "char_count": 67,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 16,
+          "bbox": [
+            126.0,
+            254.55,
+            441.76,
+            266.84
+          ],
+          "text": "b. Low vulnerability, high hazard exposure, low hazard severity. ",
+          "char_count": 65,
+          "runs": [
+            {
+              "text": "b. Low vulnerability, high hazard exposure, low hazard severity. ",
+              "char_range": [
+                0,
+                64
+              ],
+              "char_count": 65,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 17,
+          "bbox": [
+            126.0,
+            269.1,
+            441.76,
+            281.39
+          ],
+          "text": "c. Low vulnerability, low hazard exposure, high hazard severity. ",
+          "char_count": 65,
+          "runs": [
+            {
+              "text": "c. Low vulnerability, low hazard exposure, high hazard severity. ",
+              "char_range": [
+                0,
+                64
+              ],
+              "char_count": 65,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 18,
+          "bbox": [
+            126.0,
+            283.65,
+            447.25,
+            295.94
+          ],
+          "text": "d. High vulnerability, low hazard exposure, high hazard severity.  ",
+          "char_count": 67,
+          "runs": [
+            {
+              "text": "d. High vulnerability, low hazard exposure, high hazard severity.  ",
+              "char_range": [
+                0,
+                66
+              ],
+              "char_count": 67,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 19,
+          "bbox": [
+            144.0,
+            298.19,
+            147.06,
+            310.48
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 20,
+          "bbox": [
+            108.0,
+            312.74,
+            504.92,
+            325.03
+          ],
+          "text": "Explanation: Slide 107 in the week’s lecture notes shows the risk decomposition ",
+          "char_count": 80,
+          "runs": [
+            {
+              "text": "Explanation: Slide 107 in the week’s lecture notes shows the risk decomposition ",
+              "char_range": [
+                0,
+                79
+              ],
+              "char_count": 80,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 21,
+          "bbox": [
+            108.0,
+            327.29,
+            529.61,
+            339.57
+          ],
+          "text": "equation as a multiplicative (non-linear) equation. Increasing one increases the overall ",
+          "char_count": 89,
+          "runs": [
+            {
+              "text": "equation as a multiplicative (non-linear) equation. Increasing one increases the overall ",
+              "char_range": [
+                0,
+                88
+              ],
+              "char_count": 89,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 22,
+          "bbox": [
+            108.0,
+            341.83,
+            134.26,
+            354.12
+          ],
+          "text": "risk.  ",
+          "char_count": 7,
+          "runs": [
+            {
+              "text": "risk.  ",
+              "char_range": [
+                0,
+                6
+              ],
+              "char_count": 7,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 23,
+          "bbox": [
+            144.0,
+            356.38,
+            147.06,
+            368.67
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 24,
+          "bbox": [
+            90.0,
+            370.92,
+            463.0,
+            383.21
+          ],
+          "text": "12. According to the lecture, which of the following about the AI race is true? ",
+          "char_count": 80,
+          "runs": [
+            {
+              "text": "12. According to the lecture, which of the following about the AI race is true? ",
+              "char_range": [
+                0,
+                79
+              ],
+              "char_count": 80,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 25,
+          "bbox": [
+            126.0,
+            385.47,
+            459.24,
+            397.76
+          ],
+          "text": "a. AI systems naturally become safer as they grow more powerful.  ",
+          "char_count": 66,
+          "runs": [
+            {
+              "text": "a. AI systems naturally become safer as they grow more powerful.  ",
+              "char_range": [
+                0,
+                65
+              ],
+              "char_count": 66,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 26,
+          "bbox": [
+            126.0,
+            400.02,
+            440.97,
+            412.31
+          ],
+          "text": "b. The AI race reduces the need for regulation and monitoring.  ",
+          "char_count": 64,
+          "runs": [
+            {
+              "text": "b. The AI race reduces the need for regulation and monitoring.  ",
+              "char_range": [
+                0,
+                63
+              ],
+              "char_count": 64,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 27,
+          "bbox": [
+            126.0,
+            414.56,
+            530.8,
+            426.85
+          ],
+          "text": "c. It ensures faster AI development that guarantees equal benefits for all nations.  ",
+          "char_count": 85,
+          "runs": [
+            {
+              "text": "c. It ensures faster AI development that guarantees equal benefits for all nations.  ",
+              "char_range": [
+                0,
+                84
+              ],
+              "char_count": 85,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 28,
+          "bbox": [
+            126.0,
+            429.11,
+            519.79,
+            441.4
+          ],
+          "text": "d. AI competition may push to speed up development while giving up oversight. ",
+          "char_count": 78,
+          "runs": [
+            {
+              "text": "d. AI competition may push to speed up development while giving up oversight. ",
+              "char_range": [
+                0,
+                77
+              ],
+              "char_count": 78,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 29,
+          "bbox": [
+            144.0,
+            443.66,
+            147.06,
+            455.94
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#FF0000"
+            }
+          ],
+          "is_entirely_red": true,
+          "is_entirely_black": false
+        },
+        {
+          "line_number": 30,
+          "bbox": [
+            108.0,
+            458.2,
+            487.41,
+            470.49
+          ],
+          "text": "Explanation: AI Risk Part 3 [0:20-1:01] - Competition could push nations and ",
+          "char_count": 77,
+          "runs": [
+            {
+              "text": "Explanation: AI Risk Part 3 [0:20-1:01] - Competition could push nations and ",
+              "char_range": [
+                0,
+                76
+              ],
+              "char_count": 77,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 31,
+          "bbox": [
+            108.0,
+            472.75,
+            480.09,
+            485.04
+          ],
+          "text": "corporations to rush AI development, relinquishing control to these systems. ",
+          "char_count": 77,
+          "runs": [
+            {
+              "text": "corporations to rush AI development, relinquishing control to these systems. ",
+              "char_range": [
+                0,
+                76
+              ],
+              "char_count": 77,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        },
+        {
+          "line_number": 32,
+          "bbox": [
+            108.0,
+            487.29,
+            111.06,
+            499.58
+          ],
+          "text": " ",
+          "char_count": 1,
+          "runs": [
+            {
+              "text": " ",
+              "char_range": [
+                0,
+                0
+              ],
+              "char_count": 1,
+              "fill_color_hex": "#000000"
+            }
+          ],
+          "is_entirely_red": false,
+          "is_entirely_black": true
+        }
+      ]
+    }
+  ]
+}

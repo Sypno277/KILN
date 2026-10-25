@@ -1,0 +1,774 @@
+<!DOCTYPE html><html lang="en" class="js"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kiln | 100% Private Offline File &amp; PDF Processing Platform</title>
+<meta name="description" content="Kiln is a client-side file converter and PDF processing powerhouse. Convert files, merge, split, compress, edit, OCR, sign, and protect documents completely offline with 100% exact fidelity.">
+<link rel="canonical" href="https://filee.sh/">
+<link rel="alternate" hreflang="en" href="https://filee.sh/"><link rel="alternate" hreflang="ko" href="https://filee.sh/ko/"><link rel="alternate" hreflang="zh-CN" href="https://filee.sh/zh-cn/"><link rel="alternate" hreflang="x-default" href="https://filee.sh/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kiln">
+<meta property="og:title" content="Kiln | 100% Private Offline File &amp; PDF Processing Platform">
+<meta property="og:description" content="Private, client-side file converter and PDF processor. All conversions run locally inside your browser with zero server uploads and 100% content preservation.">
+<meta property="og:url" content="https://filee.sh/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@500;700;800&amp;display=swap">
+<link rel="stylesheet" href="/assets/styles.3a73bf9e74.css">
+<script src="/assets/libs/jszip.min.js"></script>
+<script src="/assets/libs/pdf-lib.min.js"></script>
+<script src="/assets/libs/pdf.min.js"></script>
+<script src="/assets/libs/xlsx.full.min.js"></script>
+<script src="/assets/libs/marked.min.js"></script>
+<script src="/assets/libs/js-yaml.min.js"></script>
+<script type="module" src="/assets/main.dc161caed7.js"></script>
+</head>
+<body class="lang-en">
+<a class="skip" href="#main">Skip to content</a>
+<div class="backdrop" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<div class="swirlzy-wrapper">
+  <!-- SWIRLZY NAV -->
+  <header class="swirlzy-nav">
+    <a class="swirlzy-brand" href="/" aria-label="Kiln">
+      <div class="swirlzy-brand-logo" style="background:#55ba86;">
+        <svg viewBox="0 0 32 32" style="width:22px;height:22px;fill:#1b4e3b;" aria-hidden="true">
+          <path d="M16 3C8.82 3 3 8.82 3 16s5.82 13 13 13 13-5.82 13-13c0-1.66-1.34-3-3-3s-3 1.34-3 3a7 7 0 1 1-7-7c1.66 0 3-1.34 3-3s-1.34-3-3-3z"/>
+        </svg>
+      </div>
+      <span class="swirlzy-brand-title">KILN</span>
+    </a>
+
+    <nav class="swirlzy-nav-links">
+      <a href="/app/" class="swirlzy-nav-link" style="color:#1b4e3b;font-weight:900;">⚡ Processing Page</a>
+      <a href="#pdf-tools" class="swirlzy-nav-link">33 Tools</a>
+      <a href="/formats/" class="swirlzy-nav-link">240+ Formats</a>
+      <a href="#architecture" class="swirlzy-nav-link">Engine</a>
+      <a href="/cli/" class="swirlzy-nav-link">CLI</a>
+      <a href="#faq" class="swirlzy-nav-link">FAQ</a>
+    </nav>
+
+    <div class="swirlzy-nav-right">
+      <details class="lang-menu">
+        <summary aria-label="Language"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.36,14C16.44,13.34 16.5,12.68 16.5,12C16.5,11.32 16.44,10.66 16.36,10H19.74C19.9,10.64 20,11.31 20,12C20,12.69 19.9,13.36 19.74,14M14.59,19.56C15.19,18.45 15.65,17.25 15.97,16H18.92C17.96,17.65 16.43,18.93 14.59,19.56M14.34,14H9.66C9.56,13.34 9.5,12.68 9.5,12C9.5,11.32 9.56,10.65 9.66,10H14.34C14.43,10.65 14.5,11.32 14.5,12C14.5,12.68 14.43,13.34 14.34,14M12,19.96C11.17,18.76 10.5,17.43 10.09,16H13.91C13.5,17.43 12.83,18.76 12,19.96M8,8H5.08C6.03,6.34 7.57,5.06 9.4,4.44C8.8,5.55 8.35,6.75 8,8M5.08,16H8C8.35,17.25 8.8,18.45 9.4,19.56C7.57,18.93 6.03,17.65 5.08,16M4.26,14C4.1,13.36 4,12.69 4,12C4,11.31 4.1,10.64 4.26,10H7.64C7.56,10.66 7.5,11.32 7.5,12C7.5,12.68 7.56,13.34 7.64,14M12,4.03C12.83,5.23 13.5,6.57 13.91,8H10.09C10.5,6.57 11.17,5.23 12,4.03M18.92,8H15.97C15.65,6.75 15.19,5.55 14.59,4.44C16.43,5.07 17.96,6.34 18.92,8M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg><span>English</span></summary>
+        <ul>
+          <li><a href="/" hreflang="en" lang="en" aria-current="page">English</a></li>
+          <li><a href="/ko/" hreflang="ko" lang="ko">한국어</a></li>
+          <li><a href="/zh-cn/" hreflang="zh-CN" lang="zh-CN">简体中文</a></li>
+        </ul>
+      </details>
+
+      <a href="/app/" class="swirlzy-cart-btn" title="Go to Kiln Processing Page">
+        <span>PROCESSING</span>
+        <span class="swirlzy-cart-badge">⚡</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- BENTO GRID -->
+  <div class="swirlzy-container">
+    <div class="swirlzy-bento-grid">
+      
+      <!-- LEFT COLUMN -->
+      <div class="swirlzy-col-left">
+        
+        <!-- CARD 1: HERO AMBER -->
+        <div class="swirlzy-card swirlzy-hero-card">
+          <!-- Sunburst rays top-left -->
+          <svg class="swirlzy-hero-rays" width="50" height="42" viewBox="0 0 50 42" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round">
+            <line x1="8" y1="28" x2="2" y2="34"/>
+            <line x1="22" y1="16" x2="16" y2="6"/>
+            <line x1="38" y1="26" x2="48" y2="30"/>
+          </svg>
+
+          <!-- Watermark puffy typography -->
+          <div class="swirlzy-hero-watermark">
+            <div class="swirlzy-hero-watermark-row">
+              <span class="swirlzy-wm-chunk">CO</span>
+              <span class="swirlzy-wm-chunk">NV</span>
+            </div>
+            <div class="swirlzy-hero-watermark-row">
+              <span class="swirlzy-wm-chunk">ER</span>
+              <span class="swirlzy-wm-chunk">T!</span>
+            </div>
+          </div>
+
+          <!-- Floating 3D Document Stack with 0 KB Uploaded Badge -->
+          <div class="swirlzy-hero-img-wrap">
+            <svg class="swirlzy-hero-svg" viewBox="0 0 320 280" width="320" height="280" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="shadow-pptx" x="20" y="130" width="280" height="150" filterUnits="userSpaceOnUse">
+                  <feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#8c4e0b" flood-opacity="0.32"/>
+                </filter>
+                <filter id="shadow-docx" x="30" y="75" width="260" height="150" filterUnits="userSpaceOnUse">
+                  <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#8c4e0b" flood-opacity="0.28"/>
+                </filter>
+                <filter id="shadow-pdf" x="40" y="15" width="240" height="150" filterUnits="userSpaceOnUse">
+                  <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#8c4e0b" flood-opacity="0.25"/>
+                </filter>
+                <linearGradient id="grad-pdf" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ff4b4b"/>
+                  <stop offset="100%" stop-color="#c62828"/>
+                </linearGradient>
+                <linearGradient id="grad-docx" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#29b6f6"/>
+                  <stop offset="100%" stop-color="#0277bd"/>
+                </linearGradient>
+                <linearGradient id="grad-pptx" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ffa726"/>
+                  <stop offset="100%" stop-color="#e65100"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Bottom Layer: PPTX Deck -->
+              <g filter="url(#shadow-pptx)" transform="rotate(4 160 190)">
+                <rect x="50" y="140" width="220" height="110" rx="22" fill="url(#grad-pptx)" stroke="#ffffff" stroke-width="2.5" stroke-opacity="0.7"/>
+                <rect x="70" y="160" width="45" height="70" rx="8" fill="#ffffff" fill-opacity="0.25"/>
+                <rect x="125" y="165" width="80" height="8" rx="4" fill="#ffffff" fill-opacity="0.9"/>
+                <rect x="125" y="182" width="60" height="6" rx="3" fill="#ffffff" fill-opacity="0.7"/>
+                <rect x="125" y="196" width="100" height="6" rx="3" fill="#ffffff" fill-opacity="0.5"/>
+                <rect x="125" y="210" width="45" height="18" rx="6" fill="#ffffff" fill-opacity="0.3"/>
+                <text x="76" y="203" font-family="'Fredoka', sans-serif" font-weight="900" font-size="16" fill="#ffffff">PPT</text>
+              </g>
+
+              <!-- Middle Layer: DOCX Document -->
+              <g filter="url(#shadow-docx)" transform="rotate(-3 160 135)">
+                <rect x="50" y="85" width="220" height="110" rx="22" fill="url(#grad-docx)" stroke="#ffffff" stroke-width="2.5" stroke-opacity="0.7"/>
+                <rect x="70" y="105" width="45" height="70" rx="8" fill="#ffffff" fill-opacity="0.25"/>
+                <rect x="125" y="110" width="90" height="8" rx="4" fill="#ffffff" fill-opacity="0.9"/>
+                <rect x="125" y="127" width="120" height="6" rx="3" fill="#ffffff" fill-opacity="0.7"/>
+                <rect x="125" y="141" width="105" height="6" rx="3" fill="#ffffff" fill-opacity="0.5"/>
+                <rect x="125" y="155" width="70" height="6" rx="3" fill="#ffffff" fill-opacity="0.5"/>
+                <text x="73" y="148" font-family="'Fredoka', sans-serif" font-weight="900" font-size="16" fill="#ffffff">DOC</text>
+              </g>
+
+              <!-- Top Layer: PDF Master Document -->
+              <g filter="url(#shadow-pdf)" transform="rotate(1 160 75)">
+                <rect x="50" y="25" width="220" height="110" rx="22" fill="url(#grad-pdf)" stroke="#ffffff" stroke-width="2.5" stroke-opacity="0.8"/>
+                <rect x="70" y="45" width="45" height="70" rx="8" fill="#ffffff" fill-opacity="0.25"/>
+                <rect x="125" y="50" width="100" height="8" rx="4" fill="#ffffff" fill-opacity="0.95"/>
+                <rect x="125" y="67" width="115" height="6" rx="3" fill="#ffffff" fill-opacity="0.75"/>
+                <rect x="125" y="81" width="90" height="6" rx="3" fill="#ffffff" fill-opacity="0.55"/>
+                <rect x="125" y="95" width="60" height="14" rx="4" fill="#ffffff" fill-opacity="0.3"/>
+                <text x="77" y="88" font-family="'Fredoka', sans-serif" font-weight="900" font-size="16" fill="#ffffff">PDF</text>
+              </g>
+            </svg>
+
+            <!-- Circular local privacy badge -->
+            <div class="swirlzy-price-badge">
+              <span class="swirlzy-price-badge-from">UPLOADED</span>
+              <span class="swirlzy-price-badge-num">0 KB</span>
+            </div>
+          </div>
+
+          <!-- Bottom Footer Bar -->
+          <div class="swirlzy-hero-footer">
+            <div class="swirlzy-hero-caption">
+              <p>100% Client-Side Engine,<br>built just for privacy</p>
+              <p class="portal-brief" style="font-size:11.5px;color:#4c391d;margin-top:6px;line-height:1.35;">Kiln is a 100% private offline file converter. Everything runs locally in your browser with zero cloud uploads and full document fidelity.</p>
+              <a href="/app/" class="swirlzy-hero-cta-btn">
+                <span>Go to Processing Page ⚡</span>
+                <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42 5.43 5.43H5v2z"/></svg>
+              </a>
+            </div>
+
+            <div class="swirlzy-hero-rating">
+              <span class="swirlzy-rating-num">( 100% )</span>
+              <span class="swirlzy-rating-sub">offline wasm</span>
+            </div>
+
+            <div class="swirlzy-hero-thumbs">
+              <div class="swirlzy-thumb" title="PDF Document" style="background:#ff4b4b;color:#fff;font-family:'Fredoka';font-weight:900;font-size:13px;">PDF</div>
+              <div class="swirlzy-thumb" title="Word Document" style="background:#29b6f6;color:#fff;font-family:'Fredoka';font-weight:900;font-size:13px;">DOC</div>
+              <div class="swirlzy-thumb" title="PowerPoint Presentation" style="background:#ffa726;color:#fff;font-family:'Fredoka';font-weight:900;font-size:13px;">PPT</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: TOP-5 PICKS WHITE -->
+        <div class="swirlzy-card swirlzy-picks-card">
+          <div class="swirlzy-picks-title">
+            TOP-5<br>PICKS
+          </div>
+
+          <div class="swirlzy-picks-list">
+            <!-- Row 1 -->
+            <div class="swirlzy-pick-row">
+              <div class="swirlzy-pick-left">
+                <div class="swirlzy-pick-icon" style="background:#fce0b6;">
+                  <span style="font-size:22px;">📄</span>
+                </div>
+                <div class="swirlzy-pick-name">PDF to<br>Word</div>
+              </div>
+              <div class="swirlzy-pick-desc">1:1 editable DOCX with intact layout &amp; fonts</div>
+              <div class="swirlzy-pick-price">&lt; 80ms<br><span style="font-size:12px;font-weight:600;color:#666;">WASM</span></div>
+              <a href="/pdf_to_word/" class="swirlzy-pick-add-btn" aria-label="Convert PDF to Word">
+                <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+              </a>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="swirlzy-pick-row">
+              <div class="swirlzy-pick-left">
+                <div class="swirlzy-pick-icon" style="background:#cbf3d2;">
+                  <span style="font-size:22px;">📊</span>
+                </div>
+                <div class="swirlzy-pick-name">PDF to<br>PPTX</div>
+              </div>
+              <div class="swirlzy-pick-desc">Vector slides with exact slide geometry</div>
+              <div class="swirlzy-pick-price">1:1<br><span style="font-size:12px;font-weight:600;color:#666;">native</span></div>
+              <a href="/pdf_to_powerpoint/" class="swirlzy-pick-add-btn" aria-label="Convert PDF to PPTX">
+                <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+              </a>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="swirlzy-pick-row">
+              <div class="swirlzy-pick-left">
+                <div class="swirlzy-pick-icon" style="background:#fcd3e1;">
+                  <span style="font-size:22px;">🗜️</span>
+                </div>
+                <div class="swirlzy-pick-name">Compress<br>PDF</div>
+              </div>
+              <div class="swirlzy-pick-desc">Smart vector &amp; raster deflate without quality loss</div>
+              <div class="swirlzy-pick-price">-75%<br><span style="font-size:12px;font-weight:600;color:#666;">lossless</span></div>
+              <a href="/compress_pdf/" class="swirlzy-pick-add-btn" aria-label="Compress PDF">
+                <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="swirlzy-col-right">
+
+        <!-- CARD 3: STUDIO SKY BLUE -->
+        <div class="swirlzy-card swirlzy-school-card">
+          <div class="swirlzy-school-title">STUDIO</div>
+          <div class="swirlzy-school-sub">Interactive Offline Workstation</div>
+
+          <div class="swirlzy-school-img-wrap">
+            <div class="swirlzy-join-badge">
+              <span class="swirlzy-join-text">TRY<br>NOW</span>
+              <svg class="swirlzy-join-arrow" viewBox="0 0 40 40" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="4 3" stroke-linecap="round">
+                <path d="M6 8 C 14 18, 22 24, 30 26"/>
+                <path d="M24 30 L 30 26 L 28 20"/>
+              </svg>
+            </div>
+            
+            <svg class="swirlzy-school-svg" viewBox="0 0 210 210" width="210" height="210" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="grad-studio-bg" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#b8e2ff"/>
+                  <stop offset="100%" stop-color="#69b4e8"/>
+                </radialGradient>
+                <filter id="shadow-laptop" x="20" y="30" width="170" height="150" filterUnits="userSpaceOnUse">
+                  <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#144265" flood-opacity="0.25"/>
+                </filter>
+              </defs>
+              <circle cx="105" cy="105" r="95" fill="url(#grad-studio-bg)" stroke="#ffffff" stroke-width="3"/>
+              
+              <g filter="url(#shadow-laptop)">
+                <rect x="45" y="48" width="120" height="82" rx="12" fill="#18222d" stroke="#ffffff" stroke-width="2"/>
+                <rect x="51" y="54" width="108" height="70" rx="8" fill="#0f171f"/>
+                
+                <circle cx="105" cy="89" r="24" stroke="#55ba86" stroke-width="3" stroke-dasharray="8 4"/>
+                <circle cx="105" cy="89" r="14" fill="#55ba86" fill-opacity="0.2"/>
+                <path d="M100 89 L104 93 L112 84" stroke="#55ba86" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                
+                <rect x="58" y="60" width="24" height="5" rx="2.5" fill="#f5ba5d"/>
+                <rect x="86" y="60" width="34" height="5" rx="2.5" fill="#ffffff" fill-opacity="0.4"/>
+                <rect x="68" y="116" width="74" height="4" rx="2" fill="#ffffff" fill-opacity="0.3"/>
+                
+                <path d="M36 130 C36 128, 38 126, 42 126 L168 126 C172 126, 174 128, 174 130 L180 144 C180 147, 177 149, 173 149 L37 149 C33 149, 30 147, 30 144 Z" fill="#2d3844" stroke="#ffffff" stroke-width="1.5"/>
+                <rect x="92" y="132" width="26" height="12" rx="3" fill="#18222d"/>
+              </g>
+            </svg>
+          </div>
+
+          <div class="swirlzy-school-actions">
+            <a href="/app/" id="go-to-processing-window" class="swirlzy-explore-btn">
+              OPEN PROCESSING PAGE ⚡
+            </a>
+            <a href="/app/" class="swirlzy-tool-icon-btn" aria-label="Open Kiln Processing Studio">
+              <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor;"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42 5.43 5.43H5v2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 4: EVERYDAY TERRACOTTA -->
+        <div class="swirlzy-card swirlzy-everyday-card">
+          <div class="swirlzy-everyday-title">EVERYDAY</div>
+
+          <div class="swirlzy-everyday-img-wrap">
+            <svg class="swirlzy-everyday-svg" viewBox="0 0 240 185" width="240" height="185" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="shadow-vault" x="10" y="10" width="220" height="170" filterUnits="userSpaceOnUse">
+                  <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#6e2505" flood-opacity="0.32"/>
+                </filter>
+                <linearGradient id="grad-vault-plate" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ffb082"/>
+                  <stop offset="100%" stop-color="#c8561d"/>
+                </linearGradient>
+              </defs>
+
+              <ellipse cx="120" cy="155" rx="88" ry="20" fill="#6e2505" fill-opacity="0.25"/>
+
+              <g filter="url(#shadow-vault)">
+                <rect x="36" y="20" width="168" height="136" rx="28" fill="url(#grad-vault-plate)" stroke="#ffffff" stroke-width="2.5" stroke-opacity="0.7"/>
+
+                <circle cx="120" cy="88" r="46" fill="#ffffff" fill-opacity="0.15" stroke="#ffffff" stroke-width="2" stroke-dasharray="6 3"/>
+
+                <path d="M120 62 L138 70 C138 90 128 104 120 110 C112 104 102 90 102 70 Z" fill="#1b4e3b" stroke="#f5ba5d" stroke-width="2"/>
+                <path d="M114 86 L118 90 L126 82" stroke="#f5ba5d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                <g transform="translate(64, 46)">
+                  <rect width="28" height="20" rx="6" fill="#d32f2f"/>
+                  <text x="4" y="14" font-family="'Fredoka', sans-serif" font-weight="900" font-size="9" fill="#ffffff">PDF</text>
+                </g>
+                <g transform="translate(148, 46)">
+                  <rect width="28" height="20" rx="6" fill="#1565c0"/>
+                  <text x="4" y="14" font-family="'Fredoka', sans-serif" font-weight="900" font-size="9" fill="#ffffff">DOC</text>
+                </g>
+                <g transform="translate(64, 110)">
+                  <rect width="28" height="20" rx="6" fill="#2e7d32"/>
+                  <text x="5" y="14" font-family="'Fredoka', sans-serif" font-weight="900" font-size="9" fill="#ffffff">XLS</text>
+                </g>
+                <g transform="translate(148, 110)">
+                  <rect width="28" height="20" rx="6" fill="#e65100"/>
+                  <text x="4" y="14" font-family="'Fredoka', sans-serif" font-weight="900" font-size="9" fill="#ffffff">PPT</text>
+                </g>
+              </g>
+            </svg>
+            <div class="swirlzy-everyday-badge">33 TOOLS</div>
+          </div>
+
+          <!-- Rays SVG -->
+          <svg class="swirlzy-everyday-rays" width="46" height="28" viewBox="0 0 46 28" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round">
+            <line x1="8" y1="20" x2="2" y2="26"/>
+            <line x1="23" y1="14" x2="23" y2="4"/>
+            <line x1="38" y1="20" x2="44" y2="26"/>
+          </svg>
+
+          <p class="swirlzy-everyday-footer">Instant local conversion, zero queues<br>right on your device!</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- SECTION 1: COLORFUL FILE FORMATS SHOWCASE -->
+  <section class="swirlzy-section" id="formats-showcase">
+    <div class="swirlzy-sec-header">
+      <span class="swirlzy-kicker-pill kicker-sky">UNIVERSAL FILE COMPATIBILITY</span>
+      <h2 class="swirlzy-sec-title">All Your Formats. Completely Local.</h2>
+      <p class="swirlzy-sec-desc">Convert documents, presentations, spreadsheets, vectors, and archives right inside your browser without uploading a single byte to external servers.</p>
+    </div>
+
+    <div class="swirlzy-format-grid">
+      <!-- 1. PDF -->
+      <a href="/pdf_to_word/" class="swirlzy-fmt-tile" title="Convert PDF to Word, PowerPoint, or JPG">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-pdf-en" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ff5252"/>
+              <stop offset="100%" stop-color="#d32f2f"/>
+            </linearGradient>
+            <filter id="f-pdf-en" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#b71c1c" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-pdf-en)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-pdf-en)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#ff867c"/>
+            <rect x="20" y="24" width="24" height="3" rx="1.5" fill="#ffffff" fill-opacity="0.8"/>
+            <rect x="20" y="31" width="18" height="3" rx="1.5" fill="#ffffff" fill-opacity="0.8"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#d32f2f" text-anchor="middle">PDF</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">PDF Document</span>
+        <span class="swirlzy-fmt-caption">Portable Document</span>
+        <span class="swirlzy-fmt-pill">To Word · PPT · JPG</span>
+      </a>
+
+      <!-- 2. DOCX -->
+      <a href="/word_to_pdf/" class="swirlzy-fmt-tile" title="Convert DOCX to PDF, HTML, or TXT">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-doc-en" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#29b6f6"/>
+              <stop offset="100%" stop-color="#0288d1"/>
+            </linearGradient>
+            <filter id="f-doc-en" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#01579b" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-doc-en)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-doc-en)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#b3e5fc"/>
+            <rect x="20" y="24" width="24" height="3" rx="1.5" fill="#ffffff" fill-opacity="0.8"/>
+            <rect x="20" y="31" width="18" height="3" rx="1.5" fill="#ffffff" fill-opacity="0.8"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="10" fill="#0288d1" text-anchor="middle">DOCX</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">Word Document</span>
+        <span class="swirlzy-fmt-caption">Microsoft Word</span>
+        <span class="swirlzy-fmt-pill">To PDF · TXT · HTML</span>
+      </a>
+
+      <!-- 3. PPTX -->
+      <a href="/powerpoint_to_pdf/" class="swirlzy-fmt-tile" title="Convert PowerPoint to PDF or Images">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-ppt-en" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ff8a65"/>
+              <stop offset="100%" stop-color="#e64a19"/>
+            </linearGradient>
+            <filter id="f-ppt-en" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#bf360c" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-ppt-en)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-ppt-en)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#ffccbc"/>
+            <circle cx="32" cy="28" r="8" fill="#ffffff" fill-opacity="0.3"/>
+            <path d="M32 28 L32 20 A8 8 0 0 1 40 28 Z" fill="#ffffff"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="10" fill="#e64a19" text-anchor="middle">PPTX</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">PowerPoint</span>
+        <span class="swirlzy-fmt-caption">Vector Presentations</span>
+        <span class="swirlzy-fmt-pill">To PDF · Vector Slides</span>
+      </a>
+
+      <!-- 4. XLSX -->
+      <a href="/excel_to_pdf/" class="swirlzy-fmt-tile" title="Convert Excel Spreadsheets to PDF, CSV, or JSON">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-xls-en" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#26a69a"/>
+              <stop offset="100%" stop-color="#00796b"/>
+            </linearGradient>
+            <filter id="f-xls-en" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#004d40" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-xls-en)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-xls-en)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#b2dfdb"/>
+            <rect x="22" y="23" width="9" height="5" rx="1" fill="#ffffff" fill-opacity="0.85"/>
+            <rect x="33" y="23" width="9" height="5" rx="1" fill="#ffffff" fill-opacity="0.85"/>
+            <rect x="22" y="30" width="9" height="5" rx="1" fill="#ffffff" fill-opacity="0.65"/>
+            <rect x="33" y="30" width="9" height="5" rx="1" fill="#ffffff" fill-opacity="0.65"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="10" fill="#00796b" text-anchor="middle">XLSX</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">Excel Sheets</span>
+        <span class="swirlzy-fmt-caption">Spreadsheets &amp; Grids</span>
+        <span class="swirlzy-fmt-pill">To PDF · CSV · JSON</span>
+      </a>
+
+      <!-- 5. PNG -->
+      <a href="/convert/png-to-jpg/" class="swirlzy-fmt-tile" title="Convert PNG to JPG, WEBP, or PDF">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-png-en" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ab47bc"/>
+              <stop offset="100%" stop-color="#7b1fa2"/>
+            </linearGradient>
+            <filter id="f-png-en" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#4a148c" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-png-en)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-png-en)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#e1bee7"/>
+            <circle cx="26" cy="24" r="3.5" fill="#ffffff"/>
+            <path d="M20 35 L28 26 L35 32 L40 28 L44 35 Z" fill="#ffffff" fill-opacity="0.85"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#7b1fa2" text-anchor="middle">PNG</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">Lossless PNG</span>
+        <span class="swirlzy-fmt-caption">Alpha Transparent</span>
+        <span class="swirlzy-fmt-pill">To JPG · WEBP · PDF</span>
+      </a>
+
+      <!-- 6. JPG -->
+      <a href="/jpg_to_pdf/" class="swirlzy-fmt-tile" title="Convert JPG to PDF, PNG, or WEBP">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-jpg-en" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ffa726"/>
+              <stop offset="100%" stop-color="#f57c00"/>
+            </linearGradient>
+            <filter id="f-jpg-en" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#e65100" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-jpg-en)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-jpg-en)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#ffe0b2"/>
+            <circle cx="32" cy="26" r="7" stroke="#ffffff" stroke-width="2.5"/>
+            <circle cx="32" cy="26" r="3" fill="#ffffff"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#f57c00" text-anchor="middle">JPG</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">Photo JPG</span>
+        <span class="swirlzy-fmt-caption">High Dynamic Range</span>
+        <span class="swirlzy-fmt-pill">To PDF · PNG · WEBP</span>
+      </a>
+
+      <!-- 7. SVG -->
+      <a href="/convert/svg-to-png/" class="swirlzy-fmt-tile" title="Convert SVG to PNG, PDF, or WEBP">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-svg-en" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ec407a"/>
+              <stop offset="100%" stop-color="#c2185b"/>
+            </linearGradient>
+            <filter id="f-svg-en" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#880e4f" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-svg-en)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-svg-en)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#f8bbd0"/>
+            <path d="M22 34 C 24 20, 40 20, 42 34" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+            <rect x="20" y="32" width="4" height="4" fill="#ffffff"/>
+            <rect x="40" y="32" width="4" height="4" fill="#ffffff"/>
+            <circle cx="32" cy="23" r="2.5" fill="#ffffff"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#c2185b" text-anchor="middle">SVG</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">Vector SVG</span>
+        <span class="swirlzy-fmt-caption">Scalable Curves</span>
+        <span class="swirlzy-fmt-pill">To PNG · PDF · WEBP</span>
+      </a>
+
+      <!-- 8. WEBP -->
+      <a href="/convert/webp-to-png/" class="swirlzy-fmt-tile" title="Convert WEBP to PNG, JPG, or PDF">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-webp-en" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#26c6da"/>
+              <stop offset="100%" stop-color="#0097a7"/>
+            </linearGradient>
+            <filter id="f-webp-en" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#006064" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-webp-en)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-webp-en)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#b2ebf2"/>
+            <path d="M32 18 L34 25 L41 27 L34 29 L32 36 L30 29 L23 27 L30 25 Z" fill="#ffffff"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="10" fill="#0097a7" text-anchor="middle">WEBP</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">WebP Graphic</span>
+        <span class="swirlzy-fmt-caption">Next-Gen Web Image</span>
+        <span class="swirlzy-fmt-pill">To PNG · JPG · PDF</span>
+      </a>
+
+      <!-- 9. HWP -->
+      <a href="/convert/pdf-to-hwp/" class="swirlzy-fmt-tile" title="Convert HWP and HWPX Documents">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-hwp-en" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#3f51b5"/>
+              <stop offset="100%" stop-color="#1a237e"/>
+            </linearGradient>
+            <filter id="f-hwp-en" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#0d1b4a" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-hwp-en)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-hwp-en)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#c5cae9"/>
+            <text x="32" y="32" font-family="'Fredoka', sans-serif" font-weight="900" font-size="15" fill="#ffffff" text-anchor="middle">한</text>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#1a237e" text-anchor="middle">HWP</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">Hangul HWP</span>
+        <span class="swirlzy-fmt-caption">Korean Word Standard</span>
+        <span class="swirlzy-fmt-pill">1:1 Native WASM</span>
+      </a>
+
+      <!-- 10. ZIP -->
+      <a href="/convert/zip-to-tar/" class="swirlzy-fmt-tile" title="Extract and Repack ZIP Archives">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-zip-en" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ff7043"/>
+              <stop offset="100%" stop-color="#d84315"/>
+            </linearGradient>
+            <filter id="f-zip-en" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#bf360c" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-zip-en)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-zip-en)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#ffccbc"/>
+            <rect x="30" y="16" width="4" height="2" fill="#ffffff"/>
+            <rect x="33" y="20" width="4" height="2" fill="#ffffff"/>
+            <rect x="30" y="24" width="4" height="2" fill="#ffffff"/>
+            <rect x="33" y="28" width="4" height="2" fill="#ffffff"/>
+            <circle cx="32" cy="33" r="3" fill="#ffffff"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#d84315" text-anchor="middle">ZIP</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">ZIP Archive</span>
+        <span class="swirlzy-fmt-caption">Compressed Bundle</span>
+        <span class="swirlzy-fmt-pill">Deflate &amp; Unpack</span>
+      </a>
+
+      <!-- 11. JSON -->
+      <a href="/convert/json-to-yaml/" class="swirlzy-fmt-tile" title="Convert JSON to YAML, CSV, or XML">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-json-en" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#00b4d8"/>
+              <stop offset="100%" stop-color="#0077b6"/>
+            </linearGradient>
+            <filter id="f-json-en" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#03045e" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-json-en)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-json-en)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#caf0f8"/>
+            <text x="32" y="32" font-family="'Fredoka', monospace" font-weight="900" font-size="15" fill="#ffffff" text-anchor="middle">{ ; }</text>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="10" fill="#0077b6" text-anchor="middle">JSON</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">Data JSON</span>
+        <span class="swirlzy-fmt-caption">Structured Payload</span>
+        <span class="swirlzy-fmt-pill">To YAML · CSV · XML</span>
+      </a>
+
+      <!-- 12. MP3 -->
+      <a href="/convert/mp3-to-wav/" class="swirlzy-fmt-tile" title="Convert MP3 Audio to WAV, OGG, or M4A">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-mp3-en" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ba68c8"/>
+              <stop offset="100%" stop-color="#6a1b9a"/>
+            </linearGradient>
+            <filter id="f-mp3-en" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#4a148c" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-mp3-en)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-mp3-en)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#e1bee7"/>
+            <circle cx="28" cy="33" r="3.5" fill="#ffffff"/>
+            <path d="M31.5 33 L31.5 20 L39 18 L39 30" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="36" cy="30" r="3" fill="#ffffff"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#6a1b9a" text-anchor="middle">MP3</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">Audio MP3</span>
+        <span class="swirlzy-fmt-caption">Digital Sound Stream</span>
+        <span class="swirlzy-fmt-pill">To WAV · OGG · M4A</span>
+      </a>
+    </div>
+
+    <div style="text-align:center;margin-top:20px;">
+      <a href="/formats/" class="brutal-btn brutal-btn-white" style="font-size:15px;padding:12px 28px;">
+        <span>Browse All 240+ Supported Formats &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION 2: 3 CANDY FEATURE PILLARS -->
+  <section class="swirlzy-section">
+    <div class="swirlzy-sec-header">
+      <span class="swirlzy-kicker-pill kicker-mint">CLIENT-FIRST PRINCIPLES</span>
+      <h2 class="swirlzy-sec-title">Engineered for Joy &amp; Absolute Privacy</h2>
+      <p class="swirlzy-sec-desc">No servers listening, no surveillance trackers, no paywalled restrictions. Just pure local WebAssembly power.</p>
+    </div>
+
+    <div class="swirlzy-candy-grid">
+      <!-- Pillar 1: Mint Sage -->
+      <div class="swirlzy-candy-card candy-mint">
+        <div class="swirlzy-candy-icon-box">🛡️</div>
+        <h3 class="swirlzy-candy-h3">100% Client-Side WASM</h3>
+        <p class="swirlzy-candy-p">Every conversion executes in your device's browser memory. Disconnect your Wi-Fi or turn on Airplane Mode: Kiln operates with zero network latency and zero data leakage.</p>
+      </div>
+
+      <!-- Pillar 2: Sky Blue -->
+      <div class="swirlzy-candy-card candy-sky">
+        <div class="swirlzy-candy-icon-box">📐</div>
+        <h3 class="swirlzy-candy-h3">1:1 Native Geometry</h3>
+        <p class="swirlzy-candy-p">Continuous baseline clustering prevents overlapping text. Master vector shapes, embedded RGB colors, and custom fonts are preserved with millimeter precision.</p>
+      </div>
+
+      <!-- Pillar 3: Honey Amber -->
+      <div class="swirlzy-candy-card candy-amber">
+        <div class="swirlzy-candy-icon-box">⚡</div>
+        <h3 class="swirlzy-candy-h3">No Limits, No Paywalls</h3>
+        <p class="swirlzy-candy-p">Process massive 500MB+ documents without arbitrary 25MB cloud paywalls. Instant local conversion with unlimited file sizes bounded only by your machine's RAM.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: JOYFUL SWIRLZY CALL TO ACTION -->
+  <section class="swirlzy-section">
+    <div class="swirlzy-cta-box">
+      <h2 class="swirlzy-cta-h2">Fast, Private Conversions Right Now.</h2>
+      <p class="swirlzy-cta-p">Step into the Kiln Processing Studio or drag files right into the interactive dial. No accounts, no subscriptions, zero data ever leaves your computer.</p>
+      <div class="swirlzy-cta-actions">
+        <a href="/app/" class="brutal-btn brutal-btn-dark" style="font-size:18px;padding:18px 36px;">
+          <span>Launch Kiln Processing Studio ⚡</span>
+        </a>
+        <a href="/formats/" class="brutal-btn brutal-btn-white" style="font-size:18px;padding:18px 32px;">
+          <span>Browse 240+ Formats &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="swirlzy-footer">
+  <div style="display:flex;align-items:center;gap:12px;">
+    <svg class="swirlzy-brand-logo" viewBox="0 0 36 36" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="18" r="16" fill="#55ba86" stroke="#1b4e3b" stroke-width="2"/>
+      <path d="M12 18 C12 13 24 13 24 18 C24 22 15 23 15 20 C15 18 21 18 21 19" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="swirlzy-footer-brand">KILN PLATFORM</div>
+      <div style="font-size:12.5px;color:var(--muted);font-family:var(--font-swirlzy-sans);">100% Client-Side Private Document &amp; File Processing Engine &middot; Open Core</div>
+    </div>
+  </div>
+
+  <div class="swirlzy-footer-links">
+    <a href="/app/">Processing Studio</a>
+    <a href="/formats/">Format Catalog</a>
+    <a href="/cli/">CLI Reference</a>
+  </div>
+
+  <div class="swirlzy-footer-copy">
+    &copy; Kiln Platform &middot; All operations executed locally on your device &middot; Zero cloud uploads &middot; No cookies &middot; No trackers
+  </div>
+</footer>
+
+
+</body></html>

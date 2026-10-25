@@ -225,6 +225,29 @@ async function runBatch0Verification() {
   assertCheck('Guard fails loudly when two conversions after code change produce byte-identical PPTX', guardCaughtPptx);
 
   // -------------------------------------------------------------------------
+  // ITEM 4: SHA-256 Input Checksum & Stored Checksum Integrity Verification
+  // -------------------------------------------------------------------------
+  console.log('\n--- Item 4: Input SHA-256 Checksum & Stored Checksum Integrity Verification ---');
+
+  const expectedRealSha256 = crypto.createHash('sha256').update(fixtureBuf).digest('hex');
+  const computedSha256 = await engine.computeFileSha256(fixtureFile);
+  assertCheck('computeFileSha256 accurately computes fixture SHA-256', computedSha256 === expectedRealSha256);
+
+  // Convert with convert() and verify conversionReport.inputSha256
+  const convertResult = await engine.convert(fixtureFile, 'docx', { expectedSha256: expectedRealSha256 });
+  const reportInputSha256 = convertResult.conversionReport?.inputSha256 || convertResult.report?.inputSha256;
+  assertCheck('Conversion report records input SHA-256 matching input bytes', reportInputSha256 === expectedRealSha256);
+
+  // Refuse conversion when stored checksum does not match
+  let refusalCaught = false;
+  try {
+    await engine.convert(fixtureFile, 'docx', { expectedSha256: 'tampered_sha256_000000000000000000000000000000000000000000000000' });
+  } catch (err) {
+    refusalCaught = err.message.includes('[INPUT_INTEGRITY_VIOLATION]');
+  }
+  assertCheck('Refuses to convert and fails loudly when stored checksum does not match input', refusalCaught);
+
+  // -------------------------------------------------------------------------
   // SUMMARY
   // -------------------------------------------------------------------------
   console.log('\n===============================================================');

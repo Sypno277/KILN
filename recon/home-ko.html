@@ -1,0 +1,760 @@
+<!DOCTYPE html><html lang="ko" class="js"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kiln | 100% 프라이빗 오프라인 파일 및 PDF 처리 플랫폼</title>
+<meta name="description" content="Kiln은 브라우저 내부에서 100% 로컬로 구동되는 클라이언트 사이드 파일 변환 및 PDF 처리 플랫폼입니다. 파일 변환, 병합, 분할, 압축, 편집, 서명 등 원본 손상 없이 처리합니다.">
+<link rel="canonical" href="https://filee.sh/ko/">
+<link rel="alternate" hreflang="en" href="https://filee.sh/"><link rel="alternate" hreflang="ko" href="https://filee.sh/ko/"><link rel="alternate" hreflang="zh-CN" href="https://filee.sh/zh-cn/"><link rel="alternate" hreflang="x-default" href="https://filee.sh/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kiln">
+<meta property="og:title" content="Kiln | 100% 프라이빗 오프라인 파일 및 PDF 처리 플랫폼">
+<meta property="og:description" content="서버 업로드 없는 100% 로컬 파일 변환 및 PDF 워크스테이션.">
+<meta property="og:url" content="https://filee.sh/ko/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/assets/styles.3a73bf9e74.css">
+<script src="/assets/libs/jszip.min.js"></script>
+<script src="/assets/libs/pdf-lib.min.js"></script>
+<script src="/assets/libs/pdf.min.js"></script>
+<script src="/assets/libs/xlsx.full.min.js"></script>
+<script src="/assets/libs/marked.min.js"></script>
+<script src="/assets/libs/js-yaml.min.js"></script>
+<script type="module" src="/assets/main.dc161caed7.js"></script>
+</head>
+<body class="lang-ko">
+<a class="skip" href="#main">본문 바로가기</a>
+<div class="backdrop" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<div class="swirlzy-wrapper">
+  <!-- SWIRLZY NAV -->
+  <header class="swirlzy-nav">
+    <a class="swirlzy-brand" href="/ko/" aria-label="Kiln">
+      <div class="swirlzy-brand-logo" style="background:#55ba86;">
+        <svg viewBox="0 0 32 32" style="width:22px;height:22px;fill:#1b4e3b;" aria-hidden="true">
+          <path d="M16 3C8.82 3 3 8.82 3 16s5.82 13 13 13 13-5.82 13-13c0-1.66-1.34-3-3-3s-3 1.34-3 3a7 7 0 1 1-7-7c1.66 0 3-1.34 3-3s-1.34-3-3-3z"/>
+        </svg>
+      </div>
+      <span class="swirlzy-brand-title">KILN</span>
+    </a>
+
+    <nav class="swirlzy-nav-links">
+      <a href="/ko/app/" class="swirlzy-nav-link" style="color:#1b4e3b;font-weight:900;">⚡ 처리 페이지</a>
+      <a href="/ko/app/" class="swirlzy-nav-link">33개 도구</a>
+      <a href="/ko/formats/" class="swirlzy-nav-link">240+ 포맷</a>
+      <a href="/ko/cli/" class="swirlzy-nav-link">CLI</a>
+    </nav>
+
+    <div class="swirlzy-nav-right">
+            <details class="lang-menu">
+        <summary aria-label="언어"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg><span>한국어</span></summary>
+        <ul>
+          <li><a href="/" hreflang="en" lang="en">English</a></li>
+          <li><a href="/ko/" hreflang="ko" lang="ko" aria-current="page">한국어</a></li>
+          <li><a href="/zh-cn/" hreflang="zh-CN" lang="zh-CN">简体中文</a></li>
+        </ul>
+      </details>
+
+      <a href="/ko/app/" class="swirlzy-cart-btn" title="Kiln 처리 페이지로 이동">
+        <span>처리 페이지</span>
+        <span class="swirlzy-cart-badge">⚡</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- BENTO GRID -->
+  <div class="swirlzy-container">
+    <div class="swirlzy-bento-grid">
+      
+      <!-- LEFT COLUMN -->
+      <div class="swirlzy-col-left">
+        
+        <!-- CARD 1: HERO AMBER -->
+        <div class="swirlzy-card swirlzy-hero-card">
+          <svg class="swirlzy-hero-rays" width="50" height="42" viewBox="0 0 50 42" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round">
+            <line x1="8" y1="28" x2="2" y2="34"/>
+            <line x1="22" y1="16" x2="16" y2="6"/>
+            <line x1="38" y1="26" x2="48" y2="30"/>
+          </svg>
+
+          <div class="swirlzy-hero-watermark">
+            <div class="swirlzy-hero-watermark-row">
+              <span class="swirlzy-wm-chunk">CO</span>
+              <span class="swirlzy-wm-chunk">NV</span>
+            </div>
+            <div class="swirlzy-hero-watermark-row">
+              <span class="swirlzy-wm-chunk">ER</span>
+              <span class="swirlzy-wm-chunk">T!</span>
+            </div>
+          </div>
+
+          <div class="swirlzy-hero-img-wrap">
+            <svg class="swirlzy-hero-svg" viewBox="0 0 320 280" width="320" height="280" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="shadow-pptx-ko" x="20" y="130" width="280" height="150" filterUnits="userSpaceOnUse">
+                  <feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#8c4e0b" flood-opacity="0.32"/>
+                </filter>
+                <filter id="shadow-docx-ko" x="30" y="75" width="260" height="150" filterUnits="userSpaceOnUse">
+                  <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#8c4e0b" flood-opacity="0.28"/>
+                </filter>
+                <filter id="shadow-pdf-ko" x="40" y="15" width="240" height="150" filterUnits="userSpaceOnUse">
+                  <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#8c4e0b" flood-opacity="0.25"/>
+                </filter>
+                <linearGradient id="grad-pdf-ko" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ff4b4b"/>
+                  <stop offset="100%" stop-color="#c62828"/>
+                </linearGradient>
+                <linearGradient id="grad-docx-ko" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#29b6f6"/>
+                  <stop offset="100%" stop-color="#0277bd"/>
+                </linearGradient>
+                <linearGradient id="grad-pptx-ko" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ffa726"/>
+                  <stop offset="100%" stop-color="#e65100"/>
+                </linearGradient>
+              </defs>
+
+              <g filter="url(#shadow-pptx-ko)" transform="rotate(4 160 190)">
+                <rect x="50" y="140" width="220" height="110" rx="22" fill="url(#grad-pptx-ko)" stroke="#ffffff" stroke-width="2.5" stroke-opacity="0.7"/>
+                <rect x="70" y="160" width="45" height="70" rx="8" fill="#ffffff" fill-opacity="0.25"/>
+                <rect x="125" y="165" width="80" height="8" rx="4" fill="#ffffff" fill-opacity="0.9"/>
+                <rect x="125" y="182" width="60" height="6" rx="3" fill="#ffffff" fill-opacity="0.7"/>
+                <rect x="125" y="196" width="100" height="6" rx="3" fill="#ffffff" fill-opacity="0.5"/>
+                <rect x="125" y="210" width="45" height="18" rx="6" fill="#ffffff" fill-opacity="0.3"/>
+                <text x="76" y="203" font-family="'Fredoka', sans-serif" font-weight="900" font-size="16" fill="#ffffff">PPT</text>
+              </g>
+
+              <g filter="url(#shadow-docx-ko)" transform="rotate(-3 160 135)">
+                <rect x="50" y="85" width="220" height="110" rx="22" fill="url(#grad-docx-ko)" stroke="#ffffff" stroke-width="2.5" stroke-opacity="0.7"/>
+                <rect x="70" y="105" width="45" height="70" rx="8" fill="#ffffff" fill-opacity="0.25"/>
+                <rect x="125" y="110" width="90" height="8" rx="4" fill="#ffffff" fill-opacity="0.9"/>
+                <rect x="125" y="127" width="120" height="6" rx="3" fill="#ffffff" fill-opacity="0.7"/>
+                <rect x="125" y="141" width="105" height="6" rx="3" fill="#ffffff" fill-opacity="0.5"/>
+                <rect x="125" y="155" width="70" height="6" rx="3" fill="#ffffff" fill-opacity="0.5"/>
+                <text x="73" y="148" font-family="'Fredoka', sans-serif" font-weight="900" font-size="16" fill="#ffffff">DOC</text>
+              </g>
+
+              <g filter="url(#shadow-pdf-ko)" transform="rotate(1 160 75)">
+                <rect x="50" y="25" width="220" height="110" rx="22" fill="url(#grad-pdf-ko)" stroke="#ffffff" stroke-width="2.5" stroke-opacity="0.8"/>
+                <rect x="70" y="45" width="45" height="70" rx="8" fill="#ffffff" fill-opacity="0.25"/>
+                <rect x="125" y="50" width="100" height="8" rx="4" fill="#ffffff" fill-opacity="0.95"/>
+                <rect x="125" y="67" width="115" height="6" rx="3" fill="#ffffff" fill-opacity="0.75"/>
+                <rect x="125" y="81" width="90" height="6" rx="3" fill="#ffffff" fill-opacity="0.55"/>
+                <rect x="125" y="95" width="60" height="14" rx="4" fill="#ffffff" fill-opacity="0.3"/>
+                <text x="77" y="88" font-family="'Fredoka', sans-serif" font-weight="900" font-size="16" fill="#ffffff">PDF</text>
+              </g>
+            </svg>
+
+            <div class="swirlzy-price-badge">
+              <span class="swirlzy-price-badge-from">업로드</span>
+              <span class="swirlzy-price-badge-num">0 KB</span>
+            </div>
+          </div>
+
+          <div class="swirlzy-hero-footer">
+            <div class="swirlzy-hero-caption">
+              <p>100% 클라이언트 로컬 엔진,<br>완벽한 프라이버시 보장</p>
+              <p class="portal-brief" style="font-size:11.5px;color:#4c391d;margin-top:6px;line-height:1.35;">Kiln은 보안과 속도를 극대화한 브라우저 기반의 로컬 파일 변환 및 문서 처리 플랫폼입니다. 서버 업로드 없이 100% 로컬 연산으로 실행됩니다.</p>
+              <a href="/ko/app/" class="swirlzy-hero-cta-btn">
+                <span>처리 페이지로 이동 ⚡</span>
+                <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42 5.43 5.43H5v2z"/></svg>
+              </a>
+            </div>
+
+            <div class="swirlzy-hero-rating">
+              <span class="swirlzy-rating-num">( 100% )</span>
+              <span class="swirlzy-rating-sub">offline wasm</span>
+            </div>
+
+            <div class="swirlzy-hero-thumbs">
+              <div class="swirlzy-thumb" title="PDF 문서" style="background:#ff4b4b;color:#fff;font-family:'Fredoka';font-weight:900;font-size:13px;">PDF</div>
+              <div class="swirlzy-thumb" title="Word 문서" style="background:#29b6f6;color:#fff;font-family:'Fredoka';font-weight:900;font-size:13px;">DOC</div>
+              <div class="swirlzy-thumb" title="PowerPoint 발표" style="background:#ffa726;color:#fff;font-family:'Fredoka';font-weight:900;font-size:13px;">PPT</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: TOP-5 PICKS WHITE -->
+        <div class="swirlzy-card swirlzy-picks-card">
+          <div class="swirlzy-picks-title">
+            TOP-5<br>PICKS
+          </div>
+
+          <div class="swirlzy-picks-list">
+            <div class="swirlzy-pick-row">
+              <div class="swirlzy-pick-left">
+                <div class="swirlzy-pick-icon" style="background:#fce0b6;">
+                  <span style="font-size:22px;">📄</span>
+                </div>
+                <div class="swirlzy-pick-name">PDF to<br>Word</div>
+              </div>
+              <div class="swirlzy-pick-desc">원본 서식과 폰트를 1:1 완벽 보존하는 DOCX 변환</div>
+              <div class="swirlzy-pick-price">&lt; 80ms<br><span style="font-size:12px;font-weight:600;color:#666;">WASM</span></div>
+              <a href="/ko/app/" class="swirlzy-pick-add-btn" aria-label="PDF to Word">
+                <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+              </a>
+            </div>
+
+            <div class="swirlzy-pick-row">
+              <div class="swirlzy-pick-left">
+                <div class="swirlzy-pick-icon" style="background:#cbf3d2;">
+                  <span style="font-size:22px;">📊</span>
+                </div>
+                <div class="swirlzy-pick-name">PDF to<br>PPTX</div>
+              </div>
+              <div class="swirlzy-pick-desc">슬라이드 기하학 및 벡터 그래픽 정밀 보존</div>
+              <div class="swirlzy-pick-price">1:1<br><span style="font-size:12px;font-weight:600;color:#666;">native</span></div>
+              <a href="/ko/app/" class="swirlzy-pick-add-btn" aria-label="PDF to PPTX">
+                <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+              </a>
+            </div>
+
+            <div class="swirlzy-pick-row">
+              <div class="swirlzy-pick-left">
+                <div class="swirlzy-pick-icon" style="background:#fcd3e1;">
+                  <span style="font-size:22px;">🗜️</span>
+                </div>
+                <div class="swirlzy-pick-name">PDF<br>압축</div>
+              </div>
+              <div class="swirlzy-pick-desc">품질 손실 없는 지능형 벡터 및 래스터 압축</div>
+              <div class="swirlzy-pick-price">-75%<br><span style="font-size:12px;font-weight:600;color:#666;">lossless</span></div>
+              <a href="/ko/app/" class="swirlzy-pick-add-btn" aria-label="PDF 압축">
+                <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="swirlzy-col-right">
+
+        <!-- CARD 3: STUDIO SKY BLUE -->
+        <div class="swirlzy-card swirlzy-school-card">
+          <div class="swirlzy-school-title">STUDIO</div>
+          <div class="swirlzy-school-sub">대화형 오프라인 워크스테이션</div>
+
+          <div class="swirlzy-school-img-wrap">
+            <div class="swirlzy-join-badge">
+              <span class="swirlzy-join-text">TRY<br>NOW</span>
+              <svg class="swirlzy-join-arrow" viewBox="0 0 40 40" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="4 3" stroke-linecap="round">
+                <path d="M6 8 C 14 18, 22 24, 30 26"/>
+                <path d="M24 30 L 30 26 L 28 20"/>
+              </svg>
+            </div>
+            
+            <svg class="swirlzy-school-svg" viewBox="0 0 210 210" width="210" height="210" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="grad-studio-bg-ko" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#b8e2ff"/>
+                  <stop offset="100%" stop-color="#69b4e8"/>
+                </radialGradient>
+                <filter id="shadow-laptop-ko" x="20" y="30" width="170" height="150" filterUnits="userSpaceOnUse">
+                  <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#144265" flood-opacity="0.25"/>
+                </filter>
+              </defs>
+              <circle cx="105" cy="105" r="95" fill="url(#grad-studio-bg-ko)" stroke="#ffffff" stroke-width="3"/>
+              
+              <g filter="url(#shadow-laptop-ko)">
+                <rect x="45" y="48" width="120" height="82" rx="12" fill="#18222d" stroke="#ffffff" stroke-width="2"/>
+                <rect x="51" y="54" width="108" height="70" rx="8" fill="#0f171f"/>
+                
+                <circle cx="105" cy="89" r="24" stroke="#55ba86" stroke-width="3" stroke-dasharray="8 4"/>
+                <circle cx="105" cy="89" r="14" fill="#55ba86" fill-opacity="0.2"/>
+                <path d="M100 89 L104 93 L112 84" stroke="#55ba86" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                
+                <rect x="58" y="60" width="24" height="5" rx="2.5" fill="#f5ba5d"/>
+                <rect x="86" y="60" width="34" height="5" rx="2.5" fill="#ffffff" fill-opacity="0.4"/>
+                <rect x="68" y="116" width="74" height="4" rx="2" fill="#ffffff" fill-opacity="0.3"/>
+                
+                <path d="M36 130 C36 128, 38 126, 42 126 L168 126 C172 126, 174 128, 174 130 L180 144 C180 147, 177 149, 173 149 L37 149 C33 149, 30 147, 30 144 Z" fill="#2d3844" stroke="#ffffff" stroke-width="1.5"/>
+                <rect x="92" y="132" width="26" height="12" rx="3" fill="#18222d"/>
+              </g>
+            </svg>
+          </div>
+
+          <div class="swirlzy-school-actions">
+            <a href="/app/" id="go-to-processing-window" class="swirlzy-explore-btn">
+              처리 페이지 열기 ⚡
+            </a>
+            <a href="/ko/app/" class="swirlzy-tool-icon-btn" aria-label="도구">
+              <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor;"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42 5.43 5.43H5v2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 4: EVERYDAY TERRACOTTA -->
+        <div class="swirlzy-card swirlzy-everyday-card">
+          <div class="swirlzy-everyday-title">EVERYDAY</div>
+
+          <div class="swirlzy-everyday-img-wrap">
+            <svg class="swirlzy-everyday-svg" viewBox="0 0 240 185" width="240" height="185" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="shadow-vault-ko" x="10" y="10" width="220" height="170" filterUnits="userSpaceOnUse">
+                  <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#6e2505" flood-opacity="0.32"/>
+                </filter>
+                <linearGradient id="grad-vault-plate-ko" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ffb082"/>
+                  <stop offset="100%" stop-color="#c8561d"/>
+                </linearGradient>
+              </defs>
+
+              <ellipse cx="120" cy="155" rx="88" ry="20" fill="#6e2505" fill-opacity="0.25"/>
+
+              <g filter="url(#shadow-vault-ko)">
+                <rect x="36" y="20" width="168" height="136" rx="28" fill="url(#grad-vault-plate-ko)" stroke="#ffffff" stroke-width="2.5" stroke-opacity="0.7"/>
+
+                <circle cx="120" cy="88" r="46" fill="#ffffff" fill-opacity="0.15" stroke="#ffffff" stroke-width="2" stroke-dasharray="6 3"/>
+
+                <path d="M120 62 L138 70 C138 90 128 104 120 110 C112 104 102 90 102 70 Z" fill="#1b4e3b" stroke="#f5ba5d" stroke-width="2"/>
+                <path d="M114 86 L118 90 L126 82" stroke="#f5ba5d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                <g transform="translate(64, 46)">
+                  <rect width="28" height="20" rx="6" fill="#d32f2f"/>
+                  <text x="4" y="14" font-family="'Fredoka', sans-serif" font-weight="900" font-size="9" fill="#ffffff">PDF</text>
+                </g>
+                <g transform="translate(148, 46)">
+                  <rect width="28" height="20" rx="6" fill="#1565c0"/>
+                  <text x="4" y="14" font-family="'Fredoka', sans-serif" font-weight="900" font-size="9" fill="#ffffff">DOC</text>
+                </g>
+                <g transform="translate(64, 110)">
+                  <rect width="28" height="20" rx="6" fill="#2e7d32"/>
+                  <text x="5" y="14" font-family="'Fredoka', sans-serif" font-weight="900" font-size="9" fill="#ffffff">XLS</text>
+                </g>
+                <g transform="translate(148, 110)">
+                  <rect width="28" height="20" rx="6" fill="#e65100"/>
+                  <text x="4" y="14" font-family="'Fredoka', sans-serif" font-weight="900" font-size="9" fill="#ffffff">PPT</text>
+                </g>
+              </g>
+            </svg>
+            <div class="swirlzy-everyday-badge">33 TOOLS</div>
+          </div>
+
+          <svg class="swirlzy-everyday-rays" width="46" height="28" viewBox="0 0 46 28" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round">
+            <line x1="8" y1="20" x2="2" y2="26"/>
+            <line x1="23" y1="14" x2="23" y2="4"/>
+            <line x1="38" y1="20" x2="44" y2="26"/>
+          </svg>
+
+          <p class="swirlzy-everyday-footer">대기 시간 제로, 클라우드 없는 즉시 변환<br>당신의 기기에서 100% 로컬 처리!</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- SECTION 1: COLORFUL FILE FORMATS SHOWCASE -->
+  <section class="swirlzy-section" id="formats-showcase">
+    <div class="swirlzy-sec-header">
+      <span class="swirlzy-kicker-pill kicker-sky">완벽한 파일 호환성</span>
+      <h2 class="swirlzy-sec-title">모든 포맷 지원. 100% 로컬 변환.</h2>
+      <p class="swirlzy-sec-desc">문서, 프레젠테이션, 스프레드시트, 벡터, 압축 파일까지 서버 업로드 없이 브라우저 내에서 안전하게 변환합니다.</p>
+    </div>
+
+    <div class="swirlzy-format-grid">
+      <!-- 1. PDF -->
+      <a href="/pdf_to_word/" class="swirlzy-fmt-tile" title="PDF를 Word, PowerPoint, JPG로 변환">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-pdf-ko" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ff5252"/>
+              <stop offset="100%" stop-color="#d32f2f"/>
+            </linearGradient>
+            <filter id="f-pdf-ko" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#b71c1c" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-pdf-ko)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-pdf-ko)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#ff867c"/>
+            <rect x="20" y="24" width="24" height="3" rx="1.5" fill="#ffffff" fill-opacity="0.8"/>
+            <rect x="20" y="31" width="18" height="3" rx="1.5" fill="#ffffff" fill-opacity="0.8"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#d32f2f" text-anchor="middle">PDF</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">PDF 문서</span>
+        <span class="swirlzy-fmt-caption">표준 전자 문서</span>
+        <span class="swirlzy-fmt-pill">Word · PPT · JPG 변환</span>
+      </a>
+
+      <!-- 2. DOCX -->
+      <a href="/word_to_pdf/" class="swirlzy-fmt-tile" title="DOCX를 PDF, HTML, TXT로 변환">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-doc-ko" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#29b6f6"/>
+              <stop offset="100%" stop-color="#0288d1"/>
+            </linearGradient>
+            <filter id="f-doc-ko" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#01579b" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-doc-ko)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-doc-ko)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#b3e5fc"/>
+            <rect x="20" y="24" width="24" height="3" rx="1.5" fill="#ffffff" fill-opacity="0.8"/>
+            <rect x="20" y="31" width="18" height="3" rx="1.5" fill="#ffffff" fill-opacity="0.8"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="10" fill="#0288d1" text-anchor="middle">DOCX</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">워드 문서</span>
+        <span class="swirlzy-fmt-caption">마이크로소프트 워드</span>
+        <span class="swirlzy-fmt-pill">PDF · TXT · HTML 변환</span>
+      </a>
+
+      <!-- 3. PPTX -->
+      <a href="/powerpoint_to_pdf/" class="swirlzy-fmt-tile" title="파워포인트를 PDF 또는 이미지로 변환">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-ppt-ko" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ff8a65"/>
+              <stop offset="100%" stop-color="#e64a19"/>
+            </linearGradient>
+            <filter id="f-ppt-ko" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#bf360c" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-ppt-ko)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-ppt-ko)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#ffccbc"/>
+            <circle cx="32" cy="28" r="8" fill="#ffffff" fill-opacity="0.3"/>
+            <path d="M32 28 L32 20 A8 8 0 0 1 40 28 Z" fill="#ffffff"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="10" fill="#e64a19" text-anchor="middle">PPTX</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">파워포인트</span>
+        <span class="swirlzy-fmt-caption">벡터 프레젠테이션</span>
+        <span class="swirlzy-fmt-pill">PDF · 벡터 슬라이드</span>
+      </a>
+
+      <!-- 4. XLSX -->
+      <a href="/excel_to_pdf/" class="swirlzy-fmt-tile" title="엑셀 스프레드시트를 PDF, CSV, JSON으로 변환">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-xls-ko" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#26a69a"/>
+              <stop offset="100%" stop-color="#00796b"/>
+            </linearGradient>
+            <filter id="f-xls-ko" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#004d40" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-xls-ko)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-xls-ko)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#b2dfdb"/>
+            <rect x="22" y="23" width="9" height="5" rx="1" fill="#ffffff" fill-opacity="0.85"/>
+            <rect x="33" y="23" width="9" height="5" rx="1" fill="#ffffff" fill-opacity="0.85"/>
+            <rect x="22" y="30" width="9" height="5" rx="1" fill="#ffffff" fill-opacity="0.65"/>
+            <rect x="33" y="30" width="9" height="5" rx="1" fill="#ffffff" fill-opacity="0.65"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="10" fill="#00796b" text-anchor="middle">XLSX</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">엑셀 시트</span>
+        <span class="swirlzy-fmt-caption">스프레드시트 &amp; 그리드</span>
+        <span class="swirlzy-fmt-pill">PDF · CSV · JSON 변환</span>
+      </a>
+
+      <!-- 5. PNG -->
+      <a href="/convert/png-to-jpg/" class="swirlzy-fmt-tile" title="PNG를 JPG, WEBP, PDF로 변환">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-png-ko" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ab47bc"/>
+              <stop offset="100%" stop-color="#7b1fa2"/>
+            </linearGradient>
+            <filter id="f-png-ko" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#4a148c" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-png-ko)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-png-ko)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#e1bee7"/>
+            <circle cx="26" cy="24" r="3.5" fill="#ffffff"/>
+            <path d="M20 35 L28 26 L35 32 L40 28 L44 35 Z" fill="#ffffff" fill-opacity="0.85"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#7b1fa2" text-anchor="middle">PNG</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">무손실 PNG</span>
+        <span class="swirlzy-fmt-caption">투명 배경 지원</span>
+        <span class="swirlzy-fmt-pill">JPG · WEBP · PDF 변환</span>
+      </a>
+
+      <!-- 6. JPG -->
+      <a href="/jpg_to_pdf/" class="swirlzy-fmt-tile" title="JPG를 PDF, PNG, WEBP로 변환">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-jpg-ko" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ffa726"/>
+              <stop offset="100%" stop-color="#f57c00"/>
+            </linearGradient>
+            <filter id="f-jpg-ko" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#e65100" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-jpg-ko)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-jpg-ko)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#ffe0b2"/>
+            <circle cx="32" cy="26" r="7" stroke="#ffffff" stroke-width="2.5"/>
+            <circle cx="32" cy="26" r="3" fill="#ffffff"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#f57c00" text-anchor="middle">JPG</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">포토 JPG</span>
+        <span class="swirlzy-fmt-caption">고화질 사진 이미지</span>
+        <span class="swirlzy-fmt-pill">PDF · PNG · WEBP 변환</span>
+      </a>
+
+      <!-- 7. SVG -->
+      <a href="/convert/svg-to-png/" class="swirlzy-fmt-tile" title="SVG를 PNG, PDF, WEBP로 변환">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-svg-ko" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ec407a"/>
+              <stop offset="100%" stop-color="#c2185b"/>
+            </linearGradient>
+            <filter id="f-svg-ko" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#880e4f" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-svg-ko)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-svg-ko)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#f8bbd0"/>
+            <path d="M22 34 C 24 20, 40 20, 42 34" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+            <rect x="20" y="32" width="4" height="4" fill="#ffffff"/>
+            <rect x="40" y="32" width="4" height="4" fill="#ffffff"/>
+            <circle cx="32" cy="23" r="2.5" fill="#ffffff"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#c2185b" text-anchor="middle">SVG</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">벡터 SVG</span>
+        <span class="swirlzy-fmt-caption">확장 가능한 벡터 곡선</span>
+        <span class="swirlzy-fmt-pill">PNG · PDF · WEBP 변환</span>
+      </a>
+
+      <!-- 8. WEBP -->
+      <a href="/convert/webp-to-png/" class="swirlzy-fmt-tile" title="WEBP를 PNG, JPG, PDF로 변환">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-webp-ko" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#26c6da"/>
+              <stop offset="100%" stop-color="#0097a7"/>
+            </linearGradient>
+            <filter id="f-webp-ko" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#006064" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-webp-ko)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-webp-ko)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#b2ebf2"/>
+            <path d="M32 18 L34 25 L41 27 L34 29 L32 36 L30 29 L23 27 L30 25 Z" fill="#ffffff"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="10" fill="#0097a7" text-anchor="middle">WEBP</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">웹P 그래픽</span>
+        <span class="swirlzy-fmt-caption">차세대 고압축 웹 이미지</span>
+        <span class="swirlzy-fmt-pill">PNG · JPG · PDF 변환</span>
+      </a>
+
+      <!-- 9. HWP -->
+      <a href="/convert/pdf-to-hwp/" class="swirlzy-fmt-tile" title="HWP 및 HWPX 한글 문서 변환">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-hwp-ko" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#3f51b5"/>
+              <stop offset="100%" stop-color="#1a237e"/>
+            </linearGradient>
+            <filter id="f-hwp-ko" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#0d1b4a" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-hwp-ko)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-hwp-ko)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#c5cae9"/>
+            <text x="32" y="32" font-family="'Fredoka', sans-serif" font-weight="900" font-size="15" fill="#ffffff" text-anchor="middle">한</text>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#1a237e" text-anchor="middle">HWP</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">한글 HWP</span>
+        <span class="swirlzy-fmt-caption">대한민국 표준 문서</span>
+        <span class="swirlzy-fmt-pill">1:1 네이티브 WASM</span>
+      </a>
+
+      <!-- 10. ZIP -->
+      <a href="/convert/zip-to-tar/" class="swirlzy-fmt-tile" title="ZIP 파일 압축 풀기 및 재포장">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-zip-ko" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ff7043"/>
+              <stop offset="100%" stop-color="#d84315"/>
+            </linearGradient>
+            <filter id="f-zip-ko" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#bf360c" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-zip-ko)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-zip-ko)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#ffccbc"/>
+            <rect x="30" y="16" width="4" height="2" fill="#ffffff"/>
+            <rect x="33" y="20" width="4" height="2" fill="#ffffff"/>
+            <rect x="30" y="24" width="4" height="2" fill="#ffffff"/>
+            <rect x="33" y="28" width="4" height="2" fill="#ffffff"/>
+            <circle cx="32" cy="33" r="3" fill="#ffffff"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#d84315" text-anchor="middle">ZIP</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">ZIP 압축</span>
+        <span class="swirlzy-fmt-caption">압축 아카이브</span>
+        <span class="swirlzy-fmt-pill">압축 해제 &amp; 변환</span>
+      </a>
+
+      <!-- 11. JSON -->
+      <a href="/convert/json-to-yaml/" class="swirlzy-fmt-tile" title="JSON을 YAML, CSV, XML로 변환">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-json-ko" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#00b4d8"/>
+              <stop offset="100%" stop-color="#0077b6"/>
+            </linearGradient>
+            <filter id="f-json-ko" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#03045e" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-json-ko)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-json-ko)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#caf0f8"/>
+            <text x="32" y="32" font-family="'Fredoka', monospace" font-weight="900" font-size="15" fill="#ffffff" text-anchor="middle">{ ; }</text>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="10" fill="#0077b6" text-anchor="middle">JSON</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">데이터 JSON</span>
+        <span class="swirlzy-fmt-caption">구조화 페이로드</span>
+        <span class="swirlzy-fmt-pill">YAML · CSV · XML 변환</span>
+      </a>
+
+      <!-- 12. MP3 -->
+      <a href="/convert/mp3-to-wav/" class="swirlzy-fmt-tile" title="MP3 오디오를 WAV, OGG, M4A로 변환">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-mp3-ko" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ba68c8"/>
+              <stop offset="100%" stop-color="#6a1b9a"/>
+            </linearGradient>
+            <filter id="f-mp3-ko" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#4a148c" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-mp3-ko)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-mp3-ko)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#e1bee7"/>
+            <circle cx="28" cy="33" r="3.5" fill="#ffffff"/>
+            <path d="M31.5 33 L31.5 20 L39 18 L39 30" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="36" cy="30" r="3" fill="#ffffff"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#6a1b9a" text-anchor="middle">MP3</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">오디오 MP3</span>
+        <span class="swirlzy-fmt-caption">디지털 사운드 스트림</span>
+        <span class="swirlzy-fmt-pill">WAV · OGG · M4A 변환</span>
+      </a>
+    </div>
+
+    <div style="text-align:center;margin-top:20px;">
+      <a href="/ko/formats/" class="brutal-btn brutal-btn-white" style="font-size:15px;padding:12px 28px;">
+        <span>240개 이상 지원 포맷 전체보기 &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION 2: 3 CANDY FEATURE PILLARS -->
+  <section class="swirlzy-section">
+    <div class="swirlzy-sec-header">
+      <span class="swirlzy-kicker-pill kicker-mint">사용자 중심 원칙</span>
+      <h2 class="swirlzy-sec-title">완벽한 프라이버시 &amp; 즐거운 사용성</h2>
+      <p class="swirlzy-sec-desc">서버 전송 없음, 트래커 없음, 유료 결제 유도 없음. 순수한 로컬 WebAssembly 기술.</p>
+    </div>
+
+    <div class="swirlzy-candy-grid">
+      <!-- Pillar 1: Mint Sage -->
+      <div class="swirlzy-candy-card candy-mint">
+        <div class="swirlzy-candy-icon-box">🛡️</div>
+        <h3 class="swirlzy-candy-h3">100% 클라이언트 WASM</h3>
+        <p class="swirlzy-candy-p">모든 작업이 브라우저 메모리 안에서 실행됩니다. 와이파이를 끄거나 비행기 모드에서도 완벽하게 동작하며 데이터 유출 위험이 없습니다.</p>
+      </div>
+
+      <!-- Pillar 2: Sky Blue -->
+      <div class="swirlzy-candy-card candy-sky">
+        <div class="swirlzy-candy-icon-box">📐</div>
+        <h3 class="swirlzy-candy-h3">1:1 네이티브 기하 구조</h3>
+        <p class="swirlzy-candy-p">연속 기준선 클러스터링으로 글자 겹침을 방지합니다. 벡터 도형, 원본 색상, 커스텀 폰트를 밀리미터 단위로 정확하게 보존합니다.</p>
+      </div>
+
+      <!-- Pillar 3: Honey Amber -->
+      <div class="swirlzy-candy-card candy-amber">
+        <div class="swirlzy-candy-icon-box">⚡</div>
+        <h3 class="swirlzy-candy-h3">용량 제한 없음, 무료</h3>
+        <p class="swirlzy-candy-p">클라우드의 25MB 용량 제한 없이 500MB 이상의 대용량 파일도 로컬 RAM 내에서 자유롭고 빠르게 처리합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: JOYFUL SWIRLZY CALL TO ACTION -->
+  <section class="swirlzy-section">
+    <div class="swirlzy-cta-box">
+      <h2 class="swirlzy-cta-h2">지금 바로 안전하고 빠른 변환을 경험하세요.</h2>
+      <p class="swirlzy-cta-p">Kiln 처리 스튜디오로 이동하거나 상단 다이얼에 파일을 끌어다 놓으세요. 계정 생성도 구독 결제도 필요 없으며 데이터는 절대 컴퓨터 밖을 나가지 않습니다.</p>
+      <div class="swirlzy-cta-actions">
+        <a href="/ko/app/" class="brutal-btn brutal-btn-dark" style="font-size:18px;padding:18px 36px;">
+          <span>Kiln 처리 스튜디오 열기 ⚡</span>
+        </a>
+        <a href="/ko/formats/" class="brutal-btn brutal-btn-white" style="font-size:18px;padding:18px 32px;">
+          <span>240개 포맷 둘러보기 &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="swirlzy-footer">
+  <div style="display:flex;align-items:center;gap:12px;">
+    <svg class="swirlzy-brand-logo" viewBox="0 0 36 36" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="18" r="16" fill="#55ba86" stroke="#1b4e3b" stroke-width="2"/>
+      <path d="M12 18 C12 13 24 13 24 18 C24 22 15 23 15 20 C15 18 21 18 21 19" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="swirlzy-footer-brand">KILN PLATFORM</div>
+      <div style="font-size:12.5px;color:var(--muted);font-family:var(--font-swirlzy-sans);">100% 클라이언트 사이드 프라이빗 파일 처리 엔진 &middot; 오픈 코어</div>
+    </div>
+  </div>
+
+  <div class="swirlzy-footer-links">
+    <a href="/ko/app/">처리 스튜디오</a>
+    <a href="/ko/formats/">포맷 카탈로그</a>
+    <a href="/ko/cli/">CLI 가이드</a>
+  </div>
+
+  <div class="swirlzy-footer-copy">
+    &copy; Kiln 플랫폼 &middot; 사용자 기기에서 로컬 실행 &middot; 클라우드 업로드 제로 &middot; 쿠키 없음 &middot; 트래커 없음
+  </div>
+</footer>
+
+
+</body></html>

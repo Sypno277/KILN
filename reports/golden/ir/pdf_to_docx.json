@@ -1,0 +1,1144 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "title": "TORTURE SUITE PAGE 1: SEMANTIC & GEOMETRIC INVENTORY",
+    "creator": "Filee Real Conversion Engine",
+    "buildStamp": {
+      "gitHash": "96fe0e4",
+      "timestamp": "2026-10-23T14:11:17.792Z",
+      "marker": "BATCH0_LIVE_PATH_PROVEN"
+    },
+    "provenance": {
+      "generator": "Filee ConverterEngine",
+      "gitCommit": "96fe0e4",
+      "timestamp": "2026-10-23T14:11:17.792Z",
+      "totalPages": 3
+    }
+  },
+  "sections": [
+    {
+      "sectionIndex": 1,
+      "pageIndices": [
+        1,
+        2,
+        3
+      ],
+      "pageGeometry": {
+        "widthEmu": 7772400,
+        "heightEmu": 10058400,
+        "orientation": "portrait",
+        "marginsEmu": {
+          "top": 330200,
+          "bottom": 4254500,
+          "left": 457200,
+          "right": 958901,
+          "header": 457200,
+          "footer": 457200,
+          "gutter": 0
+        }
+      }
+    }
+  ],
+  "pages": [
+    {
+      "pageNumber": 1,
+      "widthEmu": 7772400,
+      "heightEmu": 10058400,
+      "orientation": "portrait",
+      "rotation": 0,
+      "blocks": [
+        {
+          "type": "table",
+          "id": "p1_tbl1",
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 457200,
+              "y": 3962400,
+              "w": 3048000,
+              "h": 838200
+            }
+          },
+          "tableData": {
+            "rowCount": 3,
+            "colCount": 2,
+            "widthEmu": 3048000,
+            "heightEmu": 838200
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b1",
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 457200,
+              "y": 330200,
+              "w": 6356299,
+              "h": 203200
+            }
+          },
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 0,
+            "spacingAfterEmu": 355600,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "TORTURE SUITE PAGE 1: SEMANTIC & GEOMETRIC INVENTORY",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 457200,
+                    "y": 9525000,
+                    "w": 6356299,
+                    "h": 203200
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 203200,
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#000000",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b2",
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 457200,
+              "y": 889000,
+              "w": 5829097,
+              "h": 152400
+            }
+          },
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 355600,
+            "spacingAfterEmu": 127000,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "Column 1: Executive Overview Column 2: Operational Telemetry",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 457200,
+                    "y": 9017000,
+                    "w": 4249826,
+                    "h": 152400
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Times New Roman",
+                  "fontSizeEmu": 152400,
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#000000",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b3",
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 457200,
+              "y": 1168400,
+              "w": 5483225,
+              "h": 254000
+            }
+          },
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 127000,
+            "spacingAfterEmu": 139700,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "Multi-column text flows within defined Telemetry captures line height, gaps,",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 457200,
+                    "y": 8763000,
+                    "w": 3887216,
+                    "h": 127000
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Times New Roman",
+                  "fontSizeEmu": 127000,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#000000",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              },
+              {
+                "type": "text",
+                "text": "column boundaries without leaking margins. and baseline metrics for exact fit.",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 457200,
+                    "y": 8572500,
+                    "w": 3961130,
+                    "h": 127000
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Times New Roman",
+                  "fontSizeEmu": 127000,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#000000",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b4",
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 571500,
+              "y": 1625600,
+              "w": 1931213,
+              "h": 228600
+            }
+          },
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 139700,
+            "spacingAfterEmu": 520700,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 114300,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "Bullet item 1: Fiscal resilience",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 571500,
+                    "y": 8318500,
+                    "w": 1505331,
+                    "h": 114300
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 114300,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#000000",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              },
+              {
+                "type": "text",
+                "text": "Bullet item 2: International compliance",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 571500,
+                    "y": 8128000,
+                    "w": 1931213,
+                    "h": 114300
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 114300,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#000000",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b5",
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 508000,
+              "y": 2451100,
+              "w": 2980360,
+              "h": 139700
+            }
+          },
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 520700,
+            "spacingAfterEmu": 584200,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 50800,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "CRITICAL ALERT: RED COLOR PRESERVED",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 508000,
+                    "y": 7467600,
+                    "w": 2980360,
+                    "h": 139700
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 139700,
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#E01C47",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": "FEF08A",
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b6",
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 457200,
+              "y": 3175000,
+              "w": 4937760,
+              "h": 152400
+            }
+          },
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 584200,
+            "spacingAfterEmu": 127000,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "Math Formulation: Area = pi * r^2 + Sum(x_i - x_bar)^2 Formulation: Area = pi * r^2 + Sum(x_i - x_bar)^2",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 457200,
+                    "y": 6731000,
+                    "w": 4846320,
+                    "h": 152400
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Courier New",
+                  "fontSizeEmu": 152400,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#000000",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b7",
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 457200,
+              "y": 3454400,
+              "w": 2270608,
+              "h": 152400
+            }
+          },
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 127000,
+            "spacingAfterEmu": 431800,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "Velocity Vector: v = sqrt(2GM / R)",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 457200,
+                    "y": 6451600,
+                    "w": 2270608,
+                    "h": 152400
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Times New Roman",
+                  "fontSizeEmu": 152400,
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#000000",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b8",
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 533400,
+              "y": 4038600,
+              "w": 2399030,
+              "h": 127000
+            }
+          },
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 431800,
+            "spacingAfterEmu": 152400,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 76200,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "Metric Parameter Throughput (K/s)",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 533400,
+                    "y": 5892800,
+                    "w": 1905508,
+                    "h": 127000
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 127000,
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#000000",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b9",
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 533400,
+              "y": 4318000,
+              "w": 1954657,
+              "h": 127000
+            }
+          },
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 152400,
+            "spacingAfterEmu": 152400,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 76200,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "Throughput (K/s) Error Rate (%)",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 533400,
+                    "y": 5613400,
+                    "w": 1383538,
+                    "h": 127000
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 127000,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#000000",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b10",
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 533400,
+              "y": 4597400,
+              "w": 1884045,
+              "h": 127000
+            }
+          },
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 152400,
+            "spacingAfterEmu": 622300,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 76200,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "Error Rate (%) Multilingual Vectors: Arabic RTL [Marhaban Bikum] & Hebrew RTL [Shalom Olam]",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 533400,
+                    "y": 5334000,
+                    "w": 1178560,
+                    "h": 127000
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 127000,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#000000",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b11",
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 457200,
+              "y": 5346700,
+              "w": 5077257,
+              "h": 139700
+            }
+          },
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 622300,
+            "spacingAfterEmu": 177800,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "CJK Multi-script Vectors: Chinese [NiHao], Japanese [Konnichiwa], Korean [Annyeong]",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 457200,
+                    "y": 4572000,
+                    "w": 5077257,
+                    "h": 139700
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 139700,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#000000",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b12",
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 457200,
+              "y": 5664200,
+              "w": 5372862,
+              "h": 139700
+            }
+          },
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 177800,
+            "spacingAfterEmu": 0,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "CJK Multi-script Vectors: Chinese [NiHao], Japanese [Konnichiwa], Korean [Annyeong]",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 457200,
+                    "y": 4254500,
+                    "w": 5372862,
+                    "h": 139700
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 139700,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "unset",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pageNumber": 2,
+      "widthEmu": 15544800,
+      "heightEmu": 10058400,
+      "orientation": "landscape",
+      "rotation": 0,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "id": "p2_b1",
+          "provenance": {
+            "sourcePageIndex": 2,
+            "sourceBBoxEmu": {
+              "x": 635000,
+              "y": 406400,
+              "w": 7804658,
+              "h": 254000
+            }
+          },
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 0,
+            "spacingAfterEmu": 330200,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "TORTURE SUITE PAGE 2: TABLOID LANDSCAPE (1224 x 792 pt)",
+                "provenance": {
+                  "sourcePageIndex": 2,
+                  "sourceBBoxEmu": {
+                    "x": 635000,
+                    "y": 9398000,
+                    "w": 7804658,
+                    "h": 254000
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 254000,
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#000000",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p2_b2",
+          "provenance": {
+            "sourcePageIndex": 2,
+            "sourceBBoxEmu": {
+              "x": 635000,
+              "y": 990600,
+              "w": 6897751,
+              "h": 177800
+            }
+          },
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 330200,
+            "spacingAfterEmu": 0,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "Tests wide-canvas layout, dynamic section break generation, and element containment.",
+                "provenance": {
+                  "sourcePageIndex": 2,
+                  "sourceBBoxEmu": {
+                    "x": 635000,
+                    "y": 8890000,
+                    "w": 6897751,
+                    "h": 177800
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 177800,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#000000",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pageNumber": 3,
+      "widthEmu": 10692003,
+      "heightEmu": 7560056,
+      "orientation": "landscape",
+      "rotation": 90,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "id": "p3_b1",
+          "provenance": {
+            "sourcePageIndex": 3,
+            "sourceBBoxEmu": {
+              "x": 508000,
+              "y": 0,
+              "w": 5487314,
+              "h": 228600
+            }
+          },
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 0,
+            "spacingAfterEmu": 0,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "TORTURE SUITE PAGE 3: ROTATED 90 DEGREES",
+                "provenance": {
+                  "sourcePageIndex": 3,
+                  "sourceBBoxEmu": {
+                    "x": 508000,
+                    "y": 10160000,
+                    "w": 5487314,
+                    "h": 228600
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 228600,
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#000000",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p3_b2",
+          "provenance": {
+            "sourcePageIndex": 3,
+            "sourceBBoxEmu": {
+              "x": 508000,
+              "y": 0,
+              "w": 3244291,
+              "h": 152400
+            }
+          },
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 0,
+            "spacingAfterEmu": 0,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "Rendered orientation is landscape post-rotation.",
+                "provenance": {
+                  "sourcePageIndex": 3,
+                  "sourceBBoxEmu": {
+                    "x": 508000,
+                    "y": 9652000,
+                    "w": 3244291,
+                    "h": 152400
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 152400,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#000000",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

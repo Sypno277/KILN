@@ -1,0 +1,1443 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "title": "Regression Prevention Audit Document",
+    "creator": "Filee Real Conversion Engine",
+    "subject": "Document Analysis",
+    "buildStamp": {
+      "gitHash": "96fe0e4",
+      "timestamp": "2026-10-23T19:50:56.050Z",
+      "marker": "BATCH0_LIVE_PATH_PROVEN",
+      "toolVersions": {
+        "engine": "1.0.0",
+        "pdfjs": "3.11.174",
+        "jszip": "3.10.1",
+        "pdflib": "1.17.1"
+      }
+    },
+    "provenance": {
+      "generator": "Filee ConverterEngine",
+      "gitCommit": "96fe0e4",
+      "timestamp": "2026-10-23T19:50:56.050Z",
+      "tools": {
+        "engine": "1.0.0",
+        "pdfjs": "3.11.174",
+        "jszip": "3.10.1",
+        "pdflib": "1.17.1"
+      },
+      "totalPages": 1
+    },
+    "descriptive": {
+      "title": "Regression Prevention Audit Document",
+      "creator": "Filee Real Conversion Engine",
+      "subject": "Document Analysis",
+      "keywords": [],
+      "language": "en-US"
+    },
+    "technical": {
+      "sourceFormat": "PDF",
+      "sourceSizeBytes": null,
+      "pageCount": 1,
+      "colorSpace": "sRGB"
+    },
+    "structural": {
+      "outline": [],
+      "bookmarks": {},
+      "readingOrder": "spatial_topological_sort"
+    },
+    "process": {
+      "generator": "Filee ConverterEngine",
+      "gitCommit": "96fe0e4",
+      "timestamp": "2026-10-23T19:50:56.050Z",
+      "tools": {
+        "engine": "1.0.0",
+        "pdfjs": "3.11.174",
+        "jszip": "3.10.1",
+        "pdflib": "1.17.1"
+      },
+      "totalPages": 1
+    }
+  },
+  "sections": [
+    {
+      "sectionIndex": 1,
+      "pageIndices": [
+        1
+      ],
+      "pageGeometry": {
+        "widthEmu": 7772400,
+        "heightEmu": 10058400,
+        "orientation": "portrait",
+        "marginsEmu": {
+          "top": 381000,
+          "bottom": 3429000,
+          "left": 508000,
+          "right": 1985975,
+          "header": 457200,
+          "footer": 457200,
+          "gutter": 0
+        }
+      }
+    }
+  ],
+  "pages": [
+    {
+      "pageNumber": 1,
+      "widthEmu": 7772400,
+      "heightEmu": 10058400,
+      "orientation": "portrait",
+      "rotation": 0,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "id": "p1_b1",
+          "degradation": {
+            "editable": "flow_paragraph",
+            "visual": "positioned_text_shape",
+            "archival": "tagged_paragraph"
+          },
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 508000,
+              "y": 381000,
+              "w": 5278425,
+              "h": 279400
+            }
+          },
+          "isHeading": true,
+          "headingData": {
+            "level": 1,
+            "outlineLevel": 1,
+            "styleName": "Heading 1",
+            "inlines": [
+              {
+                "type": "text",
+                "text": "Regression Prevention Audit Document",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 508000,
+                    "y": 9398000,
+                    "w": 5278425,
+                    "h": 279400
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 279400,
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#1A1A1A",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          },
+          "equationData": null,
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 0,
+            "spacingAfterEmu": 0,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "Regression Prevention Audit Document",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 508000,
+                    "y": 9398000,
+                    "w": 5278425,
+                    "h": 279400
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 279400,
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#1A1A1A",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b2",
+          "degradation": {
+            "editable": "flow_paragraph",
+            "visual": "positioned_text_shape",
+            "archival": "tagged_paragraph"
+          },
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 508000,
+              "y": 914400,
+              "w": 3492246,
+              "h": 190500
+            }
+          },
+          "isHeading": true,
+          "headingData": {
+            "level": 2,
+            "outlineLevel": 2,
+            "styleName": "Heading 2",
+            "inlines": [
+              {
+                "type": "text",
+                "text": "Section Header in Times Roman Serif Family",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 508000,
+                    "y": 8953500,
+                    "w": 3492246,
+                    "h": 190500
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Times New Roman",
+                  "fontSizeEmu": 190500,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#26334C",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          },
+          "equationData": null,
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 152400,
+            "spacingAfterEmu": 0,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "Section Header in Times Roman Serif Family",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 508000,
+                    "y": 8953500,
+                    "w": 3492246,
+                    "h": 190500
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Times New Roman",
+                  "fontSizeEmu": 190500,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#26334C",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b3",
+          "degradation": {
+            "editable": "flow_paragraph",
+            "visual": "positioned_text_shape",
+            "archival": "tagged_paragraph"
+          },
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 635000,
+              "y": 1562100,
+              "w": 3826662,
+              "h": 139700
+            }
+          },
+          "isHeading": false,
+          "headingData": null,
+          "equationData": null,
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 152400,
+            "spacingAfterEmu": 0,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 127000,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "ALERT: Important highlighted notice with red styling text.",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 635000,
+                    "y": 8356600,
+                    "w": 3826662,
+                    "h": 139700
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 139700,
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#E01C47",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": "FCF08A",
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b4",
+          "degradation": {
+            "editable": "flow_paragraph",
+            "visual": "positioned_text_shape",
+            "archival": "tagged_paragraph"
+          },
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 508000,
+              "y": 2133600,
+              "w": 2043100,
+              "h": 177800
+            }
+          },
+          "isHeading": true,
+          "headingData": {
+            "level": 2,
+            "outlineLevel": 2,
+            "styleName": "Heading 2",
+            "inlines": [
+              {
+                "type": "text",
+                "text": "Math Formula: ",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 508000,
+                    "y": 7747000,
+                    "w": 1224864,
+                    "h": 177800
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 177800,
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#0D1A66",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              },
+              {
+                "type": "text",
+                "text": "α + β = ∑",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 1841500,
+                    "y": 7747000,
+                    "w": 709600,
+                    "h": 177800
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Symbol",
+                  "fontSizeEmu": 177800,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#0D1A66",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          },
+          "equationData": {
+            "isDisplayMode": true,
+            "unicodeFallback": "Math Formula: α + β = ∑"
+          },
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 152400,
+            "spacingAfterEmu": 0,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "Math Formula: ",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 508000,
+                    "y": 7747000,
+                    "w": 1224864,
+                    "h": 177800
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 177800,
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#0D1A66",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              },
+              {
+                "type": "text",
+                "text": "α + β = ∑",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 1841500,
+                    "y": 7747000,
+                    "w": 709600,
+                    "h": 177800
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Symbol",
+                  "fontSizeEmu": 177800,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#0D1A66",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b5",
+          "degradation": {
+            "editable": "flow_paragraph",
+            "visual": "positioned_text_shape",
+            "archival": "tagged_paragraph"
+          },
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 508000,
+              "y": 2667000,
+              "w": 2176678,
+              "h": 152400
+            }
+          },
+          "isHeading": false,
+          "headingData": null,
+          "equationData": null,
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 152400,
+            "spacingAfterEmu": 0,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "H",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 508000,
+                    "y": 7239000,
+                    "w": 110033,
+                    "h": 152400
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 152400,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#1A1A1A",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              },
+              {
+                "type": "text",
+                "text": "2",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 622300,
+                    "y": 7188200,
+                    "w": 56490,
+                    "h": 101600
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 101600,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#1A1A1A",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "subscript",
+                  "baselineOffsetEmu": -33866
+                }
+              },
+              {
+                "type": "text",
+                "text": "O and CO",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 698500,
+                    "y": 7239000,
+                    "w": 686105,
+                    "h": 152400
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 152400,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#1A1A1A",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              },
+              {
+                "type": "text",
+                "text": "2",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 1371600,
+                    "y": 7188200,
+                    "w": 56490,
+                    "h": 101600
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 101600,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#1A1A1A",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "subscript",
+                  "baselineOffsetEmu": -33866
+                }
+              },
+              {
+                "type": "text",
+                "text": " Aqueous Solution",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 1490167,
+                    "y": 7239000,
+                    "w": 1194511,
+                    "h": 152400
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 152400,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#1A1A1A",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b6",
+          "degradation": {
+            "editable": "flow_paragraph",
+            "visual": "positioned_text_shape",
+            "archival": "tagged_paragraph"
+          },
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 508000,
+              "y": 4076700,
+              "w": 4931410,
+              "h": 139700
+            }
+          },
+          "isHeading": false,
+          "headingData": null,
+          "equationData": null,
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 152400,
+            "spacingAfterEmu": 0,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "This paragraph represents a continuous multi-line paragraph block across multiple lines.",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 508000,
+                    "y": 5842000,
+                    "w": 4931410,
+                    "h": 139700
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Times New Roman",
+                  "fontSizeEmu": 139700,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#333333",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b7",
+          "degradation": {
+            "editable": "flow_paragraph",
+            "visual": "positioned_text_shape",
+            "archival": "tagged_paragraph"
+          },
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 508000,
+              "y": 4305300,
+              "w": 4764608,
+              "h": 139700
+            }
+          },
+          "isHeading": false,
+          "headingData": null,
+          "equationData": null,
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 88900,
+            "spacingAfterEmu": 0,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "It maintains precise paragraph geometry, font metrics, line height and text alignment.",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 508000,
+                    "y": 5613400,
+                    "w": 4764608,
+                    "h": 139700
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Times New Roman",
+                  "fontSizeEmu": 139700,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#333333",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b8",
+          "degradation": {
+            "editable": "flow_paragraph",
+            "visual": "positioned_text_shape",
+            "archival": "tagged_paragraph"
+          },
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 508000,
+              "y": 4533900,
+              "w": 4806798,
+              "h": 139700
+            }
+          },
+          "isHeading": false,
+          "headingData": null,
+          "equationData": null,
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 88900,
+            "spacingAfterEmu": 0,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "Every character and attribute is preserved end-to-end through the conversion pipeline.",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 508000,
+                    "y": 5384800,
+                    "w": 4806798,
+                    "h": 139700
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Times New Roman",
+                  "fontSizeEmu": 139700,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#333333",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b9",
+          "degradation": {
+            "editable": "flow_paragraph",
+            "visual": "positioned_text_shape",
+            "archival": "tagged_paragraph"
+          },
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 508000,
+              "y": 5029200,
+              "w": 3635553,
+              "h": 139700
+            }
+          },
+          "isHeading": false,
+          "headingData": null,
+          "equationData": null,
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 152400,
+            "spacingAfterEmu": 0,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "Key Principle: Zero regressions in style or geometry allowed.",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 508000,
+                    "y": 4889500,
+                    "w": 3635553,
+                    "h": 139700
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Times New Roman",
+                  "fontSizeEmu": 139700,
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#1A1A1A",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b10",
+          "degradation": {
+            "editable": "flow_paragraph",
+            "visual": "positioned_text_shape",
+            "archival": "tagged_paragraph"
+          },
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 508000,
+              "y": 5473700,
+              "w": 3691712,
+              "h": 139700
+            }
+          },
+          "isHeading": false,
+          "headingData": null,
+          "equationData": {
+            "isDisplayMode": true,
+            "unicodeFallback": "DeviceCMYK Technical Note: Calibration parameter = 0.84."
+          },
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 152400,
+            "spacingAfterEmu": 0,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "DeviceCMYK Technical Note: Calibration parameter = 0.84.",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 508000,
+                    "y": 4445000,
+                    "w": 3691712,
+                    "h": 139700
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Arial",
+                  "fontSizeEmu": 139700,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#257EBB",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b11",
+          "degradation": {
+            "editable": "flow_paragraph",
+            "visual": "positioned_text_shape",
+            "archival": "tagged_paragraph"
+          },
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 508000,
+              "y": 5867400,
+              "w": 2807335,
+              "h": 127000
+            }
+          },
+          "isHeading": false,
+          "headingData": null,
+          "equationData": null,
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 152400,
+            "spacingAfterEmu": 0,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "DeviceGray Footnote: Mid-tone neutral reference tone.",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 508000,
+                    "y": 4064000,
+                    "w": 2807335,
+                    "h": 127000
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Times New Roman",
+                  "fontSizeEmu": 127000,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#808080",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b12",
+          "degradation": {
+            "editable": "flow_paragraph",
+            "visual": "positioned_text_shape",
+            "archival": "tagged_paragraph"
+          },
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 952500,
+              "y": 6261100,
+              "w": 294907,
+              "h": 139700
+            }
+          },
+          "isHeading": false,
+          "headingData": null,
+          "equationData": null,
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 152400,
+            "spacingAfterEmu": 0,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 444500,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "2GM",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 952500,
+                    "y": 3657600,
+                    "w": 294907,
+                    "h": 139700
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Times New Roman",
+                  "fontSizeEmu": 139700,
+                  "bold": false,
+                  "italic": false,
+                  "underline": true,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#1A1A1A",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b13",
+          "degradation": {
+            "editable": "flow_paragraph",
+            "visual": "positioned_text_shape",
+            "archival": "tagged_paragraph"
+          },
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 508000,
+              "y": 6324600,
+              "w": 234696,
+              "h": 177800
+            }
+          },
+          "isHeading": true,
+          "headingData": {
+            "level": 2,
+            "outlineLevel": 2,
+            "styleName": "Heading 2",
+            "inlines": [
+              {
+                "type": "text",
+                "text": "v = ",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 508000,
+                    "y": 3556000,
+                    "w": 234696,
+                    "h": 177800
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Times New Roman",
+                  "fontSizeEmu": 177800,
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#1A1A1A",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          },
+          "equationData": {
+            "isDisplayMode": true,
+            "unicodeFallback": "v ="
+          },
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 0,
+            "spacingAfterEmu": 0,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 0,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "v = ",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 508000,
+                    "y": 3556000,
+                    "w": 234696,
+                    "h": 177800
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Times New Roman",
+                  "fontSizeEmu": 177800,
+                  "bold": true,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#1A1A1A",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "id": "p1_b14",
+          "degradation": {
+            "editable": "flow_paragraph",
+            "visual": "positioned_text_shape",
+            "archival": "tagged_paragraph"
+          },
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 1079500,
+              "y": 6489700,
+              "w": 93180,
+              "h": 139700
+            }
+          },
+          "isHeading": false,
+          "headingData": null,
+          "equationData": null,
+          "paragraphData": {
+            "alignment": "left",
+            "spacingBeforeEmu": 0,
+            "spacingAfterEmu": 0,
+            "lineSpacingEmu": 152400,
+            "indents": {
+              "leftEmu": 571500,
+              "hangingEmu": 0,
+              "firstLineEmu": 0
+            },
+            "listPr": {
+              "isList": false,
+              "markerText": null,
+              "level": 0
+            },
+            "inlines": [
+              {
+                "type": "text",
+                "text": "R",
+                "provenance": {
+                  "sourcePageIndex": 1,
+                  "sourceBBoxEmu": {
+                    "x": 1079500,
+                    "y": 3429000,
+                    "w": 93180,
+                    "h": 139700
+                  }
+                },
+                "rPr": {
+                  "fontFamily": "Times New Roman",
+                  "fontSizeEmu": 139700,
+                  "bold": false,
+                  "italic": false,
+                  "underline": false,
+                  "strike": false,
+                  "color": {
+                    "normalizedHex": "#1A1A1A",
+                    "raw": {
+                      "colorSpace": "DeviceRGB",
+                      "values": null
+                    }
+                  },
+                  "highlightHex": null,
+                  "vertAlign": "normal",
+                  "baselineOffsetEmu": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "image",
+          "id": "p1_img1",
+          "degradation": {
+            "editable": "inline_image",
+            "visual": "positioned_image",
+            "archival": "lossless_stream"
+          },
+          "provenance": {
+            "sourcePageIndex": 1,
+            "sourceBBoxEmu": {
+              "x": 508000,
+              "y": 3200400,
+              "w": 1270000,
+              "h": 508000
+            }
+          },
+          "imageData": {
+            "name": "img_p0_1",
+            "mimeType": "image/png",
+            "widthEmu": 1270000,
+            "heightEmu": 508000,
+            "altText": "[Drawing: img_p0_1]",
+            "hasRealData": true
+          }
+        }
+      ]
+    }
+  ]
+}

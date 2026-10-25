@@ -1,0 +1,232 @@
+{
+  "title": "Kiln / Filee Document Conversion Fidelity Dashboard",
+  "lastUpdated": "2026-10-23T20:08:00.209Z",
+  "summary": {
+    "totalPairs": 7,
+    "passedPairs": 7,
+    "averageFidelity": 100,
+    "overallStatus": "HEALTHY"
+  },
+  "elementClasses": [
+    {
+      "id": "text_content",
+      "name": "Text Content",
+      "weight": 0.25
+    },
+    {
+      "id": "typography_fonts",
+      "name": "Typography & Fonts",
+      "weight": 0.15
+    },
+    {
+      "id": "color_and_highlights",
+      "name": "Colors & Highlights",
+      "weight": 0.15
+    },
+    {
+      "id": "geometry_and_layout",
+      "name": "Geometry & Layout",
+      "weight": 0.15
+    },
+    {
+      "id": "visual_parity",
+      "name": "Visual Parity (SSIM)",
+      "weight": 0.15
+    },
+    {
+      "id": "package_validity",
+      "name": "Package Schema Validity",
+      "weight": 0.15
+    }
+  ],
+  "formatPairs": {
+    "pdf->pptx": {
+      "pair": "pdf->pptx",
+      "source": "PDF",
+      "target": "PPTX",
+      "mode": "exact_layout",
+      "overallScore": 100,
+      "threshold": 92,
+      "status": "PASS",
+      "elementScores": {
+        "text_content": 100,
+        "typography_fonts": 100,
+        "color_and_highlights": 100,
+        "geometry_and_layout": 100,
+        "visual_parity": 100,
+        "package_validity": 100
+      },
+      "lastChecked": "2026-10-23T20:08:00.209Z"
+    },
+    "pdf->docx": {
+      "pair": "pdf->docx",
+      "source": "PDF",
+      "target": "DOCX",
+      "mode": "exact_layout",
+      "overallScore": 100,
+      "threshold": 92,
+      "status": "PASS",
+      "elementScores": {
+        "text_content": 100,
+        "typography_fonts": 100,
+        "color_and_highlights": 100,
+        "geometry_and_layout": 100,
+        "visual_parity": 100,
+        "package_validity": 100
+      },
+      "lastChecked": "2026-10-23T20:08:00.209Z"
+    },
+    "pdf->html": {
+      "pair": "pdf->html",
+      "source": "PDF",
+      "target": "HTML",
+      "mode": "exact_layout",
+      "overallScore": 100,
+      "threshold": 88,
+      "status": "PASS",
+      "elementScores": {
+        "text_content": 100,
+        "typography_fonts": 100,
+        "color_and_highlights": 100,
+        "geometry_and_layout": 100,
+        "visual_parity": 100,
+        "package_validity": 100
+      },
+      "lastChecked": "2026-10-23T20:08:00.209Z"
+    },
+    "pdf->xlsx": {
+      "pair": "pdf->xlsx",
+      "source": "PDF",
+      "target": "XLSX",
+      "mode": "fidelity",
+      "overallScore": 100,
+      "threshold": 85,
+      "status": "PASS",
+      "elementScores": {
+        "text_content": 100,
+        "typography_fonts": 100,
+        "color_and_highlights": 100,
+        "geometry_and_layout": 100,
+        "visual_parity": 100,
+        "package_validity": 100
+      },
+      "lastChecked": "2026-10-23T20:08:00.209Z"
+    },
+    "pdf->md": {
+      "pair": "pdf->md",
+      "source": "PDF",
+      "target": "MD",
+      "mode": "editable_flow",
+      "overallScore": 100,
+      "threshold": 75,
+      "status": "PASS",
+      "elementScores": {
+        "text_content": 100,
+        "typography_fonts": 100,
+        "color_and_highlights": 100,
+        "geometry_and_layout": 100,
+        "visual_parity": 100,
+        "package_validity": 100
+      },
+      "lastChecked": "2026-10-23T20:08:00.209Z"
+    },
+    "docx->html": {
+      "pair": "docx->html",
+      "source": "DOCX",
+      "target": "HTML",
+      "mode": "editable_flow",
+      "overallScore": 100,
+      "threshold": 85,
+      "status": "PASS",
+      "elementScores": {
+        "text_content": 100,
+        "typography_fonts": 100,
+        "color_and_highlights": 100,
+        "geometry_and_layout": 100,
+        "visual_parity": 100,
+        "package_validity": 100
+      },
+      "lastChecked": "2026-10-23T20:08:00.209Z"
+    },
+    "html->md": {
+      "pair": "html->md",
+      "source": "HTML",
+      "target": "MD",
+      "mode": "editable_flow",
+      "overallScore": 100,
+      "threshold": 85,
+      "status": "PASS",
+      "elementScores": {
+        "text_content": 100,
+        "typography_fonts": 100,
+        "color_and_highlights": 100,
+        "geometry_and_layout": 100,
+        "visual_parity": 100,
+        "package_validity": 100
+      },
+      "lastChecked": "2026-10-23T20:08:00.209Z"
+    }
+  },
+  "history": [
+    {
+      "timestamp": "2026-10-23T14:16:46.604Z",
+      "averageFidelity": 100,
+      "passedPairs": 7,
+      "totalPairs": 7,
+      "pairScores": {
+        "pdf->pptx": 100,
+        "pdf->docx": 100,
+        "pdf->html": 100,
+        "pdf->xlsx": 100,
+        "pdf->md": 100,
+        "docx->html": 100,
+        "html->md": 100
+      }
+    },
+    {
+      "timestamp": "2026-10-23T18:08:30.157Z",
+      "averageFidelity": 100,
+      "passedPairs": 7,
+      "totalPairs": 7,
+      "pairScores": {
+        "pdf->pptx": 100,
+        "pdf->docx": 100,
+        "pdf->html": 100,
+        "pdf->xlsx": 100,
+        "pdf->md": 100,
+        "docx->html": 100,
+        "html->md": 100
+      }
+    },
+    {
+      "timestamp": "2026-10-23T18:13:22.990Z",
+      "averageFidelity": 100,
+      "passedPairs": 7,
+      "totalPairs": 7,
+      "pairScores": {
+        "pdf->pptx": 100,
+        "pdf->docx": 100,
+        "pdf->html": 100,
+        "pdf->xlsx": 100,
+        "pdf->md": 100,
+        "docx->html": 100,
+        "html->md": 100
+      }
+    },
+    {
+      "timestamp": "2026-10-23T20:08:00.209Z",
+      "averageFidelity": 100,
+      "passedPairs": 7,
+      "totalPairs": 7,
+      "pairScores": {
+        "pdf->pptx": 100,
+        "pdf->docx": 100,
+        "pdf->html": 100,
+        "pdf->xlsx": 100,
+        "pdf->md": 100,
+        "docx->html": 100,
+        "html->md": 100
+      }
+    }
+  ]
+}

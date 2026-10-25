@@ -1,0 +1,179 @@
+{
+  "id": "fidelity-1792779201134",
+  "timestamp": "2026-10-23T18:13:21.134Z",
+  "format": "docx",
+  "overallScore": 100,
+  "passed": true,
+  "allowLossy": true,
+  "gateAction": "PASS",
+  "thresholds": {
+    "overall": 92,
+    "content": 90,
+    "style": 90,
+    "visualSsim": 0.9,
+    "maxRegionDiff": 5,
+    "validity": 100
+  },
+  "elementClassScores": {
+    "text_content": 100,
+    "typography_fonts": 100,
+    "color_and_highlights": 100,
+    "geometry_and_layout": 100,
+    "visual_parity": 100,
+    "package_validity": 100
+  },
+  "layers": {
+    "content": {
+      "layer": "content",
+      "score": 100,
+      "passed": true,
+      "threshold": 90,
+      "charDiff": {
+        "sourceChars": 0,
+        "outputChars": 0,
+        "missingChars": 0,
+        "extraChars": 0,
+        "alteredChars": 0,
+        "reorderedChars": 0,
+        "charFidelityRatio": 1,
+        "levenshteinDist": 0
+      },
+      "objectCounts": {
+        "source": {
+          "pages": 1,
+          "images": 0,
+          "tables": 0,
+          "links": 0,
+          "lists": 0
+        },
+        "output": {
+          "pages": 1,
+          "images": 0,
+          "tables": 0,
+          "links": 0,
+          "lists": 0
+        },
+        "matches": {
+          "pages": true,
+          "images": true,
+          "tables": true,
+          "links": true,
+          "lists": true
+        }
+      }
+    },
+    "style": {
+      "layer": "style",
+      "score": 100,
+      "passed": true,
+      "threshold": 90,
+      "attributeAudit": {
+        "bold": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "italic": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "underline": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "strike": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "highlight": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "subscript": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "superscript": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "redColor": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        }
+      },
+      "fonts": {
+        "source": [],
+        "output": [],
+        "unexpected": [],
+        "clean": true
+      },
+      "alignment": {
+        "source": {
+          "left": 0,
+          "center": 0,
+          "right": 0,
+          "both": 0
+        },
+        "output": {
+          "left": 0,
+          "center": 0,
+          "right": 0,
+          "both": 0
+        }
+      }
+    },
+    "visual": {
+      "layer": "visual",
+      "score": 100,
+      "passed": true,
+      "ssim": 1,
+      "ssimThreshold": 0.9,
+      "colorHistogram": {
+        "intersectionCoefficient": 1
+      },
+      "regionDiffs": {
+        "maxDiffPercent": 0,
+        "allRegionsPassed": true
+      },
+      "diffImagePath": null
+    },
+    "validity": {
+      "layer": "validity",
+      "score": 100,
+      "passed": true,
+      "threshold": 100,
+      "schemaValid": true,
+      "xmlOrderViolations": 0,
+      "reader1Pass": true,
+      "reader2Pass": true,
+      "errors": []
+    }
+  },
+  "approximations": [],
+  "substitutions": [],
+  "losses": []
+}

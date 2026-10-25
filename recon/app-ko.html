@@ -1,0 +1,594 @@
+<!DOCTYPE html><html lang="ko" class="js"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kiln 웹 스튜디오: 100% 오프라인 브라우저 파일 변환기 | Kiln</title>
+<meta name="description" content="Kiln 웹 애플리케이션: 이미지, 문서, PDF, 데이터, 오디오를 브라우저에서 직접 변환하세요. 100% 오프라인, 완전한 개인정보 보호 및 무료.">
+<link rel="canonical" href="https://filee.sh/ko/app/">
+<link rel="alternate" hreflang="en" href="https://filee.sh/app/">
+<link rel="alternate" hreflang="ko" href="https://filee.sh/ko/app/">
+<link rel="alternate" hreflang="zh-CN" href="https://filee.sh/zh-cn/app/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="/assets/styles.3a73bf9e74.css">
+<link rel="stylesheet" href="/assets/app.css">
+<!-- 사전 번들링된 클라이언트 측 변환 라이브러리 -->
+<script src="/assets/libs/jszip.min.js"></script>
+<script src="/assets/libs/pdf-lib.min.js"></script>
+<script src="/assets/libs/pdf.min.js"></script>
+<script src="/assets/libs/xlsx.full.min.js"></script>
+<script src="/assets/libs/marked.min.js"></script>
+<script src="/assets/libs/js-yaml.min.js"></script>
+<script type="module" src="/assets/app.js"></script>
+</head>
+<body class="lang-ko studio-page">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<div class="backdrop" aria-hidden="true"><i></i><i></i><i></i></div>
+<header class="nav" data-nav="">
+  <div class="nav-inner" style="justify-content:space-between;">
+    <a class="brand swirlzy-brand" href="/ko/" aria-label="Kiln" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+      <div class="swirlzy-brand-logo" style="width:38px;height:38px;border-radius:50%;background:#55ba86;display:flex;align-items:center;justify-content:center;">
+        <svg viewBox="0 0 32 32" style="width:22px;height:22px;fill:#1b4e3b;" aria-hidden="true">
+          <path d="M16 3C8.82 3 3 8.82 3 16s5.82 13 13 13 13-5.82 13-13c0-1.66-1.34-3-3-3s-3 1.34-3 3a7 7 0 1 1-7-7c1.66 0 3-1.34 3-3s-1.34-3-3-3z"/>
+        </svg>
+      </div>
+      <span style="font-family:var(--font-bubble);font-weight:900;letter-spacing:-0.5px;font-size:24px;color:var(--ink);">KILN</span>
+    </a>
+    <div class="nav-actions">
+      <a class="btn btn-ghost" href="/ko/" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path></svg><span>← 메인 화면으로</span></a>
+      <a href="/ko/app/" class="swirlzy-cart-btn"><span class="swirlzy-cart-text">PROCESSING ⚡</span><span class="swirlzy-cart-count">33</span></a>
+      <details class="lang-menu">
+        <summary aria-label="언어"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.36,14C16.44,13.34 16.5,12.68 16.5,12C16.5,11.32 16.44,10.66 16.36,10H19.74C19.9,10.64 20,11.31 20,12C20,12.69 19.9,13.36 19.74,14M14.59,19.56C15.19,18.45 15.65,17.25 15.97,16H18.92C17.96,17.65 16.43,18.93 14.59,19.56M14.34,14H9.66C9.56,13.34 9.5,12.68 9.5,12C9.5,11.32 9.56,10.65 9.66,10H14.34C14.43,10.65 14.5,11.32 14.5,12C14.5,12.68 14.43,13.34 14.34,14M12,19.96C11.17,18.76 10.5,17.43 10.09,16H13.91C13.5,17.43 12.83,18.76 12,19.96M8,8H5.08C6.03,6.34 7.57,5.06 9.4,4.44C8.8,5.55 8.35,6.75 8,8M5.08,16H8C8.35,17.25 8.8,18.45 9.4,19.56C7.57,18.93 6.03,17.65 5.08,16M4.26,14C4.1,13.36 4,12.69 4,12C4,11.31 4.1,10.64 4.26,10H7.64C7.56,10.66 7.5,11.32 7.5,12C7.5,12.68 7.56,13.34 7.64,14M12,4.03C12.83,5.23 13.5,6.57 13.91,8H10.09C10.5,6.57 11.17,5.23 12,4.03M18.92,8H15.97C15.65,6.75 15.19,5.55 14.59,4.44C16.43,5.07 17.96,6.34 18.92,8M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg><span>한국어</span></summary>
+        <ul><li><a href="/app/" hreflang="en" lang="en">English</a></li><li><a href="/ko/app/" hreflang="ko" lang="ko" aria-current="page">한국어</a></li><li><a href="/zh-cn/app/" hreflang="zh-CN" lang="zh-CN">简体中文</a></li></ul>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="studio-container">
+
+  <!-- Minimalist Workstation Toolbar -->
+  <div class="playground-toolbar">
+    <div class="playground-status-pill">
+      <span class="status-dot-green"></span>
+      <span>100% 클라이언트 사이드 엔진 · 서버 업로드 제로 · 완전한 프라이버시</span>
+    </div>
+
+    <!-- Main Mode Navigation Switch -->
+    <div class="playground-mode-switch">
+      <button class="mode-pill is-active" data-tab="donut" id="tab-donut" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16Z"/></svg>
+        <span>플레이그라운드</span>
+      </button>
+      <button class="mode-pill" data-tab="batch" id="tab-batch" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M4,4H10V10H4V4M14,4H20V10H14V4M4,14H10V20H4V14M14,14H20V20H14V14Z"/></svg>
+        <span>일괄 변환 모드</span>
+      </button>
+      <button class="mode-pill" data-tab="pdf-tools" id="tab-pdf-tools" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,19H5V5H19V19M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z"/></svg>
+        <span>33가지 PDF 도구</span>
+      </button>
+      <button class="mode-pill" data-tab="presets" id="tab-presets" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M3,17V19H9V17H3M3,5V7H13V5H3M13,21V19H21V17H13V15H11V21H13M7,9V11H3V13H7V15H9V9H7M21,13V11H11V13H21M15,9H17V7H21V5H17V3H15V9Z"/></svg>
+        <span>사전 설정</span>
+      </button>
+      <button class="mode-pill" data-tab="watcher" id="tab-watcher" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/></svg>
+        <span>폴더 감시</span>
+      </button>
+      <button class="mode-pill" data-tab="cli" id="tab-cli" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M20,19V7H4V19H20M20,3A2,2 0 0,1 22,5V19A2,2 0 0,1 20,21H4A2,2 0 0,1 2,19V5A2,2 0 0,1 4,3H20M13,17V15H18V17H13M9.58,13L5.5,8.91L6.92,7.5L12.41,13L6.92,18.5L5.5,17.09L9.58,13Z"/></svg>
+        <span>CLI 터미널</span>
+      </button>
+      <button class="mode-pill" data-tab="history" id="tab-history" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.89,15.89L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3Z"/></svg>
+        <span>변환 기록</span>
+      </button>
+      <button class="mode-pill" data-tab="privacy" id="tab-privacy" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,11.99H7V10.03L12,5.59L17,10.03V11.99H12Z"/></svg>
+        <span>개인정보보호</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- WORKSTATION 1: PLAYGROUND & PERSIMMON / RADIAL DIAL -->
+  <section class="studio-panel is-active" data-panel="donut" role="tabpanel" aria-labelledby="tab-donut">
+    <div class="donut-stage" id="donut-stage" data-tilt-3d="plane">
+      <canvas id="playground-particle-canvas" class="ambient-3d-canvas" aria-hidden="true"></canvas>
+      <div class="card-3d-shine" aria-hidden="true"></div>
+      
+      <!-- Big white bubble typography watermark in the background (like SWEET!) -->
+      <div class="swirlzy-stage-watermark" aria-hidden="true">변환!</div>
+      
+      <!-- Circular dark green badge (like FROM $12) -->
+      <div class="swirlzy-price-badge swirlzy-stage-badge">
+        <span class="swirlzy-price-badge-from">업로드</span>
+        <span class="swirlzy-price-badge-num">0 KB</span>
+      </div>
+
+      <!-- Initial Plain Playground Drop Prompt -->
+      <div class="donut-drop-prompt" id="donut-drop-prompt">
+        <div class="donut-drop-icon">
+          <svg viewBox="0 0 24 24"><path d="M19.35,10.04C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.04C2.34,8.36 0,10.91 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.04M14,13V17H10V13H7L12,8L17,13H14Z"></path></svg>
+        </div>
+        <h2 class="donut-drop-title">파일을 여기에 끌어다 놓거나 클릭하여 선택하세요</h2>
+        <p class="donut-drop-sub">PDF, 워드, 엑셀, 한글(HWP), 이미지, 오디오, 비디오, 텍스트 파일을 지원합니다. 파일 형식을 자동으로 감지하여 변환 가능한 포맷을 표시합니다.</p>
+        <button class="btn btn-primary swirlzy-primary-pill" type="button" id="donut-browse-btn">변환할 파일 선택</button>
+        <input type="file" id="donut-file-input" style="display:none" aria-label="플레이그라운드 파일 선택">
+      </div>
+
+      <!-- Recognized File Card -->
+      <div class="donut-active-file" id="donut-active-file">
+        <div class="donut-file-info">
+          <span class="donut-file-badge" id="donut-file-badge">FILE</span>
+          <div class="donut-file-meta">
+            <h3 class="donut-file-name" id="donut-file-name">filename.ext</h3>
+            <p class="donut-file-size" id="donut-file-size">0 KB · CATEGORY</p>
+          </div>
+        </div>
+        <button class="btn btn-ghost btn-small" type="button" id="donut-change-file-btn">파일 변경</button>
+      </div>
+
+      <!-- Upfront Preflight Warning Banner -->
+      <div id="donut-lossy-preflight" class="donut-lossy-banner" style="display:none;"></div>
+
+      <!-- SVG Donut Canvas (Persimmon / Radial Dial) -->
+      <div class="studio-donut-wrapper" id="studio-donut-wrapper">
+        <div class="donut is-open">
+          <svg id="studio-donut-svg" viewBox="-110 -110 220 220"></svg>
+        </div>
+      </div>
+
+      <!-- Hidden format grid for script safety -->
+      <div class="donut-quick-grid" id="donut-quick-grid" style="display:none;"></div>
+
+      <!-- Result Banner -->
+      <div class="donut-result-banner" id="donut-result-banner">
+        <div class="donut-result-header">
+          <div class="donut-result-title">
+            <svg class="icon" viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg>
+            <span id="donut-res-title">변환 완료</span>
+          </div>
+          <button class="btn btn-ghost btn-small" type="button" id="donut-retry-btn">다른 파일 변환</button>
+        </div>
+        <div class="donut-result-details">
+          <span>PC에서 100% 안전하게 처리됨</span>
+          <strong id="donut-res-meta">0 KB (-0%)</strong>
+        </div>
+        <div class="donut-result-actions">
+          <a class="btn btn-primary swirlzy-primary-pill" id="donut-download-btn" download style="display:inline-flex;align-items:center;gap:6px;"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/></svg> 변환된 파일 다운로드</a>
+          <button class="btn btn-ghost" type="button" id="donut-preview-btn">화면에서 결과 보기</button>
+        </div>
+        <!-- BATCH 8 Conversion Fidelity Report Card -->
+        <div id="donut-fidelity-card" class="donut-fidelity-card" style="display:none;"></div>
+      </div>
+
+      <!-- Bottom Hero Card Footer -->
+      <div class="swirlzy-stage-footer" aria-hidden="true">
+        <div class="swirlzy-stage-caption">100% 클라이언트 사이드 엔진 · 완전한 개인정보 보호</div>
+        <div class="swirlzy-stage-rating">
+          <span class="swirlzy-stage-rating-num">( 100% )</span>
+          <span class="swirlzy-stage-rating-sub">오프라인 WASM</span>
+        </div>
+        <div class="swirlzy-stage-thumbs">
+          <div class="swirlzy-stage-thumb" style="background:#ff4b4b;">PDF</div>
+          <div class="swirlzy-stage-thumb" style="background:#29b6f6;">DOC</div>
+          <div class="swirlzy-stage-thumb" style="background:#ffa726;">PPT</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WORKSTATION 2: BATCH CONVERTER -->
+  <section class="studio-panel" data-panel="batch" role="tabpanel" aria-labelledby="tab-batch">
+    <div class="studio-card">
+      <div class="studio-card-head">
+        <h2><svg class="icon" viewBox="0 0 24 24" style="width:22px;height:22px;fill:var(--accent)"><path d="M4,4H10V10H4V4M14,4H20V10H14V4M4,14H10V20H4V14M14,14H20V20H14V14Z"></path></svg> 다중 파일 일괄 변환기</h2>
+        <span class="studio-badge">병렬 방사형 변환</span>
+      </div>
+
+      <div class="batch-plane-toolbar" id="batch-plane-toolbar">
+        <div class="batch-controls">
+          <div class="batch-global-format-wrap">
+            <label for="batch-global-format" style="font-weight:700;font-size:13px;color:var(--muted)">전체 형식 설정:</label>
+            <select class="batch-select" id="batch-global-format">
+              <option value="">개별 설정 유지</option>
+              <option value="docx">DOCX (워드 문서)</option>
+              <option value="pptx">PPTX (파워포인트)</option>
+              <option value="xlsx">XLSX (엑셀 시트)</option>
+              <option value="txt">TXT (일반 텍스트)</option>
+              <option value="pdf">PDF (전자 문서)</option>
+              <option value="webp">WEBP (웹 최적화 이미지)</option>
+              <option value="jpg">JPG (사진 형식)</option>
+              <option value="png">PNG (무손실)</option>
+              <option value="md">MD (마크다운)</option>
+              <option value="ico">ICO (아이콘)</option>
+              <option value="zip">ZIP (압축 파일)</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+          <button class="btn btn-ghost btn-small" type="button" id="batch-clear-btn">목록 비우기</button>
+          <button class="btn btn-secondary btn-small" type="button" id="batch-add-files-btn">
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor;vertical-align:-2px;margin-right:4px;"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"/></svg>파일 추가
+          </button>
+          <button class="btn btn-primary" type="button" id="batch-convert-all-btn" disabled>모두 변환 (0개 파일)</button>
+          <button class="btn btn-primary" type="button" id="batch-zip-download-btn" style="display:none;background:#10b981;border-color:#10b981;">
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor;vertical-align:-2px;margin-right:4px;"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/></svg>일괄 다운로드 (ZIP)
+          </button>
+        </div>
+      </div>
+
+      <!-- Batch Plane Playground Stage -->
+      <div class="batch-stage-container">
+        <div class="donut-stage batch-stage" id="batch-stage" data-tilt-3d="plane">
+          <canvas id="batch-particle-canvas" class="ambient-3d-canvas" aria-hidden="true"></canvas>
+          <div class="card-3d-shine" aria-hidden="true"></div>
+          <!-- Hidden multi-file input -->
+          <input type="file" id="batch-file-input" multiple style="display:none" aria-label="일괄 변환용 파일 선택">
+
+          <!-- Empty drop prompt on the plane -->
+          <div class="donut-drop-prompt" id="batch-drop-prompt">
+            <div class="donut-drop-icon">
+              <svg viewBox="0 0 24 24"><path d="M4,4H10V10H4V4M14,4H20V10H14V4M4,14H10V20H4V14M14,14H20V20H14V14Z"></path></svg>
+            </div>
+            <h3 class="donut-drop-title">평면에 여러 파일을 끌어놓으세요</h3>
+            <p class="donut-drop-sub">클릭하거나 끌어놓아 여러 파일을 업로드하세요. 업로드된 각 파일은 평면에 개별 카드로 배치되며 독립적인 방사형 변환 다이얼이 제공됩니다.</p>
+            <button class="btn btn-primary" type="button" id="batch-browse-btn" style="pointer-events:auto;">파일 찾기</button>
+          </div>
+
+          <!-- Add More Ribbon (visible when files are on the plane) -->
+          <div class="batch-add-ribbon" id="batch-add-ribbon" style="display:none;">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"/></svg>
+            <span>파일을 더 끌어놓거나 여기를 클릭하여 평면에 추가</span>
+          </div>
+
+          <!-- Arranged Individual File Cards Grid on the Plane -->
+          <div class="batch-plane-grid" id="batch-plane-grid" style="display:none;"></div>
+        </div>
+      </div>
+
+      <!-- Hidden table wrapper for compatibility with automated test suites -->
+      <div class="batch-table-wrapper" id="batch-table-wrapper" style="display:none">
+        <table class="batch-table">
+          <thead>
+            <tr>
+              <th>파일명</th>
+              <th>크기</th>
+              <th>대상 형식</th>
+              <th>진행률</th>
+              <th>상태 / 작업</th>
+            </tr>
+          </thead>
+          <tbody id="batch-table-body"></tbody>
+        </table>
+      </div>
+
+      <!-- Global Progress -->
+      <div class="batch-global-progress" id="batch-global-progress" style="margin-top:20px;">
+        <div class="batch-progress-header">
+          <span>전체 진행 상황</span>
+          <span id="batch-progress-text">0 / 0 완료</span>
+        </div>
+        <div class="batch-progress-bar-wrap">
+          <div class="batch-progress-bar-fill" id="batch-progress-fill"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WORKSTATION 3: PRESETS & SETTINGS -->
+  <section class="studio-panel" data-panel="presets" role="tabpanel" aria-labelledby="tab-presets">
+    <div class="studio-card">
+      <div class="studio-card-head">
+        <h2><svg class="icon" viewBox="0 0 24 24" style="width:22px;height:22px;fill:var(--accent)"><path d="M3,17V19H9V17H3M3,5V7H13V5H3M13,21V19H21V17H13V15H11V21H13M7,9V11H3V13H7V15H9V9H7M21,13V11H11V13H21M15,9H17V7H21V5H17V3H15V9Z"></path></svg> 사전 설정 및 변환 옵션</h2>
+        <button class="btn btn-primary btn-small" type="button" id="preset-save-btn">설정 저장</button>
+      </div>
+
+      <div class="presets-grid">
+        
+        <!-- BATCH 8: Document Conversion Strategy (Mode) -->
+        <div class="preset-group">
+          <div class="preset-group-title">문서 레이아웃 전략</div>
+          <select class="batch-select" id="preset-conversion-mode" style="width:100%;">
+            <option value="exact_layout">정밀 레이아웃 (좌표 충실도 및 고정 지오메트리)</option>
+            <option value="editable_flow">편집 흐름 (리플로우 단락 및 유연한 흐름)</option>
+          </select>
+          <p style="font-size:12px;color:var(--muted);margin-top:6px;">절대 2D 좌표 보존과 편집 가능한 텍스트 리플로우 중 선택합니다.</p>
+        </div>
+
+        <!-- BATCH 8: Fidelity Failure Policy -->
+        <div class="preset-group">
+          <div class="preset-group-title">충실도 실패 정책</div>
+          <select class="batch-select" id="preset-failure-policy" style="width:100%;">
+            <option value="standard" selected>표준 모드 (변환 및 보고서 반환 - 권장 기본값)</option>
+            <option value="strict">엄격 모드 (품질 점수 &lt; 90% 또는 손실 시 변환 차단)</option>
+            <option value="best_effort">최선 모드 (최대 대체 경로 및 오류 방지)</option>
+          </select>
+          <p style="font-size:12px;color:var(--muted);margin-top:6px;">문서 변환 중 품질 게이트 임계값을 적용합니다.</p>
+        </div>
+
+        <!-- Image Compression -->
+        <div class="preset-group">
+          <div class="preset-group-title">
+            <span>이미지 압축 및 품질</span>
+            <span class="preset-slider-val" id="preset-quality-val">90%</span>
+          </div>
+          <div class="preset-slider-row">
+            <input type="range" id="preset-quality" min="10" max="100" value="90" step="5" aria-label="품질 슬라이더">
+          </div>
+          <p style="font-size:12px;color:var(--muted);margin-top:6px;">JPEG 및 WEBP 변환에 적용됩니다 (90% 권장).</p>
+        </div>
+
+        <!-- Resize Scale -->
+        <div class="preset-group">
+          <div class="preset-group-title">이미지 크기 조절 (해상도)</div>
+          <select class="batch-select" id="preset-resize" style="width:100%;">
+            <option value="100">원본 해상도 유지 (100%)</option>
+            <option value="75">75% 크기로 축소</option>
+            <option value="50">50% (절반 해상도)</option>
+            <option value="25">25% (썸네일 크기)</option>
+          </select>
+        </div>
+
+        <!-- Rotation & Flip -->
+        <div class="preset-group">
+          <div class="preset-group-title">회전 및 방향 전환</div>
+          <select class="batch-select" id="preset-rotate" style="width:100%;">
+            <option value="0">회전 없음 (0°)</option>
+            <option value="90">시계 방향 90° 회전</option>
+            <option value="180">180° 회전</option>
+            <option value="270">반시계 방향 90° 회전 (270°)</option>
+          </select>
+        </div>
+
+        <!-- Color & Enhancements -->
+        <div class="preset-group">
+          <div class="preset-group-title">색상 필터 및 변환</div>
+          <div class="preset-toggle-row">
+            <span class="preset-toggle-label">흑백 모노크롬 변환 (Grayscale)</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="preset-grayscale">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="preset-toggle-row">
+            <span class="preset-toggle-label">색상 반전 (Invert)</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="preset-invert">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="preset-toggle-row">
+            <span class="preset-toggle-label">좌우 반전 (Flip Horizontal)</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="preset-fliph">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="preset-toggle-row">
+            <span class="preset-toggle-label">상하 반전 (Flip Vertical)</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="preset-flipv">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WORKSTATION 4: FOLDER WATCHER -->
+  <section class="studio-panel" data-panel="watcher" role="tabpanel" aria-labelledby="tab-watcher">
+    <div class="studio-card">
+      <div class="studio-card-head">
+        <h2><svg class="icon" viewBox="0 0 24 24" style="width:22px;height:22px;fill:#1d9e75"><path d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"></path></svg> 실시간 폴더 감시자 (Web File System Access)</h2>
+        <span class="studio-status-pill">자동 폴더 동기화</span>
+      </div>
+
+      <p style="color:var(--muted);font-size:14px;margin-bottom:20px;">
+        컴퓨터의 로컬 폴더를 지정하세요. 해당 폴더에 새로운 파일이 추가되면 Kiln이 감지하여 지정된 형식으로 자동 변환합니다!
+      </p>
+
+      <div class="watcher-status-card">
+        <div class="watcher-info">
+          <div class="watcher-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"></path></svg>
+          </div>
+          <div>
+            <h3 style="font-size:15px;margin:0 0 4px;" id="watcher-status-text">감시자 대기 중. 모니터링할 폴더를 선택하세요.</h3>
+            <p style="font-size:12px;color:var(--muted);margin:0;">규칙: 감지된 모든 이미지를 선택한 형식으로 자동 변환</p>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:10px;">
+          <select class="batch-select" id="watcher-rule-ext">
+            <option value="webp">WEBP로 변환 (85%)</option>
+            <option value="jpg">JPG로 변환 (90%)</option>
+            <option value="png">PNG로 변환</option>
+            <option value="pdf">PDF로 변환</option>
+          </select>
+          <button class="btn btn-primary" type="button" id="watcher-start-btn">감시할 폴더 선택</button>
+          <button class="btn btn-ghost" type="button" id="watcher-stop-btn" style="display:none">감시 중지</button>
+          <button class="btn btn-ghost" type="button" id="watcher-simulate-btn">파일 드롭 시뮬레이션</button>
+        </div>
+      </div>
+
+      <h3 style="font-size:14px;font-weight:700;margin-bottom:10px;">실시간 활동 로그</h3>
+      <div class="watcher-log-terminal" id="watcher-log-box">
+        <div class="watcher-log-line">[시스템] 폴더 감시자 엔진 준비 완료. 폴더 선택 또는 시뮬레이션을 기다리는 중입니다.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WORKSTATION 5: WEB TERMINAL / CLI SIMULATOR -->
+  <section class="studio-panel" data-panel="cli" role="tabpanel" aria-labelledby="tab-cli">
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <div class="terminal-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="terminal-title">kiln-cli — bash — 80x24</div>
+        <div style="width:40px"></div>
+      </div>
+      <div class="terminal-body" id="terminal-body">
+        <div class="terminal-output" id="terminal-output"></div>
+        <div class="terminal-prompt-line">
+          <span class="terminal-prompt">kiln:~$</span>
+          <input type="text" class="terminal-input" id="terminal-input" autofocus autocomplete="off" spellcheck="false" aria-label="터미널 명령 입력">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKSTATION 6: HISTORY VAULT -->
+  <section class="studio-panel" data-panel="history" role="tabpanel" aria-labelledby="tab-history">
+    <div class="studio-card">
+      <div class="studio-card-head">
+        <h2><svg class="icon" viewBox="0 0 24 24" style="width:22px;height:22px;fill:var(--accent)"><path d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.89,15.89L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3Z"></path></svg> 최근 세션 변환 기록</h2>
+        <button class="btn btn-ghost btn-small" type="button" id="history-clear-btn" disabled>기록 비우기</button>
+      </div>
+
+      <div class="batch-table-wrapper">
+        <table class="batch-table">
+          <thead>
+            <tr>
+              <th>출력 파일</th>
+              <th>변환 경로</th>
+              <th>용량 변화</th>
+              <th>시간</th>
+              <th>작업</th>
+            </tr>
+          </thead>
+          <tbody id="history-table-body"></tbody>
+        </table>
+      </div>
+      <p id="history-empty-msg" style="text-align:center;color:var(--muted);padding:30px 0;">이 세션의 변환 기록이 없습니다. 도넛 또는 일괄 변환기로 파일을 변환해 보세요.</p>
+    </div>
+  </section>
+
+  <!-- WORKSTATION 7: PDF TOOLS HUB (33 Native Tools) -->
+  <section class="studio-panel" data-panel="pdf-tools" role="tabpanel" aria-labelledby="tab-pdf-tools">
+    <div class="studio-card">
+      <div class="studio-card-head">
+        <h2><svg class="icon" viewBox="0 0 24 24" style="width:22px;height:22px;fill:var(--accent)"><path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,19H5V5H19V19M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z"/></svg> 완전한 네이티브 PDF 도구 모음 (33종)</h2>
+        <span class="studio-badge">100% 안전한 오프라인 브라우저 처리</span>
+      </div>
+
+      <!-- Custom Workflow Chaining -->
+      <div class="workflow-builder-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+          <div>
+            <h3 style="font-size:15px;margin:0 0 4px;font-weight:700;">사용자 맞춤 워크플로 (도구 연계 실행)</h3>
+            <p style="font-size:12px;color:var(--muted);margin:0;">메모리 내에서 여러 작업을 순차적으로 연계 실행합니다 (예: 압축 → 워터마크 → 암호 보호).</p>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <button class="btn btn-ghost btn-small" type="button" id="wf-export-btn">JSON 내보내기</button>
+            <button class="btn btn-ghost btn-small" type="button" id="wf-import-btn">JSON 가져오기</button>
+            <button class="btn btn-primary btn-small" type="button" id="wf-run-btn">연계 실행</button>
+          </div>
+        </div>
+        <div class="workflow-steps-chain" id="workflow-chain-box">
+          <div class="workflow-step-chip"><span>1. PDF 압축 (권장 모드)</span></div>
+          <span class="workflow-step-arrow">→</span>
+          <div class="workflow-step-chip"><span>2. 워터마크 추가 ("기밀문서")</span></div>
+          <span class="workflow-step-arrow">→</span>
+          <div class="workflow-step-chip"><span>3. 암호 보호 (AES-256)</span></div>
+        </div>
+      </div>
+
+      <!-- Hub Search & Filters -->
+      <div class="pdf-hub-toolbar">
+        <div class="pdf-search-bar">
+          <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:var(--muted)"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/></svg>
+          <input type="text" id="pdf-tool-search" placeholder="33개 PDF 도구 검색 (예: 병합, 분할, 압축, OCR, 서식, 암호화, 서명, 교정, 자르기)..." aria-label="PDF 도구 검색">
+          <kbd style="font-size:11px;padding:2px 6px;border-radius:4px;background:var(--surface);border:1px solid var(--border)">/</kbd>
+        </div>
+
+        <div class="pdf-filter-pills" id="pdf-filter-pills">
+          <button class="pdf-pill is-active" data-group="all" type="button">전체 (33)</button>
+          <button class="pdf-pill" data-group="Organize" type="button">정리 (6)</button>
+          <button class="pdf-pill" data-group="Optimize" type="button">최적화 (3)</button>
+          <button class="pdf-pill" data-group="Convert to PDF" type="button">PDF로 변환 (5)</button>
+          <button class="pdf-pill" data-group="Convert from PDF" type="button">PDF에서 변환 (6)</button>
+          <button class="pdf-pill" data-group="Edit" type="button">편집 (6)</button>
+          <button class="pdf-pill" data-group="Security" type="button">보안 (5)</button>
+          <button class="pdf-pill" data-group="Intelligence" type="button">AI 인텔리전스 (2)</button>
+        </div>
+      </div>
+
+      <!-- Tools Grid -->
+      <div class="pdf-tools-grid" id="pdf-tools-grid">
+        <!-- 동적으로 data/pdf-tools.json에서 렌더링 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKSTATION 8: PRIVACY AUDIT & DATA LEDGER -->
+  <section class="studio-panel" data-panel="privacy" role="tabpanel" aria-labelledby="tab-privacy">
+    <div class="studio-card">
+      <div class="studio-card-head">
+        <h2><svg class="icon" viewBox="0 0 24 24" style="width:22px;height:22px;fill:#10b981"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,11.99H19C18.47,16.11 15.72,19.78 12,20.92V12H5V6.3L12,3.19V11.99Z"/></svg> 클라이언트 측 개인정보 감사 &amp; 데이터 대장</h2>
+        <span class="studio-badge" style="color:#10b981;border-color:#10b981;background:rgba(16,185,129,0.1)">외부 전송 0바이트 보장</span>
+      </div>
+
+      <div class="privacy-audit-grid">
+        <div class="privacy-stat-card">
+          <div class="privacy-stat-label">외부 네트워크 전송량</div>
+          <div class="privacy-stat-val">0 B</div>
+          <p style="font-size:11px;color:var(--muted);margin:0;">문서 데이터 및 메타데이터가 브라우저 외부로 나가지 않습니다.</p>
+        </div>
+        <div class="privacy-stat-card">
+          <div class="privacy-stat-label">원격 측정 및 추적</div>
+          <div class="privacy-stat-val">비활성화됨</div>
+          <p style="font-size:11px;color:var(--muted);margin:0;">분석 스크립트, 쿠키, 추적 픽셀, 계정 시스템이 없습니다.</p>
+        </div>
+        <div class="privacy-stat-card">
+          <div class="privacy-stat-label">AI / 인텔리전스 보안</div>
+          <div class="privacy-stat-val">로컬 전용</div>
+          <p style="font-size:11px;color:var(--muted);margin:0;">WebGPU / WASM 로컬 실행. 사용자 API 키 사용 시에도 전송 전 명시적 승인 필요.</p>
+        </div>
+        <div class="privacy-stat-card">
+          <div class="privacy-stat-label">로컬 메모리 안전 상한</div>
+          <div class="privacy-stat-val">250 MB 한도</div>
+          <p style="font-size:11px;color:var(--muted);margin:0;">탭 튕김 방지를 위해 사전에 힙 한도를 능동 검사합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Modal Preview Dialog -->
+<div class="studio-modal" id="studio-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-dialog">
+    <div class="modal-head">
+      <h3 id="modal-title">파일 미리보기</h3>
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="미리보기 닫기">✕</button>
+    </div>
+    <div class="modal-content" id="modal-content"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>Kiln 웹 애플리케이션 스튜디오 · 100% 클라이언트 측 엔진 · MIT 라이선스</p>
+    <div class="footer-links">
+      <a href="/ko/">홈</a>
+      <a href="/ko/formats/">형식 목록</a>
+      <a href="/ko/cli/">CLI 레퍼런스</a>
+      <a href="https://github.com/KnifeLemon/Filee" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body></html>

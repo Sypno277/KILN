@@ -1,0 +1,280 @@
+{
+  "id": "fidelity-1792794933192",
+  "timestamp": "2026-10-23T22:35:33.192Z",
+  "format": "pptx",
+  "overallScore": 62.95,
+  "passed": false,
+  "allowLossy": false,
+  "gateAction": "FAIL_CONVERSION_BLOCKED",
+  "thresholds": {
+    "overall": 99.9,
+    "content": 99.9,
+    "style": 90,
+    "visualSsim": 0.9,
+    "maxRegionDiff": 5,
+    "validity": 100
+  },
+  "elementClassScores": {
+    "text_content": 37.78,
+    "typography_fonts": 56.25,
+    "color_and_highlights": 75,
+    "geometry_and_layout": 62.73,
+    "visual_parity": 62.73,
+    "package_validity": 100
+  },
+  "layers": {
+    "fixity": {
+      "layer": "fixity",
+      "inputSha256": null,
+      "outputSha256": null,
+      "expectBitIdentical": false,
+      "passed": true,
+      "note": "Checksum equality confirms bit-identity where expected (e.g. remux / rewrap). Checksums cannot prove cross-format equivalence; they detect change and preserve baseline fixity."
+    },
+    "content": {
+      "layer": "content",
+      "score": 37.78,
+      "passed": false,
+      "threshold": 99.9,
+      "charDiff": {
+        "sourceChars": 27,
+        "outputChars": 22,
+        "missingChars": 20,
+        "extraChars": 15,
+        "alteredChars": 15,
+        "reorderedChars": 4,
+        "charFidelityRatio": 0.1111,
+        "levenshteinDist": 24
+      },
+      "objectCounts": {
+        "source": {
+          "pages": 1,
+          "images": 0,
+          "tables": 0,
+          "links": 0,
+          "lists": 0
+        },
+        "output": {
+          "pages": 1,
+          "images": 0,
+          "tables": 0,
+          "links": 0,
+          "lists": 0
+        },
+        "matches": {
+          "pages": true,
+          "images": true,
+          "tables": true,
+          "links": true,
+          "lists": true
+        }
+      }
+    },
+    "style": {
+      "layer": "style",
+      "score": 56.25,
+      "passed": false,
+      "threshold": 90,
+      "attributeAudit": {
+        "bold": {
+          "sourceChars": 12,
+          "outputChars": 0,
+          "varianceChars": 12,
+          "variancePercent": 100,
+          "match": false
+        },
+        "italic": {
+          "sourceChars": 15,
+          "outputChars": 0,
+          "varianceChars": 15,
+          "variancePercent": 100,
+          "match": false
+        },
+        "underline": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "strike": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "highlight": {
+          "sourceChars": 19,
+          "outputChars": 0,
+          "varianceChars": 19,
+          "variancePercent": 100,
+          "match": false
+        },
+        "subscript": {
+          "sourceChars": 13,
+          "outputChars": 0,
+          "varianceChars": 13,
+          "variancePercent": 100,
+          "match": false
+        },
+        "superscript": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "redColor": {
+          "sourceChars": 22,
+          "outputChars": 0,
+          "varianceChars": 22,
+          "variancePercent": 100,
+          "match": false
+        }
+      },
+      "fonts": {
+        "source": [
+          "Helvetica-Bold",
+          "Times-Roman",
+          "Helvetica",
+          "Times-Italic"
+        ],
+        "output": [],
+        "unexpected": [],
+        "clean": true
+      },
+      "alignment": {
+        "source": {
+          "left": 0,
+          "center": 0,
+          "right": 0,
+          "both": 0
+        },
+        "output": {
+          "left": 0,
+          "center": 0,
+          "right": 0,
+          "both": 0
+        }
+      }
+    },
+    "visual": {
+      "layer": "visual",
+      "score": 62.73,
+      "passed": false,
+      "ssim": 0.6576,
+      "ssimThreshold": 0.9,
+      "colorHistogram": {
+        "intersectionCoefficient": 0.9444,
+        "channelMatches": {
+          "r": 0.9444,
+          "g": 0.9444,
+          "b": 0.9444
+        }
+      },
+      "regionDiffs": {
+        "regions": [
+          {
+            "regionId": 1,
+            "name": "Top-Left",
+            "diffPercent": 0,
+            "diffPixels": 0,
+            "totalPixels": 10000,
+            "passed": true
+          },
+          {
+            "regionId": 2,
+            "name": "Top-Center",
+            "diffPercent": 50,
+            "diffPixels": 5000,
+            "totalPixels": 10000,
+            "passed": false
+          },
+          {
+            "regionId": 3,
+            "name": "Top-Right",
+            "diffPercent": 0,
+            "diffPixels": 0,
+            "totalPixels": 10000,
+            "passed": true
+          },
+          {
+            "regionId": 4,
+            "name": "Mid-Left",
+            "diffPercent": 0,
+            "diffPixels": 0,
+            "totalPixels": 10000,
+            "passed": true
+          },
+          {
+            "regionId": 5,
+            "name": "Mid-Center",
+            "diffPercent": 0,
+            "diffPixels": 0,
+            "totalPixels": 10000,
+            "passed": true
+          },
+          {
+            "regionId": 6,
+            "name": "Mid-Right",
+            "diffPercent": 0,
+            "diffPixels": 0,
+            "totalPixels": 10000,
+            "passed": true
+          },
+          {
+            "regionId": 7,
+            "name": "Bot-Left",
+            "diffPercent": 0,
+            "diffPixels": 0,
+            "totalPixels": 10000,
+            "passed": true
+          },
+          {
+            "regionId": 8,
+            "name": "Bot-Center",
+            "diffPercent": 0,
+            "diffPixels": 0,
+            "totalPixels": 10000,
+            "passed": true
+          },
+          {
+            "regionId": 9,
+            "name": "Bot-Right",
+            "diffPercent": 0,
+            "diffPixels": 0,
+            "totalPixels": 10000,
+            "passed": true
+          }
+        ],
+        "maxDiffPercent": 50,
+        "allRegionsPassed": false
+      },
+      "diffImagePath": "D:\\My Projects\\Filee\\reports\\visual-diff\\test_strict_fail_diff.bmp"
+    },
+    "validity": {
+      "layer": "validity",
+      "score": 100,
+      "passed": true,
+      "threshold": 100,
+      "schemaValid": true,
+      "xmlOrderViolations": 0,
+      "reader1Pass": true,
+      "reader2Pass": true,
+      "errors": []
+    }
+  },
+  "approximations": [
+    {
+      "type": "Subscript Baseline Offset",
+      "detail": "13 subscript characters preserved with negative font baseline offset."
+    },
+    {
+      "type": "Text Highlight Shading",
+      "detail": "19 highlighted characters preserved with high-contrast background shading."
+    }
+  ],
+  "substitutions": [],
+  "losses": []
+}

@@ -1,0 +1,181 @@
+{
+  "id": "fidelity-1792764358846",
+  "timestamp": "2026-10-23T14:05:58.846Z",
+  "format": "pptx",
+  "overallScore": 92.5,
+  "passed": false,
+  "allowLossy": false,
+  "gateAction": "FAIL_CONVERSION_BLOCKED",
+  "thresholds": {
+    "overall": 95,
+    "content": 90,
+    "style": 90,
+    "visualSsim": 0.9,
+    "maxRegionDiff": 5,
+    "validity": 100
+  },
+  "elementClassScores": {
+    "text_content": 100,
+    "typography_fonts": 100,
+    "color_and_highlights": 100,
+    "geometry_and_layout": 100,
+    "visual_parity": 100,
+    "package_validity": 50
+  },
+  "layers": {
+    "content": {
+      "layer": "content",
+      "score": 100,
+      "passed": true,
+      "threshold": 90,
+      "charDiff": {
+        "sourceChars": 0,
+        "outputChars": 0,
+        "missingChars": 0,
+        "extraChars": 0,
+        "alteredChars": 0,
+        "reorderedChars": 0,
+        "charFidelityRatio": 1,
+        "levenshteinDist": 0
+      },
+      "objectCounts": {
+        "source": {
+          "pages": 1,
+          "images": 0,
+          "tables": 0,
+          "links": 0,
+          "lists": 0
+        },
+        "output": {
+          "pages": 1,
+          "images": 0,
+          "tables": 0,
+          "links": 0,
+          "lists": 0
+        },
+        "matches": {
+          "pages": true,
+          "images": true,
+          "tables": true,
+          "links": true,
+          "lists": true
+        }
+      }
+    },
+    "style": {
+      "layer": "style",
+      "score": 100,
+      "passed": true,
+      "threshold": 90,
+      "attributeAudit": {
+        "bold": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "italic": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "underline": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "strike": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "highlight": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "subscript": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "superscript": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        },
+        "redColor": {
+          "sourceChars": 0,
+          "outputChars": 0,
+          "varianceChars": 0,
+          "variancePercent": 0,
+          "match": true
+        }
+      },
+      "fonts": {
+        "source": [],
+        "output": [],
+        "unexpected": [],
+        "clean": true
+      },
+      "alignment": {
+        "source": {
+          "left": 0,
+          "center": 0,
+          "right": 0,
+          "both": 0
+        },
+        "output": {
+          "left": 0,
+          "center": 0,
+          "right": 0,
+          "both": 0
+        }
+      }
+    },
+    "visual": {
+      "layer": "visual",
+      "score": 100,
+      "passed": true,
+      "ssim": 1,
+      "ssimThreshold": 0.9,
+      "colorHistogram": {
+        "intersectionCoefficient": 1
+      },
+      "regionDiffs": {
+        "maxDiffPercent": 0,
+        "allRegionsPassed": true
+      },
+      "diffImagePath": null
+    },
+    "validity": {
+      "layer": "validity",
+      "score": 50,
+      "passed": false,
+      "threshold": 100,
+      "schemaValid": true,
+      "xmlOrderViolations": 0,
+      "reader1Pass": false,
+      "reader2Pass": true,
+      "errors": [
+        "Reader 1 (Python) validation failed: Command failed: python -c \"import pptx; p = pptx.Presentation(r'torture.pptx'); assert len(p.slides) >= 0; print('OK')\"\nTraceback (most recent call last):\r\n  File \"<string>\", line 1, in <module>\r\n  File \"C:\\Users\\priti\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pptx\\api.py\", line 28, in Presentation\r\n    presentation_part = Package.open(pptx).main_document_part\r\n  File \"C:\\Users\\priti\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pptx\\opc\\package.py\", line 73, in open\r\n    return cls(pkg_file)._load()\r\n  File \"C:\\Users\\priti\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pptx\\opc\\package.py\", line 157, in _load\r\n    pkg_xml_rels, parts = _PackageLoader.load(self._pkg_file, self)\r\n  File \"C:\\Users\\priti\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pptx\\opc\\package.py\", line 186, in load\r\n    return cls(pkg_file, package)._load()\r\n  File \"C:\\Users\\priti\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pptx\\opc\\package.py\", line 190, in _load\r\n    parts, xml_rels = self._parts, self._xml_rels\r\n  File \"C:\\Users\\priti\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pptx\\util.py\", line 215, in __get__\r\n    value = self._fget(obj)\r\n  File \"C:\\Users\\priti\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pptx\\opc\\package.py\", line 219, in _parts\r\n    content_types = self._content_types\r\n  File \"C:\\Users\\priti\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pptx\\util.py\", line 215, in __get__\r\n    value = self._fget(obj)\r\n  File \"C:\\Users\\priti\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pptx\\opc\\package.py\", line 203, in _content_types\r\n    return _ContentTypeMap.from_xml(self._package_reader[CONTENT_TYPES_URI])\r\n  File \"C:\\Users\\priti\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pptx\\opc\\serialized.py\", line 35, in __getitem__\r\n    return self._blob_reader[pack_uri]\r\n  File \"C:\\Users\\priti\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pptx\\util.py\", line 215, in __get__\r\n    value = self._fget(obj)\r\n  File \"C:\\Users\\priti\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pptx\\opc\\serialized.py\", line 49, in _blob_reader\r\n    return _PhysPkgReader.factory(self._pkg_file)\r\n  File \"C:\\Users\\priti\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pptx\\opc\\serialized.py\", line 135, in factory\r\n    raise PackageNotFoundError(\"Package not found at '%s'\" % pkg_file)\r\npptx.exc.PackageNotFoundError: Package not found at 'torture.pptx'\r\n"
+      ]
+    }
+  },
+  "approximations": [],
+  "substitutions": [],
+  "losses": []
+}

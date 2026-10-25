@@ -127,7 +127,7 @@ function verifySubtitles(srtText, vttText) {
 
 async function runAccuracyVerification() {
   console.log('===============================================================');
-  console.log('    KILN / FILEE AUTOMATED ACCURACY & FIDELITY TEST SUITE      ');
+  console.log('         KILN AUTOMATED ACCURACY & FIDELITY TEST SUITE         ');
   console.log('===============================================================\n');
 
   const ledger = JSON.parse(fs.readFileSync(LEDGER_PATH, 'utf8'));
@@ -577,7 +577,7 @@ async function runAccuracyVerification() {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kiln / Filee Accuracy & Verification Report</title>
+<title>Kiln Accuracy & Verification Report</title>
 <style>
   :root {
     --bg: #0f0e16;
@@ -613,7 +613,7 @@ async function runAccuracyVerification() {
 <body>
 <div class="container">
   <header>
-    <h1>Kiln / Filee Accuracy & Correctness Verification Report</h1>
+    <h1>Kiln Accuracy & Correctness Verification Report</h1>
     <p style="color:var(--muted);margin:0 0 12px;">Audited against Single Source of Truth Coverage Ledger & 5-tier test fixtures.</p>
     <span class="badge badge-pass">RELEASE GATE: PASSED (100.0% VERIFIED)</span>
   </header>

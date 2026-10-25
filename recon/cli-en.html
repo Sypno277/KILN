@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="en" class="js"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-0Q2YHDJHEL"></script>
+<script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-0Q2YHDJHEL');</script>
+<script>document.documentElement.classList.add('js')</script>
+<title>Kiln Command Line: Convert Files and Watch Folders | Kiln</title>
+<meta name="description" content="Use the free kiln command on Windows to convert files, folders and wildcards offline, watch folders, and script conversions with JSON output and exit codes.">
+<meta name="naver-site-verification" content="f0011d6370ae2cc7478f0ec9d1457451cbcdfc87">
+<link rel="canonical" href="https://filee.sh/cli/">
+<link rel="alternate" hreflang="en" href="https://filee.sh/cli/"><link rel="alternate" hreflang="ko" href="https://filee.sh/ko/cli/"><link rel="alternate" hreflang="zh-CN" href="https://filee.sh/zh-cn/cli/"><link rel="alternate" hreflang="x-default" href="https://filee.sh/cli/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kiln">
+<meta property="og:title" content="Kiln Command Line: Convert Files and Watch Folders | Kiln">
+<meta property="og:description" content="Use the free kiln command on Windows to convert files, folders and wildcards offline, watch folders, and script conversions with JSON output and exit codes.">
+<meta property="og:url" content="https://filee.sh/cli/">
+<meta property="og:image" content="https://filee.sh/media/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kiln: a donut of formats opens at the cursor while dragging a file">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR"><meta property="og:locale:alternate" content="zh_CN">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kiln Command Line: Convert Files and Watch Folders | Kiln">
+<meta name="twitter:description" content="Use the free kiln command on Windows to convert files, folders and wildcards offline, watch folders, and script conversions with JSON output and exit codes.">
+<meta name="twitter:image" content="https://filee.sh/media/og-en.jpg">
+<meta name="theme-color" content="#7F77DD" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16151F" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="/assets/styles.3a73bf9e74.css">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"The kiln command line","name":"Kiln Command Line: Convert Files and Watch Folders | Kiln","description":"Use the free kiln command on Windows to convert files, folders and wildcards offline, watch folders, and script conversions with JSON output and exit codes.","url":"https://filee.sh/cli/","inLanguage":"en","about":{"@id":"https://filee.sh/#app"},"proficiencyLevel":"Beginner","dependencies":"Kiln 1.11.0 for Windows 10/11","author":{"@type":"Person","name":"KnifeLemon","url":"https://github.com/KnifeLemon"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://filee.sh/"},{"@type":"ListItem","position":2,"name":"Command line","item":"https://filee.sh/cli/"}]}]</script>
+<script type="module" src="/assets/main.dc161caed7.js"></script>
+</head>
+<body class="lang-en">
+<a class="skip" href="#main">Skip to content</a>
+<div class="backdrop" aria-hidden="true"><i></i><i></i><i></i></div>
+<header class="nav" data-nav="">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="Kiln"><svg class="logo" viewBox="0 0 512 512" aria-hidden="true"><path fill="#7F77DD" d="M154.61 65.27A216 216 0 0 1 357.39 65.27L304.82 164.17A104 104 0 0 0 207.18 164.17Z"></path><path transform="translate(13.86,-8)" fill="#1D9E75" d="M373.66 67.74A222 222 0 0 1 477.86 248.23L359.94 252.36A104 104 0 0 0 311.12 167.81Z"></path><path fill="#7F77DD" d="M471.87 263.56A216 216 0 0 1 370.48 439.17L311.12 344.19A104 104 0 0 0 359.94 259.64Z"></path><path fill="#6A62C9" d="M357.39 446.73A216 216 0 0 1 154.61 446.73L207.18 347.83A104 104 0 0 0 304.82 347.83Z"></path><path fill="#7F77DD" d="M141.52 439.17A216 216 0 0 1 40.13 263.56L152.06 259.64A104 104 0 0 0 200.88 344.19Z"></path><path fill="#6A62C9" d="M40.13 248.44A216 216 0 0 1 141.52 72.83L200.88 167.81A104 104 0 0 0 152.06 252.36Z"></path><path fill="#3C3489" d="M222 212h44l24 24v64h-68z"></path><path fill="#AFA9EC" d="M266 212v24h24z"></path></svg><span>Kiln</span></a>
+    <nav class="nav-links" aria-label="Menu">
+      <a href="/#how">How it works</a>
+      <a href="/#features">Features</a>
+      <a href="/formats/">Formats</a>
+      <a href="/cli/" aria-current="page">Command line</a>
+      <a href="/#hwp">HWP</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <details class="lang-menu">
+        <summary aria-label="Language"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.36,14C16.44,13.34 16.5,12.68 16.5,12C16.5,11.32 16.44,10.66 16.36,10H19.74C19.9,10.64 20,11.31 20,12C20,12.69 19.9,13.36 19.74,14M14.59,19.56C15.19,18.45 15.65,17.25 15.97,16H18.92C17.96,17.65 16.43,18.93 14.59,19.56M14.34,14H9.66C9.56,13.34 9.5,12.68 9.5,12C9.5,11.32 9.56,10.65 9.66,10H14.34C14.43,10.65 14.5,11.32 14.5,12C14.5,12.68 14.43,13.34 14.34,14M12,19.96C11.17,18.76 10.5,17.43 10.09,16H13.91C13.5,17.43 12.83,18.76 12,19.96M8,8H5.08C6.03,6.34 7.57,5.06 9.4,4.44C8.8,5.55 8.35,6.75 8,8M5.08,16H8C8.35,17.25 8.8,18.45 9.4,19.56C7.57,18.93 6.03,17.65 5.08,16M4.26,14C4.1,13.36 4,12.69 4,12C4,11.31 4.1,10.64 4.26,10H7.64C7.56,10.66 7.5,11.32 7.5,12C7.5,12.68 7.56,13.34 7.64,14M12,4.03C12.83,5.23 13.5,6.57 13.91,8H10.09C10.5,6.57 11.17,5.23 12,4.03M18.92,8H15.97C15.65,6.75 15.19,5.55 14.59,4.44C16.43,5.07 17.96,6.34 18.92,8M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg><span>English</span></summary>
+        <ul><li><a href="/cli/" hreflang="en" lang="en" aria-current="page">English</a></li><li><a href="/ko/cli/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/zh-cn/cli/" hreflang="zh-CN" lang="zh-CN">简体中文</a></li></ul>
+      </details>
+      <a class="btn btn-ghost github" href="https://github.com/KnifeLemon/Filee" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21.09C14.5,21.36 14.66,21.67 15.17,21.59C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path></svg><span class="stars" data-stars="">★ 3.5k</span></a>
+      <a class="btn btn-primary btn-small" href="/app/"><span>Launch Studio</span></a>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+  <section class="page-hero page-hero-cli">
+    <div class="page-hero-copy">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path></svg></li><li><span aria-current="page">Command line</span></li></ol></nav>
+      <p class="tags"><span class="tag">Windows 10/11</span><span class="tag">Your presets</span><span class="tag">JSON output</span></p>
+      <h1>The kiln command line</h1>
+      <p class="lead">Convert files from Command Prompt, PowerShell or your own scripts with the same engines and presets as the app, or leave a folder converting whatever lands in it. Everything stays on your PC.</p>
+      <div class="cta">
+        <a class="btn btn-primary btn-large" href="/app/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4,4H10V10H4V4M14,4H20V10H14V4M4,14H10V20H4V14M14,14H20V20H14V14Z"/></svg><span>Convert in Web Studio</span></a>
+        <a class="btn btn-ghost btn-large" href="#commands"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.6,16.6L19.2,12L14.6,7.4L16,6L22,12L16,18L14.6,16.6M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6Z"></path></svg><span>See the commands</span></a>
+      </div>
+    </div>
+    <figure class="terminal" aria-label="Example: converting HEIC photos to JPG in a terminal">
+      <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+      <pre><code><span class="t-prompt">D:\Photos&gt;</span> <span class="t-cmd">kiln convert *.heic --to jpg</span>
+<span class="t-ok">ok</span>    IMG_0412.heic -&gt; IMG_0412.jpg
+<span class="t-ok">ok</span>    IMG_0413.heic -&gt; IMG_0413.jpg
+<span class="t-ok">ok</span>    IMG_0414.heic -&gt; IMG_0414.jpg
+<span class="t-out">Converted 3 of 3 file(s).</span></code></pre>
+    </figure>
+  </section>
+
+  <section class="section section-tight" id="setup">
+    <header class="section-head is-visible" data-reveal=""><h2>Set up the kiln command</h2></header>
+    <ol class="steps">
+      <li class="step" data-reveal="" style="--i:0"><span class="step-number">1</span><h3>Keep it ticked in Setup</h3><p>On the options page of the Kiln installer, leave <strong>Add the "kiln" command to PATH</strong> ticked (it is on by default). Already installed? Run the latest installer again.</p></li><li class="step" data-reveal="" style="--i:1"><span class="step-number">2</span><h3>Open a new terminal</h3><p>Open a new Command Prompt, PowerShell or Windows Terminal window (one that was already open doesn't see the new PATH) and run <code>kiln version</code>.</p></li><li class="step" data-reveal="" style="--i:2"><span class="step-number">3</span><h3>Portable or without PATH</h3><p>Everything is in the Kiln folder: run <code>kiln-cli.exe</code> there, or add its <code>cli</code> folder to PATH yourself. The app doesn't need to be running.</p></li>
+    </ol>
+  </section>
+
+  <section class="section section-tight" id="quick-start">
+    <header class="section-head" data-reveal=""><h2>Quick start</h2><p>Pass file names, wildcards like <code>*.heic</code> or whole folders. Results are saved next to the originals unless you add <code>-o</code>.</p></header>
+    <ul class="cli-recipes">
+      <li data-reveal="" style="--i:0"><h3>One photo to JPG</h3><pre class="code"><code>kiln convert photo.heic --to jpg</code></pre></li><li data-reveal="" style="--i:1"><h3>Every PNG to WebP at quality 80, into one folder</h3><pre class="code"><code>kiln convert *.png --to webp --quality 80 -o converted</code></pre></li><li data-reveal="" style="--i:0"><h3>A folder and its sub folders with a preset</h3><pre class="code"><code>kiln convert D:\Scans --recursive --preset to-pdf</code></pre></li><li data-reveal="" style="--i:1"><h3>An inbox folder that makes PDFs</h3><pre class="code"><code>kiln watch D:\Inbox --to pdf --move-originals</code></pre></li><li data-reveal="" style="--i:0"><h3>What can HEIC become?</h3><pre class="code"><code>kiln formats heic</code></pre></li><li data-reveal="" style="--i:1"><h3>Your presets, by id and name</h3><pre class="code"><code>kiln presets</code></pre></li>
+    </ul>
+  </section>
+
+  <section class="section section-tight" id="commands">
+    <header class="section-head" data-reveal=""><h2>Commands</h2></header>
+    <nav class="cat-index" aria-label="Commands">
+      <a class="pill" href="#cmd-convert"><code>kiln convert</code></a><a class="pill" href="#cmd-watch"><code>kiln watch</code></a><a class="pill" href="#cmd-formats"><code>kiln formats</code></a><a class="pill" href="#cmd-presets"><code>kiln presets</code></a><a class="pill" href="#cmd-help"><code>kiln help</code></a>
+    </nav>
+    <div class="cli-commands">
+      <article class="cli-command" id="cmd-convert" data-reveal="">
+        <h3><code>kiln convert</code></h3>
+        <pre class="code"><code>kiln convert &lt;files or folders...&gt; (--to &lt;format&gt; | --preset &lt;preset&gt;) [options]</code></pre>
+        <p>Converts files, wildcards (<code>*.heic</code>) and folders. A folder converts the files in it that Kiln knows; add <code>-r</code> for its sub folders. Give either a target format or one of your presets.</p>
+        <h4>Options</h4>
+        <table class="engine-table cli-table">
+          <tbody><tr><th scope="row"><code>-t, --to &lt;format&gt;</code></th><td>Target format by id or extension: jpg, png, webp, pdf, docx, hwpx, mp4, mp3… (see <code>kiln formats</code>)</td></tr><tr><th scope="row"><code>-p, --preset &lt;preset&gt;</code></th><td>A preset from the app, by id or by name (see <code>kiln presets</code>)</td></tr><tr><th scope="row"><code>-o, --output &lt;folder&gt;</code></th><td>Save there instead of next to the sources</td></tr><tr><th scope="row"><code>-r, --recursive</code></th><td>Include sub folders</td></tr><tr><th scope="row"><code>-q, --quality &lt;1-100&gt;</code></th><td>Image quality for JPG, WebP, AVIF and other lossy formats</td></tr><tr><th scope="row"><code>--overwrite</code></th><td>Replace existing output files (by default a number is added to the new name)</td></tr><tr><th scope="row"><code>--skip</code></th><td>Leave existing output files alone</td></tr><tr><th scope="row"><code>--keep-dates</code></th><td>Give converted files the created and modified dates of the originals</td></tr><tr><th scope="row"><code>--json</code></th><td>Print the result as one JSON document, for scripts</td></tr><tr><th scope="row"><code>--quiet</code></th><td>Print nothing but errors</td></tr></tbody>
+        </table>
+      </article>
+      <article class="cli-command" id="cmd-watch" data-reveal="">
+        <h3><code>kiln watch</code></h3>
+        <pre class="code"><code>kiln watch &lt;folder&gt; (--to &lt;format&gt; | --preset &lt;preset&gt;) [options]</code></pre>
+        <p>Converts every file that lands in the folder until you press Ctrl+C. Converted files go to a <code>converted</code> folder inside it unless you add <code>-o</code>.</p>
+        <h4>Options</h4>
+        <table class="engine-table cli-table">
+          <tbody><tr><th scope="row"><code>-t, --to &lt;format&gt;</code></th><td>Target format</td></tr><tr><th scope="row"><code>-p, --preset &lt;preset&gt;</code></th><td>A preset from the app, by id or by name</td></tr><tr><th scope="row"><code>-o, --output &lt;folder&gt;</code></th><td>Where converted files go (default: <code>&lt;folder&gt;\converted</code>)</td></tr><tr><th scope="row"><code>-r, --recursive</code></th><td>Also watch sub folders (their files keep the sub folder in the output)</td></tr><tr><th scope="row"><code>--move-originals</code></th><td>Move each converted source to <code>&lt;folder&gt;\originals</code>, and convert the files already waiting there at start</td></tr><tr><th scope="row"><code>--settle &lt;seconds&gt;</code></th><td>How long a file must stay unchanged before it is converted (default 2)</td></tr><tr><th scope="row"><code>--keep-dates</code></th><td>Give converted files the created and modified dates of the originals</td></tr><tr><th scope="row"><code>--quiet</code></th><td>Print nothing but errors</td></tr></tbody>
+        </table>
+      </article>
+      <article class="cli-command" id="cmd-formats" data-reveal="">
+        <h3><code>kiln formats</code></h3>
+        <pre class="code"><code>kiln formats [&lt;format&gt;]</code></pre>
+        <p>Lists every format with its id and extensions, or what one format converts to, including what an optional engine would add.</p>
+        
+      </article>
+      <article class="cli-command" id="cmd-presets" data-reveal="">
+        <h3><code>kiln presets</code></h3>
+        <pre class="code"><code>kiln presets</code></pre>
+        <p>Lists the built-in presets and the ones you made in the app, with their id, name and target format.</p>
+        
+      </article>
+      <article class="cli-command" id="cmd-help" data-reveal="">
+        <h3><code>kiln help</code></h3>
+        <pre class="code"><code>kiln help [&lt;command&gt;]
+kiln version</code></pre>
+        <p>Shows how to use every command or one of them, and the installed version.</p>
+        
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-tight" id="watch">
+    <div class="details-grid">
+      <div class="details-copy" data-reveal="">
+        <h2>Watch folders</h2>
+        <p class="tip">Let a folder convert whatever you put in it: downloads, scans, exports from other apps.</p>
+        <ul class="checks"><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg><span>Files are converted once they are complete, no longer growing and not open in another program, so downloads and long copies are safe.</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg><span>Temporary and hidden files (<code>.crdownload</code>, <code>.part</code>, <code>.tmp</code>, <code>~$</code> files) and formats Kiln doesn't know are ignored.</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg><span>Converted files go to a <code>converted</code> folder inside the watched folder, or wherever <code>-o</code> points. With <code>-r</code> files from sub folders keep their sub folder there (<code>2025\a.png</code> → <code>converted\2025\a.pdf</code>).</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg><span>With <code>--move-originals</code> each converted source moves to <code>originals</code>, so the folder works like an inbox. Files already waiting there are converted at start.</span></li></ul>
+      </div>
+      <div class="details-side" data-reveal="">
+        <h3>Or in the app, in the background</h3>
+        <p class="muted">The <strong>Watch folders</strong> page in Kiln does the same without a terminal: add folders, pick a preset for each, and they are converted while Kiln runs in the tray.</p>
+        <figure class="terminal" aria-label="Watch folders">
+      <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+      <pre><code><span class="t-prompt">D:\Inbox&gt;</span> <span class="t-cmd">kiln watch . --to pdf --move-originals</span>
+<span class="t-out">Watching D:\Inbox → PDF, saving to D:\Inbox\converted. Press Ctrl+C to stop.</span>
+<span class="t-ok">ok</span>    scan-0412.jpg -&gt; converted\scan-0412.pdf</code></pre>
+    </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight" id="scripts">
+    <header class="section-head" data-reveal=""><h2>Use it in scripts</h2><p><code>--json</code> prints one JSON document with every file's result, and the exit code tells your script how it went.</p></header>
+    <div class="cli-scripts">
+      <div class="details-copy" data-reveal="">
+        <h3><code>--json</code></h3>
+        <pre class="code"><code>{
+  "preset": "WEBP",
+  "target": "webp",
+  "converted": 2,
+  "skipped": 0,
+  "failed": 1,
+  "files": [
+    {
+      "source": "D:\\Exports\\cover.png",
+      "state": "done",
+      "outputs": [ "D:\\Exports\\cover.webp" ]
+    },
+    {
+      "source": "D:\\Exports\\broken.png",
+      "state": "failed",
+      "outputs": [],
+      "error": "The engine reported an error (improper image header)"
+    }
+  ]
+}</code></pre>
+      </div>
+      <div class="cli-scripts-side">
+        <div class="details-copy" data-reveal="">
+          <h3>Exit codes</h3>
+          <table class="engine-table cli-table cli-exit">
+            <tbody><tr><th scope="row"><code>0</code></th><td>Nothing failed</td></tr><tr><th scope="row"><code>1</code></th><td>Some files failed (the others were converted)</td></tr><tr><th scope="row"><code>2</code></th><td>Wrong arguments, an unknown format or preset, or a missing input</td></tr><tr><th scope="row"><code>3</code></th><td>Nothing to convert</td></tr></tbody>
+          </table>
+        </div>
+        <div class="details-copy" data-reveal="">
+          <h3>PowerShell example</h3>
+          <pre class="code"><code>$result = kiln convert D:\Exports\*.png --to webp --json | Out-String | ConvertFrom-Json
+if ($LASTEXITCODE -eq 1) {
+  $result.files | Where-Object state -eq 'failed' | ForEach-Object { "$($_.source): $($_.error)" }
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight" id="notes">
+    <div class="details-copy" data-reveal="">
+      <h2>Good to know</h2>
+      <ul class="checks"><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg><span>Same engines and presets as the app: a preset you make or change in Kiln works with <code>--preset</code> right away, by id or by name.</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg><span>Optional engines (FFmpeg, LibreOffice…) are installed in the app under Settings → Engines. <code>kiln formats &lt;format&gt;</code> shows which conversions need one.</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg><span>Wildcards are expanded by kiln itself, so <code>*.heic</code> works in Command Prompt as well as in PowerShell. Put paths with spaces in quotes.</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg><span>Nothing is uploaded and no internet is needed: files are converted on your PC, as in the app.</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg><span>Messages are in English, so scripts and logs read the same on every PC.</span></li></ul>
+    </div>
+  </section>
+
+            <section class="section download" id="download">
+    <div class="download-card" data-reveal="">
+      <svg class="logo" viewBox="0 0 512 512" aria-hidden="true"><path fill="#7F77DD" d="M154.61 65.27A216 216 0 0 1 357.39 65.27L304.82 164.17A104 104 0 0 0 207.18 164.17Z"></path><path transform="translate(13.86,-8)" fill="#1D9E75" d="M373.66 67.74A222 222 0 0 1 477.86 248.23L359.94 252.36A104 104 0 0 0 311.12 167.81Z"></path><path fill="#7F77DD" d="M471.87 263.56A216 216 0 0 1 370.48 439.17L311.12 344.19A104 104 0 0 0 359.94 259.64Z"></path><path fill="#6A62C9" d="M357.39 446.73A216 216 0 0 1 154.61 446.73L207.18 347.83A104 104 0 0 0 304.82 347.83Z"></path><path fill="#7F77DD" d="M141.52 439.17A216 216 0 0 1 40.13 263.56L152.06 259.64A104 104 0 0 0 200.88 344.19Z"></path><path fill="#6A62C9" d="M40.13 248.44A216 216 0 0 1 141.52 72.83L200.88 167.81A104 104 0 0 0 152.06 252.36Z"></path><path fill="#3C3489" d="M222 212h44l24 24v64h-68z"></path><path fill="#AFA9EC" d="M266 212v24h24z"></path></svg>
+      <h2>Convert Files Instantly in Kiln Web Studio</h2>
+      <p>100% Client-Side Engine · Pure Offline Execution · No Downloads or Installation Needed.<br>Convert PDFs to Word, PowerPoint, Excel, Text, images and 240+ formats directly in your browser.</p>
+      <a class="btn btn-primary btn-large" href="/app/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4,4H10V10H4V4M14,4H20V10H14V4M4,14H10V20H4V14M14,14H20V20H14V14Z"></path></svg><span>Launch Web Studio</span></a>
+      <p class="download-status">Pure in-browser engine · Zero server uploads · Free &amp; Open Source</p>
+      <p class="download-meta"><a href="/formats/">View 244 Formats</a> · <a href="/app/#pdf-tools">33 PDF Tools</a></p>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><svg class="logo" viewBox="0 0 512 512" aria-hidden="true"><path fill="#7F77DD" d="M154.61 65.27A216 216 0 0 1 357.39 65.27L304.82 164.17A104 104 0 0 0 207.18 164.17Z"></path><path transform="translate(13.86,-8)" fill="#1D9E75" d="M373.66 67.74A222 222 0 0 1 477.86 248.23L359.94 252.36A104 104 0 0 0 311.12 167.81Z"></path><path fill="#7F77DD" d="M471.87 263.56A216 216 0 0 1 370.48 439.17L311.12 344.19A104 104 0 0 0 359.94 259.64Z"></path><path fill="#6A62C9" d="M357.39 446.73A216 216 0 0 1 154.61 446.73L207.18 347.83A104 104 0 0 0 304.82 347.83Z"></path><path fill="#7F77DD" d="M141.52 439.17A216 216 0 0 1 40.13 263.56L152.06 259.64A104 104 0 0 0 200.88 344.19Z"></path><path fill="#6A62C9" d="M40.13 248.44A216 216 0 0 1 141.52 72.83L200.88 167.81A104 104 0 0 0 152.06 252.36Z"></path><path fill="#3C3489" d="M222 212h44l24 24v64h-68z"></path><path fill="#AFA9EC" d="M266 212v24h24z"></path></svg><div><strong>Kiln</strong><p>Drag. Drop. Converted.</p></div></div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/formats/">All formats</a>
+      <a href="/cli/">Command line</a>
+      <a href="https://github.com/KnifeLemon/Filee">GitHub</a>
+      <a href="https://github.com/KnifeLemon/Filee/releases">All releases</a>
+      <a href="https://github.com/KnifeLemon/Filee/issues">Report an issue</a>
+      <a href="https://github.com/KnifeLemon/Filee/blob/main/LICENSE">MIT License</a>
+      <a href="https://github.com/KnifeLemon/Filee/blob/main/THIRD-PARTY-NOTICES.md">Third-party notices</a>
+      <a href="https://github.com/KnifeLemon/Filee#code-signing-policy">Code signing policy</a>
+      <a href="https://github.com/sponsors/KnifeLemon" rel="noopener">Sponsor Kiln</a>
+    </nav>
+    <nav class="footer-popular" aria-label="Popular conversions">
+      <strong>Popular conversions</strong>
+      <a href="/convert/heic-to-jpg/">HEIC → JPG</a><a href="/convert/webp-to-png/">WEBP → PNG</a><a href="/convert/png-to-jpg/">PNG → JPG</a><a href="/convert/jpg-to-pdf/">JPG → PDF</a><a href="/convert/svg-to-png/">SVG → PNG</a><a href="/convert/pdf-to-jpg/">PDF → JPG</a><a href="/convert/pdf-to-docx/">PDF → DOCX</a><a href="/convert/docx-to-pdf/">DOCX → PDF</a><a href="/convert/hwp-to-pdf/">HWP → PDF</a><a href="/convert/xlsx-to-pdf/">XLSX → PDF</a><a href="/convert/pptx-to-pdf/">PPTX → PDF</a><a href="/convert/epub-to-pdf/">EPUB → PDF</a>
+    </nav>
+    <nav class="footer-langs" aria-label="Language"><a href="/cli/" hreflang="en" lang="en">English</a><a href="/ko/cli/" hreflang="ko" lang="ko">한국어</a><a href="/zh-cn/cli/" hreflang="zh-CN" lang="zh-CN">简体中文</a></nav>
+    <a class="footer-badge" href="https://alternativeto.net/software/filee-1/about/?utm_source=badge&amp;utm_medium=referral" rel="noopener" target="_blank"><picture><source srcset="/media/badges/alternativeto-dark.svg" media="(prefers-color-scheme: dark)"><img src="/media/badges/alternativeto-light.svg" alt="Kiln on AlternativeTo" width="141" height="48" loading="lazy" decoding="async"></picture></a>
+    <p class="footer-made">Built by KnifeLemon and contributors. © 2026</p>
+  </div>
+</footer>
+<script id="page-data" type="application/json">{"lang":"en","langs":[{"lang":"en","path":"/cli/","banner":"This page is also available in English.","name":"English"},{"lang":"ko","path":"/ko/cli/","banner":"이 페이지는 한국어로도 볼 수 있어요.","name":"한국어"},{"lang":"zh-CN","path":"/zh-cn/cli/","banner":"此页面也提供简体中文版本。","name":"简体中文"}]}</script>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;f888dfe8a61646df8641a569fea58885&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
+
+
+</body></html>

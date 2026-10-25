@@ -1,0 +1,594 @@
+<!DOCTYPE html><html lang="zh-CN" class="js"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kiln 网页工作室：100% 浏览器离线文件转换工具 | Kiln</title>
+<meta name="description" content="Kiln Web 应用程序：直接在浏览器中转换图像、文档、PDF、数据和音频。100% 离线、私密且免费。">
+<link rel="canonical" href="https://filee.sh/zh-cn/app/">
+<link rel="alternate" hreflang="en" href="https://filee.sh/app/">
+<link rel="alternate" hreflang="ko" href="https://filee.sh/ko/app/">
+<link rel="alternate" hreflang="zh-CN" href="https://filee.sh/zh-cn/app/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="/assets/styles.3a73bf9e74.css">
+<link rel="stylesheet" href="/assets/app.css">
+<!-- 预打包的本地客户端转换库 -->
+<script src="/assets/libs/jszip.min.js"></script>
+<script src="/assets/libs/pdf-lib.min.js"></script>
+<script src="/assets/libs/pdf.min.js"></script>
+<script src="/assets/libs/xlsx.full.min.js"></script>
+<script src="/assets/libs/marked.min.js"></script>
+<script src="/assets/libs/js-yaml.min.js"></script>
+<script type="module" src="/assets/app.js"></script>
+</head>
+<body class="lang-zh studio-page">
+<a class="skip" href="#main">跳过导航</a>
+<div class="backdrop" aria-hidden="true"><i></i><i></i><i></i></div>
+<header class="nav" data-nav="">
+  <div class="nav-inner" style="justify-content:space-between;">
+    <a class="brand swirlzy-brand" href="/zh-cn/" aria-label="Kiln" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+      <div class="swirlzy-brand-logo" style="width:38px;height:38px;border-radius:50%;background:#55ba86;display:flex;align-items:center;justify-content:center;">
+        <svg viewBox="0 0 32 32" style="width:22px;height:22px;fill:#1b4e3b;" aria-hidden="true">
+          <path d="M16 3C8.82 3 3 8.82 3 16s5.82 13 13 13 13-5.82 13-13c0-1.66-1.34-3-3-3s-3 1.34-3 3a7 7 0 1 1-7-7c1.66 0 3-1.34 3-3s-1.34-3-3-3z"/>
+        </svg>
+      </div>
+      <span style="font-family:var(--font-bubble);font-weight:900;letter-spacing:-0.5px;font-size:24px;color:var(--ink);">KILN</span>
+    </a>
+    <div class="nav-actions">
+      <a class="btn btn-ghost" href="/zh-cn/" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path></svg><span>← 返回主页</span></a>
+      <a href="/zh-cn/app/" class="swirlzy-cart-btn"><span class="swirlzy-cart-text">PROCESSING ⚡</span><span class="swirlzy-cart-count">33</span></a>
+      <details class="lang-menu">
+        <summary aria-label="语言"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.36,14C16.44,13.34 16.5,12.68 16.5,12C16.5,11.32 16.44,10.66 16.36,10H19.74C19.9,10.64 20,11.31 20,12C20,12.69 19.9,13.36 19.74,14M14.59,19.56C15.19,18.45 15.65,17.25 15.97,16H18.92C17.96,17.65 16.43,18.93 14.59,19.56M14.34,14H9.66C9.56,13.34 9.5,12.68 9.5,12C9.5,11.32 9.56,10.65 9.66,10H14.34C14.43,10.65 14.5,11.32 14.5,12C14.5,12.68 14.43,13.34 14.34,14M12,19.96C11.17,18.76 10.5,17.43 10.09,16H13.91C13.5,17.43 12.83,18.76 12,19.96M8,8H5.08C6.03,6.34 7.57,5.06 9.4,4.44C8.8,5.55 8.35,6.75 8,8M5.08,16H8C8.35,17.25 8.8,18.45 9.4,19.56C7.57,18.93 6.03,17.65 5.08,16M4.26,14C4.1,13.36 4,12.69 4,12C4,11.31 4.1,10.64 4.26,10H7.64C7.56,10.66 7.5,11.32 7.5,12C7.5,12.68 7.56,13.34 7.64,14M12,4.03C12.83,5.23 13.5,6.57 13.91,8H10.09C10.5,6.57 11.17,5.23 12,4.03M18.92,8H15.97C15.65,6.75 15.19,5.55 14.59,4.44C16.43,5.07 17.96,6.34 18.92,8M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg><span>简体中文</span></summary>
+        <ul><li><a href="/app/" hreflang="en" lang="en">English</a></li><li><a href="/ko/app/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/zh-cn/app/" hreflang="zh-CN" lang="zh-CN" aria-current="page">简体中文</a></li></ul>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="studio-container">
+
+  <!-- Minimalist Workstation Toolbar -->
+  <div class="playground-toolbar">
+    <div class="playground-status-pill">
+      <span class="status-dot-green"></span>
+      <span>100% 纯客户端本地引擎 · 零云端上传 · 极致隐私安全</span>
+    </div>
+
+    <!-- Main Mode Navigation Switch -->
+    <div class="playground-mode-switch">
+      <button class="mode-pill is-active" data-tab="donut" id="tab-donut" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16Z"/></svg>
+        <span>处理操练场</span>
+      </button>
+      <button class="mode-pill" data-tab="batch" id="tab-batch" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M4,4H10V10H4V4M14,4H20V10H14V4M4,14H10V20H4V14M14,14H20V20H14V14Z"/></svg>
+        <span>批量转换模式</span>
+      </button>
+      <button class="mode-pill" data-tab="pdf-tools" id="tab-pdf-tools" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,19H5V5H19V19M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z"/></svg>
+        <span>33 款 PDF 工具</span>
+      </button>
+      <button class="mode-pill" data-tab="presets" id="tab-presets" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M3,17V19H9V17H3M3,5V7H13V5H3M13,21V19H21V17H13V15H11V21H13M7,9V11H3V13H7V15H9V9H7M21,13V11H11V13H21M15,9H17V7H21V5H17V3H15V9Z"/></svg>
+        <span>预设配置</span>
+      </button>
+      <button class="mode-pill" data-tab="watcher" id="tab-watcher" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/></svg>
+        <span>文件夹监控</span>
+      </button>
+      <button class="mode-pill" data-tab="cli" id="tab-cli" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M20,19V7H4V19H20M20,3A2,2 0 0,1 22,5V19A2,2 0 0,1 20,21H4A2,2 0 0,1 2,19V5A2,2 0 0,1 4,3H20M13,17V15H18V17H13M9.58,13L5.5,8.91L6.92,7.5L12.41,13L6.92,18.5L5.5,17.09L9.58,13Z"/></svg>
+        <span>终端 CLI</span>
+      </button>
+      <button class="mode-pill" data-tab="history" id="tab-history" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.89,15.89L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3Z"/></svg>
+        <span>转换历史</span>
+      </button>
+      <button class="mode-pill" data-tab="privacy" id="tab-privacy" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,11.99H7V10.03L12,5.59L17,10.03V11.99H12Z"/></svg>
+        <span>隐私审计</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- WORKSTATION 1: PLAYGROUND & PERSIMMON / RADIAL DIAL -->
+  <section class="studio-panel is-active" data-panel="donut" role="tabpanel" aria-labelledby="tab-donut">
+    <div class="donut-stage" id="donut-stage" data-tilt-3d="plane">
+      <canvas id="playground-particle-canvas" class="ambient-3d-canvas" aria-hidden="true"></canvas>
+      <div class="card-3d-shine" aria-hidden="true"></div>
+      
+      <!-- Big white bubble typography watermark in the background (like SWEET!) -->
+      <div class="swirlzy-stage-watermark" aria-hidden="true">极速转换!</div>
+      
+      <!-- Circular dark green badge (like FROM $12) -->
+      <div class="swirlzy-price-badge swirlzy-stage-badge">
+        <span class="swirlzy-price-badge-from">已上传</span>
+        <span class="swirlzy-price-badge-num">0 KB</span>
+      </div>
+
+      <!-- Initial Plain Playground Drop Prompt -->
+      <div class="donut-drop-prompt" id="donut-drop-prompt">
+        <div class="donut-drop-icon">
+          <svg viewBox="0 0 24 24"><path d="M19.35,10.04C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.04C2.34,8.36 0,10.91 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.04M14,13V17H10V13H7L12,8L17,13H14Z"></path></svg>
+        </div>
+        <h2 class="donut-drop-title">拖放文件至此处，或点击任意位置浏览选择</h2>
+        <p class="donut-drop-sub">支持 PDF、Word、Excel、图像、音频、视频或数据格式。系统会自动识别文件格式并呈现可用转换选项。</p>
+        <button class="btn btn-primary swirlzy-primary-pill" type="button" id="donut-browse-btn">选择文件进行转换</button>
+        <input type="file" id="donut-file-input" style="display:none" aria-label="选择要转换的文件">
+      </div>
+
+      <!-- Recognized File Card -->
+      <div class="donut-active-file" id="donut-active-file">
+        <div class="donut-file-info">
+          <span class="donut-file-badge" id="donut-file-badge">FILE</span>
+          <div class="donut-file-meta">
+            <h3 class="donut-file-name" id="donut-file-name">filename.ext</h3>
+            <p class="donut-file-size" id="donut-file-size">0 KB · CATEGORY</p>
+          </div>
+        </div>
+        <button class="btn btn-ghost btn-small" type="button" id="donut-change-file-btn">更换文件</button>
+      </div>
+
+      <!-- Upfront Preflight Warning Banner -->
+      <div id="donut-lossy-preflight" class="donut-lossy-banner" style="display:none;"></div>
+
+      <!-- SVG Donut Canvas (Persimmon / Radial Dial) -->
+      <div class="studio-donut-wrapper" id="studio-donut-wrapper">
+        <div class="donut is-open">
+          <svg id="studio-donut-svg" viewBox="-110 -110 220 220"></svg>
+        </div>
+      </div>
+
+      <!-- Hidden format grid for script safety -->
+      <div class="donut-quick-grid" id="donut-quick-grid" style="display:none;"></div>
+
+      <!-- Result Banner -->
+      <div class="donut-result-banner" id="donut-result-banner">
+        <div class="donut-result-header">
+          <div class="donut-result-title">
+            <svg class="icon" viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg>
+            <span id="donut-res-title">转换完成</span>
+          </div>
+          <button class="btn btn-ghost btn-small" type="button" id="donut-retry-btn">转换其他文件</button>
+        </div>
+        <div class="donut-result-details">
+          <span>100% 在本机安全完成转换</span>
+          <strong id="donut-res-meta">0 KB (-0%)</strong>
+        </div>
+        <div class="donut-result-actions">
+          <a class="btn btn-primary swirlzy-primary-pill" id="donut-download-btn" download style="display:inline-flex;align-items:center;gap:6px;"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/></svg> 下载转换后的文件</a>
+          <button class="btn btn-ghost" type="button" id="donut-preview-btn">在屏幕上查看结果</button>
+        </div>
+        <!-- BATCH 8 Conversion Fidelity Report Card -->
+        <div id="donut-fidelity-card" class="donut-fidelity-card" style="display:none;"></div>
+      </div>
+
+      <!-- Bottom Hero Card Footer -->
+      <div class="swirlzy-stage-footer" aria-hidden="true">
+        <div class="swirlzy-stage-caption">100% 纯客户端本地引擎 · 极致隐私安全</div>
+        <div class="swirlzy-stage-rating">
+          <span class="swirlzy-stage-rating-num">( 100% )</span>
+          <span class="swirlzy-stage-rating-sub">离线 WASM</span>
+        </div>
+        <div class="swirlzy-stage-thumbs">
+          <div class="swirlzy-stage-thumb" style="background:#ff4b4b;">PDF</div>
+          <div class="swirlzy-stage-thumb" style="background:#29b6f6;">DOC</div>
+          <div class="swirlzy-stage-thumb" style="background:#ffa726;">PPT</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WORKSTATION 2: BATCH CONVERTER -->
+  <section class="studio-panel" data-panel="batch" role="tabpanel" aria-labelledby="tab-batch">
+    <div class="studio-card">
+      <div class="studio-card-head">
+        <h2><svg class="icon" viewBox="0 0 24 24" style="width:22px;height:22px;fill:var(--accent)"><path d="M4,4H10V10H4V4M14,4H20V10H14V4M4,14H10V20H4V14M14,14H20V20H14V14Z"></path></svg> 多文件批量转换器</h2>
+        <span class="studio-badge">并行径向转换</span>
+      </div>
+
+      <div class="batch-plane-toolbar" id="batch-plane-toolbar">
+        <div class="batch-controls">
+          <div class="batch-global-format-wrap">
+            <label for="batch-global-format" style="font-weight:700;font-size:13px;color:var(--muted)">统一设置目标：</label>
+            <select class="batch-select" id="batch-global-format">
+              <option value="">保持独立设置</option>
+              <option value="docx">DOCX (Word 文档)</option>
+              <option value="pptx">PPTX (PowerPoint 演示文稿)</option>
+              <option value="xlsx">XLSX (Excel 电子表格)</option>
+              <option value="txt">TXT (纯文本)</option>
+              <option value="pdf">PDF (电子文档)</option>
+              <option value="webp">WEBP (Web 优化图像)</option>
+              <option value="jpg">JPG (照片格式)</option>
+              <option value="png">PNG (无损图像)</option>
+              <option value="md">MD (Markdown)</option>
+              <option value="ico">ICO (图标)</option>
+              <option value="zip">ZIP (压缩包)</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+          <button class="btn btn-ghost btn-small" type="button" id="batch-clear-btn">清空列表</button>
+          <button class="btn btn-secondary btn-small" type="button" id="batch-add-files-btn">
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor;vertical-align:-2px;margin-right:4px;"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"/></svg>添加文件
+          </button>
+          <button class="btn btn-primary" type="button" id="batch-convert-all-btn" disabled>全部转换 (0 个文件)</button>
+          <button class="btn btn-primary" type="button" id="batch-zip-download-btn" style="display:none;background:#10b981;border-color:#10b981;">
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor;vertical-align:-2px;margin-right:4px;"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/></svg>批量下载 (ZIP)
+          </button>
+        </div>
+      </div>
+
+      <!-- Batch Plane Playground Stage -->
+      <div class="batch-stage-container">
+        <div class="donut-stage batch-stage" id="batch-stage" data-tilt-3d="plane">
+          <canvas id="batch-particle-canvas" class="ambient-3d-canvas" aria-hidden="true"></canvas>
+          <div class="card-3d-shine" aria-hidden="true"></div>
+          <!-- Hidden multi-file input -->
+          <input type="file" id="batch-file-input" multiple style="display:none" aria-label="批量选择文件">
+
+          <!-- Empty drop prompt on the plane -->
+          <div class="donut-drop-prompt" id="batch-drop-prompt">
+            <div class="donut-drop-icon">
+              <svg viewBox="0 0 24 24"><path d="M4,4H10V10H4V4M14,4H20V10H14V4M4,14H10V20H4V14M14,14H20V20H14V14Z"></path></svg>
+            </div>
+            <h3 class="donut-drop-title">将多个文件拖放到工作平面</h3>
+            <p class="donut-drop-sub">点击或拖放即可上传多个文件。所有文件将在平面上独立排列呈现，每个文件均配备独立的柿子花瓣式径向转换表盘。</p>
+            <button class="btn btn-primary" type="button" id="batch-browse-btn" style="pointer-events:auto;">浏览文件</button>
+          </div>
+
+          <!-- Add More Ribbon (visible when files are on the plane) -->
+          <div class="batch-add-ribbon" id="batch-add-ribbon" style="display:none;">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"/></svg>
+            <span>拖放更多文件或点击此处添加到工作平面</span>
+          </div>
+
+          <!-- Arranged Individual File Cards Grid on the Plane -->
+          <div class="batch-plane-grid" id="batch-plane-grid" style="display:none;"></div>
+        </div>
+      </div>
+
+      <!-- Hidden table wrapper for compatibility with automated test suites -->
+      <div class="batch-table-wrapper" id="batch-table-wrapper" style="display:none">
+        <table class="batch-table">
+          <thead>
+            <tr>
+              <th>文件名</th>
+              <th>大小</th>
+              <th>目标格式</th>
+              <th>进度</th>
+              <th>状态 / 操作</th>
+            </tr>
+          </thead>
+          <tbody id="batch-table-body"></tbody>
+        </table>
+      </div>
+
+      <!-- Global Progress -->
+      <div class="batch-global-progress" id="batch-global-progress" style="margin-top:20px;">
+        <div class="batch-progress-header">
+          <span>批量处理总进度</span>
+          <span id="batch-progress-text">0 / 0 已完成</span>
+        </div>
+        <div class="batch-progress-bar-wrap">
+          <div class="batch-progress-bar-fill" id="batch-progress-fill"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WORKSTATION 3: PRESETS & SETTINGS -->
+  <section class="studio-panel" data-panel="presets" role="tabpanel" aria-labelledby="tab-presets">
+    <div class="studio-card">
+      <div class="studio-card-head">
+        <h2><svg class="icon" viewBox="0 0 24 24" style="width:22px;height:22px;fill:var(--accent)"><path d="M3,17V19H9V17H3M3,5V7H13V5H3M13,21V19H21V17H13V15H11V21H13M7,9V11H3V13H7V15H9V9H7M21,13V11H11V13H21M15,9H17V7H21V5H17V3H15V9Z"></path></svg> 预设与转换选项</h2>
+        <button class="btn btn-primary btn-small" type="button" id="preset-save-btn">保存预设</button>
+      </div>
+
+      <div class="presets-grid">
+        
+        <!-- BATCH 8: Document Conversion Strategy (Mode) -->
+        <div class="preset-group">
+          <div class="preset-group-title">文档排版策略</div>
+          <select class="batch-select" id="preset-conversion-mode" style="width:100%;">
+            <option value="exact_layout">精确保真布局 (坐标保真与固定几何结构)</option>
+            <option value="editable_flow">可编辑流式排版 (自动重排段落与自然流动)</option>
+          </select>
+          <p style="font-size:12px;color:var(--muted);margin-top:6px;">选择保留绝对二维坐标定位，或重排为便于编辑的文档流。</p>
+        </div>
+
+        <!-- BATCH 8: Fidelity Failure Policy -->
+        <div class="preset-group">
+          <div class="preset-group-title">保真度失败策略</div>
+          <select class="batch-select" id="preset-failure-policy" style="width:100%;">
+            <option value="standard" selected>标准模式 (正常转换并返回保真度报告 - 推荐默认)</option>
+            <option value="strict">严格模式 (评分 &lt; 90% 或发生元素丢失时阻断转换)</option>
+            <option value="best_effort">最大兼容模式 (尽最大努力转换且不报错)</option>
+          </select>
+          <p style="font-size:12px;color:var(--muted);margin-top:6px;">在文档转换过程中强制执行质量阈值把控。</p>
+        </div>
+
+        <!-- Image Compression -->
+        <div class="preset-group">
+          <div class="preset-group-title">
+            <span>图像压缩与画质</span>
+            <span class="preset-slider-val" id="preset-quality-val">90%</span>
+          </div>
+          <div class="preset-slider-row">
+            <input type="range" id="preset-quality" min="10" max="100" value="90" step="5" aria-label="画质滑块">
+          </div>
+          <p style="font-size:12px;color:var(--muted);margin-top:6px;">应用于 JPEG 和 WEBP 格式转换（推荐 90%）。</p>
+        </div>
+
+        <!-- Resize Scale -->
+        <div class="preset-group">
+          <div class="preset-group-title">图像缩放比例 (分辨率)</div>
+          <select class="batch-select" id="preset-resize" style="width:100%;">
+            <option value="100">保持原始尺寸 (100%)</option>
+            <option value="75">缩放至 75%</option>
+            <option value="50">缩放至 50% (半分辨率)</option>
+            <option value="25">缩放至 25% (缩略图尺寸)</option>
+          </select>
+        </div>
+
+        <!-- Rotation & Flip -->
+        <div class="preset-group">
+          <div class="preset-group-title">图像旋转与方向</div>
+          <select class="batch-select" id="preset-rotate" style="width:100%;">
+            <option value="0">不旋转 (0°)</option>
+            <option value="90">顺时针旋转 90°</option>
+            <option value="180">旋转 180°</option>
+            <option value="270">逆时针旋转 90° (270°)</option>
+          </select>
+        </div>
+
+        <!-- Color & Enhancements -->
+        <div class="preset-group">
+          <div class="preset-group-title">色彩滤镜与变换</div>
+          <div class="preset-toggle-row">
+            <span class="preset-toggle-label">黑白单色灰度 (Grayscale)</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="preset-grayscale">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="preset-toggle-row">
+            <span class="preset-toggle-label">反转颜色 (Invert)</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="preset-invert">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="preset-toggle-row">
+            <span class="preset-toggle-label">水平翻转 (Flip Horizontal)</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="preset-fliph">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="preset-toggle-row">
+            <span class="preset-toggle-label">垂直翻转 (Flip Vertical)</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="preset-flipv">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WORKSTATION 4: FOLDER WATCHER -->
+  <section class="studio-panel" data-panel="watcher" role="tabpanel" aria-labelledby="tab-watcher">
+    <div class="studio-card">
+      <div class="studio-card-head">
+        <h2><svg class="icon" viewBox="0 0 24 24" style="width:22px;height:22px;fill:#1d9e75"><path d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"></path></svg> 实时文件夹监听器 (Web File System Access)</h2>
+        <span class="studio-status-pill">自动化目录监听同步</span>
+      </div>
+
+      <p style="color:var(--muted);font-size:14px;margin-bottom:20px;">
+        选择您计算机上的任意本地文件夹。当有新文件拖入该文件夹时，Kiln 会自动检测并在离线状态下转换它们！
+      </p>
+
+      <div class="watcher-status-card">
+        <div class="watcher-info">
+          <div class="watcher-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"></path></svg>
+          </div>
+          <div>
+            <h3 style="font-size:15px;margin:0 0 4px;" id="watcher-status-text">监听器空闲。请选择要监控的文件夹。</h3>
+            <p style="font-size:12px;color:var(--muted);margin:0;">规则：将检测到的所有图像自动转换为所选格式</p>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:10px;">
+          <select class="batch-select" id="watcher-rule-ext">
+            <option value="webp">转换为 WEBP (85%)</option>
+            <option value="jpg">转换为 JPG (90%)</option>
+            <option value="png">转换为 PNG</option>
+            <option value="pdf">转换为 PDF</option>
+          </select>
+          <button class="btn btn-primary" type="button" id="watcher-start-btn">选择监听文件夹</button>
+          <button class="btn btn-ghost" type="button" id="watcher-stop-btn" style="display:none">停止监听</button>
+          <button class="btn btn-ghost" type="button" id="watcher-simulate-btn">模拟文件拖放</button>
+        </div>
+      </div>
+
+      <h3 style="font-size:14px;font-weight:700;margin-bottom:10px;">实时活动日志</h3>
+      <div class="watcher-log-terminal" id="watcher-log-box">
+        <div class="watcher-log-line">[系统] 文件夹监听引擎就绪。等待选择文件夹或启动模拟。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WORKSTATION 5: WEB TERMINAL / CLI SIMULATOR -->
+  <section class="studio-panel" data-panel="cli" role="tabpanel" aria-labelledby="tab-cli">
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <div class="terminal-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="terminal-title">kiln-cli — bash — 80x24</div>
+        <div style="width:40px"></div>
+      </div>
+      <div class="terminal-body" id="terminal-body">
+        <div class="terminal-output" id="terminal-output"></div>
+        <div class="terminal-prompt-line">
+          <span class="terminal-prompt">kiln:~$</span>
+          <input type="text" class="terminal-input" id="terminal-input" autofocus autocomplete="off" spellcheck="false" aria-label="终端命令输入">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKSTATION 6: HISTORY VAULT -->
+  <section class="studio-panel" data-panel="history" role="tabpanel" aria-labelledby="tab-history">
+    <div class="studio-card">
+      <div class="studio-card-head">
+        <h2><svg class="icon" viewBox="0 0 24 24" style="width:22px;height:22px;fill:var(--accent)"><path d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.89,15.89L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3Z"></path></svg> 最近会话转换记录</h2>
+        <button class="btn btn-ghost btn-small" type="button" id="history-clear-btn" disabled>清空记录</button>
+      </div>
+
+      <div class="batch-table-wrapper">
+        <table class="batch-table">
+          <thead>
+            <tr>
+              <th>输出文件</th>
+              <th>转换路径</th>
+              <th>体积变化</th>
+              <th>时间</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody id="history-table-body"></tbody>
+        </table>
+      </div>
+      <p id="history-empty-msg" style="text-align:center;color:var(--muted);padding:30px 0;">当前会话尚无转换记录。使用甜甜圈轮盘或批量工具转换您的文件。</p>
+    </div>
+  </section>
+
+  <!-- WORKSTATION 7: PDF TOOLS HUB (33 Native Tools) -->
+  <section class="studio-panel" data-panel="pdf-tools" role="tabpanel" aria-labelledby="tab-pdf-tools">
+    <div class="studio-card">
+      <div class="studio-card-head">
+        <h2><svg class="icon" viewBox="0 0 24 24" style="width:22px;height:22px;fill:var(--accent)"><path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,19H5V5H19V19M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z"/></svg> 完整原生 PDF 工具集 (33 种工具)</h2>
+        <span class="studio-badge">100% 离线端侧安全运行</span>
+      </div>
+
+      <!-- Custom Workflow Chaining -->
+      <div class="workflow-builder-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+          <div>
+            <h3 style="font-size:15px;margin:0 0 4px;font-weight:700;">自定义工作流 (工具链路串联)</h3>
+            <p style="font-size:12px;color:var(--muted);margin:0;">在客户端内存中无缝连续执行多个操作（例如：压缩 → 水印 → 密码保护）。</p>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <button class="btn btn-ghost btn-small" type="button" id="wf-export-btn">导出 JSON</button>
+            <button class="btn btn-ghost btn-small" type="button" id="wf-import-btn">导入 JSON</button>
+            <button class="btn btn-primary btn-small" type="button" id="wf-run-btn">运行链路</button>
+          </div>
+        </div>
+        <div class="workflow-steps-chain" id="workflow-chain-box">
+          <div class="workflow-step-chip"><span>1. 压缩 PDF (推荐模式)</span></div>
+          <span class="workflow-step-arrow">→</span>
+          <div class="workflow-step-chip"><span>2. 添加水印 ("机密文件")</span></div>
+          <span class="workflow-step-arrow">→</span>
+          <div class="workflow-step-chip"><span>3. 密码保护 (AES-256)</span></div>
+        </div>
+      </div>
+
+      <!-- Hub Search & Filters -->
+      <div class="pdf-hub-toolbar">
+        <div class="pdf-search-bar">
+          <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:var(--muted)"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/></svg>
+          <input type="text" id="pdf-tool-search" placeholder="搜索 33 款 PDF 工具（如：合并、拆分、压缩、OCR、表单、加密、签名、涂黑、裁剪）..." aria-label="搜索 PDF 工具">
+          <kbd style="font-size:11px;padding:2px 6px;border-radius:4px;background:var(--surface);border:1px solid var(--border)">/</kbd>
+        </div>
+
+        <div class="pdf-filter-pills" id="pdf-filter-pills">
+          <button class="pdf-pill is-active" data-group="all" type="button">全部 (33)</button>
+          <button class="pdf-pill" data-group="Organize" type="button">组织页面 (6)</button>
+          <button class="pdf-pill" data-group="Optimize" type="button">优化提速 (3)</button>
+          <button class="pdf-pill" data-group="Convert to PDF" type="button">转为 PDF (5)</button>
+          <button class="pdf-pill" data-group="Convert from PDF" type="button">从 PDF 导出 (6)</button>
+          <button class="pdf-pill" data-group="Edit" type="button">编辑批注 (6)</button>
+          <button class="pdf-pill" data-group="Security" type="button">安全隐私 (5)</button>
+          <button class="pdf-pill" data-group="Intelligence" type="button">AI 智能 (2)</button>
+        </div>
+      </div>
+
+      <!-- Tools Grid -->
+      <div class="pdf-tools-grid" id="pdf-tools-grid">
+        <!-- 动态由 app.js 加载自 data/pdf-tools.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKSTATION 8: PRIVACY AUDIT & DATA LEDGER -->
+  <section class="studio-panel" data-panel="privacy" role="tabpanel" aria-labelledby="tab-privacy">
+    <div class="studio-card">
+      <div class="studio-card-head">
+        <h2><svg class="icon" viewBox="0 0 24 24" style="width:22px;height:22px;fill:#10b981"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,11.99H19C18.47,16.11 15.72,19.78 12,20.92V12H5V6.3L12,3.19V11.99Z"/></svg> 客户端隐私安全审计与数据大账</h2>
+        <span class="studio-badge" style="color:#10b981;border-color:#10b981;background:rgba(16,185,129,0.1)">零对外网络泄漏</span>
+      </div>
+
+      <div class="privacy-audit-grid">
+        <div class="privacy-stat-card">
+          <div class="privacy-stat-label">出站网络请求量</div>
+          <div class="privacy-stat-val">0 B</div>
+          <p style="font-size:11px;color:var(--muted);margin:0;">没有任何文档字节或元数据离开浏览器堆空间。</p>
+        </div>
+        <div class="privacy-stat-card">
+          <div class="privacy-stat-label">遥测与行为追踪</div>
+          <div class="privacy-stat-val">已彻底禁用</div>
+          <p style="font-size:11px;color:var(--muted);margin:0;">无统计脚本、无 Cookies、无跟踪像素、无账号机制。</p>
+        </div>
+        <div class="privacy-stat-card">
+          <div class="privacy-stat-label">AI / 智能处理隐私</div>
+          <div class="privacy-stat-val">纯本地运行</div>
+          <p style="font-size:11px;color:var(--muted);margin:0;">WebGPU / WASM 本地执行。自带 API 密钥也需每次弹窗明确确认。</p>
+        </div>
+        <div class="privacy-stat-card">
+          <div class="privacy-stat-label">本地安全内存上限</div>
+          <div class="privacy-stat-val">250 MB 上限</div>
+          <p style="font-size:11px;color:var(--muted);margin:0;">主动防范内存溢出与标签页崩溃。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Modal Preview Dialog -->
+<div class="studio-modal" id="studio-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-dialog">
+    <div class="modal-head">
+      <h3 id="modal-title">文件预览</h3>
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="关闭预览">✕</button>
+    </div>
+    <div class="modal-content" id="modal-content"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>Kiln Web 应用程序工作室 · 100% 客户端引擎 · MIT 开源许可证</p>
+    <div class="footer-links">
+      <a href="/zh-cn/">首页</a>
+      <a href="/zh-cn/formats/">格式列表</a>
+      <a href="/zh-cn/cli/">CLI 参考</a>
+      <a href="https://github.com/KnifeLemon/Filee" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body></html>

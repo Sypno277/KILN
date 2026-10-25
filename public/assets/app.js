@@ -1,5 +1,5 @@
 /**
- * Filee Web App Studio Controller
+ * Kiln Web App Studio Controller
  * 100% Client-Side. Pure offline execution.
  */
 
@@ -71,8 +71,26 @@ import { ConverterEngine } from './converter-engine.js';
 
   function loadPresets() {
     try {
-      const saved = localStorage.getItem('filee_studio_presets');
-      if (saved) return JSON.parse(saved);
+      const saved = (localStorage.getItem('kiln_studio_presets') || localStorage.getItem('filee_studio_presets'));
+      if (saved) {
+        return {
+          quality: 90,
+          resizePercent: 100,
+          maxEdge: null,
+          grayscale: false,
+          invert: false,
+          rotate: 0,
+          flipH: false,
+          flipV: false,
+          conversionMode: 'exact_layout',
+          failurePolicy: 'standard',
+          imageDonut: ['WEBP', 'JPG', 'PNG', 'PDF', 'ICO', 'BMP', 'SVG Trace'],
+          pdfDonut: ['DOCX', 'PPTX', 'XLSX', 'TXT', 'JPG', 'MD', 'COMPRESS', 'SPLIT'],
+          docDonut: ['PDF', 'TXT', 'HTML', 'MD'],
+          dataDonut: ['YAML', 'JSON', 'CSV', 'XML'],
+          ...JSON.parse(saved)
+        };
+      }
     } catch (e) {}
     return {
       quality: 90,
@@ -83,6 +101,8 @@ import { ConverterEngine } from './converter-engine.js';
       rotate: 0,
       flipH: false,
       flipV: false,
+      conversionMode: 'exact_layout',
+      failurePolicy: 'standard',
       imageDonut: ['WEBP', 'JPG', 'PNG', 'PDF', 'ICO', 'BMP', 'SVG Trace'],
       pdfDonut: ['DOCX', 'PPTX', 'XLSX', 'TXT', 'JPG', 'MD', 'COMPRESS', 'SPLIT'],
       docDonut: ['PDF', 'TXT', 'HTML', 'MD'],
@@ -92,7 +112,7 @@ import { ConverterEngine } from './converter-engine.js';
 
   function savePresets() {
     try {
-      localStorage.setItem('filee_studio_presets', JSON.stringify(state.presets));
+      localStorage.setItem('kiln_studio_presets', JSON.stringify(state.presets)); localStorage.setItem('filee_studio_presets', JSON.stringify(state.presets));
     } catch (e) {}
   }
 
@@ -438,6 +458,39 @@ import { ConverterEngine } from './converter-engine.js';
       hubHint.setAttribute('y', 9);
       hubHint.textContent = 'PICK FORMAT';
       donutSvg.appendChild(hubHint);
+
+      // Ultra-smooth & precise polar angle tracking on the radial dial
+      donutSvg.onpointermove = e => {
+        const rect = donutSvg.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        const dx = e.clientX - cx;
+        const dy = e.clientY - cy;
+        const distPx = Math.hypot(dx, dy);
+        const scale = 220 / rect.width;
+        const r = distPx * scale;
+
+        if (r < R_IN - 2 || r > R_OUT + POP + 14) {
+          highlightSegment(-1);
+          return;
+        }
+
+        const theta = Math.atan2(dy, dx);
+        let angle = theta - (-Math.PI / 2 - span / 2);
+        while (angle < 0) angle += 2 * Math.PI;
+        angle = angle % (2 * Math.PI);
+        const idx = Math.floor(angle / span);
+        if (idx >= 0 && idx < formats.length) {
+          highlightSegment(idx);
+        } else {
+          highlightSegment(-1);
+        }
+      };
+
+      donutSvg.onpointerleave = () => {
+        highlightSegment(-1);
+      };
     }
 
     function highlightSegment(index) {
@@ -446,8 +499,30 @@ import { ConverterEngine } from './converter-engine.js';
         seg.group.classList.toggle('is-hover', i === index);
       });
       const hint = document.getElementById('donut-hub-hint');
-      if (hint) {
-        hint.textContent = index >= 0 ? `→ ${state.donutSegments[index].label}` : 'PICK FORMAT';
+      const warningEl = document.getElementById('donut-lossy-preflight');
+
+      if (index >= 0 && state.donutSegments[index]) {
+        const seg = state.donutSegments[index];
+        if (hint) {
+          hint.textContent = `→ ${seg.label}`;
+        }
+        if (warningEl && state.donutFile && seg.target && seg.target.ext) {
+          const srcExt = state.donutFile.name.split('.').pop();
+          const preflight = engine.evaluateLossyPreflight(
+            srcExt,
+            seg.target.ext,
+            state.presets.conversionMode || 'exact_layout'
+          );
+          if (preflight && preflight.isLossy) {
+            warningEl.style.display = 'block';
+            warningEl.innerHTML = `<span class="loss-badge loss-${preflight.severity}">⚠️ Lossy Route (${preflight.tier})</span> ${preflight.warnings.join(' ')}`;
+          } else {
+            warningEl.style.display = 'none';
+          }
+        }
+      } else {
+        if (hint) hint.textContent = 'PICK FORMAT';
+        if (warningEl) warningEl.style.display = 'none';
       }
     }
 
@@ -484,7 +559,10 @@ import { ConverterEngine } from './converter-engine.js';
         invert: state.presets.invert,
         rotate: state.presets.rotate,
         flipH: state.presets.flipH,
-        flipV: state.presets.flipV
+        flipV: state.presets.flipV,
+        mode: state.presets.conversionMode || 'exact_layout',
+        layoutMode: state.presets.conversionMode || 'exact_layout',
+        policy: state.presets.failurePolicy || 'standard'
       };
 
       try {
@@ -503,6 +581,32 @@ import { ConverterEngine } from './converter-engine.js';
         // Populate results
         document.getElementById('donut-res-title').textContent = `${state.donutFile.name} → ${result.name}`;
         document.getElementById('donut-res-meta').textContent = `${formatSize(result.size)} (${calcDiff(state.donutFile.size, result.size)})`;
+
+        // Render BATCH 8 Conversion Fidelity Report Card
+        const rep = result.conversionReport || result.report;
+        const reportCard = document.getElementById('donut-fidelity-card');
+        if (rep && reportCard) {
+          reportCard.style.display = 'block';
+          const fontCount = (rep.fontSubstitutions || []).length;
+          const approxCount = (rep.approximations || []).length;
+          const lostCount = (rep.lostElements || []).length;
+          reportCard.innerHTML = `
+            <div class="fidelity-card-header">
+              <strong style="color:var(--text);font-size:13px;">Fidelity Report</strong>
+              <span class="badge ${rep.passed ? 'badge-pass' : 'badge-fail'}">${rep.overallScore}% (${rep.status})</span>
+            </div>
+            <div class="fidelity-card-meta">
+              <span>Strategy: <code>${rep.mode}</code></span> &bull;
+              <span>Canvas: <code>${rep.canvasSize?.widthPt || '-'}×${rep.canvasSize?.heightPt || '-'} pt</code></span> &bull;
+              <span>Policy: <code>${rep.policy}</code></span>
+            </div>
+            <div class="fidelity-card-pills">
+              <span class="f-pill">Fonts: ${fontCount ? fontCount + ' mapped' : '100% exact'}</span>
+              <span class="f-pill">Approximations: ${approxCount}</span>
+              <span class="f-pill">Lost Elements: ${lostCount}</span>
+            </div>
+          `;
+        }
 
         // Configure actions
         if (downloadBtn) {
@@ -678,7 +782,7 @@ import { ConverterEngine } from './converter-engine.js';
         .filter(f => f.status === 'done' && f.resultBlob)
         .map(f => ({ name: f.resultName || f.file.name, blob: f.resultBlob }));
       if (doneItems.length > 0) {
-        downloadAllAsZip(doneItems, 'filee-batch-converted.zip');
+        downloadAllAsZip(doneItems, 'kiln-batch-converted.zip');
       }
     });
 
@@ -1097,7 +1201,7 @@ import { ConverterEngine } from './converter-engine.js';
       // Check Mode action
       if (mode === 'zip' && convertedBlobs.length > 0) {
         progressText.textContent = `All ${total} files converted to ZIP archive. Downloading...`;
-        await downloadAllAsZip(convertedBlobs, 'filee-batch-converted.zip');
+        await downloadAllAsZip(convertedBlobs, 'kiln-batch-converted.zip');
       } else if (mode === 'pdf' && state.batchFiles.every(f => f.file.type.startsWith('image/'))) {
         progressText.textContent = 'Merging images into consolidated PDF...';
         const pdfRes = await engine.mergeIntoPdf(state.batchFiles.map(b => b.file), 'batch-merged.pdf');
@@ -1163,6 +1267,23 @@ import { ConverterEngine } from './converter-engine.js';
     flipVToggle?.addEventListener('change', () => {
       state.presets.flipV = flipVToggle.checked;
     });
+
+    const modeSelect = document.getElementById('preset-conversion-mode');
+    const policySelect = document.getElementById('preset-failure-policy');
+
+    if (modeSelect) {
+      modeSelect.value = state.presets.conversionMode || 'exact_layout';
+      modeSelect.addEventListener('change', () => {
+        state.presets.conversionMode = modeSelect.value;
+      });
+    }
+
+    if (policySelect) {
+      policySelect.value = state.presets.failurePolicy || 'standard';
+      policySelect.addEventListener('change', () => {
+        state.presets.failurePolicy = policySelect.value;
+      });
+    }
 
     saveBtn?.addEventListener('click', () => {
       savePresets();

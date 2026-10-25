@@ -13,8 +13,10 @@
     "verify:all": "node scripts/generate_ledger.js && node scripts/generate_pdf_tools.js && node scripts/generate_fixtures.js && node scripts/verify_accuracy.js",
     "verify:ledger": "node scripts/generate_ledger.js && node scripts/generate_pdf_tools.js",
     "verify:fixtures": "node scripts/generate_fixtures.js",
-    "verify:provenance": "node scripts/verify_batch0_provenance.js",
-    "test": "node scripts/verify_batch0_provenance.js && node scripts/lint_no_hidden_defaults.js && node scripts/lint_style_and_xml.js && node tests/geometry_guardrails_suite.js && node tests/style_fidelity_suite.js && node scripts/verify_accuracy.js && node tests/parity_suite.js && node tests/app_studio_suite.js",
+    "test:fidelity": "node tests/fidelity_checker_suite.js",
+    "test:regression": "node scripts/lint_regression_guards.js && node tests/property_fuzz_suite.js && node tests/matrix_golden_suite.js && node scripts/generate_fidelity_dashboard.js",
+    "test:user-fidelity": "node tests/user_fidelity_suite.js",
+    "test": "node scripts/verify_batch0_provenance.js && node scripts/lint_no_hidden_defaults.js && node scripts/lint_style_and_xml.js && node scripts/lint_regression_guards.js && node tests/geometry_guardrails_suite.js && node tests/style_fidelity_suite.js && node tests/fidelity_checker_suite.js && node tests/property_fuzz_suite.js && node tests/matrix_golden_suite.js && node tests/user_fidelity_suite.js && node scripts/verify_accuracy.js && node tests/parity_suite.js && node tests/app_studio_suite.js",
     "test:parity": "node tests/parity_suite.js",
     "test:studio": "node tests/app_studio_suite.js"
   },

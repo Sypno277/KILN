@@ -1,0 +1,25 @@
+{
+  "pageCounts": [
+    {
+      "page": 1,
+      "red": 357,
+      "black": 2126,
+      "total": 2483
+    },
+    {
+      "page": 2,
+      "red": 574,
+      "black": 1762,
+      "total": 2336
+    },
+    {
+      "page": 3,
+      "red": 165,
+      "black": 1354,
+      "total": 1519
+    }
+  ],
+  "totalRed": 1096,
+  "totalBlack": 5242,
+  "total": 6338
+}

@@ -1,0 +1,661 @@
+<!DOCTYPE html><html lang="en" class="js"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kiln Web App Studio: 100% Client-Side Offline File Converter | Kiln</title>
+<meta name="description" content="Kiln Web Application: Convert images, documents, PDF, data, and audio directly in your browser. 100% offline, private, and free.">
+<link rel="canonical" href="https://filee.sh/app/">
+<link rel="alternate" hreflang="en" href="https://filee.sh/app/">
+<link rel="alternate" hreflang="ko" href="https://filee.sh/ko/app/">
+<link rel="alternate" hreflang="zh-CN" href="https://filee.sh/zh-cn/app/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="/assets/styles.3a73bf9e74.css">
+<link rel="stylesheet" href="/assets/app.css">
+<!-- Pre-bundled local client-side conversion libraries -->
+<script src="/assets/libs/jszip.min.js"></script>
+<script src="/assets/libs/pdf-lib.min.js"></script>
+<script src="/assets/libs/pdf.min.js"></script>
+<script src="/assets/libs/xlsx.full.min.js"></script>
+<script src="/assets/libs/marked.min.js"></script>
+<script src="/assets/libs/js-yaml.min.js"></script>
+<script type="module" src="/assets/app.js"></script>
+</head>
+<body class="lang-en studio-page">
+<a class="skip" href="#main">Skip to content</a>
+<div class="backdrop" aria-hidden="true"><i></i><i></i><i></i></div>
+<header class="nav" data-nav="">
+  <div class="nav-inner" style="justify-content:space-between;">
+    <a class="brand swirlzy-brand" href="/" aria-label="Kiln" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+      <div class="swirlzy-brand-logo" style="width:38px;height:38px;border-radius:50%;background:#55ba86;display:flex;align-items:center;justify-content:center;">
+        <svg viewBox="0 0 32 32" style="width:22px;height:22px;fill:#1b4e3b;" aria-hidden="true">
+          <path d="M16 3C8.82 3 3 8.82 3 16s5.82 13 13 13 13-5.82 13-13c0-1.66-1.34-3-3-3s-3 1.34-3 3a7 7 0 1 1-7-7c1.66 0 3-1.34 3-3s-1.34-3-3-3z"/>
+        </svg>
+      </div>
+      <span style="font-family:var(--font-bubble);font-weight:900;letter-spacing:-0.5px;font-size:24px;color:var(--ink);">KILN</span>
+    </a>
+    <div class="nav-actions">
+      <a class="btn btn-ghost" href="/" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path></svg><span>← Back to Landing Page</span></a>
+      <a href="/app/" class="swirlzy-cart-btn"><span class="swirlzy-cart-text">PROCESSING ⚡</span><span class="swirlzy-cart-count">33</span></a>
+      <details class="lang-menu">
+        <summary aria-label="Language"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.36,14C16.44,13.34 16.5,12.68 16.5,12C16.5,11.32 16.44,10.66 16.36,10H19.74C19.9,10.64 20,11.31 20,12C20,12.69 19.9,13.36 19.74,14M14.59,19.56C15.19,18.45 15.65,17.25 15.97,16H18.92C17.96,17.65 16.43,18.93 14.59,19.56M14.34,14H9.66C9.56,13.34 9.5,12.68 9.5,12C9.5,11.32 9.56,10.65 9.66,10H14.34C14.43,10.65 14.5,11.32 14.5,12C14.5,12.68 14.43,13.34 14.34,14M12,19.96C11.17,18.76 10.5,17.43 10.09,16H13.91C13.5,17.43 12.83,18.76 12,19.96M8,8H5.08C6.03,6.34 7.57,5.06 9.4,4.44C8.8,5.55 8.35,6.75 8,8M5.08,16H8C8.35,17.25 8.8,18.45 9.4,19.56C7.57,18.93 6.03,17.65 5.08,16M4.26,14C4.1,13.36 4,12.69 4,12C4,11.31 4.1,10.64 4.26,10H7.64C7.56,10.66 7.5,11.32 7.5,12C7.5,12.68 7.56,13.34 7.64,14M12,4.03C12.83,5.23 13.5,6.57 13.91,8H10.09C10.5,6.57 11.17,5.23 12,4.03M18.92,8H15.97C15.65,6.75 15.19,5.55 14.59,4.44C16.43,5.07 17.96,6.34 18.92,8M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg><span>English</span></summary>
+        <ul><li><a href="/app/" hreflang="en" lang="en" aria-current="page">English</a></li><li><a href="/ko/app/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/zh-cn/app/" hreflang="zh-CN" lang="zh-CN">简体中文</a></li></ul>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="studio-container">
+
+  <!-- Minimalist Workstation Toolbar -->
+  <div class="playground-toolbar">
+    <div class="playground-status-pill">
+      <span class="status-dot-green"></span>
+      <span>100% Client-Side Engine · Zero Uploads · Pure Privacy</span>
+    </div>
+
+    <!-- Main Mode Navigation Switch -->
+    <div class="playground-mode-switch">
+      <button class="mode-pill is-active" data-tab="donut" id="tab-donut" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16Z"/></svg>
+        <span>Playground</span>
+      </button>
+      <button class="mode-pill" data-tab="batch" id="tab-batch" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M4,4H10V10H4V4M14,4H20V10H14V4M4,14H10V20H4V14M14,14H20V20H14V14Z"/></svg>
+        <span>Batch Processing</span>
+      </button>
+      <button class="mode-pill" data-tab="pdf-tools" id="tab-pdf-tools" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,19H5V5H19V19M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z"/></svg>
+        <span>33 PDF Tools</span>
+      </button>
+      <button class="mode-pill" data-tab="presets" id="tab-presets" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M3,17V19H9V17H3M3,5V7H13V5H3M13,21V19H21V17H13V15H11V21H13M7,9V11H3V13H7V15H9V9H7M21,13V11H11V13H21M15,9H17V7H21V5H17V3H15V9Z"/></svg>
+        <span>Presets</span>
+      </button>
+      <button class="mode-pill" data-tab="watcher" id="tab-watcher" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/></svg>
+        <span>Watcher</span>
+      </button>
+      <button class="mode-pill" data-tab="cli" id="tab-cli" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M20,19V7H4V19H20M20,3A2,2 0 0,1 22,5V19A2,2 0 0,1 20,21H4A2,2 0 0,1 2,19V5A2,2 0 0,1 4,3H20M13,17V15H18V17H13M9.58,13L5.5,8.91L6.92,7.5L12.41,13L6.92,18.5L5.5,17.09L9.58,13Z"/></svg>
+        <span>CLI</span>
+      </button>
+      <button class="mode-pill" data-tab="history" id="tab-history" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.89,15.89L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3Z"/></svg>
+        <span>History</span>
+      </button>
+      <button class="mode-pill" data-tab="privacy" id="tab-privacy" type="button">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,11.99H7V10.03L12,5.59L17,10.03V11.99H12Z"/></svg>
+        <span>Privacy</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- WORKSTATION 1: PLAYGROUND & PERSIMMON / RADIAL DIAL -->
+  <section class="studio-panel is-active" data-panel="donut" role="tabpanel" aria-labelledby="tab-donut">
+    <div class="donut-stage" id="donut-stage" data-tilt-3d="plane">
+      <canvas id="playground-particle-canvas" class="ambient-3d-canvas" aria-hidden="true"></canvas>
+      <div class="card-3d-shine" aria-hidden="true"></div>
+      
+      <!-- Big white bubble typography watermark in the background (like SWEET!) -->
+      <div class="swirlzy-stage-watermark" aria-hidden="true">CONVERT!</div>
+      
+      <!-- Circular dark green badge (like FROM $12) -->
+      <div class="swirlzy-price-badge swirlzy-stage-badge">
+        <span class="swirlzy-price-badge-from">UPLOADED</span>
+        <span class="swirlzy-price-badge-num">0 KB</span>
+      </div>
+
+      <!-- Initial Plain Playground Drop Prompt -->
+      <div class="donut-drop-prompt" id="donut-drop-prompt">
+        <div class="donut-drop-icon">
+          <svg viewBox="0 0 24 24"><path d="M19.35,10.04C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.04C2.34,8.36 0,10.91 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.04M14,13V17H10V13H7L12,8L17,13H14Z"></path></svg>
+        </div>
+        <h2 class="donut-drop-title">Drop your file here or click anywhere to browse</h2>
+        <p class="donut-drop-sub">Drag any PDF, Word, Excel, image, audio, video or data file. The system recognizes the format and presents available conversions.</p>
+        <button class="btn btn-primary swirlzy-primary-pill" type="button" id="donut-browse-btn">Choose File to Convert</button>
+        <input type="file" id="donut-file-input" style="display:none" aria-label="Select file for playground conversion">
+      </div>
+
+      <!-- Recognized File Card -->
+      <div class="donut-active-file" id="donut-active-file">
+        <div class="donut-file-info">
+          <span class="donut-file-badge" id="donut-file-badge">FILE</span>
+          <div class="donut-file-meta">
+            <h3 class="donut-file-name" id="donut-file-name">filename.ext</h3>
+            <p class="donut-file-size" id="donut-file-size">0 KB · CATEGORY</p>
+          </div>
+        </div>
+        <button class="btn btn-ghost btn-small" type="button" id="donut-change-file-btn">Change File</button>
+      </div>
+
+      <!-- Upfront Preflight Warning Banner -->
+      <div id="donut-lossy-preflight" class="donut-lossy-banner" style="display:none;"></div>
+
+      <!-- SVG Donut Canvas (Persimmon / Radial Dial) -->
+      <div class="studio-donut-wrapper" id="studio-donut-wrapper">
+        <div class="donut is-open">
+          <svg id="studio-donut-svg" viewBox="-110 -110 220 220"></svg>
+        </div>
+      </div>
+
+      <!-- Hidden format grid for script safety -->
+      <div class="donut-quick-grid" id="donut-quick-grid" style="display:none;"></div>
+
+      <!-- Result Banner -->
+      <div class="donut-result-banner" id="donut-result-banner">
+        <div class="donut-result-header">
+          <div class="donut-result-title">
+            <svg class="icon" viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg>
+            <span id="donut-res-title">Conversion Complete</span>
+          </div>
+          <button class="btn btn-ghost btn-small" type="button" id="donut-retry-btn">Convert Another</button>
+        </div>
+        <div class="donut-result-details">
+          <span>Processed 100% on PC</span>
+          <strong id="donut-res-meta">0 KB (-0%)</strong>
+        </div>
+        <div class="donut-result-actions">
+          <a class="btn btn-primary swirlzy-primary-pill" id="donut-download-btn" download style="display:inline-flex;align-items:center;gap:6px;"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/></svg> Download Converted File</a>
+          <button class="btn btn-ghost" type="button" id="donut-preview-btn">View On-Screen Result</button>
+        </div>
+        <!-- BATCH 8 Conversion Fidelity Report Card -->
+        <div id="donut-fidelity-card" class="donut-fidelity-card" style="display:none;"></div>
+      </div>
+
+      <!-- Bottom Hero Card Footer -->
+      <div class="swirlzy-stage-footer" aria-hidden="true">
+        <div class="swirlzy-stage-caption">100% Client-Side Engine · Built for Privacy</div>
+        <div class="swirlzy-stage-rating">
+          <span class="swirlzy-stage-rating-num">( 100% )</span>
+          <span class="swirlzy-stage-rating-sub">offline wasm</span>
+        </div>
+        <div class="swirlzy-stage-thumbs">
+          <div class="swirlzy-stage-thumb" style="background:#ff4b4b;">PDF</div>
+          <div class="swirlzy-stage-thumb" style="background:#29b6f6;">DOC</div>
+          <div class="swirlzy-stage-thumb" style="background:#ffa726;">PPT</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- WORKSTATION 2: BATCH CONVERTER -->
+  <section class="studio-panel" data-panel="batch" role="tabpanel" aria-labelledby="tab-batch">
+    <div class="studio-card">
+      <div class="studio-card-head">
+        <h2><svg class="icon" viewBox="0 0 24 24" style="width:22px;height:22px;fill:var(--accent)"><path d="M4,4H10V10H4V4M14,4H20V10H14V4M4,14H10V20H4V14M14,14H20V20H14V14Z"></path></svg> Multi-File Batch Processor</h2>
+        <span class="studio-badge">Parallel Radial Processing</span>
+      </div>
+
+      <div class="batch-plane-toolbar" id="batch-plane-toolbar">
+        <div class="batch-controls">
+          <div class="batch-global-format-wrap">
+            <label for="batch-global-format" style="font-weight:700;font-size:13px;color:var(--muted)">Set All To:</label>
+            <select class="batch-select" id="batch-global-format">
+              <option value="">Keep Individual</option>
+              <option value="docx">DOCX (Word Document)</option>
+              <option value="pptx">PPTX (PowerPoint Presentation)</option>
+              <option value="xlsx">XLSX (Excel Spreadsheet)</option>
+              <option value="txt">TXT (Plain Text)</option>
+              <option value="pdf">PDF (Document)</option>
+              <option value="webp">WEBP (Web Image)</option>
+              <option value="jpg">JPG (Photo)</option>
+              <option value="png">PNG (Lossless)</option>
+              <option value="md">MD (Markdown)</option>
+              <option value="ico">ICO (Icon)</option>
+              <option value="zip">ZIP (Archive)</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+          <button class="btn btn-ghost btn-small" type="button" id="batch-clear-btn">Clear All</button>
+          <button class="btn btn-secondary btn-small" type="button" id="batch-add-files-btn">
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor;vertical-align:-2px;margin-right:4px;"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"/></svg>Add Files
+          </button>
+          <button class="btn btn-primary" type="button" id="batch-convert-all-btn" disabled>Convert All (0 files)</button>
+          <button class="btn btn-primary" type="button" id="batch-zip-download-btn" style="display:none;background:#10b981;border-color:#10b981;">
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor;vertical-align:-2px;margin-right:4px;"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/></svg>Download Batch (ZIP)
+          </button>
+        </div>
+      </div>
+
+      <!-- Batch Plane Playground Stage -->
+      <div class="batch-stage-container">
+        <div class="donut-stage batch-stage" id="batch-stage" data-tilt-3d="plane">
+          <canvas id="batch-particle-canvas" class="ambient-3d-canvas" aria-hidden="true"></canvas>
+          <div class="card-3d-shine" aria-hidden="true"></div>
+          <!-- Hidden multi-file input -->
+          <input type="file" id="batch-file-input" multiple style="display:none" aria-label="Select batch files">
+
+          <!-- Empty drop prompt on the plane -->
+          <div class="donut-drop-prompt" id="batch-drop-prompt">
+            <div class="donut-drop-icon">
+              <svg viewBox="0 0 24 24"><path d="M4,4H10V10H4V4M14,4H20V10H14V4M4,14H10V20H4V14M14,14H20V20H14V14Z"></path></svg>
+            </div>
+            <h3 class="donut-drop-title">Drop multiple files onto the plane</h3>
+            <p class="donut-drop-sub">Drop or click anywhere to upload. Multiple files are arranged individually across the plane with separate radial conversion dials.</p>
+            <button class="btn btn-primary" type="button" id="batch-browse-btn" style="pointer-events:auto;">Browse Files</button>
+          </div>
+
+          <!-- Add More Ribbon (visible when files are on the plane) -->
+          <div class="batch-add-ribbon" id="batch-add-ribbon" style="display:none;">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"/></svg>
+            <span>Drop more files or click here to add to the plane</span>
+          </div>
+
+          <!-- Arranged Individual File Cards Grid on the Plane -->
+          <div class="batch-plane-grid" id="batch-plane-grid" style="display:none;"></div>
+        </div>
+      </div>
+
+      <!-- Hidden table wrapper for compatibility with automated test suites -->
+      <div class="batch-table-wrapper" id="batch-table-wrapper" style="display:none">
+        <table class="batch-table">
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>Size</th>
+              <th>Target Format</th>
+              <th>Progress</th>
+              <th>Status / Action</th>
+            </tr>
+          </thead>
+          <tbody id="batch-table-body"></tbody>
+        </table>
+      </div>
+
+      <!-- Global Progress -->
+      <div class="batch-global-progress" id="batch-global-progress" style="margin-top:20px;">
+        <div class="batch-progress-header">
+          <span>Batch Progress</span>
+          <span id="batch-progress-text">0 of 0 converted</span>
+        </div>
+        <div class="batch-progress-bar-wrap">
+          <div class="batch-progress-bar-fill" id="batch-progress-fill"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WORKSTATION 3: PRESETS & SETTINGS -->
+  <section class="studio-panel" data-panel="presets" role="tabpanel" aria-labelledby="tab-presets">
+    <div class="studio-card">
+      <div class="studio-card-head">
+        <h2><svg class="icon" viewBox="0 0 24 24" style="width:22px;height:22px;fill:var(--accent)"><path d="M3,17V19H9V17H3M3,5V7H13V5H3M13,21V19H21V17H13V15H11V21H13M7,9V11H3V13H7V15H9V9H7M21,13V11H11V13H21M15,9H17V7H21V5H17V3H15V9Z"></path></svg> Presets & Conversion Settings</h2>
+        <button class="btn btn-primary btn-small" type="button" id="preset-save-btn">Save Presets</button>
+      </div>
+
+      <div class="presets-grid">
+        
+        <!-- BATCH 8: Document Conversion Strategy (Mode) -->
+        <div class="preset-group">
+          <div class="preset-group-title">Document Layout Strategy</div>
+          <select class="batch-select" id="preset-conversion-mode" style="width:100%;">
+            <option value="exact_layout">Exact Layout (Coordinate Fidelity & Fixed Geometry)</option>
+            <option value="editable_flow">Editable Flow (Reflowed Paragraphs & Natural Flow)</option>
+          </select>
+          <p style="font-size:12px;color:var(--muted);margin-top:6px;">Choose between preserving exact absolute 2D positions or reflowing into editable text.</p>
+        </div>
+
+        <!-- BATCH 8: Fidelity Failure Policy -->
+        <div class="preset-group">
+          <div class="preset-group-title">Fidelity Failure Policy</div>
+          <select class="batch-select" id="preset-failure-policy" style="width:100%;">
+            <option value="standard" selected>Standard Mode (Convert & Report - Recommended Default)</option>
+            <option value="strict">Strict Mode (Fail Loudly on Loss or Score &lt; 90%)</option>
+            <option value="best_effort">Best-Effort Mode (Maximum Fallback without Failing)</option>
+          </select>
+          <p style="font-size:12px;color:var(--muted);margin-top:6px;">Enforces quality gate thresholds during document conversion.</p>
+        </div>
+
+        <!-- Image Compression -->
+        <div class="preset-group">
+          <div class="preset-group-title">
+            <span>Image Compression & Quality</span>
+            <span class="preset-slider-val" id="preset-quality-val">90%</span>
+          </div>
+          <div class="preset-slider-row">
+            <input type="range" id="preset-quality" min="10" max="100" value="90" step="5" aria-label="Quality slider">
+          </div>
+          <p style="font-size:12px;color:var(--muted);margin-top:6px;">Applies to JPEG and WEBP conversions (90% recommended for crisp details).</p>
+        </div>
+
+        <!-- Resize Scale -->
+        <div class="preset-group">
+          <div class="preset-group-title">Image Resize Scale</div>
+          <select class="batch-select" id="preset-resize" style="width:100%;">
+            <option value="100">Original Dimensions (100%)</option>
+            <option value="75">75% of Original</option>
+            <option value="50">50% (Half resolution)</option>
+            <option value="25">25% (Thumbnail scale)</option>
+          </select>
+        </div>
+
+        <!-- Rotation & Flip -->
+        <div class="preset-group">
+          <div class="preset-group-title">Rotation & Orientation</div>
+          <select class="batch-select" id="preset-rotate" style="width:100%;">
+            <option value="0">No Rotation (0°)</option>
+            <option value="90">Rotate 90° Clockwise</option>
+            <option value="180">Rotate 180°</option>
+            <option value="270">Rotate 270° (90° Counter-Clockwise)</option>
+          </select>
+        </div>
+
+        <!-- Color & Enhancements -->
+        <div class="preset-group">
+          <div class="preset-group-title">Image Color & Filters</div>
+          <div class="preset-toggle-row">
+            <span class="preset-toggle-label">Grayscale conversion (Monochrome)</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="preset-grayscale">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="preset-toggle-row">
+            <span class="preset-toggle-label">Invert colors</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="preset-invert">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="preset-toggle-row">
+            <span class="preset-toggle-label">Flip Horizontal</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="preset-fliph">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="preset-toggle-row">
+            <span class="preset-toggle-label">Flip Vertical</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="preset-flipv">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WORKSTATION 4: FOLDER WATCHER -->
+  <section class="studio-panel" data-panel="watcher" role="tabpanel" aria-labelledby="tab-watcher">
+    <div class="studio-card">
+      <div class="studio-card-head">
+        <h2><svg class="icon" viewBox="0 0 24 24" style="width:22px;height:22px;fill:#1d9e75"><path d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"></path></svg> Live Folder Watcher (Web File System Access)</h2>
+        <span class="studio-status-pill">Automated Directory Sync</span>
+      </div>
+
+      <p style="color:var(--muted);font-size:14px;margin-bottom:20px;">
+        Pick any local folder on your computer. When files land in that directory, Kiln automatically detects them and converts them into your target format offline!
+      </p>
+
+      <div class="watcher-status-card">
+        <div class="watcher-info">
+          <div class="watcher-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"></path></svg>
+          </div>
+          <div>
+            <h3 style="font-size:15px;margin:0 0 4px;" id="watcher-status-text">Watcher idle. Select a folder to monitor.</h3>
+            <p style="font-size:12px;color:var(--muted);margin:0;">Rule: Auto-convert any detected image to selected format</p>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:10px;">
+          <select class="batch-select" id="watcher-rule-ext">
+            <option value="webp">Convert to WEBP (85%)</option>
+            <option value="jpg">Convert to JPG (90%)</option>
+            <option value="png">Convert to PNG</option>
+            <option value="pdf">Convert to PDF</option>
+          </select>
+          <button class="btn btn-primary" type="button" id="watcher-start-btn">Select Folder to Watch</button>
+          <button class="btn btn-ghost" type="button" id="watcher-stop-btn" style="display:none">Stop Watcher</button>
+          <button class="btn btn-ghost" type="button" id="watcher-simulate-btn">Simulate File Drop</button>
+        </div>
+      </div>
+
+      <h3 style="font-size:14px;font-weight:700;margin-bottom:10px;">Live Activity Log</h3>
+      <div class="watcher-log-terminal" id="watcher-log-box">
+        <div class="watcher-log-line">[System] Folder watcher engine ready. Awaiting folder selection or simulation.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WORKSTATION 5: WEB TERMINAL / CLI SIMULATOR -->
+  <section class="studio-panel" data-panel="cli" role="tabpanel" aria-labelledby="tab-cli">
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <div class="terminal-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="terminal-title">kiln-cli — bash — 80x24</div>
+        <div style="width:40px"></div>
+      </div>
+      <div class="terminal-body" id="terminal-body">
+        <div class="terminal-output" id="terminal-output"></div>
+        <div class="terminal-prompt-line">
+          <span class="terminal-prompt">kiln:~$</span>
+          <input type="text" class="terminal-input" id="terminal-input" autofocus autocomplete="off" spellcheck="false" aria-label="Terminal command input">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKSTATION 6: HISTORY VAULT -->
+  <section class="studio-panel" data-panel="history" role="tabpanel" aria-labelledby="tab-history">
+    <div class="studio-card">
+      <div class="studio-card-head">
+        <h2><svg class="icon" viewBox="0 0 24 24" style="width:22px;height:22px;fill:var(--accent)"><path d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.89,15.89L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3Z"></path></svg> Recent Session Conversions</h2>
+        <button class="btn btn-ghost btn-small" type="button" id="history-clear-btn" disabled>Clear History</button>
+      </div>
+
+      <div class="batch-table-wrapper">
+        <table class="batch-table">
+          <thead>
+            <tr>
+              <th>Output File</th>
+              <th>Conversion Route</th>
+              <th>Size Delta</th>
+              <th>Time</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="history-table-body"></tbody>
+        </table>
+      </div>
+      <p id="history-empty-msg" style="text-align:center;color:var(--muted);padding:30px 0;">No conversions in this session yet. Convert a file using the Donut or Batch Studio.</p>
+    </div>
+  </section>
+
+  <!-- WORKSTATION 7: PDF TOOLS HUB (33 Native Tools) -->
+  <section class="studio-panel" data-panel="pdf-tools" role="tabpanel" aria-labelledby="tab-pdf-tools">
+    <div class="studio-card">
+      <div class="studio-card-head">
+        <h2><svg class="icon" viewBox="0 0 24 24" style="width:22px;height:22px;fill:var(--accent)"><path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,19H5V5H19V19M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z"/></svg> Complete PDF Toolset (33 Native Tools)</h2>
+        <span class="studio-badge">100% Private &amp; Offline</span>
+      </div>
+
+      <!-- Custom Workflow Chaining -->
+      <div class="workflow-builder-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+          <div>
+            <h3 style="font-size:15px;margin:0 0 4px;font-weight:700;">Custom Workflows (Tool Chaining)</h3>
+            <p style="font-size:12px;color:var(--muted);margin:0;">Chain multiple operations sequentially in worker memory (e.g. Compress → Watermark → Protect).</p>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <button class="btn btn-ghost btn-small" type="button" id="wf-export-btn">Export JSON</button>
+            <button class="btn btn-ghost btn-small" type="button" id="wf-import-btn">Import JSON</button>
+            <button class="btn btn-primary btn-small" type="button" id="wf-run-btn">Run Chain</button>
+          </div>
+        </div>
+        <div class="workflow-steps-chain" id="workflow-chain-box">
+          <div class="workflow-step-chip"><span>1. Compress PDF (Recommended)</span></div>
+          <span class="workflow-step-arrow">→</span>
+          <div class="workflow-step-chip"><span>2. Add Watermark ("CONFIDENTIAL")</span></div>
+          <span class="workflow-step-arrow">→</span>
+          <div class="workflow-step-chip"><span>3. Protect PDF (AES-256)</span></div>
+        </div>
+      </div>
+
+      <!-- Hub Search & Filters -->
+      <div class="pdf-hub-toolbar">
+        <div class="pdf-search-bar">
+          <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:var(--muted)"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/></svg>
+          <input type="text" id="pdf-tool-search" placeholder="Search 33 PDF tools (e.g. merge, compress, ocr, forms, protect, sign, redact, crop)..." aria-label="Search PDF tools">
+          <kbd style="font-size:11px;padding:2px 6px;border-radius:4px;background:var(--surface);border:1px solid var(--border)">/</kbd>
+        </div>
+
+        <div class="pdf-filter-pills" id="pdf-filter-pills">
+          <button class="pdf-pill is-active" data-group="all" type="button">All Tools (33)</button>
+          <button class="pdf-pill" data-group="Organize" type="button">Organize (6)</button>
+          <button class="pdf-pill" data-group="Optimize" type="button">Optimize (3)</button>
+          <button class="pdf-pill" data-group="Convert to PDF" type="button">Convert to PDF (5)</button>
+          <button class="pdf-pill" data-group="Convert from PDF" type="button">Convert from PDF (6)</button>
+          <button class="pdf-pill" data-group="Edit" type="button">Edit (6)</button>
+          <button class="pdf-pill" data-group="Security" type="button">Security (5)</button>
+          <button class="pdf-pill" data-group="Intelligence" type="button">Intelligence (2)</button>
+        </div>
+      </div>
+
+      <!-- Tools Grid -->
+      <div class="pdf-tools-grid" id="pdf-tools-grid">
+        <!-- Populated dynamically by app.js from data/pdf-tools.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKSTATION 8: PRIVACY AUDIT & DATA LEDGER -->
+  <section class="studio-panel" data-panel="privacy" role="tabpanel" aria-labelledby="tab-privacy">
+    <div class="studio-card">
+      <div class="studio-card-head">
+        <h2><svg class="icon" viewBox="0 0 24 24" style="width:22px;height:22px;fill:#10b981"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,11.99H19C18.47,16.11 15.72,19.78 12,20.92V12H5V6.3L12,3.19V11.99Z"/></svg> Client-Side Privacy Audit &amp; Data Ledger</h2>
+        <span class="studio-badge" style="color:#10b981;border-color:#10b981;background:rgba(16,185,129,0.1)">Zero Network Leaks</span>
+      </div>
+
+      <div class="privacy-audit-grid">
+        <div class="privacy-stat-card">
+          <div class="privacy-stat-label">Outbound Network Requests</div>
+          <div class="privacy-stat-val">0 B</div>
+          <p style="font-size:11px;color:var(--muted);margin:0;">No document bytes or metadata leave browser heap.</p>
+        </div>
+        <div class="privacy-stat-card">
+          <div class="privacy-stat-label">Telemetry &amp; Tracking</div>
+          <div class="privacy-stat-val">DISABLED</div>
+          <p style="font-size:11px;color:var(--muted);margin:0;">No analytics, cookies, tracking pixels, or accounts.</p>
+        </div>
+        <div class="privacy-stat-card">
+          <div class="privacy-stat-label">AI / Intelligence Privacy</div>
+          <div class="privacy-stat-val">LOCAL ONLY</div>
+          <p style="font-size:11px;color:var(--muted);margin:0;">WebGPU / WASM execution. BYO-Key requires explicit per-request confirmation.</p>
+        </div>
+        <div class="privacy-stat-card">
+          <div class="privacy-stat-label">Local Memory Boundary</div>
+          <div class="privacy-stat-val">250 MB Limit</div>
+          <p style="font-size:11px;color:var(--muted);margin:0;">Prevents tab crashes with proactive heap limits.</p>
+        </div>
+      </div>
+
+      <h3 style="font-size:15px;font-weight:700;margin:20px 0 10px;">Tool Privacy Ledger Verification</h3>
+      <div class="batch-table-wrapper">
+        <table class="batch-table">
+          <thead>
+            <tr>
+              <th>Tool Group</th>
+              <th>Tools Included</th>
+              <th>Processing Engine</th>
+              <th>Network Status</th>
+              <th>Verification Tier</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Organize (6)</strong></td>
+              <td>Merge, Split, Extract, Remove, Organize, Scan</td>
+              <td>PDFLib v1.17.1 / Canvas</td>
+              <td><span class="studio-badge" style="color:#10b981">100% Offline</span></td>
+              <td><span class="pdf-tier-pill tier-a">Tier A / B</span></td>
+            </tr>
+            <tr>
+              <td><strong>Optimize (3)</strong></td>
+              <td>Compress, Repair, OCR</td>
+              <td>PDFLib / Tesseract.js WASM</td>
+              <td><span class="studio-badge" style="color:#10b981">100% Offline</span></td>
+              <td><span class="pdf-tier-pill tier-a">Tier A / B</span></td>
+            </tr>
+            <tr>
+              <td><strong>Convert to PDF (5)</strong></td>
+              <td>Image, Word, PowerPoint, Excel, HTML</td>
+              <td>SheetJS / Mammoth / Canvas</td>
+              <td><span class="studio-badge" style="color:#10b981">100% Offline</span></td>
+              <td><span class="pdf-tier-pill tier-a">Tier A / C</span></td>
+            </tr>
+            <tr>
+              <td><strong>Convert from PDF (6)</strong></td>
+              <td>JPG, Word, PowerPoint, Excel, PDF/A, Markdown</td>
+              <td>PDFJS-Dist / SheetJS / Marked</td>
+              <td><span class="studio-badge" style="color:#10b981">100% Offline</span></td>
+              <td><span class="pdf-tier-pill tier-a">Tier A / B / C</span></td>
+            </tr>
+            <tr>
+              <td><strong>Edit (6)</strong></td>
+              <td>Edit, Rotate, Page Numbers, Watermark, Crop, Forms</td>
+              <td>PDFLib v1.17.1</td>
+              <td><span class="studio-badge" style="color:#10b981">100% Offline</span></td>
+              <td><span class="pdf-tier-pill tier-a">Tier A</span></td>
+            </tr>
+            <tr>
+              <td><strong>Security (5)</strong></td>
+              <td>Unlock, Protect, Sign, Redact, Compare</td>
+              <td>QPDF / PDFLib / PixelDiff</td>
+              <td><span class="studio-badge" style="color:#10b981">100% Offline</span></td>
+              <td><span class="pdf-tier-pill tier-a">Tier A</span></td>
+            </tr>
+            <tr>
+              <td><strong>Intelligence (2)</strong></td>
+              <td>AI Summarizer, Translate PDF</td>
+              <td>WebLLM (Local) / BYO-API Key</td>
+              <td><span class="studio-badge" style="color:#3b82f6">Local or BYO-Key Opt-in</span></td>
+              <td><span class="pdf-tier-pill tier-b">Tier B / C</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Modal Preview Dialog -->
+<div class="studio-modal" id="studio-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-dialog">
+    <div class="modal-head">
+      <h3 id="modal-title">File Preview</h3>
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close preview">✕</button>
+    </div>
+    <div class="modal-content" id="modal-content"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>Kiln Web Application Studio · 100% Client-Side Engine · MIT License</p>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/formats/">Formats Catalog</a>
+      <a href="/cli/">CLI Reference</a>
+      <a href="https://github.com/KnifeLemon/Filee" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body></html>

@@ -1,0 +1,771 @@
+<!DOCTYPE html><html lang="zh-CN" class="js"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kiln | 100% 本地隐私离线文件与 PDF 处理平台</title>
+<meta name="description" content="Kiln 是一款纯客户端、零服务器上传的文件转换与 PDF 处理利器。支持格式转换、合并、拆分、压缩、编辑、OCR、加水印和签名，保障 100% 原文排版与内容精度。">
+<link rel="canonical" href="https://filee.sh/zh-cn/">
+<link rel="alternate" hreflang="en" href="https://filee.sh/"><link rel="alternate" hreflang="ko" href="https://filee.sh/ko/"><link rel="alternate" hreflang="zh-CN" href="https://filee.sh/zh-cn/"><link rel="alternate" hreflang="x-default" href="https://filee.sh/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kiln">
+<meta property="og:title" content="Kiln | 100% 本地隐私离线文件与 PDF 处理平台">
+<meta property="og:description" content="零服务器上传的本地文件处理工作台。">
+<meta property="og:url" content="https://filee.sh/zh-cn/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap">
+<link rel="stylesheet" href="/assets/styles.3a73bf9e74.css">
+<script src="/assets/libs/jszip.min.js"></script>
+<script src="/assets/libs/pdf-lib.min.js"></script>
+<script src="/assets/libs/pdf.min.js"></script>
+<script src="/assets/libs/xlsx.full.min.js"></script>
+<script src="/assets/libs/marked.min.js"></script>
+<script src="/assets/libs/js-yaml.min.js"></script>
+<script type="module" src="/assets/main.dc161caed7.js"></script>
+</head>
+<body class="lang-zh-CN">
+<a class="skip" href="#main">跳到正文</a>
+<div class="backdrop" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<div class="swirlzy-wrapper">
+  <!-- SWIRLZY NAV -->
+  <header class="swirlzy-nav">
+    <a class="swirlzy-brand" href="/zh-cn/" aria-label="Kiln">
+      <div class="swirlzy-brand-logo" style="background:#55ba86;">
+        <svg viewBox="0 0 32 32" style="width:22px;height:22px;fill:#1b4e3b;" aria-hidden="true">
+          <path d="M16 3C8.82 3 3 8.82 3 16s5.82 13 13 13 13-5.82 13-13c0-1.66-1.34-3-3-3s-3 1.34-3 3a7 7 0 1 1-7-7c1.66 0 3-1.34 3-3s-1.34-3-3-3z"/>
+        </svg>
+      </div>
+      <span class="swirlzy-brand-title">KILN</span>
+    </a>
+
+    <nav class="swirlzy-nav-links">
+      <a href="/zh-cn/app/" class="swirlzy-nav-link" style="color:#1b4e3b;font-weight:900;">⚡ 处理页面</a>
+      <a href="/zh-cn/app/" class="swirlzy-nav-link">33款原生工具</a>
+      <a href="/zh-cn/formats/" class="swirlzy-nav-link">240+ 格式</a>
+      <a href="/zh-cn/cli/" class="swirlzy-nav-link">CLI</a>
+    </nav>
+
+    <div class="swirlzy-nav-right">
+            <details class="lang-menu">
+        <summary aria-label="语言"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg><span>简体中文</span></summary>
+        <ul>
+          <li><a href="/" hreflang="en" lang="en">English</a></li>
+          <li><a href="/ko/" hreflang="ko" lang="ko">한국어</a></li>
+          <li><a href="/zh-cn/" hreflang="zh-CN" lang="zh-CN" aria-current="page">简体中文</a></li>
+        </ul>
+      </details>
+
+      <a href="/zh-cn/app/" class="swirlzy-cart-btn" title="进入 Kiln 处理页面">
+        <span>处理页面</span>
+        <span class="swirlzy-cart-badge">⚡</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- BENTO GRID -->
+  <div class="swirlzy-container">
+    <div class="swirlzy-bento-grid">
+      
+      <!-- LEFT COLUMN -->
+      <div class="swirlzy-col-left">
+        
+        <!-- CARD 1: HERO AMBER -->
+        <div class="swirlzy-card swirlzy-hero-card">
+          <!-- Sunburst rays top-left -->
+          <svg class="swirlzy-hero-rays" width="50" height="42" viewBox="0 0 50 42" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round">
+            <line x1="8" y1="28" x2="2" y2="34"/>
+            <line x1="22" y1="16" x2="16" y2="6"/>
+            <line x1="38" y1="26" x2="48" y2="30"/>
+          </svg>
+
+          <!-- Watermark puffy typography -->
+          <div class="swirlzy-hero-watermark">
+            <div class="swirlzy-hero-watermark-row">
+              <span class="swirlzy-wm-chunk">CO</span>
+              <span class="swirlzy-wm-chunk">NV</span>
+            </div>
+            <div class="swirlzy-hero-watermark-row">
+              <span class="swirlzy-wm-chunk">ER</span>
+              <span class="swirlzy-wm-chunk">T!</span>
+            </div>
+          </div>
+
+          <!-- Floating 3D Document Stack with 0 KB Uploaded Badge -->
+          <div class="swirlzy-hero-img-wrap">
+            <svg class="swirlzy-hero-svg" viewBox="0 0 320 280" width="320" height="280" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="shadow-pptx-zh" x="20" y="130" width="280" height="150" filterUnits="userSpaceOnUse">
+                  <feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#8c4e0b" flood-opacity="0.32"/>
+                </filter>
+                <filter id="shadow-docx-zh" x="30" y="75" width="260" height="150" filterUnits="userSpaceOnUse">
+                  <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#8c4e0b" flood-opacity="0.28"/>
+                </filter>
+                <filter id="shadow-pdf-zh" x="40" y="15" width="240" height="150" filterUnits="userSpaceOnUse">
+                  <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#8c4e0b" flood-opacity="0.25"/>
+                </filter>
+                <linearGradient id="grad-pdf-zh" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ff4b4b"/>
+                  <stop offset="100%" stop-color="#c62828"/>
+                </linearGradient>
+                <linearGradient id="grad-docx-zh" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#29b6f6"/>
+                  <stop offset="100%" stop-color="#0277bd"/>
+                </linearGradient>
+                <linearGradient id="grad-pptx-zh" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ffa726"/>
+                  <stop offset="100%" stop-color="#e65100"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Bottom Layer: PPTX Deck -->
+              <g filter="url(#shadow-pptx-zh)" transform="rotate(4 160 190)">
+                <rect x="50" y="140" width="220" height="110" rx="22" fill="url(#grad-pptx-zh)" stroke="#ffffff" stroke-width="2.5" stroke-opacity="0.7"/>
+                <rect x="70" y="160" width="45" height="70" rx="8" fill="#ffffff" fill-opacity="0.25"/>
+                <rect x="125" y="165" width="80" height="8" rx="4" fill="#ffffff" fill-opacity="0.9"/>
+                <rect x="125" y="182" width="60" height="6" rx="3" fill="#ffffff" fill-opacity="0.7"/>
+                <rect x="125" y="196" width="100" height="6" rx="3" fill="#ffffff" fill-opacity="0.5"/>
+                <rect x="125" y="210" width="45" height="18" rx="6" fill="#ffffff" fill-opacity="0.3"/>
+                <text x="76" y="203" font-family="'Fredoka', sans-serif" font-weight="900" font-size="16" fill="#ffffff">PPT</text>
+              </g>
+
+              <!-- Middle Layer: DOCX Document -->
+              <g filter="url(#shadow-docx-zh)" transform="rotate(-3 160 135)">
+                <rect x="50" y="85" width="220" height="110" rx="22" fill="url(#grad-docx-zh)" stroke="#ffffff" stroke-width="2.5" stroke-opacity="0.7"/>
+                <rect x="70" y="105" width="45" height="70" rx="8" fill="#ffffff" fill-opacity="0.25"/>
+                <rect x="125" y="110" width="90" height="8" rx="4" fill="#ffffff" fill-opacity="0.9"/>
+                <rect x="125" y="127" width="120" height="6" rx="3" fill="#ffffff" fill-opacity="0.7"/>
+                <rect x="125" y="141" width="105" height="6" rx="3" fill="#ffffff" fill-opacity="0.5"/>
+                <rect x="125" y="155" width="70" height="6" rx="3" fill="#ffffff" fill-opacity="0.5"/>
+                <text x="73" y="148" font-family="'Fredoka', sans-serif" font-weight="900" font-size="16" fill="#ffffff">DOC</text>
+              </g>
+
+              <!-- Top Layer: PDF Master Document -->
+              <g filter="url(#shadow-pdf-zh)" transform="rotate(1 160 75)">
+                <rect x="50" y="25" width="220" height="110" rx="22" fill="url(#grad-pdf-zh)" stroke="#ffffff" stroke-width="2.5" stroke-opacity="0.8"/>
+                <rect x="70" y="45" width="45" height="70" rx="8" fill="#ffffff" fill-opacity="0.25"/>
+                <rect x="125" y="50" width="100" height="8" rx="4" fill="#ffffff" fill-opacity="0.95"/>
+                <rect x="125" y="67" width="115" height="6" rx="3" fill="#ffffff" fill-opacity="0.75"/>
+                <rect x="125" y="81" width="90" height="6" rx="3" fill="#ffffff" fill-opacity="0.55"/>
+                <rect x="125" y="95" width="60" height="14" rx="4" fill="#ffffff" fill-opacity="0.3"/>
+                <text x="77" y="88" font-family="'Fredoka', sans-serif" font-weight="900" font-size="16" fill="#ffffff">PDF</text>
+              </g>
+            </svg>
+
+            <!-- Circular local privacy badge -->
+            <div class="swirlzy-price-badge">
+              <span class="swirlzy-price-badge-from">UPLOADED</span>
+              <span class="swirlzy-price-badge-num">0 KB</span>
+            </div>
+          </div>
+
+          <!-- Bottom Footer Bar -->
+          <div class="swirlzy-hero-footer">
+            <div class="swirlzy-hero-caption">
+              <p>100% 浏览器客户端引擎，<br>为绝对隐私与极速而生</p>
+              <p class="portal-brief" style="font-size:11.5px;color:#4c391d;margin-top:6px;line-height:1.35;">Kiln 是一款专注于极致隐私与高速处理的本地文件处理工具。所有任务均直接在您的浏览器与本机内存中 100% 独立执行，零云端上传。</p>
+              <a href="/zh-cn/app/" class="swirlzy-hero-cta-btn">
+                <span>进入处理页面 ⚡</span>
+                <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42 5.43 5.43H5v2z"/></svg>
+              </a>
+            </div>
+
+            <div class="swirlzy-hero-rating">
+              <span class="swirlzy-rating-num">( 100% )</span>
+              <span class="swirlzy-rating-sub">offline wasm</span>
+            </div>
+
+            <div class="swirlzy-hero-thumbs">
+              <div class="swirlzy-thumb" title="PDF 文档" style="background:#ff4b4b;color:#fff;font-family:'Fredoka';font-weight:900;font-size:13px;">PDF</div>
+              <div class="swirlzy-thumb" title="Word 文档" style="background:#29b6f6;color:#fff;font-family:'Fredoka';font-weight:900;font-size:13px;">DOC</div>
+              <div class="swirlzy-thumb" title="PowerPoint 演示" style="background:#ffa726;color:#fff;font-family:'Fredoka';font-weight:900;font-size:13px;">PPT</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: TOP-5 PICKS WHITE -->
+        <div class="swirlzy-card swirlzy-picks-card">
+          <div class="swirlzy-picks-title">
+            TOP-5<br>PICKS
+          </div>
+
+          <div class="swirlzy-picks-list">
+            <!-- Row 1 -->
+            <div class="swirlzy-pick-row">
+              <div class="swirlzy-pick-left">
+                <div class="swirlzy-pick-icon" style="background:#fce0b6;">
+                  <span style="font-size:22px;">📄</span>
+                </div>
+                <div class="swirlzy-pick-name">PDF 转<br>Word</div>
+              </div>
+              <div class="swirlzy-pick-desc">1:1 完美保持排版格式与字体的可编辑 DOCX</div>
+              <div class="swirlzy-pick-price">&lt; 80ms<br><span style="font-size:12px;font-weight:600;color:#666;">WASM</span></div>
+              <a href="/zh-cn/app/" class="swirlzy-pick-add-btn" aria-label="PDF 转 Word">
+                <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+              </a>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="swirlzy-pick-row">
+              <div class="swirlzy-pick-left">
+                <div class="swirlzy-pick-icon" style="background:#cbf3d2;">
+                  <span style="font-size:22px;">📊</span>
+                </div>
+                <div class="swirlzy-pick-name">PDF 转<br>PPTX</div>
+              </div>
+              <div class="swirlzy-pick-desc">幻灯片矢量图形与精确几何位置无损保留</div>
+              <div class="swirlzy-pick-price">1:1<br><span style="font-size:12px;font-weight:600;color:#666;">native</span></div>
+              <a href="/zh-cn/app/" class="swirlzy-pick-add-btn" aria-label="PDF 转 PPTX">
+                <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+              </a>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="swirlzy-pick-row">
+              <div class="swirlzy-pick-left">
+                <div class="swirlzy-pick-icon" style="background:#fcd3e1;">
+                  <span style="font-size:22px;">🗜️</span>
+                </div>
+                <div class="swirlzy-pick-name">PDF<br>压缩</div>
+              </div>
+              <div class="swirlzy-pick-desc">智能矢量与栅格无损压缩，画质无妥协</div>
+              <div class="swirlzy-pick-price">-75%<br><span style="font-size:12px;font-weight:600;color:#666;">lossless</span></div>
+              <a href="/zh-cn/app/" class="swirlzy-pick-add-btn" aria-label="PDF 压缩">
+                <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="swirlzy-col-right">
+
+        <!-- CARD 3: STUDIO SKY BLUE -->
+        <div class="swirlzy-card swirlzy-school-card">
+          <div class="swirlzy-school-title">STUDIO</div>
+          <div class="swirlzy-school-sub">交互式本地脱机工作台</div>
+
+          <div class="swirlzy-school-img-wrap">
+            <div class="swirlzy-join-badge">
+              <span class="swirlzy-join-text">TRY<br>NOW</span>
+              <svg class="swirlzy-join-arrow" viewBox="0 0 40 40" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="4 3" stroke-linecap="round">
+                <path d="M6 8 C 14 18, 22 24, 30 26"/>
+                <path d="M24 30 L 30 26 L 28 20"/>
+              </svg>
+            </div>
+            
+            <svg class="swirlzy-school-svg" viewBox="0 0 210 210" width="210" height="210" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="grad-studio-bg-zh" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#b8e2ff"/>
+                  <stop offset="100%" stop-color="#69b4e8"/>
+                </radialGradient>
+                <filter id="shadow-laptop-zh" x="20" y="30" width="170" height="150" filterUnits="userSpaceOnUse">
+                  <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#144265" flood-opacity="0.25"/>
+                </filter>
+              </defs>
+              <circle cx="105" cy="105" r="95" fill="url(#grad-studio-bg-zh)" stroke="#ffffff" stroke-width="3"/>
+              
+              <g filter="url(#shadow-laptop-zh)">
+                <rect x="45" y="48" width="120" height="82" rx="12" fill="#18222d" stroke="#ffffff" stroke-width="2"/>
+                <rect x="51" y="54" width="108" height="70" rx="8" fill="#0f171f"/>
+                
+                <circle cx="105" cy="89" r="24" stroke="#55ba86" stroke-width="3" stroke-dasharray="8 4"/>
+                <circle cx="105" cy="89" r="14" fill="#55ba86" fill-opacity="0.2"/>
+                <path d="M100 89 L104 93 L112 84" stroke="#55ba86" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                
+                <rect x="58" y="60" width="24" height="5" rx="2.5" fill="#f5ba5d"/>
+                <rect x="86" y="60" width="34" height="5" rx="2.5" fill="#ffffff" fill-opacity="0.4"/>
+                <rect x="68" y="116" width="74" height="4" rx="2" fill="#ffffff" fill-opacity="0.3"/>
+                
+                <path d="M36 130 C36 128, 38 126, 42 126 L168 126 C172 126, 174 128, 174 130 L180 144 C180 147, 177 149, 173 149 L37 149 C33 149, 30 147, 30 144 Z" fill="#2d3844" stroke="#ffffff" stroke-width="1.5"/>
+                <rect x="92" y="132" width="26" height="12" rx="3" fill="#18222d"/>
+              </g>
+            </svg>
+          </div>
+
+          <div class="swirlzy-school-actions">
+            <a href="/app/" id="go-to-processing-window" class="swirlzy-explore-btn">
+              进入处理页面 ⚡
+            </a>
+            <a href="/zh-cn/app/" class="swirlzy-tool-icon-btn" aria-label="工具">
+              <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor;"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42 5.43 5.43H5v2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 4: EVERYDAY TERRACOTTA -->
+        <div class="swirlzy-card swirlzy-everyday-card">
+          <div class="swirlzy-everyday-title">EVERYDAY</div>
+
+          <div class="swirlzy-everyday-img-wrap">
+            <svg class="swirlzy-everyday-svg" viewBox="0 0 240 185" width="240" height="185" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="shadow-vault-zh" x="10" y="10" width="220" height="170" filterUnits="userSpaceOnUse">
+                  <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#6e2505" flood-opacity="0.32"/>
+                </filter>
+                <linearGradient id="grad-vault-plate-zh" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ffb082"/>
+                  <stop offset="100%" stop-color="#c8561d"/>
+                </linearGradient>
+              </defs>
+
+              <ellipse cx="120" cy="155" rx="88" ry="20" fill="#6e2505" fill-opacity="0.25"/>
+
+              <g filter="url(#shadow-vault-zh)">
+                <rect x="36" y="20" width="168" height="136" rx="28" fill="url(#grad-vault-plate-zh)" stroke="#ffffff" stroke-width="2.5" stroke-opacity="0.7"/>
+
+                <circle cx="120" cy="88" r="46" fill="#ffffff" fill-opacity="0.15" stroke="#ffffff" stroke-width="2" stroke-dasharray="6 3"/>
+
+                <path d="M120 62 L138 70 C138 90 128 104 120 110 C112 104 102 90 102 70 Z" fill="#1b4e3b" stroke="#f5ba5d" stroke-width="2"/>
+                <path d="M114 86 L118 90 L126 82" stroke="#f5ba5d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                <g transform="translate(64, 46)">
+                  <rect width="28" height="20" rx="6" fill="#d32f2f"/>
+                  <text x="4" y="14" font-family="'Fredoka', sans-serif" font-weight="900" font-size="9" fill="#ffffff">PDF</text>
+                </g>
+                <g transform="translate(148, 46)">
+                  <rect width="28" height="20" rx="6" fill="#1565c0"/>
+                  <text x="4" y="14" font-family="'Fredoka', sans-serif" font-weight="900" font-size="9" fill="#ffffff">DOC</text>
+                </g>
+                <g transform="translate(64, 110)">
+                  <rect width="28" height="20" rx="6" fill="#2e7d32"/>
+                  <text x="5" y="14" font-family="'Fredoka', sans-serif" font-weight="900" font-size="9" fill="#ffffff">XLS</text>
+                </g>
+                <g transform="translate(148, 110)">
+                  <rect width="28" height="20" rx="6" fill="#e65100"/>
+                  <text x="4" y="14" font-family="'Fredoka', sans-serif" font-weight="900" font-size="9" fill="#ffffff">PPT</text>
+                </g>
+              </g>
+            </svg>
+            <div class="swirlzy-everyday-badge">33 TOOLS</div>
+          </div>
+
+          <svg class="swirlzy-everyday-rays" width="46" height="28" viewBox="0 0 46 28" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round">
+            <line x1="8" y1="20" x2="2" y2="26"/>
+            <line x1="23" y1="14" x2="23" y2="4"/>
+            <line x1="38" y1="20" x2="44" y2="26"/>
+          </svg>
+
+          <p class="swirlzy-everyday-footer">秒级本地极速转换，无需排队等待<br>数据永不离机，安全无忧！</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- SECTION 1: COLORFUL FILE FORMATS SHOWCASE -->
+  <section class="swirlzy-section" id="formats-showcase">
+    <div class="swirlzy-sec-header">
+      <span class="swirlzy-kicker-pill kicker-sky">通用文件兼容支持</span>
+      <h2 class="swirlzy-sec-title">支持全格式。100% 本地离线处理。</h2>
+      <p class="swirlzy-sec-desc">文档、演示文稿、表格、矢量图与归档格式，无需上传任何字节到外部服务器，在浏览器内极速转换。</p>
+    </div>
+
+    <div class="swirlzy-format-grid">
+      <!-- 1. PDF -->
+      <a href="/pdf_to_word/" class="swirlzy-fmt-tile" title="将 PDF 转换为 Word、PowerPoint 或 JPG">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-pdf-zh" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ff5252"/>
+              <stop offset="100%" stop-color="#d32f2f"/>
+            </linearGradient>
+            <filter id="f-pdf-zh" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#b71c1c" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-pdf-zh)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-pdf-zh)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#ff867c"/>
+            <rect x="20" y="24" width="24" height="3" rx="1.5" fill="#ffffff" fill-opacity="0.8"/>
+            <rect x="20" y="31" width="18" height="3" rx="1.5" fill="#ffffff" fill-opacity="0.8"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#d32f2f" text-anchor="middle">PDF</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">PDF 文档</span>
+        <span class="swirlzy-fmt-caption">便携电子文档</span>
+        <span class="swirlzy-fmt-pill">转 Word · PPT · JPG</span>
+      </a>
+
+      <!-- 2. DOCX -->
+      <a href="/word_to_pdf/" class="swirlzy-fmt-tile" title="将 DOCX 转换为 PDF、HTML 或 TXT">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-doc-zh" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#29b6f6"/>
+              <stop offset="100%" stop-color="#0288d1"/>
+            </linearGradient>
+            <filter id="f-doc-zh" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#01579b" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-doc-zh)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-doc-zh)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#b3e5fc"/>
+            <rect x="20" y="24" width="24" height="3" rx="1.5" fill="#ffffff" fill-opacity="0.8"/>
+            <rect x="20" y="31" width="18" height="3" rx="1.5" fill="#ffffff" fill-opacity="0.8"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="10" fill="#0288d1" text-anchor="middle">DOCX</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">Word 文档</span>
+        <span class="swirlzy-fmt-caption">微软 Word 格式</span>
+        <span class="swirlzy-fmt-pill">转 PDF · TXT · HTML</span>
+      </a>
+
+      <!-- 3. PPTX -->
+      <a href="/powerpoint_to_pdf/" class="swirlzy-fmt-tile" title="将演示文稿转换为 PDF 或图像">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-ppt-zh" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ff8a65"/>
+              <stop offset="100%" stop-color="#e64a19"/>
+            </linearGradient>
+            <filter id="f-ppt-zh" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#bf360c" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-ppt-zh)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-ppt-zh)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#ffccbc"/>
+            <circle cx="32" cy="28" r="8" fill="#ffffff" fill-opacity="0.3"/>
+            <path d="M32 28 L32 20 A8 8 0 0 1 40 28 Z" fill="#ffffff"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="10" fill="#e64a19" text-anchor="middle">PPTX</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">PowerPoint</span>
+        <span class="swirlzy-fmt-caption">矢量演示幻灯片</span>
+        <span class="swirlzy-fmt-pill">转 PDF · 矢量母版</span>
+      </a>
+
+      <!-- 4. XLSX -->
+      <a href="/excel_to_pdf/" class="swirlzy-fmt-tile" title="将 Excel 表格转换为 PDF、CSV 或 JSON">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-xls-zh" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#26a69a"/>
+              <stop offset="100%" stop-color="#00796b"/>
+            </linearGradient>
+            <filter id="f-xls-zh" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#004d40" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-xls-zh)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-xls-zh)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#b2dfdb"/>
+            <rect x="22" y="23" width="9" height="5" rx="1" fill="#ffffff" fill-opacity="0.85"/>
+            <rect x="33" y="23" width="9" height="5" rx="1" fill="#ffffff" fill-opacity="0.85"/>
+            <rect x="22" y="30" width="9" height="5" rx="1" fill="#ffffff" fill-opacity="0.65"/>
+            <rect x="33" y="30" width="9" height="5" rx="1" fill="#ffffff" fill-opacity="0.65"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="10" fill="#00796b" text-anchor="middle">XLSX</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">Excel 表格</span>
+        <span class="swirlzy-fmt-caption">电子表格与数据网格</span>
+        <span class="swirlzy-fmt-pill">转 PDF · CSV · JSON</span>
+      </a>
+
+      <!-- 5. PNG -->
+      <a href="/convert/png-to-jpg/" class="swirlzy-fmt-tile" title="将 PNG 转换为 JPG、WEBP 或 PDF">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-png-zh" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ab47bc"/>
+              <stop offset="100%" stop-color="#7b1fa2"/>
+            </linearGradient>
+            <filter id="f-png-zh" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#4a148c" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-png-zh)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-png-zh)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#e1bee7"/>
+            <circle cx="26" cy="24" r="3.5" fill="#ffffff"/>
+            <path d="M20 35 L28 26 L35 32 L40 28 L44 35 Z" fill="#ffffff" fill-opacity="0.85"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#7b1fa2" text-anchor="middle">PNG</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">无损 PNG</span>
+        <span class="swirlzy-fmt-caption">支持透明 Alpha 通道</span>
+        <span class="swirlzy-fmt-pill">转 JPG · WEBP · PDF</span>
+      </a>
+
+      <!-- 6. JPG -->
+      <a href="/jpg_to_pdf/" class="swirlzy-fmt-tile" title="将 JPG 转换为 PDF、PNG 或 WEBP">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-jpg-zh" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ffa726"/>
+              <stop offset="100%" stop-color="#f57c00"/>
+            </linearGradient>
+            <filter id="f-jpg-zh" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#e65100" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-jpg-zh)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-jpg-zh)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#ffe0b2"/>
+            <circle cx="32" cy="26" r="7" stroke="#ffffff" stroke-width="2.5"/>
+            <circle cx="32" cy="26" r="3" fill="#ffffff"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#f57c00" text-anchor="middle">JPG</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">高清 JPG</span>
+        <span class="swirlzy-fmt-caption">高动态范围照片</span>
+        <span class="swirlzy-fmt-pill">转 PDF · PNG · WEBP</span>
+      </a>
+
+      <!-- 7. SVG -->
+      <a href="/convert/svg-to-png/" class="swirlzy-fmt-tile" title="将 SVG 转换为 PNG、PDF 或 WEBP">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-svg-zh" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ec407a"/>
+              <stop offset="100%" stop-color="#c2185b"/>
+            </linearGradient>
+            <filter id="f-svg-zh" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#880e4f" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-svg-zh)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-svg-zh)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#f8bbd0"/>
+            <path d="M22 34 C 24 20, 40 20, 42 34" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+            <rect x="20" y="32" width="4" height="4" fill="#ffffff"/>
+            <rect x="40" y="32" width="4" height="4" fill="#ffffff"/>
+            <circle cx="32" cy="23" r="2.5" fill="#ffffff"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#c2185b" text-anchor="middle">SVG</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">矢量 SVG</span>
+        <span class="swirlzy-fmt-caption">无限缩放矢量曲线</span>
+        <span class="swirlzy-fmt-pill">转 PNG · PDF · WEBP</span>
+      </a>
+
+      <!-- 8. WEBP -->
+      <a href="/convert/webp-to-png/" class="swirlzy-fmt-tile" title="将 WEBP 转换为 PNG、JPG 或 PDF">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-webp-zh" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#26c6da"/>
+              <stop offset="100%" stop-color="#0097a7"/>
+            </linearGradient>
+            <filter id="f-webp-zh" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#006064" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-webp-zh)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-webp-zh)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#b2ebf2"/>
+            <path d="M32 18 L34 25 L41 27 L34 29 L32 36 L30 29 L23 27 L30 25 Z" fill="#ffffff"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="10" fill="#0097a7" text-anchor="middle">WEBP</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">WebP 图像</span>
+        <span class="swirlzy-fmt-caption">新一代高效网页图</span>
+        <span class="swirlzy-fmt-pill">转 PNG · JPG · PDF</span>
+      </a>
+
+      <!-- 9. HWP -->
+      <a href="/convert/pdf-to-hwp/" class="swirlzy-fmt-tile" title="转换 HWP 与 HWPX 韩文公文">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-hwp-zh" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#3f51b5"/>
+              <stop offset="100%" stop-color="#1a237e"/>
+            </linearGradient>
+            <filter id="f-hwp-zh" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#0d1b4a" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-hwp-zh)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-hwp-zh)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#c5cae9"/>
+            <text x="32" y="32" font-family="'Fredoka', sans-serif" font-weight="900" font-size="15" fill="#ffffff" text-anchor="middle">한</text>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#1a237e" text-anchor="middle">HWP</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">Hangul 文档</span>
+        <span class="swirlzy-fmt-caption">韩文公文标准格式</span>
+        <span class="swirlzy-fmt-pill">1:1 原生 WASM</span>
+      </a>
+
+      <!-- 10. ZIP -->
+      <a href="/convert/zip-to-tar/" class="swirlzy-fmt-tile" title="解压与重新打包 ZIP 压缩包">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-zip-zh" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ff7043"/>
+              <stop offset="100%" stop-color="#d84315"/>
+            </linearGradient>
+            <filter id="f-zip-zh" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#bf360c" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-zip-zh)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-zip-zh)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#ffccbc"/>
+            <rect x="30" y="16" width="4" height="2" fill="#ffffff"/>
+            <rect x="33" y="20" width="4" height="2" fill="#ffffff"/>
+            <rect x="30" y="24" width="4" height="2" fill="#ffffff"/>
+            <rect x="33" y="28" width="4" height="2" fill="#ffffff"/>
+            <circle cx="32" cy="33" r="3" fill="#ffffff"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#d84315" text-anchor="middle">ZIP</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">ZIP 归档</span>
+        <span class="swirlzy-fmt-caption">压缩文件包</span>
+        <span class="swirlzy-fmt-pill">解压与重新打包</span>
+      </a>
+
+      <!-- 11. JSON -->
+      <a href="/convert/json-to-yaml/" class="swirlzy-fmt-tile" title="将 JSON 转换为 YAML、CSV 或 XML">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-json-zh" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#00b4d8"/>
+              <stop offset="100%" stop-color="#0077b6"/>
+            </linearGradient>
+            <filter id="f-json-zh" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#03045e" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-json-zh)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-json-zh)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#caf0f8"/>
+            <text x="32" y="32" font-family="'Fredoka', monospace" font-weight="900" font-size="15" fill="#ffffff" text-anchor="middle">{ ; }</text>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="10" fill="#0077b6" text-anchor="middle">JSON</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">JSON 数据</span>
+        <span class="swirlzy-fmt-caption">结构化数据载荷</span>
+        <span class="swirlzy-fmt-pill">转 YAML · CSV · XML</span>
+      </a>
+
+      <!-- 12. MP3 -->
+      <a href="/convert/mp3-to-wav/" class="swirlzy-fmt-tile" title="将 MP3 音频转换为 WAV、OGG 或 M4A">
+        <svg class="swirlzy-fmt-badge-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g-mp3-zh" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ba68c8"/>
+              <stop offset="100%" stop-color="#6a1b9a"/>
+            </linearGradient>
+            <filter id="f-mp3-zh" x="4" y="4" width="56" height="58" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#4a148c" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <g filter="url(#f-mp3-zh)">
+            <path d="M14 6 C14 3.8 15.8 2 18 2 L42 2 L54 14 L54 58 C54 60.2 52.2 62 50 62 L18 62 C15.8 62 14 60.2 14 58 Z" fill="url(#g-mp3-zh)"/>
+            <path d="M42 2 L42 12 C42 13.1 42.9 14 44 14 L54 14 Z" fill="#e1bee7"/>
+            <circle cx="28" cy="33" r="3.5" fill="#ffffff"/>
+            <path d="M31.5 33 L31.5 20 L39 18 L39 30" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="36" cy="30" r="3" fill="#ffffff"/>
+            <rect x="18" y="40" width="28" height="15" rx="4" fill="#ffffff"/>
+            <text x="32" y="52" font-family="'Fredoka', sans-serif" font-weight="900" font-size="11" fill="#6a1b9a" text-anchor="middle">MP3</text>
+          </g>
+        </svg>
+        <span class="swirlzy-fmt-title">MP3 音频</span>
+        <span class="swirlzy-fmt-caption">数字音频流</span>
+        <span class="swirlzy-fmt-pill">转 WAV · OGG · M4A</span>
+      </a>
+    </div>
+
+    <div style="text-align:center;margin-top:20px;">
+      <a href="/zh-cn/formats/" class="brutal-btn brutal-btn-white" style="font-size:15px;padding:12px 28px;">
+        <span>浏览全部 240+ 支持的格式 &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION 2: 3 CANDY FEATURE PILLARS -->
+  <section class="swirlzy-section">
+    <div class="swirlzy-sec-header">
+      <span class="swirlzy-kicker-pill kicker-mint">用户隐私第一原则</span>
+      <h2 class="swirlzy-sec-title">为愉悦与极致安全而打造</h2>
+      <p class="swirlzy-sec-desc">无后端服务器监控，零跟踪器，无订阅付费陷阱。纯粹的浏览器本地 WebAssembly 运算动力。</p>
+    </div>
+
+    <div class="swirlzy-candy-grid">
+      <!-- Pillar 1: Mint Sage -->
+      <div class="swirlzy-candy-card candy-mint">
+        <div class="swirlzy-candy-icon-box">🛡️</div>
+        <h3 class="swirlzy-candy-h3">100% 客户端 WASM</h3>
+        <p class="swirlzy-candy-p">所有转换在本地浏览器内存中即刻完成。即使断开 Wi-Fi 或开启飞行模式，Kiln 依然极速运行，杜绝一切数据泄露隐患。</p>
+      </div>
+
+      <!-- Pillar 2: Sky Blue -->
+      <div class="swirlzy-candy-card candy-sky">
+        <div class="swirlzy-candy-icon-box">📐</div>
+        <h3 class="swirlzy-candy-h3">1:1 原生几何精度</h3>
+        <p class="swirlzy-candy-p">连续基线聚类算法彻底杜绝文字重叠。矢量图形、母版版式、嵌入颜色与自定义字体实现毫米级精确映射。</p>
+      </div>
+
+      <!-- Pillar 3: Honey Amber -->
+      <div class="swirlzy-candy-card candy-amber">
+        <div class="swirlzy-candy-icon-box">⚡</div>
+        <h3 class="swirlzy-candy-h3">无文件大小限制，完全免费</h3>
+        <p class="swirlzy-candy-p">无需忍受云端转换服务苛刻的 25MB 大小门槛。500MB+ 的超大文件在本地电脑内存中轻松处理。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: JOYFUL SWIRLZY CALL TO ACTION -->
+  <section class="swirlzy-section">
+    <div class="swirlzy-cta-box">
+      <h2 class="swirlzy-cta-h2">立即体验极速、私密的本地文件转换。</h2>
+      <p class="swirlzy-cta-p">进入 Kiln 交互工作室，或直接拖拽文件至顶部罗盘。免注册账号、免订阅，数据永远停留在你的设备中。</p>
+      <div class="swirlzy-cta-actions">
+        <a href="/zh-cn/app/" class="brutal-btn brutal-btn-dark" style="font-size:18px;padding:18px 36px;">
+          <span>开启 Kiln 处理工作台 ⚡</span>
+        </a>
+        <a href="/zh-cn/formats/" class="brutal-btn brutal-btn-white" style="font-size:18px;padding:18px 32px;">
+          <span>探索 240+ 格式 &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="swirlzy-footer">
+  <div style="display:flex;align-items:center;gap:12px;">
+    <svg class="swirlzy-brand-logo" viewBox="0 0 36 36" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="18" r="16" fill="#55ba86" stroke="#1b4e3b" stroke-width="2"/>
+      <path d="M12 18 C12 13 24 13 24 18 C24 22 15 23 15 20 C15 18 21 18 21 19" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="swirlzy-footer-brand">KILN PLATFORM</div>
+      <div style="font-size:12.5px;color:var(--muted);font-family:var(--font-swirlzy-sans);">100% 客户端本地离线私密文件处理引擎 &middot; 开放核心</div>
+    </div>
+  </div>
+
+  <div class="swirlzy-footer-links">
+    <a href="/zh-cn/app/">处理工作台</a>
+    <a href="/zh-cn/formats/">格式目录</a>
+    <a href="/zh-cn/cli/">CLI 参考</a>
+  </div>
+
+  <div class="swirlzy-footer-copy">
+    &copy; Kiln 平台 &middot; 所有计算均在本地运行 &middot; 零云端上传 &middot; 无 Cookie &middot; 无追踪器
+  </div>
+</footer>
+
+
+</body></html>

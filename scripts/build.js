@@ -36,7 +36,7 @@ const { runLint: runDefaultsLint } = require('./lint_no_hidden_defaults');
 const { runLint: runStyleXmlLint } = require('./lint_style_and_xml');
 
 async function build() {
-  console.log('--- Starting Filee Website Build ---');
+  console.log('--- Starting Kiln Website Build ---');
   // Enforce architectural guardrails:
   runDefaultsLint();
   await runStyleXmlLint();
